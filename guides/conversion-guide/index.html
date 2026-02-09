@@ -1,0 +1,954 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-aiylphlt"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Conversion Guide | Systematic</title><link rel="canonical" href="https://fro.bot/systematic/guides/conversion-guide/"/><link rel="sitemap" href="/systematic/sitemap-index.xml"/><link rel="shortcut icon" href="/systematic/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v5.17.1"/><meta name="generator" content="Starlight v0.37.6"/><meta property="og:title" content="Conversion Guide"/><meta property="og:type" content="article"/><meta property="og:url" content="https://fro.bot/systematic/guides/conversion-guide/"/><meta property="og:locale" content="en"/><meta property="og:description" content="How to migrate skills, agents, and commands from Claude Code (CEP) to OpenCode and Systematic."/><meta property="og:site_name" content="Systematic"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="How to migrate skills, agents, and commands from Claude Code (CEP) to OpenCode and Systematic."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/systematic/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/systematic/_astro/index.CaJzVaqO.css">
+<style>@layer starlight.components{:root{--sl-badge-default-border: var(--sl-color-accent);--sl-badge-default-bg: var(--sl-color-accent-low);--sl-badge-default-text: #fff;--sl-badge-note-border: var(--sl-color-blue);--sl-badge-note-bg: var(--sl-color-blue-low);--sl-badge-note-text: #fff;--sl-badge-danger-border: var(--sl-color-red);--sl-badge-danger-bg: var(--sl-color-red-low);--sl-badge-danger-text: #fff;--sl-badge-success-border: var(--sl-color-green);--sl-badge-success-bg: var(--sl-color-green-low);--sl-badge-success-text: #fff;--sl-badge-caution-border: var(--sl-color-orange);--sl-badge-caution-bg: var(--sl-color-orange-low);--sl-badge-caution-text: #fff;--sl-badge-tip-border: var(--sl-color-purple);--sl-badge-tip-bg: var(--sl-color-purple-low);--sl-badge-tip-text: #fff}[data-theme=light]:root{--sl-badge-default-bg: var(--sl-color-accent-high);--sl-badge-note-bg: var(--sl-color-blue-high);--sl-badge-danger-bg: var(--sl-color-red-high);--sl-badge-success-bg: var(--sl-color-green-high);--sl-badge-caution-bg: var(--sl-color-orange-high);--sl-badge-tip-bg: var(--sl-color-purple-high)}.sl-badge:where(.astro-r6rcksuz){display:inline-block;border:1px solid var(--sl-color-border-badge);border-radius:.25rem;font-family:var(--sl-font-system-mono);line-height:normal;color:var(--sl-color-text-badge);background-color:var(--sl-color-bg-badge);overflow-wrap:anywhere}.sidebar-content .sl-badge:where(.astro-r6rcksuz){line-height:1;font-size:var(--sl-text-xs);padding:.125rem .375rem}.sidebar-content a[aria-current=page]>.sl-badge:where(.astro-r6rcksuz){--sl-color-bg-badge: transparent;--sl-color-border-badge: currentColor;color:inherit}.default:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-default-bg);--sl-color-border-badge: var(--sl-badge-default-border);--sl-color-text-badge: var(--sl-badge-default-text)}.note:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-note-bg);--sl-color-border-badge: var(--sl-badge-note-border);--sl-color-text-badge: var(--sl-badge-note-text)}.danger:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-danger-bg);--sl-color-border-badge: var(--sl-badge-danger-border);--sl-color-text-badge: var(--sl-badge-danger-text)}.success:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-success-bg);--sl-color-border-badge: var(--sl-badge-success-border);--sl-color-text-badge: var(--sl-badge-success-text)}.tip:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-tip-bg);--sl-color-border-badge: var(--sl-badge-tip-border);--sl-color-text-badge: var(--sl-badge-tip-text)}.caution:where(.astro-r6rcksuz){--sl-color-bg-badge: var(--sl-badge-caution-bg);--sl-color-border-badge: var(--sl-badge-caution-border);--sl-color-text-badge: var(--sl-badge-caution-text)}.small:where(.astro-r6rcksuz){font-size:var(--sl-text-xs);padding:.125rem .25rem}.medium:where(.astro-r6rcksuz){font-size:var(--sl-text-sm);padding:.175rem .35rem}.large:where(.astro-r6rcksuz){font-size:var(--sl-text-base);padding:.225rem .45rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) .sl-badge:where(.astro-r6rcksuz){vertical-align:middle}}
+@layer starlight.components{.card:where(.astro-3nstnhqj){--sl-card-border: var(--sl-color-purple);--sl-card-bg: var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);padding:clamp(1rem,calc(.125rem + 3vw),2.5rem);flex-direction:column;gap:clamp(.5rem,calc(.125rem + 1vw),1rem)}.card:where(.astro-3nstnhqj):nth-child(4n+1){--sl-card-border: var(--sl-color-orange);--sl-card-bg: var(--sl-color-orange-low)}.card:where(.astro-3nstnhqj):nth-child(4n+3){--sl-card-border: var(--sl-color-green);--sl-card-bg: var(--sl-color-green-low)}.card:where(.astro-3nstnhqj):nth-child(4n+4){--sl-card-border: var(--sl-color-red);--sl-card-bg: var(--sl-color-red-low)}.card:where(.astro-3nstnhqj):nth-child(4n+5){--sl-card-border: var(--sl-color-blue);--sl-card-bg: var(--sl-color-blue-low)}.title:where(.astro-3nstnhqj){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);gap:1rem;align-items:center}.card:where(.astro-3nstnhqj) .icon:where(.astro-3nstnhqj){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);padding:.2em;border-radius:.25rem;flex-shrink:0}.card:where(.astro-3nstnhqj) .body:where(.astro-3nstnhqj){margin:0;font-size:clamp(var(--sl-text-sm),calc(.5rem + 1vw),var(--sl-text-body))}}
+@layer starlight.components{.card-grid:where(.astro-egg2xge6){display:grid;grid-template-columns:100%;gap:1rem}.card-grid:where(.astro-egg2xge6)>*{margin-top:0!important}@media(min-width:50rem){.card-grid:where(.astro-egg2xge6){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-egg2xge6){--stagger-height: 5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-egg2xge6)>*:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-alwspyvt){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}}
+@layer starlight.components{.sl-steps{--bullet-size: calc(var(--sl-line-height) * 1rem);--bullet-margin: .375rem;list-style:none;counter-reset:steps-counter var(--sl-steps-start, 0);padding-inline-start:0}.sl-steps>li{counter-increment:steps-counter;position:relative;padding-inline-start:calc(var(--bullet-size) + 1rem);padding-bottom:1px;min-height:calc(var(--bullet-size) + var(--bullet-margin))}.sl-steps>li+li{margin-top:0}.sl-steps>li:before{content:counter(steps-counter);position:absolute;top:0;inset-inline-start:0;width:var(--bullet-size);height:var(--bullet-size);line-height:var(--bullet-size);font-size:var(--sl-text-xs);font-weight:600;text-align:center;color:var(--sl-color-white);background-color:var(--sl-color-gray-6);border-radius:99rem;box-shadow:inset 0 0 0 1px var(--sl-color-gray-5)}.sl-steps>li:after{--guide-width: 1px;content:"";position:absolute;top:calc(var(--bullet-size) + var(--bullet-margin));bottom:var(--bullet-margin);inset-inline-start:calc((var(--bullet-size) - var(--guide-width)) / 2);width:var(--guide-width);background-color:var(--sl-color-hairline-light)}}@layer starlight.content{.sl-steps>li>:first-child{--lh: calc(1em * var(--sl-line-height));--shift-y: calc(.5 * (var(--bullet-size) - var(--lh)));transform:translateY(var(--shift-y));margin-bottom:var(--shift-y)}.sl-steps>li>:first-child:where(h1,h2,h3,h4,h5,h6){--lh: calc(1em * var(--sl-line-height-headings))}@supports (--prop: 1lh){.sl-steps>li>:first-child{--lh: 1lh}}}
+@layer starlight.components{.sl-link-button:where(.astro-dsyae72l){align-items:center;border:1px solid transparent;border-radius:999rem;display:inline-flex;font-size:var(--sl-text-sm);gap:.5em;line-height:1.1875;outline-offset:.25rem;padding:.4375rem 1.125rem;text-decoration:none}.sl-link-button:where(.astro-dsyae72l).primary{background:var(--sl-color-text-accent);border-color:var(--sl-color-text-accent);color:var(--sl-color-black)}.sl-link-button:where(.astro-dsyae72l).primary:hover{color:var(--sl-color-black)}.sl-link-button:where(.astro-dsyae72l).secondary{border-color:inherit;color:var(--sl-color-white)}.sl-link-button:where(.astro-dsyae72l).minimal{color:var(--sl-color-white);padding-inline:0}.sl-link-button:where(.astro-dsyae72l) svg{flex-shrink:0}@media(min-width:50rem){.sl-link-button:where(.astro-dsyae72l){font-size:var(--sl-text-base);padding:.9375rem 1.25rem}}.sl-markdown-content .sl-link-button:where(.astro-dsyae72l){margin-inline-end:1rem}.sl-markdown-content .sl-link-button:where(.astro-dsyae72l):not(:where(p *)){margin-block:1rem}}
+</style><script type="module" src="/systematic/_astro/page.B1D-nYk3.js"></script></head> <body class="astro-aiylphlt"> <a href="#_top" class="astro-tdghjyio">Skip to content</a>  <div class="page sl-flex astro-r6lv7f2i"> <header class="header astro-r6lv7f2i"><div class="header astro-h2pe5waf"> <div class="title-wrapper sl-flex astro-h2pe5waf"> <a href="/systematic/" class="site-title sl-flex astro-hvbo5tpp">  <span class="astro-hvbo5tpp" translate="no"> Systematic </span> </a>  </div> <div class="sl-flex print:hidden astro-h2pe5waf"> <site-search class="astro-h2pe5waf astro-yuytr44a" data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}"> <button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-yuytr44a"> <svg aria-hidden="true" class="astro-yuytr44a astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-yuytr44a" aria-hidden="true">Search</span> <kbd class="sl-hidden md:sl-flex astro-yuytr44a" style="display: none;"> <kbd class="astro-yuytr44a">Ctrl</kbd><kbd class="astro-yuytr44a">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="Search" class="astro-yuytr44a"> <div class="dialog-frame sl-flex astro-yuytr44a">  <button data-close-modal class="sl-flex md:sl-hidden astro-yuytr44a"> Cancel </button> <div class="search-container astro-yuytr44a"> <div id="starlight__search" class="astro-yuytr44a"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/systematic/_astro/Search.astro_astro_type_script_index_0_lang.C6Y8oSFO.js"></script>   </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-h2pe5waf"> <div class="sl-flex social-icons astro-h2pe5waf"> <a href="https://github.com/marcusrbrown/systematic" rel="me" class="sl-flex astro-slnfz65f"><span class="sr-only astro-slnfz65f">GitHub</span><svg aria-hidden="true" class="astro-slnfz65f astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-afb54k27"> <span class="sr-only astro-afb54k27">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-afb54k27 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-afb54k27"> <option value="dark" class="astro-afb54k27">Dark</option><option value="light" class="astro-afb54k27">Light</option><option value="auto" selected class="astro-afb54k27">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-afb54k27 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script> <script type="module">const r="starlight-theme",o=e=>e==="auto"||e==="dark"||e==="light"?e:"auto",c=()=>o(typeof localStorage<"u"&&localStorage.getItem(r));function n(e){typeof localStorage<"u"&&localStorage.setItem(r,e==="light"||e==="dark"?e:"")}const l=()=>matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";function t(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e==="auto"?l():e,n(e)}matchMedia("(prefers-color-scheme: light)").addEventListener("change",()=>{c()==="auto"&&t("auto")});class s extends HTMLElement{constructor(){super(),t(c()),this.querySelector("select")?.addEventListener("change",a=>{a.currentTarget instanceof HTMLSelectElement&&t(o(a.currentTarget.value))})}}customElements.define("starlight-theme-select",s);</script> <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div> </header> <nav class="sidebar print:hidden astro-r6lv7f2i" aria-label="Main"> <starlight-menu-button class="print:hidden astro-qa7beyh5"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-qa7beyh5"> <svg aria-hidden="true" class="open-menu astro-qa7beyh5 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-qa7beyh5 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>   <div id="starlight__sidebar" class="sidebar-pane astro-r6lv7f2i"> <div class="sidebar-content sl-flex astro-r6lv7f2i"> <sl-sidebar-state-persist data-hash="12qxbnm" class="astro-jppm6ggu"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Getting Started</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <a href="/systematic/getting-started/installation/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Installation</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/getting-started/configuration/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Configuration</span>  </a> </li> </ul>  </details> </li><li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Guides</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <a href="/systematic/guides/architecture/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Architecture</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/guides/conversion-guide/" aria-current="page" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Conversion Guide</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/guides/creating-skills/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Creating Custom Skills</span>  </a> </li> </ul>  </details> </li><li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Reference</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Skills</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Skills Reference</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/agent-browser/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">agent-browser</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/agent-native-architecture/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">agent-native-architecture</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/brainstorming/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">brainstorming</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/compound-docs/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">compound-docs</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/creating-agent-skills/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">creating-agent-skills</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/file-todos/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">file-todos</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/git-worktree/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">git-worktree</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/skills/using-systematic/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">using-systematic</span>  </a> </li> </ul>  </details> </li><li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Agents</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Agents Reference</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/architecture-strategist/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">architecture-strategist</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/best-practices-researcher/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">best-practices-researcher</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/bug-reproduction-validator/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">bug-reproduction-validator</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/code-simplicity-reviewer/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">code-simplicity-reviewer</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/design-implementation-reviewer/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">design-implementation-reviewer</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/design-iterator/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">design-iterator</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/framework-docs-researcher/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">framework-docs-researcher</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/pattern-recognition-specialist/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">pattern-recognition-specialist</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/performance-oracle/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">performance-oracle</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/security-sentinel/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">security-sentinel</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/agents/spec-flow-analyzer/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">spec-flow-analyzer</span>  </a> </li> </ul>  </details> </li><li class="astro-2v7xa3ze"> <details open class="astro-2v7xa3ze"> <summary class="astro-2v7xa3ze"> <span class="group-label astro-2v7xa3ze"> <span class="large astro-2v7xa3ze">Commands</span>  </span> <svg aria-hidden="true" class="caret astro-2v7xa3ze astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-2v7xa3ze"> <li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">Commands Reference</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/agent-native-audit/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">agent-native-audit</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/create-agent-skill/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">create-agent-skill</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/deepen-plan/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">deepen-plan</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/lfg/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">lfg</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/workflows-brainstorm/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">workflows:brainstorm</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/workflows-compound/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">workflows:compound</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/workflows-plan/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">workflows:plan</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/workflows-review/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">workflows:review</span>  </a> </li><li class="astro-2v7xa3ze"> <a href="/systematic/reference/commands/workflows-work/" class="astro-2v7xa3ze"> <span class="astro-2v7xa3ze">workflows:work</span>  </a> </li> </ul>  </details> </li> </ul>  </details> </li> </ul>   <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-evq6jdvn"> <div class="social-icons astro-evq6jdvn"> <a href="https://github.com/marcusrbrown/systematic" rel="me" class="sl-flex astro-slnfz65f"><span class="sr-only astro-slnfz65f">GitHub</span><svg aria-hidden="true" class="astro-slnfz65f astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-afb54k27"> <span class="sr-only astro-afb54k27">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-afb54k27 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> <select autocomplete="off" class="astro-afb54k27"> <option value="dark" class="astro-afb54k27">Dark</option><option value="light" class="astro-afb54k27">Light</option><option value="auto" selected class="astro-afb54k27">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-afb54k27 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg> </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-r6lv7f2i">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-5o6snv62"> <aside class="right-sidebar-container print:hidden astro-5o6snv62"> <div class="right-sidebar astro-5o6snv62"> <script type="module" src="/systematic/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.hwBsy0Mo.js"></script><script type="module" src="/systematic/_astro/TableOfContents.astro_astro_type_script_index_0_lang.FuRcXuRY.js"></script><div class="lg:sl-hidden astro-dnoxkmvf"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-mqifc7lk"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-mqifc7lk"><details id="starlight__mobile-toc" class="astro-mqifc7lk"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-mqifc7lk"><span class="toggle sl-flex astro-mqifc7lk">On this page<svg aria-hidden="true" class="caret astro-mqifc7lk astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-mqifc7lk"></span></summary><div class="dropdown astro-mqifc7lk"><ul class="isMobile astro-tqutraay" style="--depth: 0;"> <li class="astro-tqutraay" style="--depth: 0;"> <a href="#_top" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#quick-reference-table" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Quick Reference Table</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#frontmatter-conversion" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Frontmatter Conversion</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#skills" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skills</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#commands" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Commands</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#agents" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Agents</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#content-transformations" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Content Transformations</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-name-mappings" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Name Mappings</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#prefix-conversions" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Prefix Conversions</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#cc-specific-syntax-removal" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">CC-Specific Syntax Removal</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#reference-updates" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Reference Updates</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#systematic-plugin-specifics" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Systematic Plugin Specifics</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#bundled-content-organization" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Bundled Content Organization</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#skill-resolution-priority" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skill Resolution Priority</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-mapping-instruction" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Mapping Instruction</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#bootstrap-skill-pattern" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Bootstrap Skill Pattern</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#conversion-checklist" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Conversion Checklist</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#skills-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skills</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#commands-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Commands</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#agents-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Agents</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#features-not-supported-in-opencode" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Features Not Supported in OpenCode</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#opencode-only-features-to-leverage" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">OpenCode-Only Features to Leverage</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#example-full-skill-conversion" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Example: Full Skill Conversion</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#original-cepclaude-code" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Original (CEP/Claude Code)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#converted-systematicopencode" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Converted (Systematic/OpenCode)</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#automated-conversion-pipeline" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Automated Conversion Pipeline</span> </a> <ul class="isMobile astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#current-capabilities" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Current Capabilities</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-name-transformations-automated" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Name Transformations (Automated)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#path-transformations-automated" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Path Transformations (Automated)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#remaining-gaps-manual-attention-required" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Remaining Gaps (Manual Attention Required)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#usage-options" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Usage Options</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#extending-the-converter" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Extending the Converter</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#testing-conversions" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Testing Conversions</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#related-resources" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Related Resources</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-dnoxkmvf"><div class="sl-container astro-dnoxkmvf"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-tqutraay" style="--depth: 0;"> <li class="astro-tqutraay" style="--depth: 0;"> <a href="#_top" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#quick-reference-table" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Quick Reference Table</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#frontmatter-conversion" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Frontmatter Conversion</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#skills" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skills</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#commands" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Commands</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#agents" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Agents</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#content-transformations" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Content Transformations</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-name-mappings" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Name Mappings</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#prefix-conversions" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Prefix Conversions</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#cc-specific-syntax-removal" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">CC-Specific Syntax Removal</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#reference-updates" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Reference Updates</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#systematic-plugin-specifics" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Systematic Plugin Specifics</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#bundled-content-organization" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Bundled Content Organization</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#skill-resolution-priority" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skill Resolution Priority</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-mapping-instruction" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Mapping Instruction</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#bootstrap-skill-pattern" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Bootstrap Skill Pattern</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#conversion-checklist" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Conversion Checklist</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#skills-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Skills</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#commands-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Commands</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#agents-1" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Agents</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#features-not-supported-in-opencode" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Features Not Supported in OpenCode</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#opencode-only-features-to-leverage" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">OpenCode-Only Features to Leverage</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#example-full-skill-conversion" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Example: Full Skill Conversion</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#original-cepclaude-code" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Original (CEP/Claude Code)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#converted-systematicopencode" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Converted (Systematic/OpenCode)</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#automated-conversion-pipeline" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Automated Conversion Pipeline</span> </a> <ul class="astro-tqutraay" style="--depth: 1;"> <li class="astro-tqutraay" style="--depth: 1;"> <a href="#current-capabilities" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Current Capabilities</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#tool-name-transformations-automated" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Tool Name Transformations (Automated)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#path-transformations-automated" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Path Transformations (Automated)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#remaining-gaps-manual-attention-required" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Remaining Gaps (Manual Attention Required)</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#usage-options" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Usage Options</span> </a>  </li><li class="astro-tqutraay" style="--depth: 1;"> <a href="#extending-the-converter" class="astro-tqutraay" style="--depth: 1;"> <span class="astro-tqutraay" style="--depth: 1;">Extending the Converter</span> </a>  </li> </ul>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#testing-conversions" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Testing Conversions</span> </a>  </li><li class="astro-tqutraay" style="--depth: 0;"> <a href="#related-resources" class="astro-tqutraay" style="--depth: 0;"> <span class="astro-tqutraay" style="--depth: 0;">Related Resources</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-5o6snv62">  <main data-pagefind-body class="astro-aiylphlt" lang="en" dir="ltr">    <div class="content-panel astro-yu6egeco"> <div class="sl-container astro-yu6egeco"> <h1 id="_top" class="astro-ty5wsixp">Conversion Guide</h1>  </div> </div>  <div class="content-panel astro-yu6egeco"> <div class="sl-container astro-yu6egeco"> <div class="sl-markdown-content"> <p>This guide provides instructions for converting Claude Code (CC) definitions (skills, commands, agents) to OpenCode (OC) format for use in the Systematic plugin.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="quick-reference-table">Quick Reference Table</h2><a class="sl-anchor-link" href="#quick-reference-table"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Quick Reference Table”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Aspect</th><th>Claude Code</th><th>OpenCode / Systematic</th></tr></thead><tbody><tr><td><strong>Skills directory</strong></td><td><code dir="auto">.claude/skills/&#x3C;name>/SKILL.md</code></td><td><code dir="auto">.opencode/skills/&#x3C;name>/SKILL.md</code></td></tr><tr><td><strong>Commands directory</strong></td><td><code dir="auto">.claude/commands/&#x3C;name>.md</code></td><td><code dir="auto">.opencode/commands/&#x3C;name>.md</code></td></tr><tr><td><strong>Agents directory</strong></td><td><code dir="auto">.claude/agents/&#x3C;name>.md</code></td><td><code dir="auto">.opencode/agents/&#x3C;name>.md</code></td></tr><tr><td><strong>Global skills</strong></td><td><code dir="auto">~/.claude/skills/</code></td><td><code dir="auto">~/.config/opencode/skills/</code></td></tr><tr><td><strong>Global commands</strong></td><td>N/A</td><td><code dir="auto">~/.config/opencode/commands/</code></td></tr><tr><td><strong>Global agents</strong></td><td>N/A</td><td><code dir="auto">~/.config/opencode/agents/</code></td></tr><tr><td><strong>Config file</strong></td><td><code dir="auto">.claude/settings.json</code></td><td><code dir="auto">opencode.json</code> or <code dir="auto">opencode.jsonc</code></td></tr><tr><td><strong>Skill tool</strong></td><td><code dir="auto">Skill</code></td><td><code dir="auto">skill</code> (native) or <code dir="auto">systematic_skill</code> (bundled)</td></tr><tr><td><strong>Task/subagent tool</strong></td><td><code dir="auto">Task</code></td><td><code dir="auto">@mention</code> or <code dir="auto">delegate_task</code></td></tr><tr><td><strong>Todo tool</strong></td><td><code dir="auto">TodoWrite</code></td><td><code dir="auto">todowrite</code></td></tr><tr><td><strong>AskUserQuestion tool</strong></td><td><code dir="auto">AskUserQuestion</code></td><td><code dir="auto">question</code></td></tr><tr><td><strong>Command prefix</strong></td><td><code dir="auto">/compound-engineering:</code></td><td><code dir="auto">/systematic:</code></td></tr><tr><td><strong>Plugin prefix</strong></td><td><code dir="auto">compound-engineering:</code></td><td><code dir="auto">systematic:</code></td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="frontmatter-conversion">Frontmatter Conversion</h2><a class="sl-anchor-link" href="#frontmatter-conversion"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Frontmatter Conversion”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="skills">Skills</h3><a class="sl-anchor-link" href="#skills"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Skills”</span></a></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="cc-fields--oc-handling">CC Fields → OC Handling</h4><a class="sl-anchor-link" href="#cc-fields--oc-handling"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “CC Fields → OC Handling”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Field</th><th>OC Field</th><th>Conversion Action</th></tr></thead><tbody><tr><td><code dir="auto">name</code></td><td><code dir="auto">name</code></td><td><strong>Keep</strong> - lowercase, hyphens, max 64 chars</td></tr><tr><td><code dir="auto">description</code></td><td><code dir="auto">description</code></td><td><strong>Keep</strong> - critical for trigger matching</td></tr><tr><td><code dir="auto">model</code></td><td>❌</td><td><strong>REMOVE</strong> - OC uses global/agent-level model selection</td></tr><tr><td><code dir="auto">allowed-tools</code></td><td>❌</td><td><strong>REMOVE</strong> - OC handles permissions via config</td></tr><tr><td><code dir="auto">argument-hint</code></td><td><code dir="auto">argument-hint</code></td><td><strong>Keep</strong> (used for autocomplete hints)</td></tr><tr><td><code dir="auto">disable-model-invocation</code></td><td>❌</td><td><strong>REMOVE</strong> - not supported in OC</td></tr><tr><td><code dir="auto">user-invocable</code></td><td>❌</td><td><strong>REMOVE</strong> - not supported in OC</td></tr><tr><td><code dir="auto">context: fork</code></td><td>❌</td><td><strong>REMOVE</strong> - subagent execution not automatic</td></tr><tr><td><code dir="auto">agent</code></td><td>❌</td><td><strong>REMOVE</strong> - use explicit delegation in content</td></tr><tr><td><code dir="auto">license</code></td><td><code dir="auto">license</code></td><td><strong>Keep</strong> (optional)</td></tr><tr><td><code dir="auto">compatibility</code></td><td><code dir="auto">compatibility</code></td><td><strong>Keep</strong> (optional)</td></tr><tr><td><code dir="auto">metadata</code></td><td><code dir="auto">metadata</code></td><td><strong>Keep</strong> (optional)</td></tr></tbody></table>
+<p><strong>Systematic compatibility note:</strong> Systematic reads skill frontmatter directly for its own tooling. CC-only fields are still accepted for bundled skills to power <strong>systematic_skill</strong> and <strong>skills-as-commands</strong> behavior, but they are not emitted into OpenCode’s native skill definitions.</p>
+<ul>
+<li><code dir="auto">disable-model-invocation</code>: hides skills from the Systematic skill tool list.</li>
+<li><code dir="auto">user-invocable</code>: controls whether a skill is exposed as a command (skills-as-commands only).</li>
+<li><code dir="auto">context: fork</code>: maps to <code dir="auto">subtask</code> when a skill is exposed as a command.</li>
+<li><code dir="auto">agent</code> / <code dir="auto">model</code>: routed through when a skill is exposed as a command.</li>
+<li><code dir="auto">allowed-tools</code>: reserved for future use (stored but not enforced).</li>
+</ul>
+<div class="sl-heading-wrapper level-h4"><h4 id="example-transformation">Example Transformation</h4><a class="sl-anchor-link" href="#example-transformation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Example Transformation”</span></a></div>
+<p><strong>Before (Claude Code):</strong></p>
+<div class="expressive-code"><link rel="stylesheet" href="/systematic/_astro/ec.v4551.css"><script type="module" src="/systematic/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">brainstorming</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Collaborative design workflow for exploring ideas</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">model</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">sonnet</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">allowed-tools</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Read, Grep, WebSearch</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">disable-model-invocation</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#FF6A83;--1:#A24848">false</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Brainstorming</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">When brainstorming, use the Task tool to spawn research agents...</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: brainstormingdescription: Collaborative design workflow for exploring ideasmodel: sonnetallowed-tools: Read, Grep, WebSearchdisable-model-invocation: false---# BrainstormingWhen brainstorming, use the Task tool to spawn research agents..."><div></div></button></div></figure></div>
+<p><strong>After (OpenCode):</strong></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">brainstorming</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on "let's brainstorm", "help me think through", "what should we build", "explore approaches", ambiguous feature requests, or when the user's request has multiple valid interpretations that need clarification.</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Brainstorming</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">When brainstorming, use delegate_task to spawn research agents...</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: brainstormingdescription: This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on &#x22;let&#x27;s brainstorm&#x22;, &#x22;help me think through&#x22;, &#x22;what should we build&#x22;, &#x22;explore approaches&#x22;, ambiguous feature requests, or when the user&#x27;s request has multiple valid interpretations that need clarification.---# BrainstormingWhen brainstorming, use delegate_task to spawn research agents..."><div></div></button></div></figure></div>
+<p><strong>Key changes:</strong></p>
+<ol>
+<li>Removed <code dir="auto">model</code>, <code dir="auto">allowed-tools</code>, <code dir="auto">disable-model-invocation</code></li>
+<li>Enhanced <code dir="auto">description</code> to include <strong>trigger conditions</strong> (critical for auto-invocation)</li>
+<li>Updated tool references in content</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="commands">Commands</h3><a class="sl-anchor-link" href="#commands"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Commands”</span></a></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="cc-fields--oc-handling-1">CC Fields → OC Handling</h4><a class="sl-anchor-link" href="#cc-fields--oc-handling-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “CC Fields → OC Handling”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Field</th><th>OC Field</th><th>Conversion Action</th></tr></thead><tbody><tr><td><code dir="auto">name</code></td><td><code dir="auto">name</code></td><td><strong>Keep</strong> or derive from filename</td></tr><tr><td><code dir="auto">description</code></td><td><code dir="auto">description</code></td><td><strong>Keep</strong></td></tr><tr><td><code dir="auto">argument-hint</code></td><td>❌</td><td><strong>REMOVE</strong> - use <code dir="auto">$ARGUMENTS</code> in template</td></tr><tr><td><code dir="auto">model</code></td><td><code dir="auto">model</code></td><td><strong>Keep</strong> if provider-qualified (e.g., <code dir="auto">anthropic/claude-3-5-sonnet</code>)</td></tr><tr><td><code dir="auto">agent</code></td><td><code dir="auto">agent</code></td><td><strong>Keep</strong> - specifies which agent executes</td></tr><tr><td><code dir="auto">subtask</code></td><td><code dir="auto">subtask</code></td><td><strong>Keep</strong> - forces subagent invocation</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="template-syntax">Template Syntax</h4><a class="sl-anchor-link" href="#template-syntax"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Template Syntax”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Syntax</th><th>OC Syntax</th><th>Notes</th></tr></thead><tbody><tr><td><code dir="auto">$ARGUMENTS</code></td><td><code dir="auto">$ARGUMENTS</code></td><td>Same - all args as string</td></tr><tr><td><code dir="auto">$0</code>, <code dir="auto">$1</code>, <code dir="auto">$2</code></td><td><code dir="auto">$1</code>, <code dir="auto">$2</code>, <code dir="auto">$3</code></td><td><strong>Shift by 1</strong> - OC is 1-indexed</td></tr><tr><td><code dir="auto">$ARGUMENTS[0]</code></td><td><code dir="auto">$1</code></td><td>Use positional instead</td></tr><tr><td><code dir="auto">!`command`</code></td><td><code dir="auto">!`command`</code></td><td>Same - shell output injection</td></tr><tr><td><code dir="auto">@filename</code></td><td><code dir="auto">@filename</code></td><td>Same - file content injection</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="agents">Agents</h3><a class="sl-anchor-link" href="#agents"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Agents”</span></a></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="cc-fields--oc-handling-2">CC Fields → OC Handling</h4><a class="sl-anchor-link" href="#cc-fields--oc-handling-2"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “CC Fields → OC Handling”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Field</th><th>OC Field</th><th>Conversion Action</th></tr></thead><tbody><tr><td><code dir="auto">name</code></td><td>❌</td><td><strong>REMOVE</strong> - derived from filename</td></tr><tr><td><code dir="auto">description</code></td><td><code dir="auto">description</code></td><td><strong>Keep</strong> - required</td></tr><tr><td><code dir="auto">model: inherit</code></td><td>❌</td><td><strong>REMOVE</strong> - OC inherits by default</td></tr><tr><td><code dir="auto">model: sonnet</code></td><td><code dir="auto">model: anthropic/claude-3-5-sonnet</code></td><td><strong>Normalize</strong> - add provider prefix</td></tr><tr><td><code dir="auto">model: opus</code></td><td><code dir="auto">model: anthropic/claude-3-opus</code></td><td><strong>Normalize</strong></td></tr><tr><td><code dir="auto">model: haiku</code></td><td><code dir="auto">model: anthropic/claude-3-haiku</code></td><td><strong>Normalize</strong></td></tr><tr><td><code dir="auto">tools</code></td><td><code dir="auto">tools</code></td><td><strong>Keep</strong> - array of allowed tools</td></tr><tr><td><code dir="auto">disallowedTools</code></td><td>❌</td><td><strong>REMOVE</strong> - use OC permission system</td></tr><tr><td><code dir="auto">permissionMode</code></td><td>❌</td><td><strong>REMOVE</strong> - use OC permission config</td></tr><tr><td><code dir="auto">skills</code></td><td>❌</td><td><strong>REMOVE</strong> - skills load via tool calls</td></tr><tr><td><code dir="auto">hooks</code></td><td>❌</td><td><strong>REMOVE</strong> - hooks configured separately</td></tr><tr><td>N/A</td><td><code dir="auto">mode</code></td><td><strong>ADD</strong> - <code dir="auto">primary</code>, <code dir="auto">subagent</code>, or <code dir="auto">all</code></td></tr><tr><td>N/A</td><td><code dir="auto">temperature</code></td><td><strong>ADD</strong> - inferred from agent purpose</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="model-normalization-rules">Model Normalization Rules</h4><a class="sl-anchor-link" href="#model-normalization-rules"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Model Normalization Rules”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">claude-*     → anthropic/claude-*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">gpt-*        → openai/gpt-*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">o1-*         → openai/o1-*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">o3-*         → openai/o3-*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">gemini-*     → google/gemini-*</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">inherit      → (remove field)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">&#x3C;other>      → anthropic/&#x3C;other></span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="claude-*     → anthropic/claude-*gpt-*        → openai/gpt-*o1-*         → openai/o1-*o3-*         → openai/o3-*gemini-*     → google/gemini-*inherit      → (remove field)<other>      → anthropic/<other>"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h4"><h4 id="temperature-inference">Temperature Inference</h4><a class="sl-anchor-link" href="#temperature-inference"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Temperature Inference”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent Keywords</th><th>Temperature</th></tr></thead><tbody><tr><td>review, audit, security, sentinel, oracle, lint, verification</td><td>0.1</td></tr><tr><td>plan, planning, architecture, strategist, analysis, research</td><td>0.2</td></tr><tr><td>doc, readme, changelog, editor, writer</td><td>0.3</td></tr><tr><td>brainstorm, creative, ideate, design, concept</td><td>0.6</td></tr><tr><td>(default)</td><td>0.3</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h4"><h4 id="example-transformation-1">Example Transformation</h4><a class="sl-anchor-link" href="#example-transformation-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Example Transformation”</span></a></div>
+<p><strong>Before (Claude Code):</strong></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">code-simplicity-reviewer</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Reviews code for unnecessary complexity and suggests simplifications</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">model</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">inherit</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">tools</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Read, Grep, Glob</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">You are a code simplicity expert...</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: code-simplicity-reviewerdescription: Reviews code for unnecessary complexity and suggests simplificationsmodel: inherittools: Read, Grep, Glob---You are a code simplicity expert..."><div></div></button></div></figure></div>
+<p><strong>After (OpenCode):</strong></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Reviews code for unnecessary complexity and suggests simplifications</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">mode</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">subagent</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">temperature</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">0.1</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">You are a code simplicity expert...</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---description: Reviews code for unnecessary complexity and suggests simplificationsmode: subagenttemperature: 0.1---You are a code simplicity expert..."><div></div></button></div></figure></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="content-transformations">Content Transformations</h2><a class="sl-anchor-link" href="#content-transformations"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Content Transformations”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="tool-name-mappings">Tool Name Mappings</h3><a class="sl-anchor-link" href="#tool-name-mappings"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Tool Name Mappings”</span></a></div>
+<p>Update references in markdown content:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Tool</th><th>OC Tool</th><th>Notes</th></tr></thead><tbody><tr><td><code dir="auto">Task</code></td><td><code dir="auto">delegate_task</code> / <code dir="auto">@mention</code></td><td>Use delegate_task for programmatic, @agent for inline</td></tr><tr><td><code dir="auto">Skill</code></td><td><code dir="auto">skill</code> (native) or <code dir="auto">systematic_skill</code></td><td>Systematic bundled skills use <code dir="auto">systematic_skill</code></td></tr><tr><td><code dir="auto">TodoWrite</code></td><td><code dir="auto">update_plan</code> or <code dir="auto">todowrite</code></td><td>Depends on environment</td></tr><tr><td><code dir="auto">Read</code></td><td><code dir="auto">read</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">Write</code></td><td><code dir="auto">write</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">Edit</code></td><td><code dir="auto">edit</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">Bash</code></td><td><code dir="auto">bash</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">Grep</code></td><td><code dir="auto">grep</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">Glob</code></td><td><code dir="auto">glob</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">WebFetch</code></td><td><code dir="auto">webfetch</code></td><td>Lowercase</td></tr><tr><td><code dir="auto">WebSearch</code></td><td><code dir="auto">google_search</code></td><td>Different name - depends on environment</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="prefix-conversions">Prefix Conversions</h3><a class="sl-anchor-link" href="#prefix-conversions"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Prefix Conversions”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Pattern</th><th>OC Pattern</th></tr></thead><tbody><tr><td><code dir="auto">/compound-engineering:</code></td><td><code dir="auto">/systematic:</code></td></tr><tr><td><code dir="auto">/workflows:</code></td><td><code dir="auto">/workflows:</code></td></tr><tr><td><code dir="auto">compound-engineering:</code></td><td><code dir="auto">systematic:</code></td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="cc-specific-syntax-removal">CC-Specific Syntax Removal</h3><a class="sl-anchor-link" href="#cc-specific-syntax-removal"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “CC-Specific Syntax Removal”</span></a></div>
+<p>Remove or adapt these CC-specific patterns:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Pattern</th><th>Action</th></tr></thead><tbody><tr><td><code dir="auto">context: fork</code> in frontmatter</td><td>Remove - use explicit delegation</td></tr><tr><td><code dir="auto">${CLAUDE_SESSION_ID}</code></td><td>Remove - not available in OC</td></tr><tr><td><code dir="auto">CLAUDE.md</code> references</td><td>Convert to <code dir="auto">AGENTS.md</code> or skill references</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="reference-updates">Reference Updates</h3><a class="sl-anchor-link" href="#reference-updates"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Reference Updates”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Reference</th><th>OC Reference</th></tr></thead><tbody><tr><td><code dir="auto">.claude/skills/</code></td><td><code dir="auto">.opencode/skills/</code></td></tr><tr><td><code dir="auto">.claude/commands/</code></td><td><code dir="auto">.opencode/commands/</code></td></tr><tr><td><code dir="auto">.claude/agents/</code></td><td><code dir="auto">.opencode/agents/</code></td></tr><tr><td><code dir="auto">~/.claude/</code></td><td><code dir="auto">~/.config/opencode/</code></td></tr><tr><td><code dir="auto">CLAUDE.md</code></td><td><code dir="auto">AGENTS.md</code></td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="systematic-plugin-specifics">Systematic Plugin Specifics</h2><a class="sl-anchor-link" href="#systematic-plugin-specifics"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Systematic Plugin Specifics”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="bundled-content-organization">Bundled Content Organization</h3><a class="sl-anchor-link" href="#bundled-content-organization"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Bundled Content Organization”</span></a></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">systematic/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── skills/              # Bundled skills (SKILL.md format)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── &#x3C;skill-name>/</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│       └── SKILL.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">├── agents/              # Bundled agents (Markdown format)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">│   └── &#x3C;agent-name>.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">└── commands/            # Bundled commands (Markdown format)</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">└── &#x3C;command-name>.md</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="systematic/├── skills/              # Bundled skills (SKILL.md format)│   └── <skill-name>/│       └── SKILL.md├── agents/              # Bundled agents (Markdown format)│   └── <agent-name>.md└── commands/            # Bundled commands (Markdown format)    └── <command-name>.md"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="skill-resolution-priority">Skill Resolution Priority</h3><a class="sl-anchor-link" href="#skill-resolution-priority"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Skill Resolution Priority”</span></a></div>
+<ol>
+<li><strong>Project skills</strong>: <code dir="auto">.opencode/skills/</code> in current project</li>
+<li><strong>User skills</strong>: <code dir="auto">~/.config/opencode/skills/</code></li>
+<li><strong>Bundled skills</strong>: Provided by systematic plugin</li>
+</ol>
+<div class="sl-heading-wrapper level-h3"><h3 id="tool-mapping-instruction">Tool Mapping Instruction</h3><a class="sl-anchor-link" href="#tool-mapping-instruction"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Tool Mapping Instruction”</span></a></div>
+<p>Include this instruction in skills that reference tools:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="markdown"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">**</span><span style="--0:#C5E478;--0fw:bold;--1:#3B61B0;--1fw:bold">Tool Mapping for OpenCode:</span><span style="--0:#C5E478;--1:#3B61B0">**</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">When skills reference tools you don't have, substitute OpenCode equivalents:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`TodoWrite`</span><span style="--0:#D6DEEB;--1:#403F53"> → </span><span style="--0:#C5E478;--1:#3B61B0">`update_plan`</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`Task`</span><span style="--0:#D6DEEB;--1:#403F53"> tool with subagents → Use OpenCode's subagent system (@mention)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`Skill`</span><span style="--0:#D6DEEB;--1:#403F53"> tool → OpenCode's native </span><span style="--0:#C5E478;--1:#3B61B0">`skill`</span><span style="--0:#D6DEEB;--1:#403F53"> tool</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`SystematicSkill`</span><span style="--0:#D6DEEB;--1:#403F53"> tool → </span><span style="--0:#C5E478;--1:#3B61B0">`systematic_skill`</span><span style="--0:#D6DEEB;--1:#403F53"> (Systematic plugin skills)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`Read`</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#C5E478;--1:#3B61B0">`Write`</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#C5E478;--1:#3B61B0">`Edit`</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#C5E478;--1:#3B61B0">`Bash`</span><span style="--0:#D6DEEB;--1:#403F53"> → Your native tools</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">-</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#C5E478;--1:#3B61B0">`AskUserQuestion`</span><span style="--0:#D6DEEB;--1:#403F53"> tool → Use OpenCode's native </span><span style="--0:#C5E478;--1:#3B61B0">`question`</span><span style="--0:#D6DEEB;--1:#403F53"> tool</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="**Tool Mapping for OpenCode:**When skills reference tools you don&#x27;t have, substitute OpenCode equivalents:- &#x60;TodoWrite&#x60; → &#x60;update_plan&#x60;- &#x60;Task&#x60; tool with subagents → Use OpenCode&#x27;s subagent system (@mention)- &#x60;Skill&#x60; tool → OpenCode&#x27;s native &#x60;skill&#x60; tool- &#x60;SystematicSkill&#x60; tool → &#x60;systematic_skill&#x60; (Systematic plugin skills)- &#x60;Read&#x60;, &#x60;Write&#x60;, &#x60;Edit&#x60;, &#x60;Bash&#x60; → Your native tools- &#x60;AskUserQuestion&#x60; tool → Use OpenCode&#x27;s native &#x60;question&#x60; tool"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="bootstrap-skill-pattern">Bootstrap Skill Pattern</h3><a class="sl-anchor-link" href="#bootstrap-skill-pattern"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Bootstrap Skill Pattern”</span></a></div>
+<p>The <code dir="auto">using-systematic</code> skill is injected into the system prompt and teaches the agent:</p>
+<ul>
+<li>How to discover available skills</li>
+<li>When to use <code dir="auto">systematic_skill</code> vs native <code dir="auto">skill</code> tool</li>
+<li>Skill invocation discipline (invoke BEFORE any response)</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="conversion-checklist">Conversion Checklist</h2><a class="sl-anchor-link" href="#conversion-checklist"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Conversion Checklist”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="skills-1">Skills</h3><a class="sl-anchor-link" href="#skills-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Skills”</span></a></div>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">model</code> field from frontmatter</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">allowed-tools</code> field from frontmatter</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">disable-model-invocation</code> field</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">user-invocable</code> field</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">context: fork</code> field</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">agent</code> field (handle delegation in content)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Enhance <code dir="auto">description</code> with trigger conditions</li>
+<li class="task-list-item"><input type="checkbox" disabled> Update tool references in content (Task → delegate_task, etc.)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Update directory references (.claude → .opencode)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Convert dynamic injection syntax if present</li>
+<li class="task-list-item"><input type="checkbox" disabled> Add tool mapping instruction if skill references CC tools</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="commands-1">Commands</h3><a class="sl-anchor-link" href="#commands-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Commands”</span></a></div>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Remove unsupported frontmatter fields</li>
+<li class="task-list-item"><input type="checkbox" disabled> Normalize model field if present (add provider prefix)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Shift positional argument indices ($0 → $1)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Convert bash injection syntax</li>
+<li class="task-list-item"><input type="checkbox" disabled> Update prefix from <code dir="auto">/compound-engineering:</code> to <code dir="auto">/systematic:</code></li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="agents-1">Agents</h3><a class="sl-anchor-link" href="#agents-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Agents”</span></a></div>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">name</code> field (derived from filename)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Normalize <code dir="auto">model</code> field (add provider prefix) or remove if <code dir="auto">inherit</code></li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">permissionMode</code> field</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">skills</code> field (load via tool calls instead)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Remove <code dir="auto">hooks</code> field (configure separately)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Add <code dir="auto">mode</code> field (<code dir="auto">primary</code>, <code dir="auto">subagent</code>, or <code dir="auto">all</code>)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Add <code dir="auto">temperature</code> field (infer from purpose)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Update tool references in content</li>
+</ul>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="features-not-supported-in-opencode">Features Not Supported in OpenCode</h2><a class="sl-anchor-link" href="#features-not-supported-in-opencode"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Features Not Supported in OpenCode”</span></a></div>
+<p>These CC features have no direct OC equivalent:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Feature</th><th>Workaround</th></tr></thead><tbody><tr><td><code dir="auto">model</code> in skill frontmatter</td><td>Use agent-level model selection</td></tr><tr><td><code dir="auto">allowed-tools</code> in skills</td><td>Configure via OC permissions</td></tr><tr><td><code dir="auto">disable-model-invocation</code></td><td>No equivalent - all skills can be auto-invoked</td></tr><tr><td><code dir="auto">user-invocable: false</code></td><td>No equivalent - use naming conventions</td></tr><tr><td><code dir="auto">context: fork</code></td><td>Explicitly use subagent delegation</td></tr><tr><td>Dynamic injection <code dir="auto">!</code>command“</td><td>Pre-compute or use tool calls</td></tr><tr><td><code dir="auto">${CLAUDE_SESSION_ID}</code></td><td>Not available</td></tr><tr><td><code dir="auto">permissionMode</code> in agents</td><td>Use OC permission config</td></tr><tr><td>Hooks in frontmatter</td><td>Configure in OC hooks system</td></tr><tr><td><code dir="auto">skills</code> preloading in agents</td><td>Load skills via tool calls</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="opencode-only-features-to-leverage">OpenCode-Only Features to Leverage</h2><a class="sl-anchor-link" href="#opencode-only-features-to-leverage"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “OpenCode-Only Features to Leverage”</span></a></div>
+<p>When converting, consider using these OC-specific capabilities:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Usage</th></tr></thead><tbody><tr><td><code dir="auto">mode: all</code> in agents</td><td>Single definition for both primary and subagent use</td></tr><tr><td><code dir="auto">temperature</code> per agent</td><td>Fine-tune creativity (0.1 for review, 0.6 for brainstorm)</td></tr><tr><td>Per-agent model selection</td><td>Cost optimization (cheap for tests, premium for architecture)</td></tr><tr><td><code dir="auto">hidden: true</code> in agents</td><td>Internal-only subagents</td></tr><tr><td>JSONC config</td><td>Add comments to configuration</td></tr><tr><td>Granular bash permissions</td><td>Glob patterns for command-level control</td></tr></tbody></table>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="example-full-skill-conversion">Example: Full Skill Conversion</h2><a class="sl-anchor-link" href="#example-full-skill-conversion"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Example: Full Skill Conversion”</span></a></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="original-cepclaude-code">Original (CEP/Claude Code)</h3><a class="sl-anchor-link" href="#original-cepclaude-code"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Original (CEP/Claude Code)”</span></a></div>
+<p><strong>File:</strong> <code dir="auto">compound-engineering/skills/brainstorming/SKILL.md</code></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">brainstorming</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Collaborative design workflow for exploring ideas</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">model</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">sonnet</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">allowed-tools</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Read, Grep, WebSearch, Task</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Brainstorming</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">This skill provides a systematic approach to brainstorming.</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">## Usage</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">When invoked, use the Task tool to spawn research agents...</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">## Process</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">1. Understand requirements</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">2. Explore approaches</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">3. Document decisions</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">Reference `.claude/skills/` for related skills.</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: brainstormingdescription: Collaborative design workflow for exploring ideasmodel: sonnetallowed-tools: Read, Grep, WebSearch, Task---# BrainstormingThis skill provides a systematic approach to brainstorming.## UsageWhen invoked, use the Task tool to spawn research agents...## Process1. Understand requirements2. Explore approaches3. Document decisionsReference &#x60;.claude/skills/&#x60; for related skills."><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="converted-systematicopencode">Converted (Systematic/OpenCode)</h3><a class="sl-anchor-link" href="#converted-systematicopencode"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Converted (Systematic/OpenCode)”</span></a></div>
+<p><strong>File:</strong> <code dir="auto">systematic/skills/brainstorming/SKILL.md</code></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">name</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">brainstorming</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">description</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on "let's brainstorm", "help me think through", "what should we build", "explore approaches", ambiguous feature requests, or when the user's request has multiple valid interpretations that need clarification.</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">---</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Brainstorming</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">This skill provides a systematic approach to brainstorming.</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">## Usage</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">When invoked, use delegate_task or @mention to spawn research agents...</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">## Process</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">1. Understand requirements</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">2. Explore approaches</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">3. Document decisions</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#3B61B0">Reference `.opencode/skills/` or use `systematic_skill` for bundled skills.</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="---name: brainstormingdescription: This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on &#x22;let&#x27;s brainstorm&#x22;, &#x22;help me think through&#x22;, &#x22;what should we build&#x22;, &#x22;explore approaches&#x22;, ambiguous feature requests, or when the user&#x27;s request has multiple valid interpretations that need clarification.---# BrainstormingThis skill provides a systematic approach to brainstorming.## UsageWhen invoked, use delegate_task or @mention to spawn research agents...## Process1. Understand requirements2. Explore approaches3. Document decisionsReference &#x60;.opencode/skills/&#x60; or use &#x60;systematic_skill&#x60; for bundled skills."><div></div></button></div></figure></div>
+<p><strong>Changes made:</strong></p>
+<ol>
+<li>✅ Removed <code dir="auto">model: sonnet</code></li>
+<li>✅ Removed <code dir="auto">allowed-tools</code></li>
+<li>✅ Enhanced <code dir="auto">description</code> with trigger conditions</li>
+<li>✅ Changed <code dir="auto">Task tool</code> → <code dir="auto">delegate_task or @mention</code></li>
+<li>✅ Changed <code dir="auto">.claude/skills/</code> → <code dir="auto">.opencode/skills/</code> + systematic_skill reference</li>
+</ol>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="automated-conversion-pipeline">Automated Conversion Pipeline</h2><a class="sl-anchor-link" href="#automated-conversion-pipeline"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Automated Conversion Pipeline”</span></a></div>
+<p>The Systematic plugin includes a converter at <code dir="auto">src/lib/converter.ts</code>:</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="current-capabilities">Current Capabilities</h3><a class="sl-anchor-link" href="#current-capabilities"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Current Capabilities”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Capability</th><th>Details</th></tr></thead><tbody><tr><td><strong>Agent frontmatter transformation</strong></td><td>Normalizes model, infers temperature, adds mode, removes <code dir="auto">name</code></td></tr><tr><td><strong>Skill frontmatter transformation</strong></td><td>Removes CC-only fields (<code dir="auto">model</code>, <code dir="auto">allowed-tools</code>, <code dir="auto">disable-model-invocation</code>, <code dir="auto">user-invocable</code>, <code dir="auto">context</code>, <code dir="auto">agent</code>)</td></tr><tr><td><strong>Command frontmatter transformation</strong></td><td>Normalizes model (adds provider prefix), removes <code dir="auto">inherit</code> models, removes <code dir="auto">argument-hint</code></td></tr><tr><td><strong>Body content transformation</strong></td><td>Tool name mappings, path replacements, prefix conversions</td></tr><tr><td><strong>Model normalization</strong></td><td>Adds provider prefix (claude-<em>→ anthropic/claude-</em>)</td></tr><tr><td><strong>Caching</strong></td><td>Avoids redundant processing via file mtime checks</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="tool-name-transformations-automated">Tool Name Transformations (Automated)</h3><a class="sl-anchor-link" href="#tool-name-transformations-automated"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Tool Name Transformations (Automated)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Tool</th><th>OC Tool</th><th>Pattern</th></tr></thead><tbody><tr><td><code dir="auto">Task</code></td><td><code dir="auto">delegate_task</code></td><td>Context-aware (avoids “Task tool” false positives)</td></tr><tr><td><code dir="auto">TodoWrite</code></td><td><code dir="auto">todowrite</code></td><td>Direct replacement</td></tr><tr><td><code dir="auto">AskUserQuestion</code></td><td><code dir="auto">question</code></td><td>Direct replacement</td></tr><tr><td><code dir="auto">WebSearch</code></td><td><code dir="auto">google_search</code></td><td>Direct replacement</td></tr><tr><td><code dir="auto">WebFetch</code></td><td><code dir="auto">webfetch</code></td><td>Direct replacement</td></tr><tr><td><code dir="auto">Read</code>, <code dir="auto">Write</code>, <code dir="auto">Edit</code>, <code dir="auto">Bash</code>, <code dir="auto">Grep</code>, <code dir="auto">Glob</code></td><td>lowercase</td><td>Context-aware (requires “tool” or “to” context)</td></tr><tr><td><code dir="auto">Skill</code></td><td><code dir="auto">skill</code></td><td>Only when followed by “tool”</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="path-transformations-automated">Path Transformations (Automated)</h3><a class="sl-anchor-link" href="#path-transformations-automated"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Path Transformations (Automated)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CC Path</th><th>OC Path</th></tr></thead><tbody><tr><td><code dir="auto">.claude/skills/</code></td><td><code dir="auto">.opencode/skills/</code></td></tr><tr><td><code dir="auto">.claude/commands/</code></td><td><code dir="auto">.opencode/commands/</code></td></tr><tr><td><code dir="auto">.claude/agents/</code></td><td><code dir="auto">.opencode/agents/</code></td></tr><tr><td><code dir="auto">~/.claude/</code></td><td><code dir="auto">~/.config/opencode/</code></td></tr><tr><td><code dir="auto">CLAUDE.md</code></td><td><code dir="auto">AGENTS.md</code></td></tr><tr><td><code dir="auto">/compound-engineering:</code></td><td><code dir="auto">/systematic:</code></td></tr><tr><td><code dir="auto">compound-engineering:</code></td><td><code dir="auto">systematic:</code></td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="remaining-gaps-manual-attention-required">Remaining Gaps (Manual Attention Required)</h3><a class="sl-anchor-link" href="#remaining-gaps-manual-attention-required"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Remaining Gaps (Manual Attention Required)”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Gap</th><th>Workaround</th></tr></thead><tbody><tr><td><code dir="auto">${CLAUDE_SESSION_ID}</code></td><td>Remove - not available in OC</td></tr><tr><td>Description enhancement with trigger conditions</td><td>Manual - requires understanding of skill purpose</td></tr><tr><td>Complex tool contexts</td><td>May require manual review for false positives/negatives</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="usage-options">Usage Options</h3><a class="sl-anchor-link" href="#usage-options"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Usage Options”</span></a></div>
+<p>The converter supports a <code dir="auto">skipBodyTransform</code> option to disable body content transformations:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="typescript"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">import</span><span style="--0:#D6DEEB;--1:#403F53"> { convertContent } </span><span style="--0:#C792EA;--1:#8844AE">from</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">./lib/converter.js</span><span style="--0:#D9F5DD;--1:#111111">'</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// Full transformation (default)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const </span><span style="--0:#82AAFF;--1:#3B61B0">converted</span><span style="--0:#C792EA;--1:#8844AE"> = </span><span style="--0:#82AAFF;--1:#3B61B0">convertContent</span><span style="--0:#D6DEEB;--1:#403F53">(content</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">skill</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// Skip body transformations (frontmatter only)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const </span><span style="--0:#82AAFF;--1:#3B61B0">convertedFrontmatterOnly</span><span style="--0:#C792EA;--1:#8844AE"> = </span><span style="--0:#82AAFF;--1:#3B61B0">convertContent</span><span style="--0:#D6DEEB;--1:#403F53">(content</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">skill</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#C792EA;--1:#8844AE">, {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#C792EA;--1:#8844AE">  </span></span><span style="--0:#C792EA;--1:#8844AE">skipBodyTransform: </span><span style="--0:#FF6A83;--1:#A24848">true</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">}</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="import { convertContent } from &#x27;./lib/converter.js&#x27;// Full transformation (default)const converted = convertContent(content, &#x27;skill&#x27;)// Skip body transformations (frontmatter only)const convertedFrontmatterOnly = convertContent(content, &#x27;skill&#x27;, {  skipBodyTransform: true})"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="extending-the-converter">Extending the Converter</h3><a class="sl-anchor-link" href="#extending-the-converter"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Extending the Converter”</span></a></div>
+<p>To add new transformations, modify the constants in <code dir="auto">src/lib/converter.ts</code>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="typescript"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// Add new tool mappings (regex pattern → replacement string)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const </span><span style="--0:#82AAFF;--1:#3B61B0">TOOL_MAPPINGS</span><span style="--0:#7FDBCA;--1:#096E72">:</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#FFCB8B;--1:#111111">ReadonlyArray</span><span style="--0:#C792EA;--1:#8844AE">&#x3C;readonly </span><span style="--0:#D6DEEB;--1:#403F53">[</span><span style="--0:#FFCB8B;--1:#111111">RegExp</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#C5E478;--1:#3B61B0">string</span><span style="--0:#D6DEEB;--1:#403F53">]</span><span style="--0:#C792EA;--1:#8844AE">> =</span><span style="--0:#D6DEEB;--1:#403F53"> [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">[</span><span style="--0:#D9F5DD;--1:#111111">/</span><span style="--0:#C792EA;--1:#8844AE">\b</span><span style="--0:#5CA7E4;--1:#3A688F">NewTool</span><span style="--0:#C792EA;--1:#8844AE">\b</span><span style="--0:#D9F5DD;--1:#111111">/</span><span style="--0:#5CA7E4;--1:#3A688F">g</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">new_tool</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#919F9F;--1:#5D6376">// ...existing mappings</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// Add new path replacements</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const </span><span style="--0:#82AAFF;--1:#3B61B0">PATH_REPLACEMENTS</span><span style="--0:#7FDBCA;--1:#096E72">:</span><span style="--0:#C792EA;--1:#8844AE"> </span><span style="--0:#FFCB8B;--1:#111111">ReadonlyArray</span><span style="--0:#C792EA;--1:#8844AE">&#x3C;readonly </span><span style="--0:#D6DEEB;--1:#403F53">[</span><span style="--0:#FFCB8B;--1:#111111">RegExp</span><span style="--0:#C792EA;--1:#8844AE">, </span><span style="--0:#C5E478;--1:#3B61B0">string</span><span style="--0:#D6DEEB;--1:#403F53">]</span><span style="--0:#C792EA;--1:#8844AE">> =</span><span style="--0:#D6DEEB;--1:#403F53"> [</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">[</span><span style="--0:#D9F5DD;--1:#111111">/</span><span style="--0:#5CA7E4;--1:#3A688F">new-path</span><span style="--0:#D9F5DD;--1:#111111">/</span><span style="--0:#5CA7E4;--1:#3A688F">g</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">replacement-path</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">],</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#919F9F;--1:#5D6376">// ...existing replacements</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5D6376">// Add CC-only fields to strip from skills</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">const </span><span style="--0:#82AAFF;--1:#3B61B0">CC_ONLY_SKILL_FIELDS</span><span style="--0:#C792EA;--1:#8844AE"> =</span><span style="--0:#D6DEEB;--1:#403F53"> [</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#ECC48D;--1:#984E4D">new-cc-field</span><span style="--0:#D9F5DD;--1:#111111">'</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#919F9F;--1:#5D6376">// ...existing fields</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="// Add new tool mappings (regex pattern → replacement string)const TOOL_MAPPINGS: ReadonlyArray<readonly [RegExp, string]> = [  [/\bNewTool\b/g, &#x27;new_tool&#x27;],  // ...existing mappings]// Add new path replacementsconst PATH_REPLACEMENTS: ReadonlyArray<readonly [RegExp, string]> = [  [/new-path/g, &#x27;replacement-path&#x27;],  // ...existing replacements]// Add CC-only fields to strip from skillsconst CC_ONLY_SKILL_FIELDS = [  &#x27;new-cc-field&#x27;,  // ...existing fields]"><div></div></button></div></figure></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="testing-conversions">Testing Conversions</h2><a class="sl-anchor-link" href="#testing-conversions"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Testing Conversions”</span></a></div>
+<p>After converting, verify:</p>
+<ol>
+<li><strong>Skill loads correctly</strong>: <code dir="auto">systematic_skill</code> or <code dir="auto">skill</code> tool returns content</li>
+<li><strong>Frontmatter parses</strong>: No YAML errors</li>
+<li><strong>Description triggers</strong>: Model auto-invokes skill when appropriate</li>
+<li><strong>Tool references work</strong>: Referenced tools exist in environment</li>
+<li><strong>Directory references valid</strong>: Paths point to correct locations</li>
+<li><strong>Body transformations applied</strong>: Tool names and paths converted correctly</li>
+</ol>
+<p>Run the converter tests to validate:</p>
+<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">bun</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">test</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">tests/unit/converter.test.ts</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="bun test tests/unit/converter.test.ts"><div></div></button></div></figure></div>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="related-resources">Related Resources</h2><a class="sl-anchor-link" href="#related-resources"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Related Resources”</span></a></div>
+<ul>
+<li><a href="https://github.com/EveryInc/compound-engineering-plugin">CEP Source</a></li>
+<li><a href="https://github.com/code-yeongyu/oh-my-opencode">Oh My OpenCode Loader</a></li>
+<li><a href="https://github.com/obra/superpowers">Superpowers Plugin</a></li>
+<li><a href="https://opencode.ai/docs/skills/">OpenCode Docs - Skills</a></li>
+<li><a href="https://opencode.ai/docs/commands/">OpenCode Docs - Commands</a></li>
+<li><a href="https://opencode.ai/docs/agents/">OpenCode Docs - Agents</a></li>
+<li><a href="https://code.claude.com/docs/en/skills">Claude Code Docs - Skills</a></li>
+<li><a href="https://www.devashish.me/p/migrating-from-claude-code-to-opencode">Migration Article</a></li>
+</ul> </div> <footer class="sl-flex astro-6hs6m4fg"> <div class="meta sl-flex astro-6hs6m4fg">   </div> <div class="pagination-links print:hidden astro-xgqntnr4" dir="ltr"> <a href="/systematic/guides/architecture/" rel="prev" class="astro-xgqntnr4"> <svg aria-hidden="true" class="astro-xgqntnr4 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg> <span class="astro-xgqntnr4"> Previous <br class="astro-xgqntnr4"> <span class="link-title astro-xgqntnr4">Architecture</span> </span> </a> <a href="/systematic/guides/creating-skills/" rel="next" class="astro-xgqntnr4"> <svg aria-hidden="true" class="astro-xgqntnr4 astro-alwspyvt" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg> <span class="astro-xgqntnr4"> Next <br class="astro-xgqntnr4"> <span class="link-title astro-xgqntnr4">Creating Custom Skills</span> </span> </a> </div>   </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
