@@ -104,9 +104,9 @@
 <li>Use brainstorm decisions as input to the research phase</li>
 </ol>
 <p><strong>If multiple brainstorms could match:</strong>
-Use <strong>AskUserQuestion tool</strong> to ask which brainstorm to use, or whether to proceed without one.</p>
+Use <strong>question tool</strong> to ask which brainstorm to use, or whether to proceed without one.</p>
 <p><strong>If no brainstorm found (or not relevant), run idea refinement:</strong></p>
-<p>Refine the idea through collaborative dialogue using the <strong>AskUserQuestion tool</strong>:</p>
+<p>Refine the idea through collaborative dialogue using the <strong>question tool</strong>:</p>
 <ul>
 <li>Ask questions one at a time to understand the idea fully</li>
 <li>Prefer multiple choice questions when natural options exist</li>
@@ -129,19 +129,19 @@ First, I need to understand the project's conventions, existing patterns, and an
 </thinking>
 <p>Run these agents <strong>in parallel</strong> to gather local context:</p>
 <ul>
-<li>Task repo-research-analyst(feature_description)</li>
-<li>Task learnings-researcher(feature_description)</li>
+<li>task repo-research-analyst(feature_description)</li>
+<li>task learnings-researcher(feature_description)</li>
 </ul>
 <p><strong>What to look for:</strong></p>
 <ul>
-<li><strong>Repo research:</strong> existing patterns, CLAUDE.md guidance, technology familiarity, pattern consistency</li>
+<li><strong>Repo research:</strong> existing patterns, AGENTS.md guidance, technology familiarity, pattern consistency</li>
 <li><strong>Learnings:</strong> documented solutions in <code dir="auto">docs/solutions/</code> that might apply (gotchas, patterns, lessons learned)</li>
 </ul>
 <p>These findings inform the next step.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="15-research-decision">1.5. Research Decision</h3><a class="sl-anchor-link" href="#15-research-decision"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “1.5. Research Decision”</span></a></div>
 <p>Based on signals from Step 0 and findings from Step 1, decide on external research.</p>
 <p><strong>High-risk topics → always research.</strong> Security, payments, external APIs, data privacy. The cost of missing something is too high. This takes precedence over speed signals.</p>
-<p><strong>Strong local context → skip external research.</strong> Codebase has good patterns, CLAUDE.md has guidance, user knows what they want. External research adds little value.</p>
+<p><strong>Strong local context → skip external research.</strong> Codebase has good patterns, AGENTS.md has guidance, user knows what they want. External research adds little value.</p>
 <p><strong>Uncertainty or unfamiliar territory → research.</strong> User is exploring, codebase has no examples, new technology. External perspective is valuable.</p>
 <p><strong>Announce the decision and proceed.</strong> Brief explanation, then continue. User can redirect if needed.</p>
 <p>Examples:</p>
@@ -153,8 +153,8 @@ First, I need to understand the project's conventions, existing patterns, and an
 <p><strong>Only run if Step 1.5 indicates external research is valuable.</strong></p>
 <p>Run these agents in parallel:</p>
 <ul>
-<li>Task best-practices-researcher(feature_description)</li>
-<li>Task framework-docs-researcher(feature_description)</li>
+<li>task best-practices-researcher(feature_description)</li>
+<li>task framework-docs-researcher(feature_description)</li>
 </ul>
 <div class="sl-heading-wrapper level-h3"><h3 id="16-consolidate-research">1.6. Consolidate Research</h3><a class="sl-anchor-link" href="#16-consolidate-research"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “1.6. Consolidate Research”</span></a></div>
 <p>After all research steps complete, consolidate findings:</p>
@@ -163,7 +163,7 @@ First, I need to understand the project's conventions, existing patterns, and an
 <li><strong>Include relevant institutional learnings</strong> from <code dir="auto">docs/solutions/</code> (key insights, gotchas to avoid)</li>
 <li>Note external documentation URLs and best practices (if external research was done)</li>
 <li>List related issues or PRs discovered</li>
-<li>Capture CLAUDE.md conventions</li>
+<li>Capture AGENTS.md conventions</li>
 </ul>
 <p><strong>Optional validation:</strong> Briefly summarize findings and ask if anything looks off or missing before proceeding to planning.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="2-issue-planning--structure">2. Issue Planning &#x26; Structure</h3><a class="sl-anchor-link" href="#2-issue-planning--structure"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “2. Issue Planning &#x26; Structure”</span></a></div>
@@ -196,7 +196,7 @@ Think like a product manager - what would make this issue clear and actionable? 
 <div class="sl-heading-wrapper level-h3"><h3 id="3-specflow-analysis">3. SpecFlow Analysis</h3><a class="sl-anchor-link" href="#3-specflow-analysis"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “3. SpecFlow Analysis”</span></a></div>
 <p>After planning the issue structure, run SpecFlow Analyzer to validate and refine the feature specification:</p>
 <ul>
-<li>Task spec-flow-analyzer(feature_description, research_findings)</li>
+<li>task spec-flow-analyzer(feature_description, research_findings)</li>
 </ul>
 <p><strong>SpecFlow Analyzer Output:</strong></p>
 <ul class="contains-task-list">
@@ -378,36 +378,34 @@ Apply best practices for clarity and actionability, making the issue easy to sca
 <li>❌ <code dir="auto">docs/plans/feat-user-auth-plan.md</code> (missing date prefix)</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="post-generation-options">Post-Generation Options</h2><a class="sl-anchor-link" href="#post-generation-options"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Post-Generation Options”</span></a></div>
-<p>After writing the plan file, use the <strong>AskUserQuestion tool</strong> to present these options:</p>
+<p>After writing the plan file, use the <strong>question tool</strong> to present these options:</p>
 <p><strong>Question:</strong> “Plan ready at <code dir="auto">docs/plans/YYYY-MM-DD-&#x3C;type>-&#x3C;name>-plan.md</code>. What would you like to do next?”</p>
 <p><strong>Options:</strong></p>
 <ol>
 <li><strong>Open plan in editor</strong> - Open the plan file for review</li>
 <li><strong>Run <code dir="auto">/deepen-plan</code></strong> - Enhance each section with parallel research agents (best practices, performance, UI)</li>
-<li><strong>Run <code dir="auto">/plan_review</code></strong> - Get feedback from reviewers (DHH, Kieran, Simplicity)</li>
+<li><strong>Run <code dir="auto">/technical_review</code></strong> - Technical feedback from code-focused reviewers (DHH, Kieran, Simplicity)</li>
+<li><strong>Review and refine</strong> - Improve the document through structured self-review</li>
 <li><strong>Start <code dir="auto">/workflows:work</code></strong> - Begin implementing this plan locally</li>
-<li><strong>Start <code dir="auto">/workflows:work</code> on remote</strong> - Begin implementing in Claude Code on the web (use <code dir="auto">&#x26;</code> to run in background)</li>
 <li><strong>Create Issue</strong> - Create issue in project tracker (GitHub/Linear)</li>
-<li><strong>Simplify</strong> - Reduce detail level</li>
 </ol>
 <p>Based on selection:</p>
 <ul>
 <li><strong>Open plan in editor</strong> → Run <code dir="auto">open docs/plans/&#x3C;plan_filename>.md</code> to open the file in the user’s default editor</li>
 <li><strong><code dir="auto">/deepen-plan</code></strong> → Call the /deepen-plan command with the plan file path to enhance with research</li>
-<li><strong><code dir="auto">/plan_review</code></strong> → Call the /plan_review command with the plan file path</li>
+<li><strong><code dir="auto">/technical_review</code></strong> → Call the /technical_review command with the plan file path</li>
+<li><strong>Review and refine</strong> → Load <code dir="auto">document-review</code> skill.</li>
 <li><strong><code dir="auto">/workflows:work</code></strong> → Call the /workflows:work command with the plan file path</li>
-<li><strong><code dir="auto">/workflows:work</code> on remote</strong> → Run <code dir="auto">/workflows:work docs/plans/&#x3C;plan_filename>.md &#x26;</code> to start work in background for Claude Code web</li>
 <li><strong>Create Issue</strong> → See “Issue Creation” section below</li>
-<li><strong>Simplify</strong> → Ask “What should I simplify?” then regenerate simpler version</li>
 <li><strong>Other</strong> (automatically provided) → Accept free text for rework or specific changes</li>
 </ul>
 <p><strong>Note:</strong> If running <code dir="auto">/workflows:plan</code> with ultrathink enabled, automatically run <code dir="auto">/deepen-plan</code> after plan creation for maximum depth and grounding.</p>
-<p>Loop back to options after Simplify or Other changes until user selects <code dir="auto">/workflows:work</code> or <code dir="auto">/plan_review</code>.</p>
+<p>Loop back to options after Simplify or Other changes until user selects <code dir="auto">/workflows:work</code> or <code dir="auto">/technical_review</code>.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="issue-creation">Issue Creation</h2><a class="sl-anchor-link" href="#issue-creation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Issue Creation”</span></a></div>
-<p>When user selects “Create Issue”, detect their project tracker from CLAUDE.md:</p>
+<p>When user selects “Create Issue”, detect their project tracker from AGENTS.md:</p>
 <ol>
 <li>
-<p><strong>Check for tracker preference</strong> in user’s CLAUDE.md (global or project):</p>
+<p><strong>Check for tracker preference</strong> in user’s AGENTS.md (global or project):</p>
 <ul>
 <li>Look for <code dir="auto">project_tracker: github</code> or <code dir="auto">project_tracker: linear</code></li>
 <li>Or look for mentions of “GitHub Issues” or “Linear” in their workflow section</li>
@@ -426,14 +424,14 @@ Apply best practices for clarity and actionability, making the issue easy to sca
 <p><strong>If no tracker configured:</strong>
 Ask user: “Which project tracker do you use? (GitHub/Linear/Other)”</p>
 <ul>
-<li>Suggest adding <code dir="auto">project_tracker: github</code> or <code dir="auto">project_tracker: linear</code> to their CLAUDE.md</li>
+<li>Suggest adding <code dir="auto">project_tracker: github</code> or <code dir="auto">project_tracker: linear</code> to their AGENTS.md</li>
 </ul>
 </li>
 <li>
 <p><strong>After creation:</strong></p>
 <ul>
 <li>Display the issue URL</li>
-<li>Ask if they want to proceed to <code dir="auto">/workflows:work</code> or <code dir="auto">/plan_review</code></li>
+<li>Ask if they want to proceed to <code dir="auto">/workflows:work</code> or <code dir="auto">/technical_review</code></li>
 </ul>
 </li>
 </ol>
