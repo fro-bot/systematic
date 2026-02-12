@@ -1,0 +1,20 @@
+{
+  "name": "cmd-deepen-plan",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "cmd-deepen-plan",
+      "type": "ocx:command",
+      "description": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details",
+      "files": [
+        {
+          "path": "commands/deepen-plan.md",
+          "target": ".opencode/command/deepen-plan.md",
+          "integrity": "sha256-Pg1SqDZpVvQxrHuT6kblTXAkJbCPrloz19AbHrNnJLg="
+        }
+      ]
+    }
+  }
+}

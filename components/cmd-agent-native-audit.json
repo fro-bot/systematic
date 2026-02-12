@@ -1,0 +1,20 @@
+{
+  "name": "cmd-agent-native-audit",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "cmd-agent-native-audit",
+      "type": "ocx:command",
+      "description": "Run comprehensive agent-native architecture review with scored principles",
+      "files": [
+        {
+          "path": "commands/agent-native-audit.md",
+          "target": ".opencode/command/agent-native-audit.md",
+          "integrity": "sha256-wdDOZfsgP/H+UiqUS0ha2XKMS2HVY434XYONGj71hic="
+        }
+      ]
+    }
+  }
+}

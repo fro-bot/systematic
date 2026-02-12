@@ -1,0 +1,20 @@
+{
+  "name": "cmd-brainstorm",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "cmd-brainstorm",
+      "type": "ocx:command",
+      "description": "Explore requirements and approaches through collaborative dialogue before planning implementation",
+      "files": [
+        {
+          "path": "commands/workflows/brainstorm.md",
+          "target": ".opencode/command/brainstorm.md",
+          "integrity": "sha256-mgeVNT6X+oBPakiq2g7umB7Cs3Cf6X2Ug2NK9RIuWWg="
+        }
+      ]
+    }
+  }
+}

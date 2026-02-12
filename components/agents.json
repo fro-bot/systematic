@@ -1,0 +1,40 @@
+{
+  "name": "agents",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agents",
+      "type": "ocx:bundle",
+      "description": "All Systematic agents",
+      "files": [],
+      "dependencies": [
+        "agent-design-implementation-reviewer",
+        "agent-design-iterator",
+        "agent-figma-design-sync",
+        "agent-best-practices-researcher",
+        "agent-framework-docs-researcher",
+        "agent-git-history-analyzer",
+        "agent-learnings-researcher",
+        "agent-repo-research-analyst",
+        "agent-agent-native-reviewer",
+        "agent-architecture-strategist",
+        "agent-code-simplicity-reviewer",
+        "agent-data-integrity-guardian",
+        "agent-data-migration-expert",
+        "agent-deployment-verification-agent",
+        "agent-dhh-rails-reviewer",
+        "agent-kieran-rails-reviewer",
+        "agent-kieran-typescript-reviewer",
+        "agent-pattern-recognition-specialist",
+        "agent-performance-oracle",
+        "agent-security-sentinel",
+        "agent-bug-reproduction-validator",
+        "agent-lint",
+        "agent-pr-comment-resolver",
+        "agent-spec-flow-analyzer"
+      ]
+    }
+  }
+}

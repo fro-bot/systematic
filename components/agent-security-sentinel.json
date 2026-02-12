@@ -1,0 +1,20 @@
+{
+  "name": "agent-security-sentinel",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-security-sentinel",
+      "type": "ocx:agent",
+      "description": "Performs security audits for vulnerabilities, input validation, auth/authz, hardcoded secrets, and OWASP compliance. Use when reviewing code for security issues or before deployment.",
+      "files": [
+        {
+          "path": "agents/review/security-sentinel.md",
+          "target": ".opencode/agent/security-sentinel.md",
+          "integrity": "sha256-/6pWAMLcMwZG+AsaBXFPTzjNPK4/k6HQwPUo5lLB0Zk="
+        }
+      ]
+    }
+  }
+}

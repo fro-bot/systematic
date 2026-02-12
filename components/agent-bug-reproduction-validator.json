@@ -1,0 +1,20 @@
+{
+  "name": "agent-bug-reproduction-validator",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-bug-reproduction-validator",
+      "type": "ocx:agent",
+      "description": "Systematically reproduces and validates bug reports to confirm whether reported behavior is an actual bug. Use when you receive a bug report or issue that needs verification.",
+      "files": [
+        {
+          "path": "agents/workflow/bug-reproduction-validator.md",
+          "target": ".opencode/agent/bug-reproduction-validator.md",
+          "integrity": "sha256-vPXMOmB3S+WItEhzvu3wgp5C36Br0wj81ea8LNUI12w="
+        }
+      ]
+    }
+  }
+}
