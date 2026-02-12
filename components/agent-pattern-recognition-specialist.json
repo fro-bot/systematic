@@ -1,10 +1,10 @@
 {
   "name": "agent-pattern-recognition-specialist",
   "dist-tags": {
-    "latest": "0.0.0-dev"
+    "latest": "1.16.2"
   },
   "versions": {
-    "0.0.0-dev": {
+    "1.16.2": {
       "name": "agent-pattern-recognition-specialist",
       "type": "ocx:agent",
       "description": "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns.",

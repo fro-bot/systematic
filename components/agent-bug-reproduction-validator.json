@@ -1,10 +1,10 @@
 {
   "name": "agent-bug-reproduction-validator",
   "dist-tags": {
-    "latest": "0.0.0-dev"
+    "latest": "1.16.2"
   },
   "versions": {
-    "0.0.0-dev": {
+    "1.16.2": {
       "name": "agent-bug-reproduction-validator",
       "type": "ocx:agent",
       "description": "Systematically reproduces and validates bug reports to confirm whether reported behavior is an actual bug. Use when you receive a bug report or issue that needs verification.",

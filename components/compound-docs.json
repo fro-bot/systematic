@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "0.0.0-dev"
+    "latest": "1.16.2"
   },
   "versions": {
-    "0.0.0-dev": {
+    "1.16.2": {
       "name": "compound-docs",
       "type": "ocx:skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",

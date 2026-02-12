@@ -1,10 +1,10 @@
 {
   "name": "agent-best-practices-researcher",
   "dist-tags": {
-    "latest": "0.0.0-dev"
+    "latest": "1.16.2"
   },
   "versions": {
-    "0.0.0-dev": {
+    "1.16.2": {
       "name": "agent-best-practices-researcher",
       "type": "ocx:agent",
       "description": "Researches and synthesizes external best practices, documentation, and examples for any technology or framework. Use when you need industry standards, community conventions, or implementation guidance.",
