@@ -1,0 +1,27 @@
+{
+  "name": "skills",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "skills",
+      "type": "ocx:bundle",
+      "version": "0.0.0-dev",
+      "description": "All Systematic skills",
+      "dependencies": [
+        "agent-browser",
+        "agent-native-architecture",
+        "brainstorming",
+        "compound-docs",
+        "create-agent-skills",
+        "document-review",
+        "file-todos",
+        "frontend-design",
+        "git-worktree",
+        "orchestrating-swarms",
+        "using-systematic"
+      ]
+    }
+  }
+}

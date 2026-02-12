@@ -1,0 +1,21 @@
+{
+  "name": "frontend-design",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "frontend-design",
+      "type": "ocx:skill",
+      "version": "0.0.0-dev",
+      "description": "This skill should be used when creating distinctive, production-grade frontend interfaces with high design quality. It applies when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "target": ".opencode/skills/frontend-design/SKILL.md",
+          "integrity": "sha256-Kj/Zuo1RwPGAF3uTXL4lgZgj9lPmt3/J+nxypOAbkTo="
+        }
+      ]
+    }
+  }
+}

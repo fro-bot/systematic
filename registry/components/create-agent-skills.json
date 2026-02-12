@@ -1,0 +1,146 @@
+{
+  "name": "create-agent-skills",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "create-agent-skills",
+      "type": "ocx:skill",
+      "version": "0.0.0-dev",
+      "description": "Expert guidance for creating OpenCode skills and slash commands. Use when working with SKILL.md files, authoring new skills, improving existing skills, creating slash commands, or understanding skill structure and best practices.",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "target": ".opencode/skills/create-agent-skills/SKILL.md",
+          "integrity": "sha256-RKA1k+rvtxW5OFEa/N8PlCpo9jVNCfEm8SvFpJ1GjL8="
+        },
+        {
+          "path": "references/api-security.md",
+          "target": ".opencode/skills/create-agent-skills/references/api-security.md",
+          "integrity": "sha256-USok7kOt3BpwgXpenkFxueC97EaGtRPOzZLT/hymaGM="
+        },
+        {
+          "path": "references/be-clear-and-direct.md",
+          "target": ".opencode/skills/create-agent-skills/references/be-clear-and-direct.md",
+          "integrity": "sha256-ACvjccNJztoUJWp6hTs0e3gUm1Gqzol2U20EEYVzUTE="
+        },
+        {
+          "path": "references/best-practices.md",
+          "target": ".opencode/skills/create-agent-skills/references/best-practices.md",
+          "integrity": "sha256-jWmtXTzOivXohcKUpu9oK+xRGjsyiCd64aJzWZEA3q8="
+        },
+        {
+          "path": "references/common-patterns.md",
+          "target": ".opencode/skills/create-agent-skills/references/common-patterns.md",
+          "integrity": "sha256-RCPajLXNSGF4SHeJnACL1NdjxN4BKZ/kq8vRy0ZwWsI="
+        },
+        {
+          "path": "references/core-principles.md",
+          "target": ".opencode/skills/create-agent-skills/references/core-principles.md",
+          "integrity": "sha256-nWH6i5EMyf8vtRvo753rppn8o/K3BJ+QYr9JaNVimfM="
+        },
+        {
+          "path": "references/executable-code.md",
+          "target": ".opencode/skills/create-agent-skills/references/executable-code.md",
+          "integrity": "sha256-d8rzYX84rmY8UV4DwyJn3wKpPiyjAT/nRBWcubRvgWM="
+        },
+        {
+          "path": "references/iteration-and-testing.md",
+          "target": ".opencode/skills/create-agent-skills/references/iteration-and-testing.md",
+          "integrity": "sha256-z9AdwoxeWiV6dd/MryEsmUKZtJJxVdpf+Alok+ONJDg="
+        },
+        {
+          "path": "references/official-spec.md",
+          "target": ".opencode/skills/create-agent-skills/references/official-spec.md",
+          "integrity": "sha256-Vslovz12EOUlytAGNVd5Ke4zp0/60lBNifBXDCPWcYA="
+        },
+        {
+          "path": "references/recommended-structure.md",
+          "target": ".opencode/skills/create-agent-skills/references/recommended-structure.md",
+          "integrity": "sha256-Fp2f0J9wpdqN3QFaTt3ZDDmQFpPV6l+ivoNHTBZ7EZY="
+        },
+        {
+          "path": "references/skill-structure.md",
+          "target": ".opencode/skills/create-agent-skills/references/skill-structure.md",
+          "integrity": "sha256-wVeEwI4F/D4E5VxdITyaNY1YYUjKu/c/TllLfewql1w="
+        },
+        {
+          "path": "references/using-scripts.md",
+          "target": ".opencode/skills/create-agent-skills/references/using-scripts.md",
+          "integrity": "sha256-DxwlE+rg1Hp6mBrypEHajB/vx6sKlfWz8aFeiWdyKNU="
+        },
+        {
+          "path": "references/using-templates.md",
+          "target": ".opencode/skills/create-agent-skills/references/using-templates.md",
+          "integrity": "sha256-yoJKD+UP5jsgxUhVQr4rEOazojUxEd7w9qXJAEt/Vqk="
+        },
+        {
+          "path": "references/workflows-and-validation.md",
+          "target": ".opencode/skills/create-agent-skills/references/workflows-and-validation.md",
+          "integrity": "sha256-4fvdzUKWNmU70Lt7zPm+NGM5olUwpLOaIsOV+LiQPrs="
+        },
+        {
+          "path": "templates/router-skill.md",
+          "target": ".opencode/skills/create-agent-skills/templates/router-skill.md",
+          "integrity": "sha256-BNSawcol2Rkd/T16OztecIeaEZmD7BVha6xN8bjNCVE="
+        },
+        {
+          "path": "templates/simple-skill.md",
+          "target": ".opencode/skills/create-agent-skills/templates/simple-skill.md",
+          "integrity": "sha256-X+T0DPDYJwM8iZSOP4k3frXsJZPu8xW9Y0oO1m7r+RU="
+        },
+        {
+          "path": "workflows/add-reference.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/add-reference.md",
+          "integrity": "sha256-lB1OZ4VkQUioGEnY6DTuBVIzJoBZLhj1SHdCOQPBG5A="
+        },
+        {
+          "path": "workflows/add-script.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/add-script.md",
+          "integrity": "sha256-lqFw0YYmAxz1S5repENKAPqzz+24+hzzD58x+h4XwjI="
+        },
+        {
+          "path": "workflows/add-template.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/add-template.md",
+          "integrity": "sha256-ZTfQE6zDE/E0Ro+n2VJXzVoiGdXt90QaBdCIjV9NjnU="
+        },
+        {
+          "path": "workflows/add-workflow.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/add-workflow.md",
+          "integrity": "sha256-cJq/ikYVXx1avBQFo/FnziQv+lDOVuBlhLT5kWKgmZI="
+        },
+        {
+          "path": "workflows/audit-skill.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/audit-skill.md",
+          "integrity": "sha256-sJfUPZwvJRc1dPruluX3mFHwQR6N/EQ486bTakWhFkI="
+        },
+        {
+          "path": "workflows/create-domain-expertise-skill.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/create-domain-expertise-skill.md",
+          "integrity": "sha256-3ra1cKTU+d7bZiBuV74nXiXEg7UQEawdlMx46XGgVys="
+        },
+        {
+          "path": "workflows/create-new-skill.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/create-new-skill.md",
+          "integrity": "sha256-qeZG161zioFu2KWghJtNPb6Lybqp2xZ5m35KD4MtK2o="
+        },
+        {
+          "path": "workflows/get-guidance.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/get-guidance.md",
+          "integrity": "sha256-vmTNLYnml9i353+DMNoRCbXL10F4lv7uey1iH6djkEM="
+        },
+        {
+          "path": "workflows/upgrade-to-router.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/upgrade-to-router.md",
+          "integrity": "sha256-bUOw/b1Ns8ZsiNgPTN/FdrKnrbJAPd6MjckvZyGoAAo="
+        },
+        {
+          "path": "workflows/verify-skill.md",
+          "target": ".opencode/skills/create-agent-skills/workflows/verify-skill.md",
+          "integrity": "sha256-JuuagwimV2keNTIOwQMZKD23BPVz/aAiuNaJfvSdGWk="
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "agent-repo-research-analyst",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-repo-research-analyst",
+      "type": "ocx:agent",
+      "version": "0.0.0-dev",
+      "description": "Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions.",
+      "files": [
+        {
+          "path": "agents/research/repo-research-analyst.md",
+          "target": ".opencode/agents/repo-research-analyst.md",
+          "integrity": "sha256-YbQTuT/xwHjlyK+yTta97XDEG3hoGiKwEX+1qcn/3y8="
+        }
+      ]
+    }
+  }
+}

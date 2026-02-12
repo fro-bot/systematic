@@ -1,0 +1,41 @@
+{
+  "name": "compound-docs",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "compound-docs",
+      "type": "ocx:skill",
+      "version": "0.0.0-dev",
+      "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "target": ".opencode/skills/compound-docs/SKILL.md",
+          "integrity": "sha256-j4ys+72emJTIEmIJzOPUz1DwWncYXvjxXO/X4d8/1H0="
+        },
+        {
+          "path": "assets/critical-pattern-template.md",
+          "target": ".opencode/skills/compound-docs/assets/critical-pattern-template.md",
+          "integrity": "sha256-73ZcszjeYXaEUq5+U4ozrrVv9xwqN2g5XEVDMlAdjLE="
+        },
+        {
+          "path": "assets/resolution-template.md",
+          "target": ".opencode/skills/compound-docs/assets/resolution-template.md",
+          "integrity": "sha256-NRujhuUPKwAiHRmGDmQm2j1twIXNocvT9TLd4qtEvmk="
+        },
+        {
+          "path": "references/yaml-schema.md",
+          "target": ".opencode/skills/compound-docs/references/yaml-schema.md",
+          "integrity": "sha256-ufSJRQoLRwHzmVATKPJxej04p42YplczkkaI5Yn5K4g="
+        },
+        {
+          "path": "schema.yaml",
+          "target": ".opencode/skills/compound-docs/schema.yaml",
+          "integrity": "sha256-NLXKrwKJlC68EDcgf142QJUIlfIa9Eptk2r+z+UYtgg="
+        }
+      ]
+    }
+  }
+}

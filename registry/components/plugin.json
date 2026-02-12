@@ -1,0 +1,19 @@
+{
+  "name": "plugin",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "plugin",
+      "type": "ocx:plugin",
+      "version": "0.0.0-dev",
+      "description": "Systematic OpenCode plugin — registers skills, agents, commands, and bootstrap prompt",
+      "opencode": {
+        "plugins": {
+          "@fro.bot/systematic": {}
+        }
+      }
+    }
+  }
+}

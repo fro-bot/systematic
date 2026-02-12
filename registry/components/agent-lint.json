@@ -1,0 +1,21 @@
+{
+  "name": "agent-lint",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-lint",
+      "type": "ocx:agent",
+      "version": "0.0.0-dev",
+      "description": "Use this agent when you need to run linting and code quality checks on Ruby and ERB files. Run before pushing to origin.",
+      "files": [
+        {
+          "path": "agents/workflow/lint.md",
+          "target": ".opencode/agents/lint.md",
+          "integrity": "sha256-rKAbearlPRRxX1Bbkpsnkvw5sm08cjeP52JxAoNLJEY="
+        }
+      ]
+    }
+  }
+}

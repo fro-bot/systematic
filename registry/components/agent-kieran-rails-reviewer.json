@@ -1,0 +1,21 @@
+{
+  "name": "agent-kieran-rails-reviewer",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-kieran-rails-reviewer",
+      "type": "ocx:agent",
+      "version": "0.0.0-dev",
+      "description": "Reviews Rails code with an extremely high quality bar for conventions, clarity, and maintainability. Use after implementing features, modifying code, or creating new Rails components.",
+      "files": [
+        {
+          "path": "agents/review/kieran-rails-reviewer.md",
+          "target": ".opencode/agents/kieran-rails-reviewer.md",
+          "integrity": "sha256-gKjwQCKquSRwZKKmpgMEOvQPkAKz17uzzf8QRJ5Q3V8="
+        }
+      ]
+    }
+  }
+}

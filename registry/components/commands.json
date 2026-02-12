@@ -1,0 +1,25 @@
+{
+  "name": "commands",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "commands",
+      "type": "ocx:bundle",
+      "version": "0.0.0-dev",
+      "description": "All Systematic commands",
+      "dependencies": [
+        "cmd-agent-native-audit",
+        "cmd-create-agent-skill",
+        "cmd-deepen-plan",
+        "cmd-lfg",
+        "cmd-brainstorm",
+        "cmd-compound",
+        "cmd-plan",
+        "cmd-review",
+        "cmd-work"
+      ]
+    }
+  }
+}

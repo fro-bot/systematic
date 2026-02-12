@@ -1,0 +1,21 @@
+{
+  "name": "cmd-compound",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "cmd-compound",
+      "type": "ocx:command",
+      "version": "0.0.0-dev",
+      "description": "Document a recently solved problem to compound your team's knowledge",
+      "files": [
+        {
+          "path": "commands/workflows/compound.md",
+          "target": ".opencode/commands/compound.md",
+          "integrity": "sha256-ZKDpYVBf6tsrCRv8yTZfyzlsPTwpayG8LNGUkTomC0w="
+        }
+      ]
+    }
+  }
+}

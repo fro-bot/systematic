@@ -1,0 +1,21 @@
+{
+  "name": "orchestrating-swarms",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "orchestrating-swarms",
+      "type": "ocx:skill",
+      "version": "0.0.0-dev",
+      "description": "Use when orchestrating multi-agent swarms, coordinating parallel code reviews, creating pipeline workflows with dependencies, building self-organizing task queues, or any task benefiting from divide-and-conquer patterns.",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "target": ".opencode/skills/orchestrating-swarms/SKILL.md",
+          "integrity": "sha256-Lgmr0f+aR2oB+/PmX0MqWb32GbhW+suX6owK1aJ/AZM="
+        }
+      ]
+    }
+  }
+}

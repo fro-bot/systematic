@@ -1,0 +1,21 @@
+{
+  "name": "agent-data-integrity-guardian",
+  "dist-tags": {
+    "latest": "0.0.0-dev"
+  },
+  "versions": {
+    "0.0.0-dev": {
+      "name": "agent-data-integrity-guardian",
+      "type": "ocx:agent",
+      "version": "0.0.0-dev",
+      "description": "Reviews database migrations, data models, and persistent data code for safety. Use when checking migration safety, data constraints, transaction boundaries, or privacy compliance.",
+      "files": [
+        {
+          "path": "agents/review/data-integrity-guardian.md",
+          "target": ".opencode/agents/data-integrity-guardian.md",
+          "integrity": "sha256-zZjKHy/vjYjx8CxcGiyDsemW8OSLFJUkUFrpDS9cBN8="
+        }
+      ]
+    }
+  }
+}
