@@ -1,10 +1,10 @@
 {
   "name": "agent-deployment-verification-agent",
   "dist-tags": {
-    "latest": "1.16.2"
+    "latest": "1.17.0"
   },
   "versions": {
-    "1.16.2": {
+    "1.17.0": {
       "name": "agent-deployment-verification-agent",
       "type": "ocx:agent",
       "description": "Produces Go/No-Go deployment checklists with SQL verification queries, rollback procedures, and monitoring plans. Use when PRs touch production data, migrations, or risky data changes.",

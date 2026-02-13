@@ -1,10 +1,10 @@
 {
   "name": "agent-data-migration-expert",
   "dist-tags": {
-    "latest": "1.16.2"
+    "latest": "1.17.0"
   },
   "versions": {
-    "1.16.2": {
+    "1.17.0": {
       "name": "agent-data-migration-expert",
       "type": "ocx:agent",
       "description": "Validates data migrations, backfills, and production data transformations against reality. Use when PRs involve ID mappings, column renames, enum conversions, or schema changes.",
