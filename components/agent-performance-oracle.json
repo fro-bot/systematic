@@ -1,10 +1,10 @@
 {
   "name": "agent-performance-oracle",
   "dist-tags": {
-    "latest": "1.17.1"
+    "latest": "1.17.2"
   },
   "versions": {
-    "1.17.1": {
+    "1.17.2": {
       "name": "agent-performance-oracle",
       "type": "ocx:agent",
       "description": "Analyzes code for performance bottlenecks, algorithmic complexity, database queries, memory usage, and scalability. Use after implementing features or when performance concerns arise.",

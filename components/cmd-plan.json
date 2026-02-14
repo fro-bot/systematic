@@ -1,10 +1,10 @@
 {
   "name": "cmd-plan",
   "dist-tags": {
-    "latest": "1.17.1"
+    "latest": "1.17.2"
   },
   "versions": {
-    "1.17.1": {
+    "1.17.2": {
       "name": "cmd-plan",
       "type": "ocx:command",
       "description": "Transform feature descriptions into well-structured project plans following conventions",
