@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "1.17.2"
+    "latest": "1.17.3"
   },
   "versions": {
-    "1.17.2": {
+    "1.17.3": {
       "name": "skills",
       "type": "ocx:bundle",
       "description": "All Systematic skills",
