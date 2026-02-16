@@ -1,10 +1,10 @@
 {
   "name": "cmd-deepen-plan",
   "dist-tags": {
-    "latest": "1.18.0"
+    "latest": "1.18.1"
   },
   "versions": {
-    "1.18.0": {
+    "1.18.1": {
       "name": "cmd-deepen-plan",
       "type": "ocx:command",
       "description": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details",
