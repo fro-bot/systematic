@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "1.17.3",
+  "version": "1.18.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {

@@ -1,10 +1,10 @@
 {
   "name": "agent-figma-design-sync",
   "dist-tags": {
-    "latest": "1.17.3"
+    "latest": "1.18.0"
   },
   "versions": {
-    "1.17.3": {
+    "1.18.0": {
       "name": "agent-figma-design-sync",
       "type": "ocx:agent",
       "description": "Detects and fixes visual differences between a web implementation and its Figma design. Use iteratively when syncing implementation to match Figma specs.",
