@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "1.18.1"
+    "latest": "1.18.2"
   },
   "versions": {
-    "1.18.1": {
+    "1.18.2": {
       "name": "using-systematic",
       "type": "ocx:skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",

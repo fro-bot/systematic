@@ -1,10 +1,10 @@
 {
   "name": "agent-architecture-strategist",
   "dist-tags": {
-    "latest": "1.18.1"
+    "latest": "1.18.2"
   },
   "versions": {
-    "1.18.1": {
+    "1.18.2": {
       "name": "agent-architecture-strategist",
       "type": "ocx:agent",
       "description": "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors.",

@@ -1,10 +1,10 @@
 {
   "name": "cmd-brainstorm",
   "dist-tags": {
-    "latest": "1.18.1"
+    "latest": "1.18.2"
   },
   "versions": {
-    "1.18.1": {
+    "1.18.2": {
       "name": "cmd-brainstorm",
       "type": "ocx:command",
       "description": "Explore requirements and approaches through collaborative dialogue before planning implementation",

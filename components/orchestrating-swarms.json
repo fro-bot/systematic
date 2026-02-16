@@ -1,10 +1,10 @@
 {
   "name": "orchestrating-swarms",
   "dist-tags": {
-    "latest": "1.18.1"
+    "latest": "1.18.2"
   },
   "versions": {
-    "1.18.1": {
+    "1.18.2": {
       "name": "orchestrating-swarms",
       "type": "ocx:skill",
       "description": "Use when orchestrating multi-agent swarms, coordinating parallel code reviews, creating pipeline workflows with dependencies, building self-organizing task queues, or any task benefiting from divide-and-conquer patterns.",

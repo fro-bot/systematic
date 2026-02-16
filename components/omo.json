@@ -1,10 +1,10 @@
 {
   "name": "omo",
   "dist-tags": {
-    "latest": "1.18.1"
+    "latest": "1.18.2"
   },
   "versions": {
-    "1.18.1": {
+    "1.18.2": {
       "name": "omo",
       "type": "ocx:profile",
       "description": "OhMyOpenCode (OMO) profile — Systematic with enhanced orchestration and delegation",
