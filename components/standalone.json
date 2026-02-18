@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "1.18.2"
+    "latest": "1.18.3"
   },
   "versions": {
-    "1.18.2": {
+    "1.18.3": {
       "name": "standalone",
       "type": "ocx:profile",
       "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",
