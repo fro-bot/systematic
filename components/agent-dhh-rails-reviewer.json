@@ -1,10 +1,10 @@
 {
   "name": "agent-dhh-rails-reviewer",
   "dist-tags": {
-    "latest": "1.18.3"
+    "latest": "1.18.4"
   },
   "versions": {
-    "1.18.3": {
+    "1.18.4": {
       "name": "agent-dhh-rails-reviewer",
       "type": "ocx:agent",
       "description": "Brutally honest Rails code review from DHH's perspective. Use when reviewing Rails code for anti-patterns, JS framework contamination, or violations of Rails conventions.",
