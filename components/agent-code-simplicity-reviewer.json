@@ -1,10 +1,10 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "agent-code-simplicity-reviewer",
       "type": "ocx:agent",
       "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities.",

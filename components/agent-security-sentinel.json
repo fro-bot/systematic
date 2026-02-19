@@ -1,10 +1,10 @@
 {
   "name": "agent-security-sentinel",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "agent-security-sentinel",
       "type": "ocx:agent",
       "description": "Performs security audits for vulnerabilities, input validation, auth/authz, hardcoded secrets, and OWASP compliance. Use when reviewing code for security issues or before deployment.",

@@ -1,10 +1,10 @@
 {
   "name": "agent-agent-native-reviewer",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "agent-agent-native-reviewer",
       "type": "ocx:agent",
       "description": "Reviews code to ensure agent-native parity — any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts.",

@@ -1,10 +1,10 @@
 {
   "name": "cmd-lfg",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "cmd-lfg",
       "type": "ocx:command",
       "description": "Full autonomous engineering workflow",

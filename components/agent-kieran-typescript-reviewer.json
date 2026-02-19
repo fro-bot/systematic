@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-typescript-reviewer",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "agent-kieran-typescript-reviewer",
       "type": "ocx:agent",
       "description": "Reviews TypeScript code with an extremely high quality bar for type safety, modern patterns, and maintainability. Use after implementing features, modifying code, or creating new TypeScript components.",

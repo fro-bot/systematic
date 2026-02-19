@@ -1,10 +1,10 @@
 {
   "name": "cmd-compound",
   "dist-tags": {
-    "latest": "1.18.4"
+    "latest": "1.18.5"
   },
   "versions": {
-    "1.18.4": {
+    "1.18.5": {
       "name": "cmd-compound",
       "type": "ocx:command",
       "description": "Document a recently solved problem to compound your team's knowledge",
