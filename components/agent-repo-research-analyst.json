@@ -1,10 +1,10 @@
 {
   "name": "agent-repo-research-analyst",
   "dist-tags": {
-    "latest": "1.18.6"
+    "latest": "1.18.7"
   },
   "versions": {
-    "1.18.6": {
+    "1.18.7": {
       "name": "agent-repo-research-analyst",
       "type": "ocx:agent",
       "description": "Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions.",

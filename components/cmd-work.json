@@ -1,10 +1,10 @@
 {
   "name": "cmd-work",
   "dist-tags": {
-    "latest": "1.18.6"
+    "latest": "1.18.7"
   },
   "versions": {
-    "1.18.6": {
+    "1.18.7": {
       "name": "cmd-work",
       "type": "ocx:command",
       "description": "Execute work plans efficiently while maintaining quality and finishing features",
