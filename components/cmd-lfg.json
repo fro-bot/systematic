@@ -1,10 +1,10 @@
 {
   "name": "cmd-lfg",
   "dist-tags": {
-    "latest": "1.18.8"
+    "latest": "1.19.0"
   },
   "versions": {
-    "1.18.8": {
+    "1.19.0": {
       "name": "cmd-lfg",
       "type": "ocx:command",
       "description": "Full autonomous engineering workflow",
@@ -12,7 +12,7 @@
         {
           "path": "commands/lfg.md",
           "target": ".opencode/command/lfg.md",
-          "integrity": "sha256-u6tF+04kJ3cT4dcCFfFXIgRh/LrIOgRDhPzuk2NHHCc="
+          "integrity": "sha256-qtxWf97ZtpITtifBsSqzjfITkvHKw1xFg8D6cXxZPiI="
         }
       ]
     }
