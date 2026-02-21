@@ -1,10 +1,10 @@
 {
   "name": "file-todos",
   "dist-tags": {
-    "latest": "1.19.0"
+    "latest": "1.20.0"
   },
   "versions": {
-    "1.19.0": {
+    "1.20.0": {
       "name": "file-todos",
       "type": "ocx:skill",
       "description": "This skill should be used when managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes.",
