@@ -1,10 +1,10 @@
 {
   "name": "agent-native-architecture",
   "dist-tags": {
-    "latest": "1.20.0"
+    "latest": "1.20.1"
   },
   "versions": {
-    "1.20.0": {
+    "1.20.1": {
       "name": "agent-native-architecture",
       "type": "ocx:skill",
       "description": "Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.",
