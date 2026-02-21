@@ -1,10 +1,10 @@
 {
   "name": "cmd-create-agent-skill",
   "dist-tags": {
-    "latest": "1.20.1"
+    "latest": "1.20.2"
   },
   "versions": {
-    "1.20.1": {
+    "1.20.2": {
       "name": "cmd-create-agent-skill",
       "type": "ocx:command",
       "description": "Create or edit Claude Code skills with expert guidance on structure and best practices",
