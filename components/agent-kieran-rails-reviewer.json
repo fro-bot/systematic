@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-rails-reviewer",
   "dist-tags": {
-    "latest": "1.20.2"
+    "latest": "1.21.0"
   },
   "versions": {
-    "1.20.2": {
+    "1.21.0": {
       "name": "agent-kieran-rails-reviewer",
       "type": "ocx:agent",
       "description": "Reviews Rails code with an extremely high quality bar for conventions, clarity, and maintainability. Use after implementing features, modifying code, or creating new Rails components.",

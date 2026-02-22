@@ -1,10 +1,10 @@
 {
   "name": "agent-learnings-researcher",
   "dist-tags": {
-    "latest": "1.20.2"
+    "latest": "1.21.0"
   },
   "versions": {
-    "1.20.2": {
+    "1.21.0": {
       "name": "agent-learnings-researcher",
       "type": "ocx:agent",
       "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes.",
