@@ -1,10 +1,10 @@
 {
   "name": "agents",
   "dist-tags": {
-    "latest": "1.21.2"
+    "latest": "1.21.3"
   },
   "versions": {
-    "1.21.2": {
+    "1.21.3": {
       "name": "agents",
       "type": "ocx:bundle",
       "description": "All Systematic agents",
