@@ -1,10 +1,10 @@
 {
   "name": "cmd-plan",
   "dist-tags": {
-    "latest": "1.21.3"
+    "latest": "1.22.0"
   },
   "versions": {
-    "1.21.3": {
+    "1.22.0": {
       "name": "cmd-plan",
       "type": "ocx:command",
       "description": "Transform feature descriptions into well-structured project plans following conventions",
@@ -12,7 +12,7 @@
         {
           "path": "commands/workflows/plan.md",
           "target": ".opencode/command/plan.md",
-          "integrity": "sha256-bTLXH8vuqlgPM9AUMYciW/5CvGomqFlq4Ml3cTgTRBA="
+          "integrity": "sha256-0A3WqMHFv7uPWI0AIzLkN/HlpOjhY9PUHbWE8Jl2WDo="
         }
       ]
     }

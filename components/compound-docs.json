@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "1.21.3"
+    "latest": "1.22.0"
   },
   "versions": {
-    "1.21.3": {
+    "1.22.0": {
       "name": "compound-docs",
       "type": "ocx:skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
@@ -12,7 +12,7 @@
         {
           "path": "SKILL.md",
           "target": ".opencode/skills/compound-docs/SKILL.md",
-          "integrity": "sha256-eUfR2w7pCEtcEm/V0dEgE+ONFh+BCLbXMHM1Y6XQWEo="
+          "integrity": "sha256-BbMpATqc0lflB32ek6WT3YKQ/QY+Tcb95r/gIW9+rtY="
         },
         {
           "path": "assets/critical-pattern-template.md",

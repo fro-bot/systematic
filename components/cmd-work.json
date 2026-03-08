@@ -1,10 +1,10 @@
 {
   "name": "cmd-work",
   "dist-tags": {
-    "latest": "1.21.3"
+    "latest": "1.22.0"
   },
   "versions": {
-    "1.21.3": {
+    "1.22.0": {
       "name": "cmd-work",
       "type": "ocx:command",
       "description": "Execute work plans efficiently while maintaining quality and finishing features",
@@ -12,7 +12,7 @@
         {
           "path": "commands/workflows/work.md",
           "target": ".opencode/command/work.md",
-          "integrity": "sha256-tVInaESmehTzOlxwu/XesW1m+VwL0DhCiPL6tnlsWwM="
+          "integrity": "sha256-otxedMgGVcndFD05VKTTut/VBPc7divUx5T3Pw4fJRo="
         }
       ]
     }

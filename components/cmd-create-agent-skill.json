@@ -1,10 +1,10 @@
 {
   "name": "cmd-create-agent-skill",
   "dist-tags": {
-    "latest": "1.21.3"
+    "latest": "1.22.0"
   },
   "versions": {
-    "1.21.3": {
+    "1.22.0": {
       "name": "cmd-create-agent-skill",
       "type": "ocx:command",
       "description": "Create or edit Claude Code skills with expert guidance on structure and best practices",
@@ -12,7 +12,7 @@
         {
           "path": "commands/create-agent-skill.md",
           "target": ".opencode/command/create-agent-skill.md",
-          "integrity": "sha256-jVMG85ncAe98VTKr1APBvhAVmmTjlru1wGEKvICVg6U="
+          "integrity": "sha256-YEnwL0yIRtdAfBuKKNyShlSptOIxymEyeblKwpeCpvk="
         }
       ]
     }

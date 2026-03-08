@@ -1,10 +1,10 @@
 {
   "name": "create-agent-skills",
   "dist-tags": {
-    "latest": "1.21.3"
+    "latest": "1.22.0"
   },
   "versions": {
-    "1.21.3": {
+    "1.22.0": {
       "name": "create-agent-skills",
       "type": "ocx:skill",
       "description": "Expert guidance for creating OpenCode skills and slash commands. Use when working with SKILL.md files, authoring new skills, improving existing skills, creating slash commands, or understanding skill structure and best practices.",
@@ -107,7 +107,7 @@
         {
           "path": "workflows/add-workflow.md",
           "target": ".opencode/skills/create-agent-skills/workflows/add-workflow.md",
-          "integrity": "sha256-cJq/ikYVXx1avBQFo/FnziQv+lDOVuBlhLT5kWKgmZI="
+          "integrity": "sha256-jqrQZioeMmUO4o6HTPA5OF2dVrgjZpGa1AWt6aaUdeo="
         },
         {
           "path": "workflows/audit-skill.md",
@@ -122,12 +122,12 @@
         {
           "path": "workflows/create-new-skill.md",
           "target": ".opencode/skills/create-agent-skills/workflows/create-new-skill.md",
-          "integrity": "sha256-T6ikWB1yYC1XZ4vg5S5uBe+pX1F4OWscLfEY8pIT4xk="
+          "integrity": "sha256-swSoSegDc1FCjM0mYHf0f/cUmRGJhgl1Tx6i9TcvWaE="
         },
         {
           "path": "workflows/get-guidance.md",
           "target": ".opencode/skills/create-agent-skills/workflows/get-guidance.md",
-          "integrity": "sha256-F73Df6QxXHG8FteOJohLYjEMUMVB++JN+65CSaFJN98="
+          "integrity": "sha256-vmTNLYnml9i353+DMNoRCbXL10F4lv7uey1iH6djkEM="
         },
         {
           "path": "workflows/upgrade-to-router.md",
