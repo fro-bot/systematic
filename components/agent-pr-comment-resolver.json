@@ -1,10 +1,10 @@
 {
   "name": "agent-pr-comment-resolver",
   "dist-tags": {
-    "latest": "1.22.0"
+    "latest": "1.22.1"
   },
   "versions": {
-    "1.22.0": {
+    "1.22.1": {
       "name": "agent-pr-comment-resolver",
       "type": "ocx:agent",
       "description": "Addresses PR review comments by implementing requested changes and reporting resolutions. Use when code review feedback needs to be resolved with code changes.",
