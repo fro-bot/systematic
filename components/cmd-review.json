@@ -1,10 +1,10 @@
 {
   "name": "cmd-review",
   "dist-tags": {
-    "latest": "1.22.6"
+    "latest": "1.22.7"
   },
   "versions": {
-    "1.22.6": {
+    "1.22.7": {
       "name": "cmd-review",
       "type": "ocx:command",
       "description": "Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and worktrees",
