@@ -1,10 +1,10 @@
 {
   "name": "agent-best-practices-researcher",
   "dist-tags": {
-    "latest": "1.22.7"
+    "latest": "2.0.1"
   },
   "versions": {
-    "1.22.7": {
+    "2.0.1": {
       "name": "agent-best-practices-researcher",
       "type": "ocx:agent",
       "description": "Researches and synthesizes external best practices, documentation, and examples for any technology or framework. Use when you need industry standards, community conventions, or implementation guidance.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/research/best-practices-researcher.md",
           "target": ".opencode/agent/best-practices-researcher.md",
-          "integrity": "sha256-S6JYjJeV28kbDvA7qi8+5oVKXanHfvSk7h3P2OY6qEY="
+          "integrity": "sha256-eaD8ZeiLRcNUTtc3lBW3tQ+J0D3y1qhPrj/1FXdtyHU="
         }
       ]
     }

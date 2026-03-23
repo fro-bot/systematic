@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "1.22.7",
+  "version": "2.0.1",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -15,19 +15,9 @@
       "description": "Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop."
     },
     {
-      "name": "brainstorming",
-      "type": "ocx:skill",
-      "description": "This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on \"let's brainstorm\", \"help me think through\", \"what should we build\", \"explore approaches\", ambiguous feature requests, or when the user's request has multiple valid interpretations that need clarification."
-    },
-    {
       "name": "compound-docs",
       "type": "ocx:skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup"
-    },
-    {
-      "name": "create-agent-skills",
-      "type": "ocx:skill",
-      "description": "Expert guidance for creating OpenCode skills and slash commands. Use when working with SKILL.md files, authoring new skills, improving existing skills, creating slash commands, or understanding skill structure and best practices."
     },
     {
       "name": "document-review",
@@ -180,51 +170,6 @@
       "description": "Analyzes specifications and feature descriptions for user flow completeness and gap identification. Use when a spec, plan, or feature description needs flow analysis, edge case discovery, or requirements validation."
     },
     {
-      "name": "cmd-agent-native-audit",
-      "type": "ocx:command",
-      "description": "Run comprehensive agent-native architecture review with scored principles"
-    },
-    {
-      "name": "cmd-create-agent-skill",
-      "type": "ocx:command",
-      "description": "Create or edit Claude Code skills with expert guidance on structure and best practices"
-    },
-    {
-      "name": "cmd-deepen-plan",
-      "type": "ocx:command",
-      "description": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details"
-    },
-    {
-      "name": "cmd-lfg",
-      "type": "ocx:command",
-      "description": "Full autonomous engineering workflow"
-    },
-    {
-      "name": "cmd-brainstorm",
-      "type": "ocx:command",
-      "description": "Explore requirements and approaches through collaborative dialogue before planning implementation"
-    },
-    {
-      "name": "cmd-compound",
-      "type": "ocx:command",
-      "description": "Document a recently solved problem to compound your team's knowledge"
-    },
-    {
-      "name": "cmd-plan",
-      "type": "ocx:command",
-      "description": "Transform feature descriptions into well-structured project plans following conventions"
-    },
-    {
-      "name": "cmd-review",
-      "type": "ocx:command",
-      "description": "Perform exhaustive code reviews using multi-agent analysis, ultra-thinking, and worktrees"
-    },
-    {
-      "name": "cmd-work",
-      "type": "ocx:command",
-      "description": "Execute work plans efficiently while maintaining quality and finishing features"
-    },
-    {
       "name": "skills",
       "type": "ocx:bundle",
       "description": "All Systematic skills"
@@ -233,11 +178,6 @@
       "name": "agents",
       "type": "ocx:bundle",
       "description": "All Systematic agents"
-    },
-    {
-      "name": "commands",
-      "type": "ocx:bundle",
-      "description": "All Systematic commands"
     },
     {
       "name": "standalone",

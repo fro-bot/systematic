@@ -1,10 +1,10 @@
 {
   "name": "agent-browser",
   "dist-tags": {
-    "latest": "1.22.7"
+    "latest": "2.0.1"
   },
   "versions": {
-    "1.22.7": {
+    "2.0.1": {
       "name": "agent-browser",
       "type": "ocx:skill",
       "description": "Browser automation using Vercel's agent-browser CLI. Use when you need to interact with web pages, fill forms, take screenshots, or scrape data. Alternative to Playwright MCP - uses Bash commands with ref-based element selection. Triggers on \"browse website\", \"fill form\", \"click button\", \"take screenshot\", \"scrape page\", \"web automation\".",
@@ -12,7 +12,57 @@
         {
           "path": "SKILL.md",
           "target": ".opencode/skills/agent-browser/SKILL.md",
-          "integrity": "sha256-I0517jyhHZg01quP3WUX+1QpNVh3oFWe7nbt8PH0GsI="
+          "integrity": "sha256-/AcETz2qlt/pxJcXCOQhRroTNH2PZFzpJobRuAIl02o="
+        },
+        {
+          "path": "references/authentication.md",
+          "target": ".opencode/skills/agent-browser/references/authentication.md",
+          "integrity": "sha256-QU7mawAmc9rLfYVZ7AV3JrGdF6rtxXevvjc/sV3m89U="
+        },
+        {
+          "path": "references/commands.md",
+          "target": ".opencode/skills/agent-browser/references/commands.md",
+          "integrity": "sha256-vz9/uanRi/GfuHtexFE+k02N1E0tVo6Uz2+CBmQNUdY="
+        },
+        {
+          "path": "references/profiling.md",
+          "target": ".opencode/skills/agent-browser/references/profiling.md",
+          "integrity": "sha256-dSiPVv0antYE4dE7qi5qRTC6VI1yR/YkoFaRTpQhDkM="
+        },
+        {
+          "path": "references/proxy-support.md",
+          "target": ".opencode/skills/agent-browser/references/proxy-support.md",
+          "integrity": "sha256-TES6YNk5dSMQn9vfHZcnOWkYVsW/a/FYf8WHk8cbRnE="
+        },
+        {
+          "path": "references/session-management.md",
+          "target": ".opencode/skills/agent-browser/references/session-management.md",
+          "integrity": "sha256-LOUxvxBar4J6kHpOJV4AMh7vWZTKDiHkHChInAqO/rs="
+        },
+        {
+          "path": "references/snapshot-refs.md",
+          "target": ".opencode/skills/agent-browser/references/snapshot-refs.md",
+          "integrity": "sha256-JV7cSLmdom1g5OwddHxMDnT/eGmnQeTAwEQfOJe4l88="
+        },
+        {
+          "path": "references/video-recording.md",
+          "target": ".opencode/skills/agent-browser/references/video-recording.md",
+          "integrity": "sha256-wsEr2MROXTb7uUz8N2GA1HUH08JqfuiHa4kvxwDc8zI="
+        },
+        {
+          "path": "templates/authenticated-session.sh",
+          "target": ".opencode/skills/agent-browser/templates/authenticated-session.sh",
+          "integrity": "sha256-H6mSbDbb5xGREgzgZ+Xjur5zLNHMYFAg870E3EMKpYw="
+        },
+        {
+          "path": "templates/capture-workflow.sh",
+          "target": ".opencode/skills/agent-browser/templates/capture-workflow.sh",
+          "integrity": "sha256-vz86L4QTdziR2fpADSov3fbXP/x6my+gD3l/lEFxw9U="
+        },
+        {
+          "path": "templates/form-automation.sh",
+          "target": ".opencode/skills/agent-browser/templates/form-automation.sh",
+          "integrity": "sha256-uGg2mG0zn3NrFcp4zz1WboRaYpOuJaWwCqUguDdXJlA="
         }
       ]
     }
