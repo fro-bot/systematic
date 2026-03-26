@@ -1,10 +1,10 @@
 {
   "name": "agent-spec-flow-analyzer",
   "dist-tags": {
-    "latest": "2.0.2"
+    "latest": "2.0.3"
   },
   "versions": {
-    "2.0.2": {
+    "2.0.3": {
       "name": "agent-spec-flow-analyzer",
       "type": "ocx:agent",
       "description": "Analyzes specifications and feature descriptions for user flow completeness and gap identification. Use when a spec, plan, or feature description needs flow analysis, edge case discovery, or requirements validation.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/workflow/spec-flow-analyzer.md",
           "target": ".opencode/agent/spec-flow-analyzer.md",
-          "integrity": "sha256-J3atUBRqzBekgg4FpeG9CMrEdvApwgJEekNTn/AS6oA="
+          "integrity": "sha256-DbVV8RGd4KwvI0I1UsdskD+wMeB3a6y67wOcuOOlYFQ="
         }
       ]
     }

@@ -1,10 +1,10 @@
 {
   "name": "agent-browser",
   "dist-tags": {
-    "latest": "2.0.2"
+    "latest": "2.0.3"
   },
   "versions": {
-    "2.0.2": {
+    "2.0.3": {
       "name": "agent-browser",
       "type": "ocx:skill",
       "description": "Browser automation using Vercel's agent-browser CLI. Use when you need to interact with web pages, fill forms, take screenshots, or scrape data. Alternative to Playwright MCP - uses Bash commands with ref-based element selection. Triggers on \"browse website\", \"fill form\", \"click button\", \"take screenshot\", \"scrape page\", \"web automation\".",
@@ -12,7 +12,7 @@
         {
           "path": "SKILL.md",
           "target": ".opencode/skills/agent-browser/SKILL.md",
-          "integrity": "sha256-/AcETz2qlt/pxJcXCOQhRroTNH2PZFzpJobRuAIl02o="
+          "integrity": "sha256-al6tR8YNXR5laIq0UrkiJ2LNwImPtG8T185VBZDTH/A="
         },
         {
           "path": "references/authentication.md",

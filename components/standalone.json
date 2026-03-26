@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "2.0.2"
+    "latest": "2.0.3"
   },
   "versions": {
-    "2.0.2": {
+    "2.0.3": {
       "name": "standalone",
       "type": "ocx:profile",
       "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",
@@ -22,7 +22,7 @@
         {
           "path": "profiles/standalone/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-DwQlZ1jnd3E3m/lP0QY3u2kAy7NOFAXmkOoNnVO7mvY="
+          "integrity": "sha256-BKMk+RIpVSgmm/tSlldBHVIVE0+ct0mBPoDpbxzVHUI="
         }
       ]
     }
