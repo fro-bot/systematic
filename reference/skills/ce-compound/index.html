@@ -112,16 +112,100 @@
 <li>Extracts conversation history</li>
 <li>Identifies problem type, component, symptoms</li>
 <li>Incorporates auto memory excerpts (if provided by the orchestrator) as supplementary evidence when identifying problem type, component, and symptoms</li>
-<li>Validates against schema</li>
-<li>Returns: YAML frontmatter skeleton</li>
+<li>Validates all enum fields against the schema values below</li>
+<li>Maps problem_type to the <code dir="auto">docs/solutions/</code> category directory</li>
+<li>Suggests a filename using the pattern <code dir="auto">[sanitized-problem-slug]-[date].md</code></li>
+<li>Returns: YAML frontmatter skeleton (must include <code dir="auto">category:</code> field mapped from problem_type), category directory path, and suggested filename</li>
 </ul>
+<p><strong>Schema enum values (validate against these exactly):</strong></p>
+<ul>
+<li><strong>problem_type</strong>: build_error, test_failure, runtime_error, performance_issue, database_issue, security_issue, ui_bug, integration_issue, logic_error, developer_experience, workflow_issue, best_practice, documentation_gap</li>
+<li><strong>component</strong>: rails_model, rails_controller, rails_view, service_object, background_job, database, frontend_stimulus, hotwire_turbo, email_processing, brief_system, assistant, authentication, payments, development_workflow, testing_framework, documentation, tooling</li>
+<li><strong>root_cause</strong>: missing_association, missing_include, missing_index, wrong_api, scope_issue, thread_violation, async_timing, memory_leak, config_error, logic_error, test_isolation, missing_validation, missing_permission, missing_workflow_step, inadequate_documentation, missing_tooling, incomplete_setup</li>
+<li><strong>resolution_type</strong>: code_fix, migration, config_change, test_fix, dependency_update, environment_setup, workflow_improvement, documentation_update, tooling_addition, seed_data_update</li>
+<li><strong>severity</strong>: critical, high, medium, low</li>
+</ul>
+<p><strong>Category mapping (problem_type -> directory):</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>problem_type</th><th>Directory</th></tr></thead><tbody><tr><td>build_error</td><td>build-errors/</td></tr><tr><td>test_failure</td><td>test-failures/</td></tr><tr><td>runtime_error</td><td>runtime-errors/</td></tr><tr><td>performance_issue</td><td>performance-issues/</td></tr><tr><td>database_issue</td><td>database-issues/</td></tr><tr><td>security_issue</td><td>security-issues/</td></tr><tr><td>ui_bug</td><td>ui-bugs/</td></tr><tr><td>integration_issue</td><td>integration-issues/</td></tr><tr><td>logic_error</td><td>logic-errors/</td></tr><tr><td>developer_experience</td><td>developer-experience/</td></tr><tr><td>workflow_issue</td><td>workflow-issues/</td></tr><tr><td>best_practice</td><td>best-practices/</td></tr><tr><td>documentation_gap</td><td>documentation-gaps/</td></tr></tbody></table>
 <div class="sl-heading-wrapper level-h4"><h4 id="2-solution-extractor">2. <strong>Solution Extractor</strong></h4><a class="sl-anchor-link" href="#2-solution-extractor"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “2. Solution Extractor”</span></a></div>
 <ul>
 <li>Analyzes all investigation steps</li>
 <li>Identifies root cause</li>
 <li>Extracts working solution with code examples</li>
 <li>Incorporates auto memory excerpts (if provided by the orchestrator) as supplementary evidence — conversation history and the verified fix take priority; if memory notes contradict the conversation, note the contradiction as cautionary context</li>
-<li>Returns: Solution content block</li>
+<li>Develops prevention strategies and best practices guidance</li>
+<li>Generates test cases if applicable</li>
+<li>Returns: Solution content block including prevention section</li>
+</ul>
+<p><strong>Expected output sections (follow this structure):</strong></p>
+<ul>
+<li><strong>Problem</strong>: 1-2 sentence description of the issue</li>
+<li><strong>Symptoms</strong>: Observable symptoms (error messages, behavior)</li>
+<li><strong>What Didn’t Work</strong>: Failed investigation attempts and why they failed</li>
+<li><strong>Solution</strong>: The actual fix with code examples (before/after when applicable)</li>
+<li><strong>Why This Works</strong>: Root cause explanation and why the solution addresses it</li>
+<li><strong>Prevention</strong>: Strategies to avoid recurrence, best practices, and test cases. Include concrete code examples where applicable (e.g., gem configurations, test assertions, linting rules)</li>
 </ul>
 <div class="sl-heading-wrapper level-h4"><h4 id="3-related-docs-finder">3. <strong>Related Docs Finder</strong></h4><a class="sl-anchor-link" href="#3-related-docs-finder"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “3. Related Docs Finder”</span></a></div>
 <ul>
@@ -129,33 +213,82 @@
 <li>Identifies cross-references and links</li>
 <li>Finds related GitHub issues</li>
 <li>Flags any related learning or pattern docs that may now be stale, contradicted, or overly broad</li>
-<li>Returns: Links, relationships, and any refresh candidates</li>
-</ul>
-<div class="sl-heading-wrapper level-h4"><h4 id="4-prevention-strategist">4. <strong>Prevention Strategist</strong></h4><a class="sl-anchor-link" href="#4-prevention-strategist"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4. Prevention Strategist”</span></a></div>
+<li><strong>Assesses overlap</strong> with the new doc being created across five dimensions: problem statement, root cause, solution approach, referenced files, and prevention rules. Score as:
 <ul>
-<li>Develops prevention strategies</li>
-<li>Creates best practices guidance</li>
-<li>Generates test cases if applicable</li>
-<li>Returns: Prevention/testing content</li>
+<li><strong>High</strong>: 4-5 dimensions match — essentially the same problem solved again</li>
+<li><strong>Moderate</strong>: 2-3 dimensions match — same area but different angle or solution</li>
+<li><strong>Low</strong>: 0-1 dimensions match — related but distinct</li>
 </ul>
-<div class="sl-heading-wrapper level-h4"><h4 id="5-category-classifier">5. <strong>Category Classifier</strong></h4><a class="sl-anchor-link" href="#5-category-classifier"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “5. Category Classifier”</span></a></div>
+</li>
+<li>Returns: Links, relationships, refresh candidates, and overlap assessment (score + which dimensions matched)</li>
+</ul>
+<p><strong>Search strategy (grep-first filtering for efficiency):</strong></p>
+<ol>
+<li>Extract keywords from the problem context: module names, technical terms, error messages, component types</li>
+<li>If the problem category is clear, narrow search to the matching <code dir="auto">docs/solutions/&#x3C;category>/</code> directory</li>
+<li>Use the native content-search tool (e.g., Grep in OpenCode) to pre-filter candidate files BEFORE reading any content. Run multiple searches in parallel, case-insensitive, targeting frontmatter fields. These are template patterns — substitute actual keywords:
 <ul>
-<li>Determines optimal <code dir="auto">docs/solutions/</code> category</li>
-<li>Validates category against schema</li>
-<li>Suggests filename based on slug</li>
-<li>Returns: Final path and filename</li>
+<li><code dir="auto">title:.*&#x3C;keyword></code></li>
+<li><code dir="auto">tags:.*(&#x3C;keyword1>|&#x3C;keyword2>)</code></li>
+<li><code dir="auto">module:.*&#x3C;module name></code></li>
+<li><code dir="auto">component:.*&#x3C;component></code></li>
 </ul>
+</li>
+<li>If search returns >25 candidates, re-run with more specific patterns. If &#x3C;3, broaden to full content search</li>
+<li>Read only frontmatter (first 30 lines) of candidate files to score relevance</li>
+<li>Fully read only strong/moderate matches</li>
+<li>Return distilled links and relationships, not raw file contents</li>
+</ol>
+<p><strong>GitHub issue search:</strong></p>
+<p>Prefer the <code dir="auto">gh</code> CLI for searching related issues: <code dir="auto">gh issue list --search "&#x3C;keywords>" --state all --limit 5</code>. If <code dir="auto">gh</code> is not installed, fall back to the GitHub MCP tools (e.g., <code dir="auto">unblocked</code> data_retrieval) if available. If neither is available, skip GitHub issue search and note it was skipped in the output.</p>
 <p>&#x3C;/parallel_tasks></p>
 <div class="sl-heading-wrapper level-h3"><h3 id="phase-2-assembly--write">Phase 2: Assembly &#x26; Write</h3><a class="sl-anchor-link" href="#phase-2-assembly--write"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Phase 2: Assembly &#x26; Write”</span></a></div>
 <p>&#x3C;sequential_tasks></p>
 <p><strong>WAIT for all Phase 1 subagents to complete before proceeding.</strong></p>
 <p>The orchestrating agent (main conversation) performs these steps:</p>
 <ol>
-<li>Collect all text results from Phase 1 subagents</li>
-<li>Assemble complete markdown file from the collected pieces</li>
-<li>Validate YAML frontmatter against schema</li>
-<li>Create directory if needed: <code dir="auto">mkdir -p docs/solutions/[category]/</code></li>
-<li>Write the SINGLE final file: <code dir="auto">docs/solutions/[category]/[filename].md</code></li>
+<li>
+<p>Collect all text results from Phase 1 subagents</p>
+</li>
+<li>
+<p><strong>Check the overlap assessment</strong> from the Related Docs Finder before deciding what to write:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Overlap</th><th>Action</th></tr></thead><tbody><tr><td><strong>High</strong> — existing doc covers the same problem, root cause, and solution</td><td><strong>Update the existing doc</strong> with fresher context (new code examples, updated references, additional prevention tips) rather than creating a duplicate. The existing doc’s path and structure stay the same.</td></tr><tr><td><strong>Moderate</strong> — same problem area but different angle, root cause, or solution</td><td><strong>Create the new doc</strong> normally. Flag the overlap for Phase 2.5 to recommend consolidation review.</td></tr><tr><td><strong>Low or none</strong></td><td><strong>Create the new doc</strong> normally.</td></tr></tbody></table>
+<p>The reason to update rather than create: two docs describing the same problem and solution will inevitably drift apart. The newer context is fresher and more trustworthy, so fold it into the existing doc rather than creating a second one that immediately needs consolidation.</p>
+<p>When updating an existing doc, preserve its file path and frontmatter structure. Update the solution, code examples, prevention tips, and any stale references. Add a <code dir="auto">last_updated: YYYY-MM-DD</code> field to the frontmatter. Do not change the title unless the problem framing has materially shifted.</p>
+</li>
+<li>
+<p>Assemble complete markdown file from the collected pieces</p>
+</li>
+<li>
+<p>Validate YAML frontmatter against schema</p>
+</li>
+<li>
+<p>Create directory if needed: <code dir="auto">mkdir -p docs/solutions/[category]/</code></p>
+</li>
+<li>
+<p>Write the file: either the updated existing doc or the new <code dir="auto">docs/solutions/[category]/[filename].md</code></p>
+</li>
 </ol>
 <p>&#x3C;/sequential_tasks></p>
 <div class="sl-heading-wrapper level-h3"><h3 id="phase-25-selective-refresh-check">Phase 2.5: Selective Refresh Check</h3><a class="sl-anchor-link" href="#phase-25-selective-refresh-check"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Phase 2.5: Selective Refresh Check”</span></a></div>
@@ -168,6 +301,7 @@
 <li>The current work involved a refactor, migration, rename, or dependency upgrade that likely invalidated references in older docs</li>
 <li>A pattern doc now looks overly broad, outdated, or no longer supported by the refreshed reality</li>
 <li>The Related Docs Finder surfaced high-confidence refresh candidates in the same problem space</li>
+<li>The Related Docs Finder reported <strong>moderate overlap</strong> with an existing doc — there may be consolidation opportunities that benefit from a focused review</li>
 </ol>
 <p>It does <strong>not</strong> make sense to invoke <code dir="auto">ce:compound-refresh</code> when:</p>
 <ol>
@@ -237,7 +371,7 @@
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File created:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/[category]/[filename].md</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Note: This was created in compact-safe mode. For richer documentation</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">(cross-references, detailed prevention strategies, specialized reviews),</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">re-run /compound in a fresh session.</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Documentation complete (compact-safe mode)File created:- docs/solutions/[category]/[filename].mdNote: This was created in compact-safe mode. For richer documentation(cross-references, detailed prevention strategies, specialized reviews),re-run /compound in a fresh session."><div></div></button></div></figure></div>
 <p><strong>No subagents are launched. No parallel tasks. One file written.</strong></p>
-<p>In compact-safe mode, only suggest <code dir="auto">ce:compound-refresh</code> if there is an obvious narrow refresh target. Do not broaden into a large refresh sweep from a compact-safe session.</p>
+<p>In compact-safe mode, the overlap check is skipped (no Related Docs Finder subagent). This means compact-safe mode may create a doc that overlaps with an existing one. That is acceptable — <code dir="auto">ce:compound-refresh</code> will catch it later. Only suggest <code dir="auto">ce:compound-refresh</code> if there is an obvious narrow refresh target. Do not broaden into a large refresh sweep from a compact-safe session.</p>
 <hr>
 <div class="sl-heading-wrapper level-h2"><h2 id="what-it-captures">What It Captures</h2><a class="sl-anchor-link" href="#what-it-captures"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “What It Captures”</span></a></div>
 <ul>
@@ -299,15 +433,23 @@
 
 
 
-<table><thead><tr><th>❌ Wrong</th><th>✅ Correct</th></tr></thead><tbody><tr><td>Subagents write files like <code dir="auto">context-analysis.md</code>, <code dir="auto">solution-draft.md</code></td><td>Subagents return text data; orchestrator writes one final file</td></tr><tr><td>Research and assembly run in parallel</td><td>Research completes → then assembly runs</td></tr><tr><td>Multiple files created during workflow</td><td>Single file: <code dir="auto">docs/solutions/[category]/[filename].md</code></td></tr></tbody></table>
+
+
+
+
+<table><thead><tr><th>❌ Wrong</th><th>✅ Correct</th></tr></thead><tbody><tr><td>Subagents write files like <code dir="auto">context-analysis.md</code>, <code dir="auto">solution-draft.md</code></td><td>Subagents return text data; orchestrator writes one final file</td></tr><tr><td>Research and assembly run in parallel</td><td>Research completes → then assembly runs</td></tr><tr><td>Multiple files created during workflow</td><td>One file written or updated: <code dir="auto">docs/solutions/[category]/[filename].md</code></td></tr><tr><td>Creating a new doc when an existing doc covers the same problem</td><td>Check overlap assessment; update the existing doc when overlap is high</td></tr></tbody></table>
 <div class="sl-heading-wrapper level-h2"><h2 id="success-output">Success Output</h2><a class="sl-anchor-link" href="#success-output"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Success Output”</span></a></div>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">✓ Documentation complete</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Auto memory: 2 relevant entries used as supplementary evidence</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Subagent Results:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Context Analyzer: Identified performance_issue in brief_system</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Solution Extractor: 3 code fixes</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Related Docs Finder: 2 related issues</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Prevention Strategist: Prevention strategies, test suggestions</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Category Classifier: `performance-issues`</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Subagent Results:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Context Analyzer: Identified performance_issue in brief_system, category: performance-issues/</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Solution Extractor: 3 code fixes, prevention strategies</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ Related Docs Finder: 2 related issues</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Specialized Agent Reviews (Auto-Triggered):</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ performance-oracle: Validated query optimization approach</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ kieran-rails-reviewer: Code examples meet Rails standards</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ code-simplicity-reviewer: Solution is appropriately minimal</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">✓ every-style-editor: Documentation style verified</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File created:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/performance-issues/n-plus-one-brief-generation.md</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">This documentation will be searchable for future reference when similar</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">issues occur in the Email Processing or Brief System modules.</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Link related documentation</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Update other references</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. View documentation</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Documentation completeAuto memory: 2 relevant entries used as supplementary evidenceSubagent Results:  ✓ Context Analyzer: Identified performance_issue in brief_system  ✓ Solution Extractor: 3 code fixes  ✓ Related Docs Finder: 2 related issues  ✓ Prevention Strategist: Prevention strategies, test suggestions  ✓ Category Classifier: &#x60;performance-issues&#x60;Specialized Agent Reviews (Auto-Triggered):  ✓ performance-oracle: Validated query optimization approach  ✓ kieran-rails-reviewer: Code examples meet Rails standards  ✓ code-simplicity-reviewer: Solution is appropriately minimal  ✓ every-style-editor: Documentation style verifiedFile created:- docs/solutions/performance-issues/n-plus-one-brief-generation.mdThis documentation will be searchable for future reference when similarissues occur in the Email Processing or Brief System modules.What&#x27;s next?1. Continue workflow (recommended)2. Link related documentation3. Update other references4. View documentation5. Other"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Link related documentation</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Update other references</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. View documentation</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Documentation completeAuto memory: 2 relevant entries used as supplementary evidenceSubagent Results:  ✓ Context Analyzer: Identified performance_issue in brief_system, category: performance-issues/  ✓ Solution Extractor: 3 code fixes, prevention strategies  ✓ Related Docs Finder: 2 related issuesSpecialized Agent Reviews (Auto-Triggered):  ✓ performance-oracle: Validated query optimization approach  ✓ kieran-rails-reviewer: Code examples meet Rails standards  ✓ code-simplicity-reviewer: Solution is appropriately minimal  ✓ every-style-editor: Documentation style verifiedFile created:- docs/solutions/performance-issues/n-plus-one-brief-generation.mdThis documentation will be searchable for future reference when similarissues occur in the Email Processing or Brief System modules.What&#x27;s next?1. Continue workflow (recommended)2. Link related documentation3. Update other references4. View documentation5. Other"><div></div></button></div></figure></div>
+<p><strong>Alternate output (when updating an existing doc due to high overlap):</strong></p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">✓ Documentation updated (existing doc refreshed with current context)</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Overlap detected: docs/solutions/performance-issues/n-plus-one-queries.md</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">Matched dimensions: problem statement, root cause, solution, referenced files</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">Action: Updated existing doc with fresher code examples and prevention tips</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File updated:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/performance-issues/n-plus-one-queries.md (added last_updated: 2026-03-24)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Documentation updated (existing doc refreshed with current context)Overlap detected: docs/solutions/performance-issues/n-plus-one-queries.md  Matched dimensions: problem statement, root cause, solution, referenced files  Action: Updated existing doc with fresher code examples and prevention tipsFile updated:- docs/solutions/performance-issues/n-plus-one-queries.md (added last_updated: 2026-03-24)"><div></div></button></div></figure></div>
 <div class="sl-heading-wrapper level-h2"><h2 id="the-compounding-philosophy">The Compounding Philosophy</h2><a class="sl-anchor-link" href="#the-compounding-philosophy"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “The Compounding Philosophy”</span></a></div>
 <p>This creates a compounding knowledge system:</p>
 <ol>
@@ -349,7 +491,6 @@
 <ul>
 <li><strong>Auto-triggered</strong> (optional): Agents can run post-documentation for enhancement</li>
 <li><strong>Manual trigger</strong>: User can invoke agents after /ce:compound completes for deeper review</li>
-<li><strong>Customize agents</strong>: Edit <code dir="auto">systematic.local.md</code> or invoke the <code dir="auto">setup</code> skill to configure which review agents are used across all workflows</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="related-commands">Related Commands</h2><a class="sl-anchor-link" href="#related-commands"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Related Commands”</span></a></div>
 <ul>

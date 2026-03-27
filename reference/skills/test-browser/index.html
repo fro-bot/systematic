@@ -245,13 +245,13 @@
 <p><strong>Ask the user how to proceed:</strong></p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Test Failed: [route]</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Issue: [description]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Console errors: [if any]</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">How to proceed?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Fix now - I'll help debug and fix</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Create todo - Add a todo for later (using the file-todos skill)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Skip - Continue testing other pages</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="Test Failed: [route]Issue: [description]Console errors: [if any]How to proceed?1. Fix now - I&#x27;ll help debug and fix2. Create todo - Add a todo for later (using the file-todos skill)3. Skip - Continue testing other pages"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">How to proceed?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Fix now - I'll help debug and fix</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Create todo - Add a todo for later (using the todo-create skill)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Skip - Continue testing other pages</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="Test Failed: [route]Issue: [description]Console errors: [if any]How to proceed?1. Fix now - I&#x27;ll help debug and fix2. Create todo - Add a todo for later (using the todo-create skill)3. Skip - Continue testing other pages"><div></div></button></div></figure></div>
 </li>
 <li>
 <p><strong>If “Fix now”:</strong> investigate, propose a fix, apply, re-run the failing test</p>
 </li>
 <li>
-<p><strong>If “Create todo”:</strong> load the <code dir="auto">file-todos</code> skill and create a todo with priority p1 and description <code dir="auto">browser-test-{description}</code>, continue</p>
+<p><strong>If “Create todo”:</strong> load the <code dir="auto">todo-create</code> skill and create a todo with priority p1 and description <code dir="auto">browser-test-{description}</code>, continue</p>
 </li>
 <li>
 <p><strong>If “Skip”:</strong> log as skipped, continue</p>

@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-typescript-reviewer",
   "dist-tags": {
-    "latest": "2.0.3"
+    "latest": "2.1.0"
   },
   "versions": {
-    "2.0.3": {
+    "2.1.0": {
       "name": "agent-kieran-typescript-reviewer",
       "type": "ocx:agent",
       "description": "Reviews TypeScript code with an extremely high quality bar for type safety, modern patterns, and maintainability. Use after implementing features, modifying code, or creating new TypeScript components.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/kieran-typescript-reviewer.md",
           "target": ".opencode/agent/kieran-typescript-reviewer.md",
-          "integrity": "sha256-qpTQOPQ9xaWsZB5ffrfzoqatTfF0FtdQrgJJ1py6MPY="
+          "integrity": "sha256-CGwge7bA6t1FewHioX9M5s0yLT391xwHIuckLzgIw08="
         }
       ]
     }

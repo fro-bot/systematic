@@ -1,10 +1,10 @@
 {
   "name": "git-worktree",
   "dist-tags": {
-    "latest": "2.0.3"
+    "latest": "2.1.0"
   },
   "versions": {
-    "2.0.3": {
+    "2.1.0": {
       "name": "git-worktree",
       "type": "ocx:skill",
       "description": "This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles.",
@@ -17,7 +17,7 @@
         {
           "path": "scripts/worktree-manager.sh",
           "target": ".opencode/skills/git-worktree/scripts/worktree-manager.sh",
-          "integrity": "sha256-NcPX8jjmYXgtwu2ixMl0vk97Sxx6GMv+a9GW7SSorUM="
+          "integrity": "sha256-2IyS88xjqbPgP7pKpzlHFvgA/qv043aCn20q9sx94iY="
         }
       ]
     }
