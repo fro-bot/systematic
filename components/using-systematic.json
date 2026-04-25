@@ -1,17 +1,17 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "using-systematic",
-      "type": "ocx:skill",
+      "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
       "files": [
         {
-          "path": "SKILL.md",
-          "target": ".opencode/skills/using-systematic/SKILL.md",
+          "path": "skills/using-systematic/SKILL.md",
+          "target": "skills/using-systematic/SKILL.md",
           "integrity": "sha256-gpbrXQRkuccuaQhXe19Fq2FuRNBDHK6zxogT3Snfc6I="
         }
       ]

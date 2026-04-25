@@ -1,0 +1,20 @@
+{
+  "name": "report-bug-ce",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "report-bug-ce",
+      "type": "skill",
+      "description": "Use this skill when a user needs to report a bug in the Systematic plugin with complete reproduction details and environment data, then open a GitHub issue directly from the CLI.",
+      "files": [
+        {
+          "path": "skills/report-bug-ce/SKILL.md",
+          "target": "skills/report-bug-ce/SKILL.md",
+          "integrity": "sha256-UA5/vTM9yq5tLZYEyVpf6MQjIH3nFcvOn9PaLLoOiY4="
+        }
+      ]
+    }
+  }
+}

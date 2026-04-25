@@ -1,0 +1,50 @@
+{
+  "name": "ce-review",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "ce-review",
+      "type": "skill",
+      "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.",
+      "files": [
+        {
+          "path": "skills/ce-review/SKILL.md",
+          "target": "skills/ce-review/SKILL.md",
+          "integrity": "sha256-qQZRltShsOT9LZF+yXBIytbZPoBKYh23gPWEeg5eFyI="
+        },
+        {
+          "path": "skills/ce-review/references/diff-scope.md",
+          "target": "skills/ce-review/references/diff-scope.md",
+          "integrity": "sha256-sRo8vug3K8QWKi4AiY6CMXs3xfVsv0Vv6Bw+X+8f+Yk="
+        },
+        {
+          "path": "skills/ce-review/references/findings-schema.json",
+          "target": "skills/ce-review/references/findings-schema.json",
+          "integrity": "sha256-BBLcf0hKYhInilnmiIln9FjsuUrpZwNOsRYvFRd8USE="
+        },
+        {
+          "path": "skills/ce-review/references/persona-catalog.md",
+          "target": "skills/ce-review/references/persona-catalog.md",
+          "integrity": "sha256-UDh2EmNxnM+g8CkAOTvrjzluVEb21zSOGrPD7jkEdHw="
+        },
+        {
+          "path": "skills/ce-review/references/resolve-base.sh",
+          "target": "skills/ce-review/references/resolve-base.sh",
+          "integrity": "sha256-cvdS7BqCVbpWBPiPbDP2oum1kXXkThjuLNJXwaGxe+s="
+        },
+        {
+          "path": "skills/ce-review/references/review-output-template.md",
+          "target": "skills/ce-review/references/review-output-template.md",
+          "integrity": "sha256-qEWA/F435aTkNWgdaYSYOviP7XOkqdmIi4fn5/j39FI="
+        },
+        {
+          "path": "skills/ce-review/references/subagent-template.md",
+          "target": "skills/ce-review/references/subagent-template.md",
+          "integrity": "sha256-F3FMSVzJPE+A9qdotIPN95kxwzQZtYNM9x8y+FvOMsQ="
+        }
+      ]
+    }
+  }
+}

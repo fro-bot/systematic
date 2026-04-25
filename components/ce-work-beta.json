@@ -1,0 +1,20 @@
+{
+  "name": "ce-work-beta",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "ce-work-beta",
+      "type": "skill",
+      "description": "[BETA] Execute work with external delegate support. Same as ce:work but includes experimental Codex delegation mode for token-conserving code implementation.",
+      "files": [
+        {
+          "path": "skills/ce-work-beta/SKILL.md",
+          "target": "skills/ce-work-beta/SKILL.md",
+          "integrity": "sha256-45ofAkEDRWwc1ffoBfxvkgjOQU+AMMVKgLWLAqERwtE="
+        }
+      ]
+    }
+  }
+}

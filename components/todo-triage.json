@@ -1,0 +1,20 @@
+{
+  "name": "todo-triage",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "todo-triage",
+      "type": "skill",
+      "description": "Use when reviewing pending todos for approval, prioritizing code review findings, or interactively categorizing work items",
+      "files": [
+        {
+          "path": "skills/todo-triage/SKILL.md",
+          "target": "skills/todo-triage/SKILL.md",
+          "integrity": "sha256-jGxpUPC2SU3QqVgbbemRLnA4VdH0wmW+rKV09OtSojI="
+        }
+      ]
+    }
+  }
+}

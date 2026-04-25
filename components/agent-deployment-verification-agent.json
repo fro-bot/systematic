@@ -1,17 +1,17 @@
 {
   "name": "agent-deployment-verification-agent",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-deployment-verification-agent",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Produces Go/No-Go deployment checklists with SQL verification queries, rollback procedures, and monitoring plans. Use when PRs touch production data, migrations, or risky data changes.",
       "files": [
         {
           "path": "agents/review/deployment-verification-agent.md",
-          "target": ".opencode/agent/deployment-verification-agent.md",
+          "target": "agents/review/deployment-verification-agent.md",
           "integrity": "sha256-EKrPunHx5DcUvLQvrCKU+P+h9mLcEebMWqOOdH9Hteo="
         }
       ]

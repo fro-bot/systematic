@@ -1,17 +1,17 @@
 {
   "name": "agent-figma-design-sync",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-figma-design-sync",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Detects and fixes visual differences between a web implementation and its Figma design. Use iteratively when syncing implementation to match Figma specs.",
       "files": [
         {
           "path": "agents/design/figma-design-sync.md",
-          "target": ".opencode/agent/figma-design-sync.md",
+          "target": "agents/design/figma-design-sync.md",
           "integrity": "sha256-DeNroCwR1AIAXVRUleFHYR98/AHbJu1RSlyAbDvFIVw="
         }
       ]

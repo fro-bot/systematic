@@ -1,17 +1,17 @@
 {
   "name": "agent-git-history-analyzer",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-git-history-analyzer",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Performs archaeological analysis of git history to trace code evolution, identify contributors, and understand why code patterns exist. Use when you need historical context for code changes.",
       "files": [
         {
           "path": "agents/research/git-history-analyzer.md",
-          "target": ".opencode/agent/git-history-analyzer.md",
+          "target": "agents/research/git-history-analyzer.md",
           "integrity": "sha256-C4pBIr/fPbMYglRVefFB+LvvqiIoSlE2ZqFaprTeu7o="
         }
       ]

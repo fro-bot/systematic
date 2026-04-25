@@ -1,0 +1,20 @@
+{
+  "name": "changelog",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "changelog",
+      "type": "skill",
+      "description": "Create engaging changelogs for recent merges to main branch",
+      "files": [
+        {
+          "path": "skills/changelog/SKILL.md",
+          "target": "skills/changelog/SKILL.md",
+          "integrity": "sha256-JmnBKZFg42yGwL7iyAx1LZhS/Mvhckayk/p8RnzQHwA="
+        }
+      ]
+    }
+  }
+}

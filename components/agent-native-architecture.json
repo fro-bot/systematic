@@ -1,87 +1,87 @@
 {
   "name": "agent-native-architecture",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-native-architecture",
-      "type": "ocx:skill",
+      "type": "skill",
       "description": "Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.",
       "files": [
         {
-          "path": "SKILL.md",
-          "target": ".opencode/skills/agent-native-architecture/SKILL.md",
+          "path": "skills/agent-native-architecture/SKILL.md",
+          "target": "skills/agent-native-architecture/SKILL.md",
           "integrity": "sha256-sug8wR0PF9dzi3wePw7TW8fQZOY9Taa8JLqoXGrVbDs="
         },
         {
-          "path": "references/action-parity-discipline.md",
-          "target": ".opencode/skills/agent-native-architecture/references/action-parity-discipline.md",
+          "path": "skills/agent-native-architecture/references/action-parity-discipline.md",
+          "target": "skills/agent-native-architecture/references/action-parity-discipline.md",
           "integrity": "sha256-mYxUXk3ResgNh5rrIejwXgZzk1AVei6sN0C40vHJ6cw="
         },
         {
-          "path": "references/agent-execution-patterns.md",
-          "target": ".opencode/skills/agent-native-architecture/references/agent-execution-patterns.md",
+          "path": "skills/agent-native-architecture/references/agent-execution-patterns.md",
+          "target": "skills/agent-native-architecture/references/agent-execution-patterns.md",
           "integrity": "sha256-I7vkoYrDxUoDSWjWN81tSXYGgqJe1CGUWFOZGFeBhKU="
         },
         {
-          "path": "references/agent-native-testing.md",
-          "target": ".opencode/skills/agent-native-architecture/references/agent-native-testing.md",
+          "path": "skills/agent-native-architecture/references/agent-native-testing.md",
+          "target": "skills/agent-native-architecture/references/agent-native-testing.md",
           "integrity": "sha256-VDCZ0jCdnpMqgnCEfhGCzqkS+mrbCQfMQ9sct/z8Aos="
         },
         {
-          "path": "references/architecture-patterns.md",
-          "target": ".opencode/skills/agent-native-architecture/references/architecture-patterns.md",
+          "path": "skills/agent-native-architecture/references/architecture-patterns.md",
+          "target": "skills/agent-native-architecture/references/architecture-patterns.md",
           "integrity": "sha256-OLD2PDBCSOAWyzgUOBP+PtJZsIA/Y7MkT6NleW3IOw0="
         },
         {
-          "path": "references/dynamic-context-injection.md",
-          "target": ".opencode/skills/agent-native-architecture/references/dynamic-context-injection.md",
+          "path": "skills/agent-native-architecture/references/dynamic-context-injection.md",
+          "target": "skills/agent-native-architecture/references/dynamic-context-injection.md",
           "integrity": "sha256-JaVZtGkJpiAnzHca6h14y1GydHb154BeVI6tTi2ZlaU="
         },
         {
-          "path": "references/files-universal-interface.md",
-          "target": ".opencode/skills/agent-native-architecture/references/files-universal-interface.md",
+          "path": "skills/agent-native-architecture/references/files-universal-interface.md",
+          "target": "skills/agent-native-architecture/references/files-universal-interface.md",
           "integrity": "sha256-QK/ISjb4Yl7DnDvEaubXsnYxk/Af4yL6hXb1/LGMczk="
         },
         {
-          "path": "references/from-primitives-to-domain-tools.md",
-          "target": ".opencode/skills/agent-native-architecture/references/from-primitives-to-domain-tools.md",
+          "path": "skills/agent-native-architecture/references/from-primitives-to-domain-tools.md",
+          "target": "skills/agent-native-architecture/references/from-primitives-to-domain-tools.md",
           "integrity": "sha256-Ksl2XHqi08K8A7H28UIIdGAl3Sv4m3VhJvAaNs7zwaQ="
         },
         {
-          "path": "references/mcp-tool-design.md",
-          "target": ".opencode/skills/agent-native-architecture/references/mcp-tool-design.md",
+          "path": "skills/agent-native-architecture/references/mcp-tool-design.md",
+          "target": "skills/agent-native-architecture/references/mcp-tool-design.md",
           "integrity": "sha256-VMTncpSaia/wDhrKBSJmeHbz11lR4ZR+c0S+qgOO+us="
         },
         {
-          "path": "references/mobile-patterns.md",
-          "target": ".opencode/skills/agent-native-architecture/references/mobile-patterns.md",
+          "path": "skills/agent-native-architecture/references/mobile-patterns.md",
+          "target": "skills/agent-native-architecture/references/mobile-patterns.md",
           "integrity": "sha256-4hrIl8rJYE2HqCrnRuFOo3VN/WQhao8M/5yH4dIevOI="
         },
         {
-          "path": "references/product-implications.md",
-          "target": ".opencode/skills/agent-native-architecture/references/product-implications.md",
+          "path": "skills/agent-native-architecture/references/product-implications.md",
+          "target": "skills/agent-native-architecture/references/product-implications.md",
           "integrity": "sha256-L3jKD9trVxCDIXvUMsuTV0fIrG4qUpDFhluFIMY+iEA="
         },
         {
-          "path": "references/refactoring-to-prompt-native.md",
-          "target": ".opencode/skills/agent-native-architecture/references/refactoring-to-prompt-native.md",
+          "path": "skills/agent-native-architecture/references/refactoring-to-prompt-native.md",
+          "target": "skills/agent-native-architecture/references/refactoring-to-prompt-native.md",
           "integrity": "sha256-78jQ7AafNXAM4OQbykWwfQCxYcqxqiUjzAQ8SYjdkxA="
         },
         {
-          "path": "references/self-modification.md",
-          "target": ".opencode/skills/agent-native-architecture/references/self-modification.md",
+          "path": "skills/agent-native-architecture/references/self-modification.md",
+          "target": "skills/agent-native-architecture/references/self-modification.md",
           "integrity": "sha256-pbYZmj69BLZRAwkmnYmZ165p3eoELQhS+BFIB/LEphk="
         },
         {
-          "path": "references/shared-workspace-architecture.md",
-          "target": ".opencode/skills/agent-native-architecture/references/shared-workspace-architecture.md",
+          "path": "skills/agent-native-architecture/references/shared-workspace-architecture.md",
+          "target": "skills/agent-native-architecture/references/shared-workspace-architecture.md",
           "integrity": "sha256-Z7DBxMeIMUDRAX0JoMStjsbQmqoA131xVwsORJOOLOk="
         },
         {
-          "path": "references/system-prompt-design.md",
-          "target": ".opencode/skills/agent-native-architecture/references/system-prompt-design.md",
+          "path": "skills/agent-native-architecture/references/system-prompt-design.md",
+          "target": "skills/agent-native-architecture/references/system-prompt-design.md",
           "integrity": "sha256-RmUFr7zY1N748aLk6TtfPYvTXyMMKNPsGyvgVOt3X9g="
         }
       ]

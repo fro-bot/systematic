@@ -1,0 +1,20 @@
+{
+  "name": "agent-correctness-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-correctness-reviewer",
+      "type": "agent",
+      "description": "Always-on code-review persona. Reviews code for logic errors, edge cases, state management bugs, error propagation failures, and intent-vs-implementation mismatches.",
+      "files": [
+        {
+          "path": "agents/review/correctness-reviewer.md",
+          "target": "agents/review/correctness-reviewer.md",
+          "integrity": "sha256-pPItHsMeLV3Mrr6G4tKsEW8xNupoYVjwJV/GARvUzzk="
+        }
+      ]
+    }
+  }
+}

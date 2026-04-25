@@ -1,17 +1,17 @@
 {
   "name": "agent-architecture-strategist",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-architecture-strategist",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors.",
       "files": [
         {
           "path": "agents/review/architecture-strategist.md",
-          "target": ".opencode/agent/architecture-strategist.md",
+          "target": "agents/review/architecture-strategist.md",
           "integrity": "sha256-kV7YRNCNAbwiEf3lrJUdxyd6ZF4NNXKUVHXmGuW1C1U="
         }
       ]

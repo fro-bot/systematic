@@ -1,0 +1,20 @@
+{
+  "name": "agent-julik-frontend-races-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-julik-frontend-races-reviewer",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when the diff touches async UI code, Stimulus/Turbo lifecycles, or DOM-timing-sensitive frontend behavior. Reviews code for race conditions and janky UI failure modes.",
+      "files": [
+        {
+          "path": "agents/review/julik-frontend-races-reviewer.md",
+          "target": "agents/review/julik-frontend-races-reviewer.md",
+          "integrity": "sha256-XWIOAJPL0+kYU/q46YbE768125EeAgPdJu6KuG1eQQA="
+        }
+      ]
+    }
+  }
+}

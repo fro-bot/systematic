@@ -1,0 +1,20 @@
+{
+  "name": "agent-testing-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-testing-reviewer",
+      "type": "agent",
+      "description": "Always-on code-review persona. Reviews code for test coverage gaps, weak assertions, brittle implementation-coupled tests, and missing edge case coverage.",
+      "files": [
+        {
+          "path": "agents/review/testing-reviewer.md",
+          "target": "agents/review/testing-reviewer.md",
+          "integrity": "sha256-WINij0s6zX7opIp9boWFVMxitJK1DsWZrWKD6wLhbk8="
+        }
+      ]
+    }
+  }
+}

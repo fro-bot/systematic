@@ -1,17 +1,17 @@
 {
   "name": "agent-learnings-researcher",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-learnings-researcher",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes.",
       "files": [
         {
           "path": "agents/research/learnings-researcher.md",
-          "target": ".opencode/agent/learnings-researcher.md",
+          "target": "agents/research/learnings-researcher.md",
           "integrity": "sha256-S8WBITIfXOUzgD+yngugtXM7bpl512fu4V4keGE3AdE="
         }
       ]

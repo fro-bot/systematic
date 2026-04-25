@@ -1,0 +1,20 @@
+{
+  "name": "reproduce-bug",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "reproduce-bug",
+      "type": "skill",
+      "description": "Systematically reproduce and investigate a bug from a GitHub issue. Use when the user provides a GitHub issue number or URL for a bug they want reproduced or investigated.",
+      "files": [
+        {
+          "path": "skills/reproduce-bug/SKILL.md",
+          "target": "skills/reproduce-bug/SKILL.md",
+          "integrity": "sha256-znVyqThJ+3dWo3E1zAbLCDr4SpS13ickr8p0H9N5tqA="
+        }
+      ]
+    }
+  }
+}

@@ -1,17 +1,17 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-code-simplicity-reviewer",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities.",
       "files": [
         {
           "path": "agents/review/code-simplicity-reviewer.md",
-          "target": ".opencode/agent/code-simplicity-reviewer.md",
+          "target": "agents/review/code-simplicity-reviewer.md",
           "integrity": "sha256-pGPU/zubp9lz6ZNv2LGDakEwOQCKkYgqm9OQs5tJ/RY="
         }
       ]

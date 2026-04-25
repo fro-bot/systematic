@@ -1,17 +1,17 @@
 {
   "name": "agent-design-iterator",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-design-iterator",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Iteratively refines UI design through N screenshot-analyze-improve cycles. Use PROACTIVELY when design changes aren't coming together after 1-2 attempts, or when user requests iterative refinement.",
       "files": [
         {
           "path": "agents/design/design-iterator.md",
-          "target": ".opencode/agent/design-iterator.md",
+          "target": "agents/design/design-iterator.md",
           "integrity": "sha256-7u94QZ8Y4H6J0pMagAScsdIEQBLEtI4Qv9Z70m7+R7Q="
         }
       ]

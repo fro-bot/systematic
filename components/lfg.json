@@ -1,0 +1,20 @@
+{
+  "name": "lfg",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "lfg",
+      "type": "skill",
+      "description": "Full autonomous engineering workflow",
+      "files": [
+        {
+          "path": "skills/lfg/SKILL.md",
+          "target": "skills/lfg/SKILL.md",
+          "integrity": "sha256-6oOO4BGUPNemkNlGdQtFBiFeMSz/t3uSs615jjhmc6g="
+        }
+      ]
+    }
+  }
+}

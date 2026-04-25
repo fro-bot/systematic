@@ -1,0 +1,25 @@
+{
+  "name": "git-clean-gone-branches",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "git-clean-gone-branches",
+      "type": "skill",
+      "description": "Clean up local branches whose remote tracking branch is gone. Use when the user says \"clean up branches\", \"delete gone branches\", \"prune local branches\", \"clean gone\", or wants to remove stale local branches that no longer exist on the remote. Also handles removing associated worktrees for branches that have them.",
+      "files": [
+        {
+          "path": "skills/git-clean-gone-branches/SKILL.md",
+          "target": "skills/git-clean-gone-branches/SKILL.md",
+          "integrity": "sha256-Ichj30Pg82oqrcdJrjctzT6iIoALw2eJIbEWM4+7AaI="
+        },
+        {
+          "path": "skills/git-clean-gone-branches/scripts/clean-gone",
+          "target": "skills/git-clean-gone-branches/scripts/clean-gone",
+          "integrity": "sha256-5wePsReYo9qRZW171Yx2Sk9Dh1TmA4pGlR0hCi5CC4g="
+        }
+      ]
+    }
+  }
+}

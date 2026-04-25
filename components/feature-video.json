@@ -1,0 +1,20 @@
+{
+  "name": "feature-video",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "feature-video",
+      "type": "skill",
+      "description": "Record a video walkthrough of a feature and add it to the PR description. Use when a PR needs a visual demo for reviewers, when the user asks to demo a feature, create a PR video, record a walkthrough, show what changed visually, or add a video to a pull request.",
+      "files": [
+        {
+          "path": "skills/feature-video/SKILL.md",
+          "target": "skills/feature-video/SKILL.md",
+          "integrity": "sha256-tkf/8bOho2uTvHLC3LkwO1dBv3a2cpwLpYvIa6BEOqs="
+        }
+      ]
+    }
+  }
+}

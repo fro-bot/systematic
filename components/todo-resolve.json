@@ -1,0 +1,20 @@
+{
+  "name": "todo-resolve",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "todo-resolve",
+      "type": "skill",
+      "description": "Use when batch-resolving approved todos, especially after code review or triage sessions",
+      "files": [
+        {
+          "path": "skills/todo-resolve/SKILL.md",
+          "target": "skills/todo-resolve/SKILL.md",
+          "integrity": "sha256-4+J0D+UCqZg2aq5yikmwBnnN2c2AF4c3ZUNfeq/bsEk="
+        }
+      ]
+    }
+  }
+}

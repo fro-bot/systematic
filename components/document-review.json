@@ -1,32 +1,32 @@
 {
   "name": "document-review",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "document-review",
-      "type": "ocx:skill",
-      "description": "This skill should be used to refine brainstorm or plan documents before proceeding to the next workflow step. It applies when a brainstorm or plan document exists and the user wants to improve it.",
+      "type": "skill",
+      "description": "Review requirements or plan documents using parallel persona agents that surface role-specific issues. Use when a requirements document or plan document exists and the user wants to improve it.",
       "files": [
         {
-          "path": "SKILL.md",
-          "target": ".opencode/skills/document-review/SKILL.md",
+          "path": "skills/document-review/SKILL.md",
+          "target": "skills/document-review/SKILL.md",
           "integrity": "sha256-kbilPGXDqExCJ6jFM2G1pCVF796NNnHG/R1ErbKHLqg="
         },
         {
-          "path": "references/findings-schema.json",
-          "target": ".opencode/skills/document-review/references/findings-schema.json",
+          "path": "skills/document-review/references/findings-schema.json",
+          "target": "skills/document-review/references/findings-schema.json",
           "integrity": "sha256-mmDwo4zSUwcpWmtcTdGXlW1yiHq04MEER+0d39H7j58="
         },
         {
-          "path": "references/review-output-template.md",
-          "target": ".opencode/skills/document-review/references/review-output-template.md",
+          "path": "skills/document-review/references/review-output-template.md",
+          "target": "skills/document-review/references/review-output-template.md",
           "integrity": "sha256-OnArXcP4SeQmslQQzWTvPM7whA9i3cvpi/Esl266p38="
         },
         {
-          "path": "references/subagent-template.md",
-          "target": ".opencode/skills/document-review/references/subagent-template.md",
+          "path": "skills/document-review/references/subagent-template.md",
+          "target": "skills/document-review/references/subagent-template.md",
           "integrity": "sha256-9jKUf6lfUokvLbaFgdmU+u0cFlYzLIIYPYyR3GolMMQ="
         }
       ]

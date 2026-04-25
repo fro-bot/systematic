@@ -1,0 +1,20 @@
+{
+  "name": "test-xcode",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "test-xcode",
+      "type": "skill",
+      "description": "Build and test iOS apps on simulator using XcodeBuildMCP. Use after making iOS code changes, before creating a PR, or when verifying app behavior and checking for crashes on simulator.",
+      "files": [
+        {
+          "path": "skills/test-xcode/SKILL.md",
+          "target": "skills/test-xcode/SKILL.md",
+          "integrity": "sha256-t0F7fmn8wtS/N7vXdEBNYukU2xZgxTJiO6tEoI7nXpg="
+        }
+      ]
+    }
+  }
+}

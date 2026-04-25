@@ -1,0 +1,50 @@
+{
+  "name": "dhh-rails-style",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "dhh-rails-style",
+      "type": "skill",
+      "description": "This skill should be used when writing Ruby and Rails code in DHH's distinctive 37signals style. It applies when writing Ruby code, Rails applications, creating models, controllers, or any Ruby file. Triggers on Ruby/Rails code generation, refactoring requests, code review, or when the user mentions DHH, 37signals, Basecamp, HEY, or Campfire style. Embodies REST purity, fat models, thin controllers, Current attributes, Hotwire patterns, and the \"clarity over cleverness\" philosophy.",
+      "files": [
+        {
+          "path": "skills/dhh-rails-style/SKILL.md",
+          "target": "skills/dhh-rails-style/SKILL.md",
+          "integrity": "sha256-wkGmQG6tONR0YkNtvsdF0v+uMKJNx7lzuDUufUke2bY="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/architecture.md",
+          "target": "skills/dhh-rails-style/references/architecture.md",
+          "integrity": "sha256-Z0o7p6+CXts6uFC+XQL978vwikQEeq7jOqlTGF1dzaw="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/controllers.md",
+          "target": "skills/dhh-rails-style/references/controllers.md",
+          "integrity": "sha256-v7jAarCLX9iiLGWTvApbkP9aPGSIxJlPP6JanBQOv28="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/frontend.md",
+          "target": "skills/dhh-rails-style/references/frontend.md",
+          "integrity": "sha256-B963SIgs6448wkGsPXV7egUE3GmUciby9kyw1hq82RA="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/gems.md",
+          "target": "skills/dhh-rails-style/references/gems.md",
+          "integrity": "sha256-V70hLkSV/fXm+LWnV9Ewr3KBby8LrvktxdyyD5HDH2Y="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/models.md",
+          "target": "skills/dhh-rails-style/references/models.md",
+          "integrity": "sha256-ciI3AViFT0xb1DoVe+3HgmZJaugHfsM/zc9+PGqhs6M="
+        },
+        {
+          "path": "skills/dhh-rails-style/references/testing.md",
+          "target": "skills/dhh-rails-style/references/testing.md",
+          "integrity": "sha256-NW+ncx7pDagh+YYSg3MVwhfY4wyYzD1J2n6VddAwSHc="
+        }
+      ]
+    }
+  }
+}

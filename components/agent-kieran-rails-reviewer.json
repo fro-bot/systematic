@@ -1,17 +1,17 @@
 {
   "name": "agent-kieran-rails-reviewer",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-kieran-rails-reviewer",
-      "type": "ocx:agent",
-      "description": "Reviews Rails code with an extremely high quality bar for conventions, clarity, and maintainability. Use after implementing features, modifying code, or creating new Rails components.",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when the diff touches Rails application code. Reviews Rails changes with Kieran's strict bar for clarity, conventions, and maintainability.",
       "files": [
         {
           "path": "agents/review/kieran-rails-reviewer.md",
-          "target": ".opencode/agent/kieran-rails-reviewer.md",
+          "target": "agents/review/kieran-rails-reviewer.md",
           "integrity": "sha256-hoJtqBzrfrmKQDtLNNzbb9Uti7gVlhbsYaPxGw22b9Y="
         }
       ]

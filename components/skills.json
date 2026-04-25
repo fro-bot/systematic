@@ -1,22 +1,59 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "skills",
-      "type": "ocx:bundle",
+      "type": "bundle",
       "description": "All Systematic skills",
       "files": [],
       "dependencies": [
         "agent-browser",
         "agent-native-architecture",
+        "agent-native-audit",
+        "andrew-kane-gem-writer",
+        "ce-brainstorm",
+        "ce-compound",
+        "ce-compound-refresh",
+        "ce-ideate",
+        "ce-plan",
+        "ce-review",
+        "ce-work",
+        "ce-work-beta",
+        "changelog",
+        "claude-permissions-optimizer",
         "compound-docs",
+        "deepen-plan",
+        "deploy-docs",
+        "dhh-rails-style",
         "document-review",
+        "dspy-ruby",
+        "every-style-editor",
+        "feature-video",
         "frontend-design",
+        "gemini-imagegen",
+        "generate-command",
+        "git-clean-gone-branches",
+        "git-commit",
+        "git-commit-push-pr",
         "git-worktree",
+        "lfg",
+        "onboarding",
         "orchestrating-swarms",
+        "proof",
+        "rclone",
+        "report-bug-ce",
+        "reproduce-bug",
+        "resolve-pr-feedback",
+        "setup",
+        "slfg",
+        "test-browser",
+        "test-xcode",
+        "todo-create",
+        "todo-resolve",
+        "todo-triage",
         "using-systematic"
       ]
     }

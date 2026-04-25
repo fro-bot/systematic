@@ -1,0 +1,40 @@
+{
+  "name": "resolve-pr-feedback",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "resolve-pr-feedback",
+      "type": "skill",
+      "description": "Resolve PR review feedback by evaluating validity and fixing issues in parallel. Use when addressing PR review comments, resolving review threads, or fixing code review feedback.",
+      "files": [
+        {
+          "path": "skills/resolve-pr-feedback/SKILL.md",
+          "target": "skills/resolve-pr-feedback/SKILL.md",
+          "integrity": "sha256-rvCONvBl29G17JNSZhS76SAu1vnLAwMRWv2WgElngNs="
+        },
+        {
+          "path": "skills/resolve-pr-feedback/scripts/get-pr-comments",
+          "target": "skills/resolve-pr-feedback/scripts/get-pr-comments",
+          "integrity": "sha256-lykV/GhoBSaYXtVAYgnXxzsKFLV7vUgfz12/gGky1vg="
+        },
+        {
+          "path": "skills/resolve-pr-feedback/scripts/get-thread-for-comment",
+          "target": "skills/resolve-pr-feedback/scripts/get-thread-for-comment",
+          "integrity": "sha256-wLArmev/6plctWmhQjjHJI3+I51aT16qLYWGO4LsN1k="
+        },
+        {
+          "path": "skills/resolve-pr-feedback/scripts/reply-to-pr-thread",
+          "target": "skills/resolve-pr-feedback/scripts/reply-to-pr-thread",
+          "integrity": "sha256-y+D2/4MxhX7Ion4nZdmr2gjhZuY+MtE3h4fmZUte0dM="
+        },
+        {
+          "path": "skills/resolve-pr-feedback/scripts/resolve-pr-thread",
+          "target": "skills/resolve-pr-feedback/scripts/resolve-pr-thread",
+          "integrity": "sha256-olgqcREMSa1m5mxJVNBkfQqwWXg4QJ4fSJasj2uQ2D8="
+        }
+      ]
+    }
+  }
+}

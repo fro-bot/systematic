@@ -1,26 +1,26 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "standalone",
-      "type": "ocx:profile",
+      "type": "profile",
       "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",
       "files": [
         {
-          "path": "profiles/standalone/opencode.jsonc",
+          "path": "registry/files/profiles/standalone/opencode.jsonc",
           "target": "opencode.jsonc",
           "integrity": "sha256-mCIkVxyksxAJ0lMFxiE0i8/H8quWIcjrcSksAnLBak4="
         },
         {
-          "path": "profiles/standalone/ocx.jsonc",
+          "path": "registry/files/profiles/standalone/ocx.jsonc",
           "target": "ocx.jsonc",
           "integrity": "sha256-rkmQElUvK7/R+2NsXY4RXrvezIFUG+SKCJLyJq6UXRw="
         },
         {
-          "path": "profiles/standalone/AGENTS.md",
+          "path": "registry/files/profiles/standalone/AGENTS.md",
           "target": "AGENTS.md",
           "integrity": "sha256-BKMk+RIpVSgmm/tSlldBHVIVE0+ct0mBPoDpbxzVHUI="
         }

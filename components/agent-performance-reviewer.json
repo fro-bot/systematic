@@ -1,0 +1,20 @@
+{
+  "name": "agent-performance-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-performance-reviewer",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when the diff touches database queries, loop-heavy data transforms, caching layers, or I/O-intensive paths. Reviews code for runtime performance and scalability issues.",
+      "files": [
+        {
+          "path": "agents/review/performance-reviewer.md",
+          "target": "agents/review/performance-reviewer.md",
+          "integrity": "sha256-YlMZ25k8FG15/BtyjBqpmQ9g+QxMSCQZaIbPVoWM8xo="
+        }
+      ]
+    }
+  }
+}

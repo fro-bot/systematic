@@ -1,0 +1,20 @@
+{
+  "name": "agent-adversarial-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-adversarial-reviewer",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when the diff is large (>=50 changed lines) or touches high-risk domains like auth, payments, data mutations, or external APIs. Actively constructs failure scenarios to break the implementation rather than checking against known patterns.",
+      "files": [
+        {
+          "path": "agents/review/adversarial-reviewer.md",
+          "target": "agents/review/adversarial-reviewer.md",
+          "integrity": "sha256-/WC2l4bi5sDh/o/HVN4n1l9Elkpm0iwpvQNx9+58uQ8="
+        }
+      ]
+    }
+  }
+}

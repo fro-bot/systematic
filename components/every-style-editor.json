@@ -1,0 +1,25 @@
+{
+  "name": "every-style-editor",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "every-style-editor",
+      "type": "skill",
+      "description": "This skill should be used when reviewing or editing copy to ensure adherence to Every's style guide. It provides a systematic line-by-line review process for grammar, punctuation, mechanics, and style guide compliance.",
+      "files": [
+        {
+          "path": "skills/every-style-editor/SKILL.md",
+          "target": "skills/every-style-editor/SKILL.md",
+          "integrity": "sha256-FfHlF408yqvBmcfaP1ioeoFdQS36VivcvU5VY0BV2Kk="
+        },
+        {
+          "path": "skills/every-style-editor/references/EVERY_WRITE_STYLE.md",
+          "target": "skills/every-style-editor/references/EVERY_WRITE_STYLE.md",
+          "integrity": "sha256-zWmVzs5t14DWFuGaWF3SN7yNaX6+eMZTL+y7S+TyZ0I="
+        }
+      ]
+    }
+  }
+}

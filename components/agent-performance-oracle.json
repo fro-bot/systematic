@@ -1,17 +1,17 @@
 {
   "name": "agent-performance-oracle",
   "dist-tags": {
-    "latest": "2.5.3"
+    "latest": "2.6.0"
   },
   "versions": {
-    "2.5.3": {
+    "2.6.0": {
       "name": "agent-performance-oracle",
-      "type": "ocx:agent",
+      "type": "agent",
       "description": "Analyzes code for performance bottlenecks, algorithmic complexity, database queries, memory usage, and scalability. Use after implementing features or when performance concerns arise.",
       "files": [
         {
           "path": "agents/review/performance-oracle.md",
-          "target": ".opencode/agent/performance-oracle.md",
+          "target": "agents/review/performance-oracle.md",
           "integrity": "sha256-9QRVb/rUM7CmwPQl82WKLbUYKCjpvErL3awTP50SZhY="
         }
       ]

@@ -1,0 +1,20 @@
+{
+  "name": "test-browser",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "test-browser",
+      "type": "skill",
+      "description": "Run browser tests on pages affected by current PR or branch",
+      "files": [
+        {
+          "path": "skills/test-browser/SKILL.md",
+          "target": "skills/test-browser/SKILL.md",
+          "integrity": "sha256-wZCl++njiJm1erJsGz5M6RSdhBLAiibLnvai4kjP5Cc="
+        }
+      ]
+    }
+  }
+}

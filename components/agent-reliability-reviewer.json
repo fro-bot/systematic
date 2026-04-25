@@ -1,0 +1,20 @@
+{
+  "name": "agent-reliability-reviewer",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-reliability-reviewer",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when the diff touches error handling, retries, circuit breakers, timeouts, health checks, background jobs, or async handlers. Reviews code for production reliability and failure modes.",
+      "files": [
+        {
+          "path": "agents/review/reliability-reviewer.md",
+          "target": "agents/review/reliability-reviewer.md",
+          "integrity": "sha256-t4YjSn/fKYUA9+Z6lao/VhQRNfzmqTFp5KVl+5dDj7E="
+        }
+      ]
+    }
+  }
+}

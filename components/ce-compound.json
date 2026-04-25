@@ -1,0 +1,35 @@
+{
+  "name": "ce-compound",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "ce-compound",
+      "type": "skill",
+      "description": "Document a recently solved problem to compound your team's knowledge",
+      "files": [
+        {
+          "path": "skills/ce-compound/SKILL.md",
+          "target": "skills/ce-compound/SKILL.md",
+          "integrity": "sha256-ydgK2rmXDUrIMKCetMd1UEYPgFTMa5F2LapIwswNJJg="
+        },
+        {
+          "path": "skills/ce-compound/assets/resolution-template.md",
+          "target": "skills/ce-compound/assets/resolution-template.md",
+          "integrity": "sha256-4qpc9+AbHSrggxeGPQEcsLOEu/aDvSyriFpIb1uc3Ts="
+        },
+        {
+          "path": "skills/ce-compound/references/schema.yaml",
+          "target": "skills/ce-compound/references/schema.yaml",
+          "integrity": "sha256-V4dkHMK7Cm9N82563tTbiY5HMIKE4GmbFlYF62cx42s="
+        },
+        {
+          "path": "skills/ce-compound/references/yaml-schema.md",
+          "target": "skills/ce-compound/references/yaml-schema.md",
+          "integrity": "sha256-VxXYwGYGD5MTW29VNukymyzbB9CfwTSz4m+e/CqKdgg="
+        }
+      ]
+    }
+  }
+}

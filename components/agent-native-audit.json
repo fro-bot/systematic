@@ -1,0 +1,20 @@
+{
+  "name": "agent-native-audit",
+  "dist-tags": {
+    "latest": "2.6.0"
+  },
+  "versions": {
+    "2.6.0": {
+      "name": "agent-native-audit",
+      "type": "skill",
+      "description": "Run comprehensive agent-native architecture review with scored principles",
+      "files": [
+        {
+          "path": "skills/agent-native-audit/SKILL.md",
+          "target": "skills/agent-native-audit/SKILL.md",
+          "integrity": "sha256-s+SJd+Ek8Gww+vJL7YlPOIohgp+j62VblrxE0wNDMjw="
+        }
+      ]
+    }
+  }
+}
