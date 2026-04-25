@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "2.1.0",
+  "version": "2.5.3",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -23,11 +23,6 @@
       "name": "document-review",
       "type": "ocx:skill",
       "description": "This skill should be used to refine brainstorm or plan documents before proceeding to the next workflow step. It applies when a brainstorm or plan document exists and the user wants to improve it."
-    },
-    {
-      "name": "file-todos",
-      "type": "ocx:skill",
-      "description": "This skill should be used when managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes."
     },
     {
       "name": "frontend-design",

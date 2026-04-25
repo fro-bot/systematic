@@ -1,10 +1,10 @@
 {
   "name": "agent-pr-comment-resolver",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "agent-pr-comment-resolver",
       "type": "ocx:agent",
       "description": "Addresses PR review comments by implementing requested changes and reporting resolutions. Use when code review feedback needs to be resolved with code changes.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/workflow/pr-comment-resolver.md",
           "target": ".opencode/agent/pr-comment-resolver.md",
-          "integrity": "sha256-7FfXzgXy89cbmeiCg+KETZGpK2EHElz525DLIxS10x0="
+          "integrity": "sha256-scMCBI5FSknN0baUyz+DZM5Fkte+zukySF6uB3CR7jA="
         }
       ]
     }

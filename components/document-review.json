@@ -1,10 +1,10 @@
 {
   "name": "document-review",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "document-review",
       "type": "ocx:skill",
       "description": "This skill should be used to refine brainstorm or plan documents before proceeding to the next workflow step. It applies when a brainstorm or plan document exists and the user wants to improve it.",
@@ -12,7 +12,22 @@
         {
           "path": "SKILL.md",
           "target": ".opencode/skills/document-review/SKILL.md",
-          "integrity": "sha256-7PhPNhEX2dxT38u3/ocZFrBmTqU5LADawUm7X64wvPM="
+          "integrity": "sha256-kbilPGXDqExCJ6jFM2G1pCVF796NNnHG/R1ErbKHLqg="
+        },
+        {
+          "path": "references/findings-schema.json",
+          "target": ".opencode/skills/document-review/references/findings-schema.json",
+          "integrity": "sha256-mmDwo4zSUwcpWmtcTdGXlW1yiHq04MEER+0d39H7j58="
+        },
+        {
+          "path": "references/review-output-template.md",
+          "target": ".opencode/skills/document-review/references/review-output-template.md",
+          "integrity": "sha256-OnArXcP4SeQmslQQzWTvPM7whA9i3cvpi/Esl266p38="
+        },
+        {
+          "path": "references/subagent-template.md",
+          "target": ".opencode/skills/document-review/references/subagent-template.md",
+          "integrity": "sha256-9jKUf6lfUokvLbaFgdmU+u0cFlYzLIIYPYyR3GolMMQ="
         }
       ]
     }

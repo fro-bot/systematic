@@ -1,10 +1,10 @@
 {
   "name": "agent-pattern-recognition-specialist",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "agent-pattern-recognition-specialist",
       "type": "ocx:agent",
       "description": "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/pattern-recognition-specialist.md",
           "target": ".opencode/agent/pattern-recognition-specialist.md",
-          "integrity": "sha256-Xz90CmZ6Xby/WZoJ0mb5hqXjT9zHQefcD7xGTRNw5Cc="
+          "integrity": "sha256-wC7u+nX9I3XlICoH1vwfN+KL/9hL9Z0qQpOu9sSyH2A="
         }
       ]
     }

@@ -1,10 +1,10 @@
 {
   "name": "agent-data-migration-expert",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "agent-data-migration-expert",
       "type": "ocx:agent",
       "description": "Validates data migrations, backfills, and production data transformations against reality. Use when PRs involve ID mappings, column renames, enum conversions, or schema changes.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/data-migration-expert.md",
           "target": ".opencode/agent/data-migration-expert.md",
-          "integrity": "sha256-i/npP3Ug86whOTtwz4u11LhBfLqzLvC+ljalPPqfkhI="
+          "integrity": "sha256-g9gIRvVajGjrSE2ODcOkaYe88Gib/+VD8B4qnl17tGg="
         }
       ]
     }

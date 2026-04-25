@@ -1,10 +1,10 @@
 {
   "name": "agent-native-architecture",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "agent-native-architecture",
       "type": "ocx:skill",
       "description": "Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.",
@@ -12,7 +12,7 @@
         {
           "path": "SKILL.md",
           "target": ".opencode/skills/agent-native-architecture/SKILL.md",
-          "integrity": "sha256-0Yx+2Enfe1lYGeZdMY9zvag+WvZ6m1hzS8IxijMRdLU="
+          "integrity": "sha256-sug8wR0PF9dzi3wePw7TW8fQZOY9Taa8JLqoXGrVbDs="
         },
         {
           "path": "references/action-parity-discipline.md",
@@ -22,12 +22,12 @@
         {
           "path": "references/agent-execution-patterns.md",
           "target": ".opencode/skills/agent-native-architecture/references/agent-execution-patterns.md",
-          "integrity": "sha256-37oH4RMoekzRdSjTnKV956rpINbtw78SORvkxsjb2mg="
+          "integrity": "sha256-I7vkoYrDxUoDSWjWN81tSXYGgqJe1CGUWFOZGFeBhKU="
         },
         {
           "path": "references/agent-native-testing.md",
           "target": ".opencode/skills/agent-native-architecture/references/agent-native-testing.md",
-          "integrity": "sha256-jXnxknCMZ/hs+qV0QJ1asoWw52VTiiQEs7n4kL/fAbI="
+          "integrity": "sha256-VDCZ0jCdnpMqgnCEfhGCzqkS+mrbCQfMQ9sct/z8Aos="
         },
         {
           "path": "references/architecture-patterns.md",
@@ -57,7 +57,7 @@
         {
           "path": "references/mobile-patterns.md",
           "target": ".opencode/skills/agent-native-architecture/references/mobile-patterns.md",
-          "integrity": "sha256-qGxj+rVOG1b4y7Q4T1BcMZ78ud10y7c3XuSXuJ+0L0g="
+          "integrity": "sha256-4hrIl8rJYE2HqCrnRuFOo3VN/WQhao8M/5yH4dIevOI="
         },
         {
           "path": "references/product-implications.md",

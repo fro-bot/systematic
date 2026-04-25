@@ -1,10 +1,10 @@
 {
   "name": "agent-agent-native-reviewer",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "agent-agent-native-reviewer",
       "type": "ocx:agent",
       "description": "Reviews code to ensure agent-native parity — any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/agent-native-reviewer.md",
           "target": ".opencode/agent/agent-native-reviewer.md",
-          "integrity": "sha256-FZ18whYP+0d516sQgsC9kbi/QEKxHy4o4t9a6ozAyIc="
+          "integrity": "sha256-ta/8ckpqA3TXxECUaKV8podI1pAKGITWYrCjoI53O64="
         }
       ]
     }

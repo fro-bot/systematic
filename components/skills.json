@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "2.5.3"
   },
   "versions": {
-    "2.1.0": {
+    "2.5.3": {
       "name": "skills",
       "type": "ocx:bundle",
       "description": "All Systematic skills",
@@ -14,7 +14,6 @@
         "agent-native-architecture",
         "compound-docs",
         "document-review",
-        "file-todos",
         "frontend-design",
         "git-worktree",
         "orchestrating-swarms",
