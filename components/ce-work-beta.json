@@ -1,10 +1,10 @@
 {
   "name": "ce-work-beta",
   "dist-tags": {
-    "latest": "2.6.0"
+    "latest": "2.6.1"
   },
   "versions": {
-    "2.6.0": {
+    "2.6.1": {
       "name": "ce-work-beta",
       "type": "skill",
       "description": "[BETA] Execute work with external delegate support. Same as ce:work but includes experimental Codex delegation mode for token-conserving code implementation.",
@@ -13,6 +13,16 @@
           "path": "skills/ce-work-beta/SKILL.md",
           "target": "skills/ce-work-beta/SKILL.md",
           "integrity": "sha256-45ofAkEDRWwc1ffoBfxvkgjOQU+AMMVKgLWLAqERwtE="
+        },
+        {
+          "path": "skills/ce-work-beta/references/codex-delegation-workflow.md",
+          "target": "skills/ce-work-beta/references/codex-delegation-workflow.md",
+          "integrity": "sha256-+vQdQd9gbOQ8wSlkPTTHfskTCfsPd36GAS78lYQh4mE="
+        },
+        {
+          "path": "skills/ce-work-beta/references/shipping-workflow.md",
+          "target": "skills/ce-work-beta/references/shipping-workflow.md",
+          "integrity": "sha256-uIJeIs15oXWWV3vQWO9AT+3MMoTKTFrbtT0ZFzs9NHc="
         }
       ]
     }
