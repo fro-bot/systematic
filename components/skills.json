@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.6.1"
+    "latest": "2.7.0"
   },
   "versions": {
-    "2.6.1": {
+    "2.7.0": {
       "name": "skills",
       "type": "bundle",
       "description": "All Systematic skills",
@@ -54,7 +54,8 @@
         "todo-create",
         "todo-resolve",
         "todo-triage",
-        "using-systematic"
+        "using-systematic",
+        "writing-systematic-skills"
       ]
     }
   }

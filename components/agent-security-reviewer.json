@@ -1,10 +1,10 @@
 {
   "name": "agent-security-reviewer",
   "dist-tags": {
-    "latest": "2.6.1"
+    "latest": "2.7.0"
   },
   "versions": {
-    "2.6.1": {
+    "2.7.0": {
       "name": "agent-security-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches auth middleware, public endpoints, user input handling, or permission checks. Reviews code for exploitable vulnerabilities.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/security-reviewer.md",
           "target": "agents/review/security-reviewer.md",
-          "integrity": "sha256-JcDz/0d+i08sFa8z+nnsvEdDbwHWi/yoimDl7aX4mb4="
+          "integrity": "sha256-hZD0RzGzVe7QgIjedmSM16VziuVLD1n9/dJusG9GAJo="
         }
       ]
     }

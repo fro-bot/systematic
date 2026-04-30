@@ -1,10 +1,10 @@
 {
   "name": "agent-bug-reproduction-validator",
   "dist-tags": {
-    "latest": "2.6.1"
+    "latest": "2.7.0"
   },
   "versions": {
-    "2.6.1": {
+    "2.7.0": {
       "name": "agent-bug-reproduction-validator",
       "type": "agent",
       "description": "Systematically reproduces and validates bug reports to confirm whether reported behavior is an actual bug. Use when you receive a bug report or issue that needs verification.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/workflow/bug-reproduction-validator.md",
           "target": "agents/workflow/bug-reproduction-validator.md",
-          "integrity": "sha256-vPXMOmB3S+WItEhzvu3wgp5C36Br0wj81ea8LNUI12w="
+          "integrity": "sha256-PRXGk8l6xOeAXTLMrGqsyN7Z6GfQFAHeL0xcNge6SOI="
         }
       ]
     }

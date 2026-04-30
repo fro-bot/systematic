@@ -1,10 +1,10 @@
 {
   "name": "agent-data-migrations-reviewer",
   "dist-tags": {
-    "latest": "2.6.1"
+    "latest": "2.7.0"
   },
   "versions": {
-    "2.6.1": {
+    "2.7.0": {
       "name": "agent-data-migrations-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches migration files, schema changes, data transformations, or backfill scripts. Reviews code for data integrity and migration safety.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/data-migrations-reviewer.md",
           "target": "agents/review/data-migrations-reviewer.md",
-          "integrity": "sha256-mmxJEgnRKKGVitFqJoHBCnAwfxLp/5gRV++unHjJfR0="
+          "integrity": "sha256-AsQCMKv6KpamESWIwOxAZ3CuIiTxTmXk/ILHnNONxCg="
         }
       ]
     }
