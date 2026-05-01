@@ -1,10 +1,10 @@
 {
   "name": "ce-work-beta",
   "dist-tags": {
-    "latest": "2.7.0"
+    "latest": "2.7.1"
   },
   "versions": {
-    "2.7.0": {
+    "2.7.1": {
       "name": "ce-work-beta",
       "type": "skill",
       "description": "[BETA] Execute work with external delegate support. Same as ce:work but includes experimental Codex delegation mode for token-conserving code implementation.",
