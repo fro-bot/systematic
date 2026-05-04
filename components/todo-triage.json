@@ -1,10 +1,10 @@
 {
   "name": "todo-triage",
   "dist-tags": {
-    "latest": "2.7.1"
+    "latest": "2.7.2"
   },
   "versions": {
-    "2.7.1": {
+    "2.7.2": {
       "name": "todo-triage",
       "type": "skill",
       "description": "Use when reviewing pending todos for approval, prioritizing code review findings, or interactively categorizing work items",

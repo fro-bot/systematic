@@ -1,10 +1,10 @@
 {
   "name": "agent-ankane-readme-writer",
   "dist-tags": {
-    "latest": "2.7.1"
+    "latest": "2.7.2"
   },
   "versions": {
-    "2.7.1": {
+    "2.7.2": {
       "name": "agent-ankane-readme-writer",
       "type": "agent",
       "description": "Creates or updates README files following Ankane-style template for Ruby gems. Use when writing gem documentation with imperative voice, concise prose, and standard section ordering.",
