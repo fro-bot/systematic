@@ -1,10 +1,10 @@
 {
   "name": "agent-performance-oracle",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-performance-oracle",
       "type": "agent",
       "description": "Analyzes code for performance bottlenecks, algorithmic complexity, database queries, memory usage, and scalability. Use after implementing features or when performance concerns arise.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/performance-oracle.md",
           "target": "agents/review/performance-oracle.md",
-          "integrity": "sha256-9QRVb/rUM7CmwPQl82WKLbUYKCjpvErL3awTP50SZhY="
+          "integrity": "sha256-1JJ9CBD0BGBYoXcrb3tkjQTzOZxnKR9YAQ+9v+gurfI="
         }
       ]
     }

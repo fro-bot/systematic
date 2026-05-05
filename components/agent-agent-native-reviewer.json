@@ -1,10 +1,10 @@
 {
   "name": "agent-agent-native-reviewer",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-agent-native-reviewer",
       "type": "agent",
       "description": "Reviews code to ensure agent-native parity -- any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/agent-native-reviewer.md",
           "target": "agents/review/agent-native-reviewer.md",
-          "integrity": "sha256-ta/8ckpqA3TXxECUaKV8podI1pAKGITWYrCjoI53O64="
+          "integrity": "sha256-qDNLirq56g5CIPggiTBjFKj8PmjzmD0YwlJLzEdcc30="
         }
       ]
     }

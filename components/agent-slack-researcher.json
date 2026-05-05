@@ -1,10 +1,10 @@
 {
   "name": "agent-slack-researcher",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-slack-researcher",
       "type": "agent",
       "description": "Searches Slack for organizational context. Use when the user explicitly asks. Requires a Slack MCP server.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/research/slack-researcher.md",
           "target": "agents/research/slack-researcher.md",
-          "integrity": "sha256-nR3+CRqxCXWbTjR1f6FRpDyQczQVAcmRXJD7YbR+r+w="
+          "integrity": "sha256-RsAhsTzAXGDosyAwAU5EyDGuLnUBMowZveCDYpYNFns="
         }
       ]
     }

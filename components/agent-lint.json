@@ -1,10 +1,10 @@
 {
   "name": "agent-lint",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-lint",
       "type": "agent",
       "description": "Use this agent when you need to run linting and code quality checks on Ruby and ERB files. Run before pushing to origin.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/workflow/lint.md",
           "target": "agents/workflow/lint.md",
-          "integrity": "sha256-wpjsEn3jVGGlXHP4//LESVhcJHVGFThOXMjKIqAgPws="
+          "integrity": "sha256-wO6PRlSYCCTt/6Kmb6tWW9xZU6zhlm4etyPxUcBMBcc="
         }
       ]
     }

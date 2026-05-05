@@ -1,10 +1,10 @@
 {
   "name": "agent-schema-drift-detector",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-schema-drift-detector",
       "type": "agent",
       "description": "Detects unrelated schema.rb changes in PRs by cross-referencing against included migrations. Use when reviewing PRs with database schema changes.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/schema-drift-detector.md",
           "target": "agents/review/schema-drift-detector.md",
-          "integrity": "sha256-uKWrqrR80C9oyMBg20uGiPIZHPflkauyDpUAEdBzU6Q="
+          "integrity": "sha256-gfuEcId1ofj94HimwMs1Z/wwTMj6ywcIzGjLltYnWuQ="
         }
       ]
     }

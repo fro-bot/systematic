@@ -1,10 +1,10 @@
 {
   "name": "agent-performance-reviewer",
   "dist-tags": {
-    "latest": "2.7.2"
+    "latest": "2.7.3"
   },
   "versions": {
-    "2.7.2": {
+    "2.7.3": {
       "name": "agent-performance-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches database queries, loop-heavy data transforms, caching layers, or I/O-intensive paths. Reviews code for runtime performance and scalability issues.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/performance-reviewer.md",
           "target": "agents/review/performance-reviewer.md",
-          "integrity": "sha256-zRBPV3gTwxS3uz3H3weQtioCV9kR6lN2aYz6etB88LM="
+          "integrity": "sha256-Cuu+htyz7zXp+bXInWSRNXJX6x5oZDD1hxW3/HS4ReM="
         }
       ]
     }
