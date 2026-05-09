@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-rails-reviewer",
   "dist-tags": {
-    "latest": "2.8.1"
+    "latest": "2.9.0"
   },
   "versions": {
-    "2.8.1": {
+    "2.9.0": {
       "name": "agent-kieran-rails-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches Rails application code. Reviews Rails changes with Kieran's strict bar for clarity, conventions, and maintainability.",

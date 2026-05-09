@@ -1,10 +1,10 @@
 {
   "name": "agent-feasibility-reviewer",
   "dist-tags": {
-    "latest": "2.8.1"
+    "latest": "2.9.0"
   },
   "versions": {
-    "2.8.1": {
+    "2.9.0": {
       "name": "agent-feasibility-reviewer",
       "type": "agent",
       "description": "Evaluates whether proposed technical approaches in planning documents will survive contact with reality -- architecture conflicts, dependency gaps, migration risks, and implementability. Spawned by the document-review skill.",
