@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "2.7.3",
+  "version": "2.8.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -265,6 +265,11 @@
       "description": "Analyzes specifications and feature descriptions for user flow completeness and gap identification. Use when a spec, plan, or feature description needs flow analysis, edge case discovery, or requirements validation."
     },
     {
+      "name": "agent-systematic-implementer",
+      "type": "agent",
+      "description": "Implements one plan unit in a fresh subagent context and reports bounded changes back to the orchestrator."
+    },
+    {
       "name": "agent-testing-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Reviews code for test coverage gaps, weak assertions, brittle implementation-coupled tests, and missing edge case coverage."
@@ -308,11 +313,6 @@
       "name": "ce-work",
       "type": "skill",
       "description": "Execute work efficiently while maintaining quality and finishing features"
-    },
-    {
-      "name": "ce-work-beta",
-      "type": "skill",
-      "description": "[BETA] Execute work with external delegate support. Same as ce:work but includes experimental Codex delegation mode for token-conserving code implementation."
     },
     {
       "name": "changelog",

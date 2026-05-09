@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.7.3"
+    "latest": "2.8.0"
   },
   "versions": {
-    "2.7.3": {
+    "2.8.0": {
       "name": "skills",
       "type": "bundle",
       "description": "All Systematic skills",
@@ -21,7 +21,6 @@
         "ce-plan",
         "ce-review",
         "ce-work",
-        "ce-work-beta",
         "changelog",
         "claude-permissions-optimizer",
         "compound-docs",

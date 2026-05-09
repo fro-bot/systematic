@@ -1,0 +1,20 @@
+{
+  "name": "agent-systematic-implementer",
+  "dist-tags": {
+    "latest": "2.8.0"
+  },
+  "versions": {
+    "2.8.0": {
+      "name": "agent-systematic-implementer",
+      "type": "agent",
+      "description": "Implements one plan unit in a fresh subagent context and reports bounded changes back to the orchestrator.",
+      "files": [
+        {
+          "path": "agents/workflow/systematic-implementer.md",
+          "target": "agents/workflow/systematic-implementer.md",
+          "integrity": "sha256-O8rReU0xG02+5SIL+U/Eu3ijuPh5/d4kA6Y4k3HNB7s="
+        }
+      ]
+    }
+  }
+}

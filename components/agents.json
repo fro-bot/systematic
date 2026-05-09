@@ -1,10 +1,10 @@
 {
   "name": "agents",
   "dist-tags": {
-    "latest": "2.7.3"
+    "latest": "2.8.0"
   },
   "versions": {
-    "2.7.3": {
+    "2.8.0": {
       "name": "agents",
       "type": "bundle",
       "description": "All Systematic agents",
@@ -59,6 +59,7 @@
         "agent-security-sentinel",
         "agent-slack-researcher",
         "agent-spec-flow-analyzer",
+        "agent-systematic-implementer",
         "agent-testing-reviewer"
       ]
     }
