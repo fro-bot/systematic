@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-typescript-reviewer",
   "dist-tags": {
-    "latest": "2.9.1"
+    "latest": "2.9.2"
   },
   "versions": {
-    "2.9.1": {
+    "2.9.2": {
       "name": "agent-kieran-typescript-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches TypeScript code. Reviews changes with Kieran's strict bar for type safety, clarity, and maintainability.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/kieran-typescript-reviewer.md",
           "target": "agents/review/kieran-typescript-reviewer.md",
-          "integrity": "sha256-t8Gqmpn6/rfcEw+u0nFjMRDocxRVAeOsSDf4wL9ZXUQ="
+          "integrity": "sha256-Mj3fi2SuhMdwnSgNxS+ZVPDU+RaMcge0VkuUgdcsQeE="
         }
       ]
     }

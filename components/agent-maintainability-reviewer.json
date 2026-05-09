@@ -1,10 +1,10 @@
 {
   "name": "agent-maintainability-reviewer",
   "dist-tags": {
-    "latest": "2.9.1"
+    "latest": "2.9.2"
   },
   "versions": {
-    "2.9.1": {
+    "2.9.2": {
       "name": "agent-maintainability-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Reviews code for premature abstraction, unnecessary indirection, dead code, coupling between unrelated modules, and naming that obscures intent.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/maintainability-reviewer.md",
           "target": "agents/review/maintainability-reviewer.md",
-          "integrity": "sha256-+jTTT1CxBTO7R2yzyzyGcjGUhx/pVm3Dx1TNopfd0Bc="
+          "integrity": "sha256-7TmTfmvcL84APhX1M+//c5V7K/8pHgo/zAj7Cani4HI="
         }
       ]
     }

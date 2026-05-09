@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-python-reviewer",
   "dist-tags": {
-    "latest": "2.9.1"
+    "latest": "2.9.2"
   },
   "versions": {
-    "2.9.1": {
+    "2.9.2": {
       "name": "agent-kieran-python-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches Python code. Reviews changes with Kieran's strict bar for Pythonic clarity, type hints, and maintainability.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/kieran-python-reviewer.md",
           "target": "agents/review/kieran-python-reviewer.md",
-          "integrity": "sha256-tRohC2L0chplFpcwT6N7ezuwKwYaL559YRC6t3uyV9Q="
+          "integrity": "sha256-qXv9XFjUs5n1rdWJKLytUJ3Vd+9K1ZsZT+3w3jdCQd0="
         }
       ]
     }
