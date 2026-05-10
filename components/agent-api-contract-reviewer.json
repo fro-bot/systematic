@@ -1,10 +1,10 @@
 {
   "name": "agent-api-contract-reviewer",
   "dist-tags": {
-    "latest": "2.10.0"
+    "latest": "2.11.0"
   },
   "versions": {
-    "2.10.0": {
+    "2.11.0": {
       "name": "agent-api-contract-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches API routes, request/response types, serialization, versioning, or exported type signatures. Reviews code for breaking contract changes.",
