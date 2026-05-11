@@ -1,10 +1,10 @@
 {
   "name": "agent-reliability-reviewer",
   "dist-tags": {
-    "latest": "2.12.1"
+    "latest": "2.12.2"
   },
   "versions": {
-    "2.12.1": {
+    "2.12.2": {
       "name": "agent-reliability-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches error handling, retries, circuit breakers, timeouts, health checks, background jobs, or async handlers. Reviews code for production reliability and failure modes.",

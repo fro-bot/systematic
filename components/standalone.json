@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "2.12.1"
+    "latest": "2.12.2"
   },
   "versions": {
-    "2.12.1": {
+    "2.12.2": {
       "name": "standalone",
       "type": "profile",
       "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",

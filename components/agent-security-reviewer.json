@@ -1,10 +1,10 @@
 {
   "name": "agent-security-reviewer",
   "dist-tags": {
-    "latest": "2.12.1"
+    "latest": "2.12.2"
   },
   "versions": {
-    "2.12.1": {
+    "2.12.2": {
       "name": "agent-security-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches auth middleware, public endpoints, user input handling, or permission checks. Reviews code for exploitable vulnerabilities.",
