@@ -1,10 +1,10 @@
 {
   "name": "reproduce-bug",
   "dist-tags": {
-    "latest": "2.13.1"
+    "latest": "2.13.2"
   },
   "versions": {
-    "2.13.1": {
+    "2.13.2": {
       "name": "reproduce-bug",
       "type": "skill",
       "description": "Systematically reproduce and investigate a bug from a GitHub issue. Use when the user provides a GitHub issue number or URL for a bug they want reproduced or investigated.",
