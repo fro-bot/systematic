@@ -1,10 +1,10 @@
 {
   "name": "agent-cli-readiness-reviewer",
   "dist-tags": {
-    "latest": "2.12.3"
+    "latest": "2.13.0"
   },
   "versions": {
-    "2.12.3": {
+    "2.13.0": {
       "name": "agent-cli-readiness-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches CLI command definitions, argument parsing, or command handler implementations. Reviews CLI code for agent readiness -- how well the CLI serves autonomous agents, not just human users.",
