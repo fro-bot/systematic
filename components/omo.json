@@ -1,10 +1,10 @@
 {
   "name": "omo",
   "dist-tags": {
-    "latest": "2.14.0"
+    "latest": "2.14.1"
   },
   "versions": {
-    "2.14.0": {
+    "2.14.1": {
       "name": "omo",
       "type": "profile",
       "description": "OhMyOpenCode (OMO) profile — Systematic with enhanced orchestration and delegation",
@@ -27,7 +27,7 @@
         {
           "path": "registry/files/profiles/omo/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-b8obeh8Nvh8u/RinbyB5pGMbepT6dKfvgaxEUB+nshI="
+          "integrity": "sha256-8Y/WoBzftrNsQDPs0AtU64Ib2AZKr1AoYskpZBxBWl4="
         }
       ]
     }
