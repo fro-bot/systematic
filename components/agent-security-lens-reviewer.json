@@ -1,10 +1,10 @@
 {
   "name": "agent-security-lens-reviewer",
   "dist-tags": {
-    "latest": "2.14.1"
+    "latest": "2.14.2"
   },
   "versions": {
-    "2.14.1": {
+    "2.14.2": {
       "name": "agent-security-lens-reviewer",
       "type": "agent",
       "description": "Evaluates planning documents for security gaps at the plan level -- auth/authz assumptions, data exposure risks, API surface vulnerabilities, and missing threat model elements. Spawned by the document-review skill.",
