@@ -1,10 +1,10 @@
 {
   "name": "agent-learnings-researcher",
   "dist-tags": {
-    "latest": "2.14.4"
+    "latest": "2.14.5"
   },
   "versions": {
-    "2.14.4": {
+    "2.14.5": {
       "name": "agent-learnings-researcher",
       "type": "agent",
       "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes.",
