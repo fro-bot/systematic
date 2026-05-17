@@ -1,10 +1,10 @@
 {
   "name": "todo-create",
   "dist-tags": {
-    "latest": "2.14.5"
+    "latest": "2.15.0"
   },
   "versions": {
-    "2.14.5": {
+    "2.15.0": {
       "name": "todo-create",
       "type": "skill",
       "description": "Use when creating durable work items, managing todo lifecycle, or tracking findings across sessions in the file-based todo system",
