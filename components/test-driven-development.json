@@ -1,0 +1,25 @@
+{
+  "name": "test-driven-development",
+  "dist-tags": {
+    "latest": "2.17.0"
+  },
+  "versions": {
+    "2.17.0": {
+      "name": "test-driven-development",
+      "type": "skill",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "files": [
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "target": "skills/test-driven-development/SKILL.md",
+          "integrity": "sha256-JW+tZ/dD+BeVqRo5xkMa/GF50yvLP9t96LKZP7rLEy0="
+        },
+        {
+          "path": "skills/test-driven-development/references/testing-anti-patterns.md",
+          "target": "skills/test-driven-development/references/testing-anti-patterns.md",
+          "integrity": "sha256-veRTvCWPBlQ5h0d8g3k5r6p3TqKsvZ8wjXAvxFK8QoM="
+        }
+      ]
+    }
+  }
+}

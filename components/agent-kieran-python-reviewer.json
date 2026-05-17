@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-python-reviewer",
   "dist-tags": {
-    "latest": "2.16.0"
+    "latest": "2.17.0"
   },
   "versions": {
-    "2.16.0": {
+    "2.17.0": {
       "name": "agent-kieran-python-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches Python code. Reviews changes with Kieran's strict bar for Pythonic clarity, type hints, and maintainability.",

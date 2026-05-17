@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "2.16.0",
+  "version": "2.17.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -455,6 +455,11 @@
       "description": "Run browser tests on pages affected by current PR or branch"
     },
     {
+      "name": "test-driven-development",
+      "type": "skill",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code"
+    },
+    {
       "name": "test-xcode",
       "type": "skill",
       "description": "Build and test iOS apps on simulator using XcodeBuildMCP. Use after making iOS code changes, before creating a PR, or when verifying app behavior and checking for crashes on simulator."
@@ -478,6 +483,11 @@
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions"
+    },
+    {
+      "name": "writing-skills",
+      "type": "skill",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
     },
     {
       "name": "writing-systematic-skills",

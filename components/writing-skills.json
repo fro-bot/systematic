@@ -1,0 +1,50 @@
+{
+  "name": "writing-skills",
+  "dist-tags": {
+    "latest": "2.17.0"
+  },
+  "versions": {
+    "2.17.0": {
+      "name": "writing-skills",
+      "type": "skill",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "files": [
+        {
+          "path": "skills/writing-skills/SKILL.md",
+          "target": "skills/writing-skills/SKILL.md",
+          "integrity": "sha256-pTLABj6sMdwryEXtBo0PxFOYOczbrrrJijmLD/ciAfk="
+        },
+        {
+          "path": "skills/writing-skills/references/anthropic-best-practices-distilled.md",
+          "target": "skills/writing-skills/references/anthropic-best-practices-distilled.md",
+          "integrity": "sha256-ktbms8EriOxPYGCovd5kXAgFWZrVD7aCLdod6md3fXs="
+        },
+        {
+          "path": "skills/writing-skills/references/examples/skill-testing-walkthrough.md",
+          "target": "skills/writing-skills/references/examples/skill-testing-walkthrough.md",
+          "integrity": "sha256-iOgBc3R50MlX7nlMydr9ROjpwgtSPIqBZVZJCK5V/nE="
+        },
+        {
+          "path": "skills/writing-skills/references/graphviz-conventions.dot",
+          "target": "skills/writing-skills/references/graphviz-conventions.dot",
+          "integrity": "sha256-wffDSzYVM9MNLhuZ55AxnBBS+kbbyFwU/DmTD5ZsB/g="
+        },
+        {
+          "path": "skills/writing-skills/references/persuasion-principles.md",
+          "target": "skills/writing-skills/references/persuasion-principles.md",
+          "integrity": "sha256-w8hPVypR3YttT8bly9wrw7nge6OBpFvav8560olN2Cg="
+        },
+        {
+          "path": "skills/writing-skills/references/testing-skills-with-subagents.md",
+          "target": "skills/writing-skills/references/testing-skills-with-subagents.md",
+          "integrity": "sha256-pEBJvfgrG27tgP+48+DNJ2ZpB8N5HFA7QjgaDa66VlY="
+        },
+        {
+          "path": "skills/writing-skills/scripts/render-graphs.js",
+          "target": "skills/writing-skills/scripts/render-graphs.js",
+          "integrity": "sha256-JAEblUDIdyTOKkalZeAoEe94Odb9gvcvltvpfy28qaM="
+        }
+      ]
+    }
+  }
+}

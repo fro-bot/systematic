@@ -1,10 +1,10 @@
 {
   "name": "agent-adversarial-reviewer",
   "dist-tags": {
-    "latest": "2.16.0"
+    "latest": "2.17.0"
   },
   "versions": {
-    "2.16.0": {
+    "2.17.0": {
       "name": "agent-adversarial-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff is large (>=50 changed lines) or touches high-risk domains like auth, payments, data mutations, or external APIs. Actively constructs failure scenarios to break the implementation rather than checking against known patterns.",
