@@ -1,10 +1,10 @@
 {
   "name": "generate-command",
   "dist-tags": {
-    "latest": "2.18.0"
+    "latest": "2.19.0"
   },
   "versions": {
-    "2.18.0": {
+    "2.19.0": {
       "name": "generate-command",
       "type": "skill",
       "description": "Create a new custom slash command following conventions and best practices",

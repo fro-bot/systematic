@@ -1,10 +1,10 @@
 {
   "name": "orchestrating-swarms",
   "dist-tags": {
-    "latest": "2.18.0"
+    "latest": "2.19.0"
   },
   "versions": {
-    "2.18.0": {
+    "2.19.0": {
       "name": "orchestrating-swarms",
       "type": "skill",
       "description": "Use when orchestrating multi-agent swarms, coordinating parallel code reviews, creating pipeline workflows with dependencies, building self-organizing task queues, or any task benefiting from divide-and-conquer patterns.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/orchestrating-swarms/SKILL.md",
           "target": "skills/orchestrating-swarms/SKILL.md",
-          "integrity": "sha256-DdUt/O58X6qWealm3jgNDJZPpL7dQEFki2KaJpz8kmY="
+          "integrity": "sha256-VTAOyY5/q+IWuMWtLiD+LEdWltZD0mlVaiD3mm9gNCE="
         }
       ]
     }
