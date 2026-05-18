@@ -1,10 +1,10 @@
 {
   "name": "git-clean-gone-branches",
   "dist-tags": {
-    "latest": "2.19.0"
+    "latest": "2.20.0"
   },
   "versions": {
-    "2.19.0": {
+    "2.20.0": {
       "name": "git-clean-gone-branches",
       "type": "skill",
       "description": "Clean up local branches whose remote tracking branch is gone. Use when the user says \"clean up branches\", \"delete gone branches\", \"prune local branches\", \"clean gone\", or wants to remove stale local branches that no longer exist on the remote. Also handles removing associated worktrees for branches that have them.",
