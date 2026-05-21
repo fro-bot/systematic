@@ -1,10 +1,10 @@
 {
   "name": "agent-correctness-reviewer",
   "dist-tags": {
-    "latest": "2.20.3"
+    "latest": "2.20.4"
   },
   "versions": {
-    "2.20.3": {
+    "2.20.4": {
       "name": "agent-correctness-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Reviews code for logic errors, edge cases, state management bugs, error propagation failures, and intent-vs-implementation mismatches.",
