@@ -1,10 +1,10 @@
 {
   "name": "agent-project-standards-reviewer",
   "dist-tags": {
-    "latest": "0.0.0-dev"
+    "latest": "2.20.3"
   },
   "versions": {
-    "0.0.0-dev": {
+    "2.20.3": {
       "name": "agent-project-standards-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Audits changes against the project's own AGENTS.md standards -- frontmatter rules, reference inclusion, naming conventions, cross-platform portability, and tool selection policies.",
