@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "2.20.5"
+    "latest": "2.20.6"
   },
   "versions": {
-    "2.20.5": {
+    "2.20.6": {
       "name": "compound-docs",
       "type": "skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
@@ -12,7 +12,7 @@
         {
           "path": "skills/compound-docs/SKILL.md",
           "target": "skills/compound-docs/SKILL.md",
-          "integrity": "sha256-9sE0L202wxS2TnX8KHBsRrYy2l7sILl8F7nW2SJ8SM0="
+          "integrity": "sha256-r86/zgVddb4cKSDCRU2bCqHwfarJr8GxVv9NPThzJkU="
         },
         {
           "path": "skills/compound-docs/assets/critical-pattern-template.md",
