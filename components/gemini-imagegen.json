@@ -1,10 +1,10 @@
 {
   "name": "gemini-imagegen",
   "dist-tags": {
-    "latest": "2.20.0"
+    "latest": "2.20.1"
   },
   "versions": {
-    "2.20.0": {
+    "2.20.1": {
       "name": "gemini-imagegen",
       "type": "skill",
       "description": "This skill should be used when generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, creating stickers, product mockups, or any image generation/manipulation task. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images.",
