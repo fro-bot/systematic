@@ -1,10 +1,10 @@
 {
   "name": "todo-resolve",
   "dist-tags": {
-    "latest": "2.20.2"
+    "latest": "0.0.0-dev"
   },
   "versions": {
-    "2.20.2": {
+    "0.0.0-dev": {
       "name": "todo-resolve",
       "type": "skill",
       "description": "Use when batch-resolving approved todos, especially after code review or triage sessions",

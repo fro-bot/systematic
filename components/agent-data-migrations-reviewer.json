@@ -1,10 +1,10 @@
 {
   "name": "agent-data-migrations-reviewer",
   "dist-tags": {
-    "latest": "2.20.2"
+    "latest": "0.0.0-dev"
   },
   "versions": {
-    "2.20.2": {
+    "0.0.0-dev": {
       "name": "agent-data-migrations-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches migration files, schema changes, data transformations, or backfill scripts. Reviews code for data integrity and migration safety.",
