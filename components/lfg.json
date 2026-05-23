@@ -1,10 +1,10 @@
 {
   "name": "lfg",
   "dist-tags": {
-    "latest": "2.22.0"
+    "latest": "2.23.0"
   },
   "versions": {
-    "2.22.0": {
+    "2.23.0": {
       "name": "lfg",
       "type": "skill",
       "description": "Full autonomous engineering workflow",
