@@ -1,10 +1,10 @@
 {
   "name": "agent-julik-frontend-races-reviewer",
   "dist-tags": {
-    "latest": "2.20.6"
+    "latest": "2.21.0"
   },
   "versions": {
-    "2.20.6": {
+    "2.21.0": {
       "name": "agent-julik-frontend-races-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches async UI code, Stimulus/Turbo lifecycles, or DOM-timing-sensitive frontend behavior. Reviews code for race conditions and janky UI failure modes.",
