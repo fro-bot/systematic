@@ -1,10 +1,10 @@
 {
   "name": "agent-data-migration-expert",
   "dist-tags": {
-    "latest": "2.23.4"
+    "latest": "2.23.5"
   },
   "versions": {
-    "2.23.4": {
+    "2.23.5": {
       "name": "agent-data-migration-expert",
       "type": "agent",
       "description": "Validates data migrations, backfills, and production data transformations against reality. Use when PRs involve ID mappings, column renames, enum conversions, or schema changes.",

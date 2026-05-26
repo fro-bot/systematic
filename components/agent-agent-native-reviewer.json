@@ -1,10 +1,10 @@
 {
   "name": "agent-agent-native-reviewer",
   "dist-tags": {
-    "latest": "2.23.4"
+    "latest": "2.23.5"
   },
   "versions": {
-    "2.23.4": {
+    "2.23.5": {
       "name": "agent-agent-native-reviewer",
       "type": "agent",
       "description": "Reviews code to ensure agent-native parity -- any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts.",
