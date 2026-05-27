@@ -1,10 +1,10 @@
 {
   "name": "slfg",
   "dist-tags": {
-    "latest": "2.23.5"
+    "latest": "2.23.6"
   },
   "versions": {
-    "2.23.5": {
+    "2.23.6": {
       "name": "slfg",
       "type": "skill",
       "description": "Full autonomous engineering workflow using swarm mode for parallel execution",
