@@ -1,10 +1,10 @@
 {
   "name": "writing-skills",
   "dist-tags": {
-    "latest": "2.24.0"
+    "latest": "0.0.0-dev"
   },
   "versions": {
-    "2.24.0": {
+    "0.0.0-dev": {
       "name": "writing-skills",
       "type": "skill",
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
@@ -42,7 +42,7 @@
         {
           "path": "skills/writing-skills/scripts/render-graphs.js",
           "target": "skills/writing-skills/scripts/render-graphs.js",
-          "integrity": "sha256-JAEblUDIdyTOKkalZeAoEe94Odb9gvcvltvpfy28qaM="
+          "integrity": "sha256-pMuZb67+Rms/mwO36qjxt9JJEvHPmTd5jWOmgm4Zp8w="
         }
       ]
     }
