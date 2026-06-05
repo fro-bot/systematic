@@ -1,10 +1,10 @@
 {
   "name": "ce-plan",
   "dist-tags": {
-    "latest": "2.25.0"
+    "latest": "2.26.0"
   },
   "versions": {
-    "2.25.0": {
+    "2.26.0": {
       "name": "ce-plan",
       "type": "skill",
       "description": "Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-plan/SKILL.md",
           "target": "skills/ce-plan/SKILL.md",
-          "integrity": "sha256-sj0alTwciVeCKbvhwdZO9STiua7qTgMLKoCE4PGPpbI="
+          "integrity": "sha256-cky7nFKEVWyWwDyqtzMGmM2Q0xl3znvN5wMf0DXzUL0="
         },
         {
           "path": "skills/ce-plan/references/deepening-workflow.md",
@@ -20,14 +20,29 @@
           "integrity": "sha256-vLJILUoNSyAkI+ww/FjKSUHm+/KULe10kuFW6JbhCYo="
         },
         {
+          "path": "skills/ce-plan/references/markdown-rendering.md",
+          "target": "skills/ce-plan/references/markdown-rendering.md",
+          "integrity": "sha256-Lx9y1fAUTY69sHz2NyUEaRLh8biAIMLVw88JkGs1Ivo="
+        },
+        {
           "path": "skills/ce-plan/references/plan-handoff.md",
           "target": "skills/ce-plan/references/plan-handoff.md",
-          "integrity": "sha256-KNzE6nEE4ykki7U4mcC7gfSnCjS89Pig37DkyEOi560="
+          "integrity": "sha256-oGAwPChLpdy8yvqn6lL85HfPwbciw3EUDUcHtNK7Z7E="
+        },
+        {
+          "path": "skills/ce-plan/references/plan-sections.md",
+          "target": "skills/ce-plan/references/plan-sections.md",
+          "integrity": "sha256-dmHnNzhMoQotxWRp/Vb3IP8yhifEGTFKVpE1Zv8IhWw="
+        },
+        {
+          "path": "skills/ce-plan/references/synthesis-summary.md",
+          "target": "skills/ce-plan/references/synthesis-summary.md",
+          "integrity": "sha256-iI+wA28mu+LTUCCkcssaGBLvisIe+hiJxkY9ZE7o57A="
         },
         {
           "path": "skills/ce-plan/references/universal-planning.md",
           "target": "skills/ce-plan/references/universal-planning.md",
-          "integrity": "sha256-DavgWckrK/zr6xWPJan9lGZw7mfohNBuzd2SKfVrmQw="
+          "integrity": "sha256-/EU5GOggmUt6Ypfk8jsrkhINEC1ueO2mp+FBcJp8h8c="
         },
         {
           "path": "skills/ce-plan/references/visual-communication.md",

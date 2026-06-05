@@ -1,10 +1,10 @@
 {
   "name": "ce-brainstorm",
   "dist-tags": {
-    "latest": "2.25.0"
+    "latest": "2.26.0"
   },
   "versions": {
-    "2.25.0": {
+    "2.26.0": {
       "name": "ce-brainstorm",
       "type": "skill",
       "description": "Explore requirements and approaches through collaborative dialogue before writing a right-sized requirements document and planning implementation. Use for feature ideas, problem framing, when the user says 'let's brainstorm', or when they want to think through options before deciding what to build. Also use when a user describes a vague or ambitious feature request, asks 'what should we build', 'help me think through X', presents a problem with multiple valid solutions, or seems unsure about scope or direction — even if they don't explicitly ask to brainstorm.",
@@ -12,7 +12,12 @@
         {
           "path": "skills/ce-brainstorm/SKILL.md",
           "target": "skills/ce-brainstorm/SKILL.md",
-          "integrity": "sha256-eO2t8SQp/fbr8u89LqoFIxGwDTknJjGaYLqfls9WI8E="
+          "integrity": "sha256-C4tzbE/lwMXiDizP7UT9IA5YZhkfLsu5RwINwdYLgVY="
+        },
+        {
+          "path": "skills/ce-brainstorm/references/brainstorm-sections.md",
+          "target": "skills/ce-brainstorm/references/brainstorm-sections.md",
+          "integrity": "sha256-6HvVtkS2u7r18hAstBNPB52oK2oeBv80y305BgD/tcM="
         },
         {
           "path": "skills/ce-brainstorm/references/handoff.md",
@@ -20,14 +25,29 @@
           "integrity": "sha256-2MlBnsYsUKXSIPjX7ho1cF6zEnT8eX6pBByCNrKKUVI="
         },
         {
+          "path": "skills/ce-brainstorm/references/markdown-rendering.md",
+          "target": "skills/ce-brainstorm/references/markdown-rendering.md",
+          "integrity": "sha256-SGkU0MyBDOnbXMa/3bTuN7iDlx4GnWIQ7xp+5omlVLs="
+        },
+        {
           "path": "skills/ce-brainstorm/references/requirements-capture.md",
           "target": "skills/ce-brainstorm/references/requirements-capture.md",
-          "integrity": "sha256-iTnEnqA4nI8vuevMxws8ugNabT3GARrlFZRO7H+/iSk="
+          "integrity": "sha256-FIP85ln1aXudWRs8kaopWA3G/FMhmx1HoS6cBI4sruU="
+        },
+        {
+          "path": "skills/ce-brainstorm/references/synthesis-summary.md",
+          "target": "skills/ce-brainstorm/references/synthesis-summary.md",
+          "integrity": "sha256-XvEqGZxH7jSmU9+/yT8ftVjyPfHOO91Ens8kqgLRsNA="
         },
         {
           "path": "skills/ce-brainstorm/references/universal-brainstorming.md",
           "target": "skills/ce-brainstorm/references/universal-brainstorming.md",
-          "integrity": "sha256-WRWZzQm7mhDeJCLne2oTsdPlkm1qgmFQ9qCBnI/YNjs="
+          "integrity": "sha256-rkOY2INta9vWLO6WMc7B+gTCjX8wESwAz81S2Skak+A="
+        },
+        {
+          "path": "skills/ce-brainstorm/references/visual-communication.md",
+          "target": "skills/ce-brainstorm/references/visual-communication.md",
+          "integrity": "sha256-W8jnsxzDed5MVudDladPQOH6UpWTc47i8QtyM9AbdS0="
         }
       ]
     }
