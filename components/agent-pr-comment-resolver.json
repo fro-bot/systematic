@@ -1,10 +1,10 @@
 {
   "name": "agent-pr-comment-resolver",
   "dist-tags": {
-    "latest": "2.27.0"
+    "latest": "2.28.0"
   },
   "versions": {
-    "2.27.0": {
+    "2.28.0": {
       "name": "agent-pr-comment-resolver",
       "type": "agent",
       "description": "Evaluates and resolves one or more related PR review threads -- assesses validity, implements fixes, and returns structured summaries with reply text. Spawned by the resolve-pr-feedback skill.",
