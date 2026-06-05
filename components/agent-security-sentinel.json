@@ -1,10 +1,10 @@
 {
   "name": "agent-security-sentinel",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-security-sentinel",
       "type": "agent",
       "description": "Performs security audits for vulnerabilities, input validation, auth/authz, hardcoded secrets, and OWASP compliance. Use when reviewing code for security issues or before deployment.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/security-sentinel.md",
           "target": "agents/review/security-sentinel.md",
-          "integrity": "sha256-zBverotUU7VtLPuGOhpu8oDiLaauIv1vC0I/0L460xY="
+          "integrity": "sha256-sxMxoz9gEckfCZrKypyZo80Q5ABICoJ4+POjS/kuC0M="
         }
       ]
     }

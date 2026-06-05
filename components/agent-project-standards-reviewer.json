@@ -1,10 +1,10 @@
 {
   "name": "agent-project-standards-reviewer",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-project-standards-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Audits changes against the project's own AGENTS.md standards -- frontmatter rules, reference inclusion, naming conventions, cross-platform portability, and tool selection policies.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/project-standards-reviewer.md",
           "target": "agents/review/project-standards-reviewer.md",
-          "integrity": "sha256-BOa4F95oW7TFcv5CdB+EEmuZI2TL86yWViWP6Dj+YMY="
+          "integrity": "sha256-tOdTGNNLrBD5z5mRF6bO4Tx+CO48mmv74KNVIslnjEQ="
         }
       ]
     }

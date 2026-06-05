@@ -1,10 +1,10 @@
 {
   "name": "agent-repo-research-analyst",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-repo-research-analyst",
       "type": "agent",
       "description": "Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/research/repo-research-analyst.md",
           "target": "agents/research/repo-research-analyst.md",
-          "integrity": "sha256-ViUdONoB3eDzC/yGGB00D08gBfwsUzERJWPKuLdczLA="
+          "integrity": "sha256-6QOpmUhHVn1s6gYbYwnD4xPCYONi8qDtc1TkOReTe1g="
         }
       ]
     }

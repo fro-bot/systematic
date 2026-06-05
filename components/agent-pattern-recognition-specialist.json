@@ -1,10 +1,10 @@
 {
   "name": "agent-pattern-recognition-specialist",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-pattern-recognition-specialist",
       "type": "agent",
       "description": "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/pattern-recognition-specialist.md",
           "target": "agents/review/pattern-recognition-specialist.md",
-          "integrity": "sha256-B7OzF3ua9OHyX1LX21kL1ORSNosO4hu++b+u7nudNW4="
+          "integrity": "sha256-uKMRL8Omcdn7+g9WXm1MLmVnYGEm2iBUaf7UlLdR0K8="
         }
       ]
     }

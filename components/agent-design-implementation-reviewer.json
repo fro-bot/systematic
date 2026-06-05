@@ -1,10 +1,10 @@
 {
   "name": "agent-design-implementation-reviewer",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-design-implementation-reviewer",
       "type": "agent",
       "description": "Visually compares live UI implementation against Figma designs and provides detailed feedback on discrepancies. Use after writing or modifying HTML/CSS/React components to verify design fidelity.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/design/design-implementation-reviewer.md",
           "target": "agents/design/design-implementation-reviewer.md",
-          "integrity": "sha256-G6m9NJicXi7yd70Kql0Hlh8HMDEdPf2xaoAfRl23J5s="
+          "integrity": "sha256-5MYk5wRMl764CvpHsmFyksH8c1wWkgTlKw+S2b7nrtk="
         }
       ]
     }

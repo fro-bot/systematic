@@ -1,10 +1,10 @@
 {
   "name": "agent-data-integrity-guardian",
   "dist-tags": {
-    "latest": "2.26.0"
+    "latest": "2.27.0"
   },
   "versions": {
-    "2.26.0": {
+    "2.27.0": {
       "name": "agent-data-integrity-guardian",
       "type": "agent",
       "description": "Reviews database migrations, data models, and persistent data code for safety. Use when checking migration safety, data constraints, transaction boundaries, or privacy compliance.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/data-integrity-guardian.md",
           "target": "agents/review/data-integrity-guardian.md",
-          "integrity": "sha256-o/asgXlvwuD925XQlzVoGE4AdFwvauCAjyKBJq7qvZw="
+          "integrity": "sha256-SFczWXrhivO+BQvAGgsqIawdLzLs7E4UkWQFoqIVcFk="
         }
       ]
     }
