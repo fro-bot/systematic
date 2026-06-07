@@ -1,10 +1,10 @@
 {
   "name": "setup",
   "dist-tags": {
-    "latest": "2.29.0"
+    "latest": "2.30.0"
   },
   "versions": {
-    "2.29.0": {
+    "2.30.0": {
       "name": "setup",
       "type": "skill",
       "description": "Configure project-level settings for systematic workflows. Currently a placeholder — review agent selection is handled automatically by ce:review.",

@@ -1,10 +1,10 @@
 {
   "name": "changelog",
   "dist-tags": {
-    "latest": "2.29.0"
+    "latest": "2.30.0"
   },
   "versions": {
-    "2.29.0": {
+    "2.30.0": {
       "name": "changelog",
       "type": "skill",
       "description": "Create engaging changelogs for recent merges to main branch",
