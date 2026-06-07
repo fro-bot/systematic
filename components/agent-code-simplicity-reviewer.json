@@ -1,10 +1,10 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "2.28.0"
+    "latest": "2.29.0"
   },
   "versions": {
-    "2.28.0": {
+    "2.29.0": {
       "name": "agent-code-simplicity-reviewer",
       "type": "agent",
       "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/code-simplicity-reviewer.md",
           "target": "agents/review/code-simplicity-reviewer.md",
-          "integrity": "sha256-pbDZUI07oPMYvma3Fav3SQ5LFRo7FouwlDMZU3fZOpI="
+          "integrity": "sha256-FvGfSS3RGXAPC6hQ5DdTdlbKjQF5rYTvp7qKnhFAR08="
         }
       ]
     }

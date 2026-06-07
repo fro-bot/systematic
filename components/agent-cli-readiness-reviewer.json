@@ -1,10 +1,10 @@
 {
   "name": "agent-cli-readiness-reviewer",
   "dist-tags": {
-    "latest": "2.28.0"
+    "latest": "2.29.0"
   },
   "versions": {
-    "2.28.0": {
+    "2.29.0": {
       "name": "agent-cli-readiness-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches CLI command definitions, argument parsing, or command handler implementations. Reviews CLI code for agent readiness -- how well the CLI serves autonomous agents, not just human users.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/cli-readiness-reviewer.md",
           "target": "agents/review/cli-readiness-reviewer.md",
-          "integrity": "sha256-2EwtGC+WyadxzCOQgdCf14HUGxq8ePoYZjodvgqZ+y4="
+          "integrity": "sha256-61P2yeoMjjgSZKjK61MhexebZ5HWENJXA2Amn7EN6l8="
         }
       ]
     }

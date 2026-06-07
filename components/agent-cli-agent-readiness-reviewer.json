@@ -1,10 +1,10 @@
 {
   "name": "agent-cli-agent-readiness-reviewer",
   "dist-tags": {
-    "latest": "2.28.0"
+    "latest": "2.29.0"
   },
   "versions": {
-    "2.28.0": {
+    "2.29.0": {
       "name": "agent-cli-agent-readiness-reviewer",
       "type": "agent",
       "description": "Reviews CLI source code, plans, or specs for AI agent readiness using a severity-based rubric focused on whether a CLI is merely usable by agents or genuinely optimized for them.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/cli-agent-readiness-reviewer.md",
           "target": "agents/review/cli-agent-readiness-reviewer.md",
-          "integrity": "sha256-UoyUMhuPRRqpWrs+3gYbBjy9P5aQcQGEwySA/TrlLFo="
+          "integrity": "sha256-7sAkkTYTiYzBHv1HwluihXyotG88GT9hZVbbtKZELKY="
         }
       ]
     }

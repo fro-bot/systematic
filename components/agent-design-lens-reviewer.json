@@ -1,10 +1,10 @@
 {
   "name": "agent-design-lens-reviewer",
   "dist-tags": {
-    "latest": "2.28.0"
+    "latest": "2.29.0"
   },
   "versions": {
-    "2.28.0": {
+    "2.29.0": {
       "name": "agent-design-lens-reviewer",
       "type": "agent",
       "description": "Reviews planning documents for missing design decisions -- information architecture, interaction states, user flows, and AI slop risk. Uses dimensional rating to identify gaps. Spawned by the document-review skill.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/document-review/design-lens-reviewer.md",
           "target": "agents/document-review/design-lens-reviewer.md",
-          "integrity": "sha256-ZY7z7oTpYIaCJaBKYRbC/Qd2kPsLWcXMwNxV/mObfmo="
+          "integrity": "sha256-IHXscbgOgqPb9iQr+HU/bb2orKWunxK/T/eNQsZQrM8="
         }
       ]
     }

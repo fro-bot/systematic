@@ -1,10 +1,10 @@
 {
   "name": "agent-previous-comments-reviewer",
   "dist-tags": {
-    "latest": "2.28.0"
+    "latest": "2.29.0"
   },
   "versions": {
-    "2.28.0": {
+    "2.29.0": {
       "name": "agent-previous-comments-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when reviewing a PR that has existing review comments or review threads. Checks whether prior feedback has been addressed in the current diff.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/review/previous-comments-reviewer.md",
           "target": "agents/review/previous-comments-reviewer.md",
-          "integrity": "sha256-18OWoBiTPMpsHfPY+7pPRuYjmXXgVPPynNQ1FLGMliA="
+          "integrity": "sha256-1hufVg153jlTGmstaBfOoA1z8N2lqpp3ghQ+mJ52l2s="
         }
       ]
     }
