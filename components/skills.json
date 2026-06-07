@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.30.1"
+    "latest": "2.31.0"
   },
   "versions": {
-    "2.30.1": {
+    "2.31.0": {
       "name": "skills",
       "type": "bundle",
       "description": "All Systematic skills",
