@@ -1,10 +1,10 @@
 {
   "name": "orchestrating-subagents",
   "dist-tags": {
-    "latest": "2.31.0"
+    "latest": "2.31.1"
   },
   "versions": {
-    "2.31.0": {
+    "2.31.1": {
       "name": "orchestrating-subagents",
       "type": "skill",
       "description": "Use when dispatching parallel or serial subagents in OpenCode, coordinating multi-unit plan execution, synthesizing results from independent subagent runs, or handling subagent failure and retry. Triggers on requests to run tasks in parallel, divide work across subagents, orchestrate a pipeline of dependent steps, or coordinate multiple agents without shared-file conflicts.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/orchestrating-subagents/SKILL.md",
           "target": "skills/orchestrating-subagents/SKILL.md",
-          "integrity": "sha256-KKQm/6g6FsJLlTQ6nBOknC/r842xLUofOy1H/yznaSI="
+          "integrity": "sha256-qp0A9/7vliKtNImazSbGeQnfYOX5xfMbwra0nid5BPA="
         }
       ]
     }
