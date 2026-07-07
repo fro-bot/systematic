@@ -1,10 +1,10 @@
 {
   "name": "test-driven-development",
   "dist-tags": {
-    "latest": "2.33.1"
+    "latest": "2.33.2"
   },
   "versions": {
-    "2.33.1": {
+    "2.33.2": {
       "name": "test-driven-development",
       "type": "skill",
       "description": "Use when implementing any feature or bugfix, before writing implementation code",
