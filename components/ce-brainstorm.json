@@ -1,10 +1,10 @@
 {
   "name": "ce-brainstorm",
   "dist-tags": {
-    "latest": "3.0.3"
+    "latest": "3.1.0"
   },
   "versions": {
-    "3.0.3": {
+    "3.1.0": {
       "name": "ce-brainstorm",
       "type": "skill",
       "description": "Explore requirements and approaches through collaborative dialogue before writing a right-sized requirements document and planning implementation. Use for feature ideas, problem framing, when the user says 'let's brainstorm', or when they want to think through options before deciding what to build. Also use when a user describes a vague or ambitious feature request, asks 'what should we build', 'help me think through X', presents a problem with multiple valid solutions, or seems unsure about scope or direction — even if they don't explicitly ask to brainstorm.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-brainstorm/SKILL.md",
           "target": "skills/ce-brainstorm/SKILL.md",
-          "integrity": "sha256-C4tzbE/lwMXiDizP7UT9IA5YZhkfLsu5RwINwdYLgVY="
+          "integrity": "sha256-waXT3bfq07ZII0S1AJBk810DrYnY/aCuQQQZAziuyyU="
         },
         {
           "path": "skills/ce-brainstorm/references/brainstorm-sections.md",

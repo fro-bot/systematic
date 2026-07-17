@@ -1,10 +1,10 @@
 {
   "name": "git-commit",
   "dist-tags": {
-    "latest": "3.0.3"
+    "latest": "3.1.0"
   },
   "versions": {
-    "3.0.3": {
+    "3.1.0": {
       "name": "git-commit",
       "type": "skill",
       "description": "Create a git commit with a clear, value-communicating message. Use when the user says \"commit\", \"commit this\", \"save my changes\", \"create a commit\", or wants to commit staged or unstaged work. Produces well-structured commit messages that follow repo conventions when they exist, and defaults to conventional commit format otherwise.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/git-commit/SKILL.md",
           "target": "skills/git-commit/SKILL.md",
-          "integrity": "sha256-XOOqbHHO2q3x0ZSRDzpmfO16YOHD1tZsuTCendKsM1s="
+          "integrity": "sha256-DEViioHLfbn5gP34WJmK6RzynK9u0YSLeGwHvoQckCc="
         }
       ]
     }
