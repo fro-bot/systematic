@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "2.33.3"
+    "latest": "3.0.0"
   },
   "versions": {
-    "2.33.3": {
+    "3.0.0": {
       "name": "standalone",
       "type": "profile",
       "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",
@@ -22,7 +22,7 @@
         {
           "path": "registry/files/profiles/standalone/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-3Fm7AxgK91oyhr2MXwSulYmK4emMFE85RbxACLGeQLQ="
+          "integrity": "sha256-8CiZwXkOjaoHN84e9sqKfYMh92wNXr81M3Ed9tiBxzg="
         }
       ]
     }

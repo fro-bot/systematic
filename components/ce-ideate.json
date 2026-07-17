@@ -1,10 +1,10 @@
 {
   "name": "ce-ideate",
   "dist-tags": {
-    "latest": "2.33.3"
+    "latest": "3.0.0"
   },
   "versions": {
-    "2.33.3": {
+    "3.0.0": {
       "name": "ce-ideate",
       "type": "skill",
       "description": "Generate and critically evaluate grounded improvement ideas for the current project. Use when asking what to improve, requesting idea generation, exploring surprising improvements, or wanting the AI to proactively suggest strong project directions before brainstorming one in depth. Triggers on phrases like 'what should I improve', 'give me ideas', 'ideate on this project', 'surprise me with improvements', 'what would you change', or any request for AI-generated project improvement suggestions rather than refining the user's own idea.",
@@ -17,7 +17,7 @@
         {
           "path": "skills/ce-ideate/references/post-ideation-workflow.md",
           "target": "skills/ce-ideate/references/post-ideation-workflow.md",
-          "integrity": "sha256-5I2WDTc8b2s8GQ4FOuhQSjuLZky++7ZadNjESrlKJ9Y="
+          "integrity": "sha256-f9DMcp73qerXTZwbevNjmOTUR7XYFJBEsg5EPim/P0I="
         }
       ]
     }

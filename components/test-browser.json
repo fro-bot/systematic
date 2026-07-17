@@ -1,10 +1,10 @@
 {
   "name": "test-browser",
   "dist-tags": {
-    "latest": "2.33.3"
+    "latest": "3.0.0"
   },
   "versions": {
-    "2.33.3": {
+    "3.0.0": {
       "name": "test-browser",
       "type": "skill",
       "description": "Run browser tests on pages affected by current PR or branch",
@@ -12,7 +12,7 @@
         {
           "path": "skills/test-browser/SKILL.md",
           "target": "skills/test-browser/SKILL.md",
-          "integrity": "sha256-LB0nFxWNaWM1B82Pgkn8NXCr72hpzt/+nd4vXQMZOB0="
+          "integrity": "sha256-XjE2GspBQSMPz1i1ty6yOAp7Vvrld0J6VKKll649r8s="
         }
       ]
     }

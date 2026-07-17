@@ -1,10 +1,10 @@
 {
   "name": "agent-design-iterator",
   "dist-tags": {
-    "latest": "2.33.3"
+    "latest": "3.0.0"
   },
   "versions": {
-    "2.33.3": {
+    "3.0.0": {
       "name": "agent-design-iterator",
       "type": "agent",
       "description": "Iteratively refines UI design through N screenshot-analyze-improve cycles. Use PROACTIVELY when design changes aren't coming together after 1-2 attempts, or when user requests iterative refinement.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/design/design-iterator.md",
           "target": "agents/design/design-iterator.md",
-          "integrity": "sha256-mBKIy6vs+KKTXeJ8fQMGr6mtxCEunRPiNCCwN0eYyRw="
+          "integrity": "sha256-om+U3XyyfgI8aSIlrPHnPGyXsXAUX7tOazpVmhh6J0I="
         }
       ]
     }
