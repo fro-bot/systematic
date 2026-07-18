@@ -1,10 +1,10 @@
 {
   "name": "test-browser",
   "dist-tags": {
-    "latest": "3.1.0"
+    "latest": "3.2.0"
   },
   "versions": {
-    "3.1.0": {
+    "3.2.0": {
       "name": "test-browser",
       "type": "skill",
       "description": "Run browser tests on pages affected by current PR or branch",

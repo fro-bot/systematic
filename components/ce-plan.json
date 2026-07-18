@@ -1,10 +1,10 @@
 {
   "name": "ce-plan",
   "dist-tags": {
-    "latest": "3.1.0"
+    "latest": "3.2.0"
   },
   "versions": {
-    "3.1.0": {
+    "3.2.0": {
       "name": "ce-plan",
       "type": "skill",
       "description": "Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-plan/SKILL.md",
           "target": "skills/ce-plan/SKILL.md",
-          "integrity": "sha256-eJjlmSKefUVo2RBWBXFn93LbHjPoUfHpPVzlTxV/gN4="
+          "integrity": "sha256-eLDH60rnFVDbVYYNdNKgIaYG91pEediobDmtjt2euVI="
         },
         {
           "path": "skills/ce-plan/references/deepening-workflow.md",
@@ -37,7 +37,7 @@
         {
           "path": "skills/ce-plan/references/synthesis-summary.md",
           "target": "skills/ce-plan/references/synthesis-summary.md",
-          "integrity": "sha256-iI+wA28mu+LTUCCkcssaGBLvisIe+hiJxkY9ZE7o57A="
+          "integrity": "sha256-kSeY2mR6gYJF4lxa9HCrPYxFgA2w3pp4q/EsP4nQ14g="
         },
         {
           "path": "skills/ce-plan/references/universal-planning.md",
