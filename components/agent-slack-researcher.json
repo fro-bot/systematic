@@ -1,10 +1,10 @@
 {
   "name": "agent-slack-researcher",
   "dist-tags": {
-    "latest": "3.2.1"
+    "latest": "3.2.2"
   },
   "versions": {
-    "3.2.1": {
+    "3.2.2": {
       "name": "agent-slack-researcher",
       "type": "agent",
       "description": "Searches Slack for organizational context. Use when the user explicitly asks. Requires a Slack MCP server.",
