@@ -75,10 +75,24 @@
 <p>This is on by default. If you already keep skills under <code dir="auto">.opencode/skills/</code>, <code dir="auto">.claude/skills/</code>, or <code dir="auto">.agents/skills/</code>, they show up as commands as soon as the plugin loads — no configuration required.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="where-skills-are-discovered">Where skills are discovered</h2><a class="sl-anchor-link" href="#where-skills-are-discovered"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Where skills are discovered”</span></a></div>
 <p>Systematic mirrors OpenCode’s own discovery contract exactly, so the command you invoke resolves to the same skill OpenCode’s <code dir="auto">skill</code> tool would load. Skills are discovered from six roots:</p>
-<p>| Scope | Locations |
-|-------|-----------|
-| Global | <code dir="auto">~/.claude/skills/</code>, <code dir="auto">~/.agents/skills/</code>, <code dir="auto">~/.config/opencode/skills/</code> |
-| Project | <code dir="auto">.opencode/skills/</code>, <code dir="auto">.claude/skills/</code>, <code dir="auto">.agents/skills/</code> |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scope</th><th>Locations</th></tr></thead><tbody><tr><td>Global</td><td><code dir="auto">~/.claude/skills/</code>, <code dir="auto">~/.agents/skills/</code>, <code dir="auto">~/.config/opencode/skills/</code></td></tr><tr><td>Project</td><td><code dir="auto">.opencode/skills/</code>, <code dir="auto">.claude/skills/</code>, <code dir="auto">.agents/skills/</code></td></tr></tbody></table>
 <p>Project locations are discovered by walking up from your working directory to the git worktree root, so a skill defined in a subdirectory of a monorepo is found too.</p>
 <p>When the same skill name exists in more than one location, the winner follows OpenCode’s precedence: <code dir="auto">.opencode</code> skills win over <code dir="auto">.claude</code>/<code dir="auto">.agents</code> skills, and project skills win over global ones. The command Systematic registers always points at that same winner.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="how-a-command-is-built">How a command is built</h2><a class="sl-anchor-link" href="#how-a-command-is-built"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “How a command is built”</span></a></div>

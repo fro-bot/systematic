@@ -88,12 +88,37 @@
 <p>Every identifier in the bundle — skill references, agent references — is rewritten at build time from Systematic’s internal source form (<code dir="auto">ce:&#x3C;name></code>, <code dir="auto">systematic:&#x3C;category>:&#x3C;name></code>) to Claude Code’s plugin-namespaced form (<code dir="auto">systematic:&#x3C;skill-dir></code>, <code dir="auto">systematic:&#x3C;agent-stem></code>). A build-time integrity check fails the build if any source-namespace form or unresolved reference leaks into the published bundle, so what installs is guaranteed self-consistent.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="the-layered-model">The layered model</h2><a class="sl-anchor-link" href="#the-layered-model"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The layered model”</span></a></div>
 <p>Systematic’s Claude Code integration is deliberately layered rather than relying on one mechanism to do everything:</p>
-<p>| Layer | Mechanism | Role |
-|---|---|---|
-| Enforcement | Plugin output style (<code dir="auto">force-for-plugin: true</code>) | Authoritative, install-alone behavioral discipline |
-| State | <code dir="auto">SessionStart</code> hook | Declarative session facts (skill/subagent availability) only |
-| Workflow | Native skills | Skill content and instructions, discovered natively |
-| Agents | Native subagents | Persona dispatch by name |</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Mechanism</th><th>Role</th></tr></thead><tbody><tr><td>Enforcement</td><td>Plugin output style (<code dir="auto">force-for-plugin: true</code>)</td><td>Authoritative, install-alone behavioral discipline</td></tr><tr><td>State</td><td><code dir="auto">SessionStart</code> hook</td><td>Declarative session facts (skill/subagent availability) only</td></tr><tr><td>Workflow</td><td>Native skills</td><td>Skill content and instructions, discovered natively</td></tr><tr><td>Agents</td><td>Native subagents</td><td>Persona dispatch by name</td></tr></tbody></table>
 <div class="sl-heading-wrapper level-h2"><h2 id="honest-capability-boundary">Honest capability boundary</h2><a class="sl-anchor-link" href="#honest-capability-boundary"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Honest capability boundary”</span></a></div>
 <p>Output-style enforcement is real and applies automatically on install, but it operates at the system-prompt level, the same layer as any other instruction the model receives — it is strong guidance, not a hard gate the model cannot violate. Treat it the way you would treat any other system-prompt-level policy: reliable in practice, not cryptographically enforced.</p>
 <p>Coverage also differs by surface. Plugin-bundled hooks fire app-wide, including in Cowork. A project-local <code dir="auto">.claude/settings.json</code> hook, by contrast, fires in the Code tab but not in Cowork — if you need state or enforcement to reach Cowork sessions, it has to come through the plugin, not a project-local hook.</p>
