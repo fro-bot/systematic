@@ -1,10 +1,10 @@
 {
   "name": "agent-deployment-verification-agent",
   "dist-tags": {
-    "latest": "3.2.3"
+    "latest": "3.2.4"
   },
   "versions": {
-    "3.2.3": {
+    "3.2.4": {
       "name": "agent-deployment-verification-agent",
       "type": "agent",
       "description": "Produces Go/No-Go deployment checklists with SQL verification queries, rollback procedures, and monitoring plans. Use when PRs touch production data, migrations, or risky data changes.",

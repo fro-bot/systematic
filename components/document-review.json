@@ -1,10 +1,10 @@
 {
   "name": "document-review",
   "dist-tags": {
-    "latest": "3.2.3"
+    "latest": "3.2.4"
   },
   "versions": {
-    "3.2.3": {
+    "3.2.4": {
       "name": "document-review",
       "type": "skill",
       "description": "Review requirements or plan documents using parallel persona agents that surface role-specific issues. Use when a requirements document or plan document exists and the user wants to improve it.",
@@ -12,27 +12,27 @@
         {
           "path": "skills/document-review/SKILL.md",
           "target": "skills/document-review/SKILL.md",
-          "integrity": "sha256-2pAVkZpH8sedjAGm36r/XVb+5dfXP9L727n5KQ7vhFQ="
+          "integrity": "sha256-bivJCv0mdMTCF0gKE/T7ghd+8RwWCMV8iRnHqAgJOrY="
         },
         {
           "path": "skills/document-review/references/findings-schema.json",
           "target": "skills/document-review/references/findings-schema.json",
-          "integrity": "sha256-mmDwo4zSUwcpWmtcTdGXlW1yiHq04MEER+0d39H7j58="
+          "integrity": "sha256-NqzlzPFDhAgPtFPuWDm6HuoZqipnwiYN+aSfBeqFR+w="
         },
         {
           "path": "skills/document-review/references/review-output-template.md",
           "target": "skills/document-review/references/review-output-template.md",
-          "integrity": "sha256-OnArXcP4SeQmslQQzWTvPM7whA9i3cvpi/Esl266p38="
+          "integrity": "sha256-2EiXmgDm8vVNLIYDaud6xt7QRhB1yDOburFrmA0m+uw="
         },
         {
           "path": "skills/document-review/references/subagent-template.md",
           "target": "skills/document-review/references/subagent-template.md",
-          "integrity": "sha256-9jKUf6lfUokvLbaFgdmU+u0cFlYzLIIYPYyR3GolMMQ="
+          "integrity": "sha256-rA/aaYy9Knk2j1jhOoqwt48g/x/82X+me3LU0IgoOjc="
         },
         {
           "path": "skills/document-review/references/synthesis-and-presentation.md",
           "target": "skills/document-review/references/synthesis-and-presentation.md",
-          "integrity": "sha256-RZXl9J3eEhagbJCDgZ4IEAWk0S9N31pA9RtETcnCBmY="
+          "integrity": "sha256-YcDB1y59DJhy7Noz+ekhseMLe79uu4cHfqu6bJ0+EyE="
         }
       ]
     }
