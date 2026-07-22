@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "3.2.5"
+    "latest": "3.2.6"
   },
   "versions": {
-    "3.2.5": {
+    "3.2.6": {
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
