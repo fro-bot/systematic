@@ -1,10 +1,10 @@
 {
   "name": "ce-compound",
   "dist-tags": {
-    "latest": "3.2.7"
+    "latest": "3.2.8"
   },
   "versions": {
-    "3.2.7": {
+    "3.2.8": {
       "name": "ce-compound",
       "type": "skill",
       "description": "Document a recently solved problem to compound your team's knowledge",

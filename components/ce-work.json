@@ -1,10 +1,10 @@
 {
   "name": "ce-work",
   "dist-tags": {
-    "latest": "3.2.7"
+    "latest": "3.2.8"
   },
   "versions": {
-    "3.2.7": {
+    "3.2.8": {
       "name": "ce-work",
       "type": "skill",
       "description": "Execute work efficiently while maintaining quality and finishing features",
