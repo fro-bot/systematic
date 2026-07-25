@@ -1,10 +1,10 @@
 {
   "name": "resolve-pr-feedback",
   "dist-tags": {
-    "latest": "3.2.6"
+    "latest": "3.2.7"
   },
   "versions": {
-    "3.2.6": {
+    "3.2.7": {
       "name": "resolve-pr-feedback",
       "type": "skill",
       "description": "Resolve PR review feedback by evaluating validity and fixing issues in parallel. Use when addressing PR review comments, resolving review threads, or fixing code review feedback.",
