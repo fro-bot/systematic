@@ -1,10 +1,10 @@
 {
   "name": "deploy-docs",
   "dist-tags": {
-    "latest": "3.3.0"
+    "latest": "3.3.1"
   },
   "versions": {
-    "3.3.0": {
+    "3.3.1": {
       "name": "deploy-docs",
       "type": "skill",
       "description": "Validate and prepare documentation for GitHub Pages deployment",
