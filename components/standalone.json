@@ -1,13 +1,13 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "3.4.0"
+    "latest": "3.4.1"
   },
   "versions": {
-    "3.4.0": {
+    "3.4.1": {
       "name": "standalone",
       "type": "profile",
-      "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration",
+      "description": "Standalone Systematic profile — compound-engineering loops with zero extra configuration",
       "files": [
         {
           "path": "registry/files/profiles/standalone/opencode.jsonc",
@@ -22,7 +22,7 @@
         {
           "path": "registry/files/profiles/standalone/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-8CiZwXkOjaoHN84e9sqKfYMh92wNXr81M3Ed9tiBxzg="
+          "integrity": "sha256-kOvo1paSP2NqfN15xSRjPzdyc/nFZq6UFn7xUT3OVls="
         }
       ]
     }

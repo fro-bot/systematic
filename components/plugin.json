@@ -1,13 +1,13 @@
 {
   "name": "plugin",
   "dist-tags": {
-    "latest": "3.4.0"
+    "latest": "3.4.1"
   },
   "versions": {
-    "3.4.0": {
+    "3.4.1": {
       "name": "plugin",
       "type": "plugin",
-      "description": "Systematic OpenCode plugin — registers skills, agents, commands, and bootstrap prompt",
+      "description": "Systematic plugin — registers skills, agents, commands, and bootstrap prompt",
       "files": [],
       "opencode": {
         "plugins": {

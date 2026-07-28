@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -357,7 +357,7 @@
     {
       "name": "standalone",
       "type": "profile",
-      "description": "Standalone Systematic profile — structured engineering workflows with zero extra configuration"
+      "description": "Standalone Systematic profile — compound-engineering loops with zero extra configuration"
     },
     {
       "name": "omo",
@@ -367,7 +367,7 @@
     {
       "name": "plugin",
       "type": "plugin",
-      "description": "Systematic OpenCode plugin — registers skills, agents, commands, and bootstrap prompt"
+      "description": "Systematic plugin — registers skills, agents, commands, and bootstrap prompt"
     }
   ]
 }
