@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "3.4.1"
+    "latest": "3.5.0"
   },
   "versions": {
-    "3.4.1": {
+    "3.5.0": {
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
@@ -27,7 +27,7 @@
         {
           "path": "skills/using-systematic/references/pi-profile.md",
           "target": "skills/using-systematic/references/pi-profile.md",
-          "integrity": "sha256-JxmpDG3cFdmRt0jJMR2c7Madr5abd8vYLJ6AhTmk2+g="
+          "integrity": "sha256-TSUbnF1l/jqxe2W7m/giQUwjaqja6TbnwR2aCruJiMY="
         }
       ]
     }
