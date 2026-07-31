@@ -1,10 +1,10 @@
 {
   "name": "agent-spec-flow-analyzer",
   "dist-tags": {
-    "latest": "3.5.1"
+    "latest": "3.5.2"
   },
   "versions": {
-    "3.5.1": {
+    "3.5.2": {
       "name": "agent-spec-flow-analyzer",
       "type": "agent",
       "description": "Analyzes specifications and feature descriptions for user flow completeness and gap identification. Use when a spec, plan, or feature description needs flow analysis, edge case discovery, or requirements validation.",
