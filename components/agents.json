@@ -1,10 +1,10 @@
 {
   "name": "agents",
   "dist-tags": {
-    "latest": "3.5.3"
+    "latest": "3.5.4"
   },
   "versions": {
-    "3.5.3": {
+    "3.5.4": {
       "name": "agents",
       "type": "bundle",
       "description": "All Systematic agents",
