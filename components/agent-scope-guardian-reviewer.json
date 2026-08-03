@@ -1,10 +1,10 @@
 {
   "name": "agent-scope-guardian-reviewer",
   "dist-tags": {
-    "latest": "3.5.7"
+    "latest": "3.5.8"
   },
   "versions": {
-    "3.5.7": {
+    "3.5.8": {
       "name": "agent-scope-guardian-reviewer",
       "type": "agent",
       "description": "Reviews planning documents for scope alignment and unjustified complexity -- challenges unnecessary abstractions, premature frameworks, and scope that exceeds stated goals. Spawned by the document-review skill.",

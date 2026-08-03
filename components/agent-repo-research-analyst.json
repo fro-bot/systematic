@@ -1,10 +1,10 @@
 {
   "name": "agent-repo-research-analyst",
   "dist-tags": {
-    "latest": "3.5.7"
+    "latest": "3.5.8"
   },
   "versions": {
-    "3.5.7": {
+    "3.5.8": {
       "name": "agent-repo-research-analyst",
       "type": "agent",
       "description": "Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions.",

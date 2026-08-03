@@ -1,10 +1,10 @@
 {
   "name": "agent-systematic-implementer",
   "dist-tags": {
-    "latest": "3.5.7"
+    "latest": "3.5.8"
   },
   "versions": {
-    "3.5.7": {
+    "3.5.8": {
       "name": "agent-systematic-implementer",
       "type": "agent",
       "description": "Implements one plan unit in a fresh subagent context and reports bounded changes back to the orchestrator.",
