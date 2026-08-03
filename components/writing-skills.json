@@ -1,10 +1,10 @@
 {
   "name": "writing-skills",
   "dist-tags": {
-    "latest": "3.5.6"
+    "latest": "3.5.7"
   },
   "versions": {
-    "3.5.6": {
+    "3.5.7": {
       "name": "writing-skills",
       "type": "skill",
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",

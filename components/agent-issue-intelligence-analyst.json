@@ -1,10 +1,10 @@
 {
   "name": "agent-issue-intelligence-analyst",
   "dist-tags": {
-    "latest": "3.5.6"
+    "latest": "3.5.7"
   },
   "versions": {
-    "3.5.6": {
+    "3.5.7": {
       "name": "agent-issue-intelligence-analyst",
       "type": "agent",
       "description": "Fetches and analyzes GitHub issues to surface recurring themes, pain patterns, and severity trends. Use when understanding a project's issue landscape, analyzing bug patterns for ideation, or summarizing what users are reporting.",
