@@ -1,10 +1,10 @@
 {
   "name": "agent-performance-reviewer",
   "dist-tags": {
-    "latest": "3.5.8"
+    "latest": "3.5.9"
   },
   "versions": {
-    "3.5.8": {
+    "3.5.9": {
       "name": "agent-performance-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches database queries, loop-heavy data transforms, caching layers, or I/O-intensive paths. Reviews code for runtime performance and scalability issues.",
