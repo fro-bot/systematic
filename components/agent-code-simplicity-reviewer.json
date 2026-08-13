@@ -1,10 +1,10 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "3.6.1"
+    "latest": "3.6.2"
   },
   "versions": {
-    "3.6.1": {
+    "3.6.2": {
       "name": "agent-code-simplicity-reviewer",
       "type": "agent",
       "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities.",

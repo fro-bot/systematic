@@ -1,10 +1,10 @@
 {
   "name": "agent-architecture-strategist",
   "dist-tags": {
-    "latest": "3.6.1"
+    "latest": "3.6.2"
   },
   "versions": {
-    "3.6.1": {
+    "3.6.2": {
       "name": "agent-architecture-strategist",
       "type": "agent",
       "description": "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors.",
