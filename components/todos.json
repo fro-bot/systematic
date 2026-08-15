@@ -1,10 +1,10 @@
 {
   "name": "todos",
   "dist-tags": {
-    "latest": "3.8.0"
+    "latest": "3.9.0"
   },
   "versions": {
-    "3.8.0": {
+    "3.9.0": {
       "name": "todos",
       "type": "skill",
       "description": "Use when creating durable work items, managing todo lifecycle, or tracking findings across sessions in the file-based todo system; when reviewing pending todos for approval, prioritizing code review findings, or interactively categorizing work items; or when batch-resolving approved todos, especially after code review or triage sessions",
