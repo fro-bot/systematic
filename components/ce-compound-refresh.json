@@ -1,10 +1,10 @@
 {
   "name": "ce-compound-refresh",
   "dist-tags": {
-    "latest": "3.9.0"
+    "latest": "3.9.1"
   },
   "versions": {
-    "3.9.0": {
+    "3.9.1": {
       "name": "ce-compound-refresh",
       "type": "skill",
       "description": "Refresh stale or drifting learnings and pattern docs in docs/solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing docs/solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation.",
