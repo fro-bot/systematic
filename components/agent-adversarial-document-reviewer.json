@@ -1,10 +1,10 @@
 {
   "name": "agent-adversarial-document-reviewer",
   "dist-tags": {
-    "latest": "3.10.0"
+    "latest": "3.10.1"
   },
   "versions": {
-    "3.10.0": {
+    "3.10.1": {
       "name": "agent-adversarial-document-reviewer",
       "type": "agent",
       "description": "Conditional document-review persona, selected when the document has >5 requirements or implementation units, makes significant architectural decisions, covers high-stakes domains, or proposes new abstractions. Challenges premises, surfaces unstated assumptions, and stress-tests decisions rather than evaluating document quality.",

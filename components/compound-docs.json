@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "3.10.0"
+    "latest": "3.10.1"
   },
   "versions": {
-    "3.10.0": {
+    "3.10.1": {
       "name": "compound-docs",
       "type": "skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",

@@ -1,18 +1,18 @@
 {
   "name": "agent-architecture-strategist",
   "dist-tags": {
-    "latest": "3.10.0"
+    "latest": "3.10.1"
   },
   "versions": {
-    "3.10.0": {
+    "3.10.1": {
       "name": "agent-architecture-strategist",
       "type": "agent",
-      "description": "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors.",
+      "description": "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors. Dispatched by deepen-plan and ce-plan's deepening workflow, not by ce:review.",
       "files": [
         {
           "path": "agents/review/architecture-strategist.md",
           "target": "agents/review/architecture-strategist.md",
-          "integrity": "sha256-RV4Tm9ykVFYTFqKHXiwT6GO0LfK2EeBRNWUJ/puAxQs="
+          "integrity": "sha256-ySbHTtl9xWi7Lg6QgJ5r3wykF4ZpbfqETEf6RVaXThU="
         }
       ]
     }
