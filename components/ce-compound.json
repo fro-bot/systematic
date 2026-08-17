@@ -1,10 +1,10 @@
 {
   "name": "ce-compound",
   "dist-tags": {
-    "latest": "3.10.1"
+    "latest": "3.10.2"
   },
   "versions": {
-    "3.10.1": {
+    "3.10.2": {
       "name": "ce-compound",
       "type": "skill",
       "description": "Document a recently solved problem to compound your team's knowledge",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-compound/SKILL.md",
           "target": "skills/ce-compound/SKILL.md",
-          "integrity": "sha256-AGrKgUQrFP7aNNvjGvU4NpG8gJdSj4hgEqjTsDGyZSI="
+          "integrity": "sha256-tg/dh41rqwXdwiGN44KwxhpmwAdZwbPkzDRNTT/N24A="
         },
         {
           "path": "skills/ce-compound/assets/resolution-template.md",

@@ -156,7 +156,7 @@
 <p>Run agents in parallel in the <strong>foreground</strong> (do not use background dispatch — the results are needed before proceeding):</p>
 <ol>
 <li>
-<p><strong>Quick context scan</strong> — dispatch a general-purpose sub-agent using the platform’s cheapest capable model (e.g., <code dir="auto">model: "haiku"</code> in OpenCode) with this prompt:</p>
+<p><strong>Quick context scan</strong> — dispatch <code dir="auto">systematic:research:repo-research-analyst</code> with this prompt:</p>
 <blockquote>
 <p>Read the project’s AGENTS.md (or AGENTS.md only as compatibility fallback, then README.md if neither exists), then discover the top-level directory layout using the native file-search/glob tool (e.g., <code dir="auto">Glob</code> with pattern <code dir="auto">*</code> or <code dir="auto">*/*</code> in OpenCode). Return a concise summary (under 30 lines) covering:</p>
 <ul>
