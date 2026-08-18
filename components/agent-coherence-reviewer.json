@@ -1,10 +1,10 @@
 {
   "name": "agent-coherence-reviewer",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "agent-coherence-reviewer",
       "type": "agent",
       "description": "Reviews planning documents for internal consistency -- contradictions between sections, terminology drift, structural issues, and ambiguity where readers would diverge. Spawned by the document-review skill.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/document-review/coherence-reviewer.md",
           "target": "agents/document-review/coherence-reviewer.md",
-          "integrity": "sha256-uFVzIYTtSWhHGVyrGQpQKWuQ9xMdmbl9YeLqNvH5+sA="
+          "integrity": "sha256-rNRQ4gqnIkDrsV2K85J+OTXpvx+f24vTp7LtCYEAXfk="
         }
       ]
     }

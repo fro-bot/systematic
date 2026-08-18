@@ -1,18 +1,18 @@
 {
   "name": "agent-pattern-recognition-specialist",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "agent-pattern-recognition-specialist",
       "type": "agent",
-      "description": "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns.",
+      "description": "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns. Dispatched by deepen-plan, ce-plan's deepening workflow, and ce-compound, not by ce:review.",
       "files": [
         {
           "path": "agents/review/pattern-recognition-specialist.md",
           "target": "agents/review/pattern-recognition-specialist.md",
-          "integrity": "sha256-GpxroQrMNiarQzWmovUEsViJH5YroFZ7o5O1HCKlMTU="
+          "integrity": "sha256-v6tc8+gn6GBYc6W0xeTFD8XItCc1MJkA/2LeJc0E/Lg="
         }
       ]
     }

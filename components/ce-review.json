@@ -1,10 +1,10 @@
 {
   "name": "ce-review",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "ce-review",
       "type": "skill",
       "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-review/SKILL.md",
           "target": "skills/ce-review/SKILL.md",
-          "integrity": "sha256-on1a/o0kwdsA2tDsxCQYjCtEketjjIlt2mQXU/MGl7I="
+          "integrity": "sha256-i8ikz0zOSVofMu+OhsZ9WcE0BPffO9HG9lTQmS+ooVM="
         },
         {
           "path": "skills/ce-review/references/diff-scope.md",
@@ -22,12 +22,12 @@
         {
           "path": "skills/ce-review/references/findings-schema.json",
           "target": "skills/ce-review/references/findings-schema.json",
-          "integrity": "sha256-BBLcf0hKYhInilnmiIln9FjsuUrpZwNOsRYvFRd8USE="
+          "integrity": "sha256-T0LsciYRN/GWXcBu4DpaA/m5LdNqx0rtO8YbJXTrlFs="
         },
         {
           "path": "skills/ce-review/references/persona-catalog.md",
           "target": "skills/ce-review/references/persona-catalog.md",
-          "integrity": "sha256-UDh2EmNxnM+g8CkAOTvrjzluVEb21zSOGrPD7jkEdHw="
+          "integrity": "sha256-3yGGqCk45CfRjgGZj5pnI1KCHda3Nn5E4lyy5KKlnHo="
         },
         {
           "path": "skills/ce-review/references/resolve-base.sh",
@@ -37,12 +37,12 @@
         {
           "path": "skills/ce-review/references/review-output-template.md",
           "target": "skills/ce-review/references/review-output-template.md",
-          "integrity": "sha256-Q5MtAegHwX4NOk55ImHIcUiHs2kMZZr7aa4W4I+1trA="
+          "integrity": "sha256-9zwuXPZEIU+Zi7Bk1thdSSPJV3+YjrhiNKlv7fwvF6w="
         },
         {
           "path": "skills/ce-review/references/subagent-template.md",
           "target": "skills/ce-review/references/subagent-template.md",
-          "integrity": "sha256-F3FMSVzJPE+A9qdotIPN95kxwzQZtYNM9x8y+FvOMsQ="
+          "integrity": "sha256-L20lDa+h+ViF+O1RyLKPPIJF/zE42NmPxXkNJY9+ZiU="
         },
         {
           "path": "skills/ce-review/references/validator-template.md",

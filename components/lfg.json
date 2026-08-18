@@ -1,10 +1,10 @@
 {
   "name": "lfg",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "lfg",
       "type": "skill",
       "description": "Full autonomous engineering workflow",
@@ -12,7 +12,7 @@
         {
           "path": "skills/lfg/SKILL.md",
           "target": "skills/lfg/SKILL.md",
-          "integrity": "sha256-6oOO4BGUPNemkNlGdQtFBiFeMSz/t3uSs615jjhmc6g="
+          "integrity": "sha256-eZ9i7GxCnblUwzTqvp7MdXCCgedM6uBep6hu8/BETHA="
         }
       ]
     }

@@ -1,6 +1,8 @@
 ---
 name: using-systematic
 description: Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions
+metadata:
+  harness-portability: neutral-v1
 ---
 
 <SUBAGENT-STOP>
@@ -27,8 +29,6 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 ## How to Access Skills
 
-Use the `systematic_skill` tool for Systematic bundled skills. Use the `skill` tool for non-Systematic skills. When you invoke a skill, its content is loaded and presented to you—follow it directly.
-
 # Using Skills
 
 ## The Rule
@@ -42,7 +42,7 @@ digraph skill_flow {
     "Already brainstormed?" [shape=diamond];
     "Invoke brainstorming skill" [shape=box];
     "Might any skill apply?" [shape=diamond];
-    "Invoke `systematic_skill` tool" [shape=box];
+    "Invoke the relevant skill via the active harness's skill-loading mechanism" [shape=box];
     "Announce: 'Using [skill] to [purpose]'" [shape=box];
     "Has checklist?" [shape=diamond];
     "Create todo per item" [shape=box];
@@ -55,9 +55,9 @@ digraph skill_flow {
     "Invoke brainstorming skill" -> "Might any skill apply?";
 
     "User message received" -> "Might any skill apply?";
-    "Might any skill apply?" -> "Invoke `systematic_skill` tool" [label="yes, even 1%"];
+    "Might any skill apply?" -> "Invoke the relevant skill via the active harness's skill-loading mechanism" [label="yes, even 1%"];
     "Might any skill apply?" -> "Respond (including clarifications)" [label="definitely not"];
-    "Invoke `systematic_skill` tool" -> "Announce: 'Using [skill] to [purpose]'";
+    "Invoke the relevant skill via the active harness's skill-loading mechanism" -> "Announce: 'Using [skill] to [purpose]'";
     "Announce: 'Using [skill] to [purpose]'" -> "Has checklist?";
     "Has checklist?" -> "Create todo per item" [label="yes"];
     "Has checklist?" -> "Follow skill exactly" [label="no"];
@@ -106,6 +106,12 @@ The skill itself tells you which.
 
 Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
 
-## Skill Resolution
+## Capability Resolution
 
-Systematic bundled skills are listed in the `systematic_skill` tool description. Use the `skill` tool for skills outside the Systematic plugin.
+The four capabilities are subagent delegation, blocking user interaction, task tracking, and skill loading.
+
+The bootstrap inlines the active harness profile naming the exact mechanisms for this session—consult it.
+
+When a mechanism is unavailable, present numbered options in chat and wait for questions, maintain a visible list for task tracking, and dispatch delegation sequentially or do the work inline.
+
+Check the workflow guard availability once per execution unit. If the guard reports `unavailable` or `guard-unavailable`, treat it as terminal for that unit: do not retry `systematic_workflow_start` or `systematic_workflow_complete`. Use the documented unguarded fallback only when authorized, and report the unavailable state once.

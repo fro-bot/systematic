@@ -2,6 +2,8 @@
 name: ce:plan
 description: "Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan."
 argument-hint: "[optional: feature description, requirements doc path, plan path to deepen, or any task to plan]"
+metadata:
+  harness-portability: neutral-v1
 ---
 
 # Create Technical Plan
@@ -16,7 +18,7 @@ This workflow produces a durable implementation plan. It does **not** implement 
 
 ## Interaction Method
 
-Use the platform's question tool when available. When asking the user a question, prefer the platform's blocking question tool if one exists (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini). Otherwise, present numbered options in chat and wait for the user's reply before proceeding.
+Use the platform's question tool when available. When asking the user a question, prefer the platform's blocking question tool if one exists (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait). Otherwise, present numbered options in chat and wait for the user's reply before proceeding.
 
 Ask one question at a time. Prefer a concise single-select choice when natural options exist.
 
@@ -138,7 +140,7 @@ If the bootstrap uncovers major unresolved product questions:
 
 If the bootstrap reveals that a different workflow would serve the user better:
 
-- **Symptom without a root cause** (user describes broken behavior but hasn't identified why) — announce that investigation is needed before planning and load the `ce:debug` skill. A plan requires a known problem to solve; debugging identifies what that problem is. Announce the routing clearly: "This needs investigation before planning — switching to ce:debug to find the root cause."
+- **Symptom without a root cause** (user describes broken behavior but hasn't identified why) — announce that investigation is needed before planning: a plan requires a known problem to solve, so the root cause must be identified first. Announce the routing clearly: "This needs investigation before planning — identify the root cause first, then return to planning."
 - **Clear task ready to execute** (known root cause, obvious fix, no architectural decisions) — suggest `ce:work` as a faster alternative alongside continuing with planning. The user decides.
 
 #### 0.5 Classify Outstanding Questions Before Planning
@@ -169,7 +171,7 @@ If depth is unclear, ask one targeted question and then continue.
 
 Surface call-outs to the user — the specific forks in scope or approach where user input materially changes the plan — so scope can be corrected **before Phase 1 research is spent**. Sub-agent dispatch (systematic:research:repo-research-analyst, systematic:research:learnings-researcher, etc.) is the expensive next step this phase guards against wasted effort on.
 
-Fires **only in solo invocation** — when Phase 0.2 found no upstream brainstorm doc AND Phase 0.4 stayed in ce:plan (did not route to ce:debug, ce:work, or universal-planning) AND Phase 0.5 cleared (no unresolved blockers) AND not on Phase 0.1 fast paths (resume normal, deepen-intent). Each guard is an explicit conditional. Skip Phase 0.7 entirely when any guard fails — brainstorm-sourced invocations defer to Phase 5.1.5 instead.
+Fires **only in solo invocation** — when Phase 0.2 found no upstream brainstorm doc AND Phase 0.4 stayed in ce:plan (did not route to ce:work or universal-planning) AND Phase 0.5 cleared (no unresolved blockers) AND not on Phase 0.1 fast paths (resume normal, deepen-intent). Each guard is an explicit conditional. Skip Phase 0.7 entirely when any guard fails — brainstorm-sourced invocations defer to Phase 5.1.5 instead.
 
 **Read `references/synthesis-summary.md` before composing the scoping synthesis.** It carries the affirmability test, keep-test criteria, detail test, summary shape budgets, granularity rules, anti-patterns, revision-vs-confirmation discipline, doc-shape routing, soft-cut behavior, self-redirect support, the worked PII compression example, and full headless-mode routing — all required for a well-shaped synthesis.
 
@@ -224,14 +226,17 @@ Prepare a concise planning context summary (a paragraph or two) to pass as input
 
 Run these agents in parallel:
 
-- Task systematic:research:repo-research-analyst(Scope: technology, architecture, patterns. {planning context summary})
-- Task systematic:research:learnings-researcher(planning context summary)
+- Dispatch `systematic:research:repo-research-analyst` — scope: technology, architecture, patterns, prior-art; pass the planning context summary to the technology, architecture, and patterns scopes. For the prior-art scope, pass only the independently stated concern — its trigger, effect, state, and integration boundary — plus the classified plan depth, rather than the planning context summary or proposed solution. Skip the prior-art scope for explicitly non-software planning and mechanical work that changes no behavior; make that exemption decision here at dispatch.
+- Dispatch `systematic:research:learnings-researcher` — pass the planning context summary.
 Collect:
 - Technology stack and versions (used in section 1.2 to make sharper external research decisions)
 - Architectural patterns and conventions to follow
 - Implementation patterns, relevant files, modules, and tests
+- Prior-art survey result: schema version, verdict, surveyed scope and freshness record, bounded budget, candidate ownership and dispositions, and any recorded acceptance
 - AGENTS.md guidance that materially affects the plan, with AGENTS.md used only as compatibility fallback when present
 - Institutional learnings from `docs/solutions/`
+
+When the prior-art scope runs, apply its verdict before continuing planning: an `unscoped` or `unresolved` result stops planning until the scope narrows, the budget rises, or the user explicitly accepts the uncertainty. Record that acceptance in the Prior-Art Survey section. In a run with no user present, either verdict fails the run rather than proceeding.
 
 **Slack context** (opt-in) — never auto-dispatch. Route by condition:
 
@@ -293,8 +298,8 @@ Announce the decision briefly before continuing. Examples:
 
 If Step 1.2 indicates external research is useful, run these agents in parallel:
 
-- Task systematic:research:best-practices-researcher(planning context summary)
-- Task systematic:research:framework-docs-researcher(planning context summary)
+- Dispatch `systematic:research:best-practices-researcher` — pass the planning context summary.
+- Dispatch `systematic:research:framework-docs-researcher` — pass the planning context summary.
 
 #### 1.4 Consolidate Research
 
@@ -322,7 +327,7 @@ This ensures flow analysis (Phase 1.5) runs and the confidence check (Phase 5.3)
 
 For **Standard** or **Deep** plans, or when user flow completeness is still unclear, run:
 
-- Task systematic:workflow:spec-flow-analyzer(planning context summary, research findings)
+- Dispatch `systematic:workflow:spec-flow-analyzer` — pass the planning context summary and research findings.
 
 Use the output to:
 - Identify missing edge cases, state transitions, or handoff gaps
@@ -550,6 +555,43 @@ deepened: YYYY-MM-DD  # optional, set when the confidence check substantively st
 
 - [Relevant external docs or best-practice source, if used]
 
+## Prior-Art Survey
+
+Include this section for every qualifying software-work or behavior-changing plan. Omit it only when Phase 1.1 explicitly applies the non-software or mechanical-no-behavior-change exemption. The section must contain exactly one fenced `json` block, and that block must validate against `references/prior-art-survey-schema.json`. Preserve the survey's schema-conforming structured result, including the schema version, verdict, surveyed scope, freshness record, bounded budget, candidate ownership and dispositions, and the acceptance record when present. A plan containing prose, placeholders, a missing block, multiple blocks, or a malformed/schema-invalid block is not compliant.
+
+Omit `scopes_considered` unless the verdict is `unscoped`, and omit `acceptance` unless the user has accepted an `unscoped` or `unresolved` verdict.
+
+```json
+{
+  "schema_version": 2,
+  "verdict": "reuse | extend | build-new-within-scope | unscoped | unresolved",
+  "scope": "<workspace or subtree searched>",
+  "freshness": {
+    "vcs_reference": "<VCS reference for the surveyed scope, when available>",
+    "scope_baseline": "<portable digest or baseline for the surveyed scope when VCS is unavailable>"
+  },
+  "budget": {
+    "max_search_passes": 1,
+    "max_candidate_inspections": 1,
+    "exhausted": false
+  },
+  "candidates": [
+    {
+      "path_or_symbol": "<repository-relative path or source symbol>",
+      "description": "<what it owns in the code's vocabulary>",
+      "disposition": "reuse | extend | insufficient | undispositioned",
+      "insufficiency_reason": "<required when verdict is build-new-within-scope>"
+    }
+  ],
+  "scopes_considered": ["<required for an unscoped verdict>"],
+  "acceptance": {
+    "accepted_by_user": true,
+    "accepted_verdict": "unscoped | unresolved",
+    "reason": "<what the user accepted and why planning may proceed>"
+  }
+}
+```
+
 ## Key Technical Decisions
 
 - [Decision]: [Rationale]
@@ -695,7 +737,7 @@ For larger `Deep` plans, extend the core template only when useful with sections
 
 Compose the plan using two paired references:
 
-- `references/plan-sections.md` — the section contract. Describes what the plan contains: the outcome the plan must enable for downstream consumers, the hard floor (Summary, Problem Frame, Requirements, KTDs, Implementation Units), the include-when-material catalog (HTD, Scope Boundaries, Open Questions, System-Wide Impact, Risks & Dependencies, Acceptance Examples, Documentation/Operational Notes, Sources & Research), the agency-driven escape hatch (introduce new sections when content warrants), and the ID/content rules.
+- `references/plan-sections.md` — the section contract. Describes what the plan contains: the outcome the plan must enable for downstream consumers, the hard floor (Summary, Problem Frame, Requirements, Prior-Art Survey, KTDs, Implementation Units), the include-when-material catalog (HTD, Scope Boundaries, Open Questions, System-Wide Impact, Risks & Dependencies, Acceptance Examples, Documentation/Operational Notes, Sources & Research), the agency-driven escape hatch (introduce new sections when content warrants), and the ID/content rules.
 - `references/markdown-rendering.md` — how to present the sections in markdown (table-vs-prose by content shape, ID prefix format, diagram rendering, etc.).
 
 The section catalog is the same regardless of plan depth. Format-specific principles live in the rendering reference. The Core Plan Template above (Section 4.2) is the canonical content authority — `plan-sections.md` is a rendering/ordering layer that describes how sections present, not which sections exist.
@@ -790,7 +832,7 @@ Then continue to Phase 5.2 without a blocking question.
 
 **REQUIRED: Write the plan file to disk before presenting any options.**
 
-Use the Write tool to save the complete plan to:
+Use the write tool to save the complete plan to:
 
 ```text
 docs/plans/YYYY-MM-DD-NNN-<type>-<descriptive-name>-plan.md

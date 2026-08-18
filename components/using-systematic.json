@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
@@ -12,7 +12,22 @@
         {
           "path": "skills/using-systematic/SKILL.md",
           "target": "skills/using-systematic/SKILL.md",
-          "integrity": "sha256-3QhIdq0UWBKJjrsM8euP+K5Rg1WWgIHLjJhRdpIH0jk="
+          "integrity": "sha256-v2liF9+O76P7n0WpZ96g5XSgP86cApPrFGuUglfB2Fo="
+        },
+        {
+          "path": "skills/using-systematic/references/claude-code-profile.md",
+          "target": "skills/using-systematic/references/claude-code-profile.md",
+          "integrity": "sha256-rp2wk49wYNWm5/5Q6FQNpo+dIrSwNjGe6R76I2Tfcy8="
+        },
+        {
+          "path": "skills/using-systematic/references/opencode-profile.md",
+          "target": "skills/using-systematic/references/opencode-profile.md",
+          "integrity": "sha256-GDiomf8KFYFyLTU/J61IBLxiP5RnJ+RFI74mTlBfrUA="
+        },
+        {
+          "path": "skills/using-systematic/references/pi-profile.md",
+          "target": "skills/using-systematic/references/pi-profile.md",
+          "integrity": "sha256-TSUbnF1l/jqxe2W7m/giQUwjaqja6TbnwR2aCruJiMY="
         }
       ]
     }

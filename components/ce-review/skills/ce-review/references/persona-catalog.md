@@ -1,6 +1,14 @@
 # Persona Catalog
 
-17 reviewer personas organized into always-on, cross-cutting conditional, and stack-specific conditional layers, plus CE-specific agents. The orchestrator uses this catalog to select which reviewers to spawn for each review.
+13 reviewer personas organized into always-on, cross-cutting conditional, and stack-specific conditional layers, plus CE-specific agents. The orchestrator uses this catalog to select which reviewers to spawn for each review.
+
+## Shared persona pool
+
+The `agents/review/` directory is a shared persona pool, not `ce:review`'s roster. Directory placement does not imply that a persona is selectable by `ce:review`. These shared personas are dispatched by other workflows and intentionally do not appear in this catalog's `ce:review` selection tables:
+
+- `systematic:review:architecture-strategist` — dispatched by `deepen-plan` and `ce-plan`'s deepening workflow for architectural analysis.
+- `systematic:review:pattern-recognition-specialist` — dispatched by `deepen-plan`, `ce-plan`'s deepening workflow, and `ce-compound` for consistency, duplication, and pattern analysis.
+- `systematic:review:code-simplicity-reviewer` — dispatched by `ce-compound` for code-heavy issues.
 
 ## Always-on (4 personas + 2 CE agents)
 
@@ -37,17 +45,13 @@ Spawned when the orchestrator identifies relevant patterns in the diff. The orch
 | `cli-readiness` | `systematic:review:cli-readiness-reviewer` | CLI command definitions, argument parsing, CLI framework usage, command handler implementations |
 | `previous-comments` | `systematic:review:previous-comments-reviewer` | **PR-only.** Reviewing a PR that has existing review comments or review threads from prior review rounds. Skip entirely when no PR metadata was gathered in Stage 1. |
 
-## Stack-Specific Conditional (5 personas)
+## Stack-Specific Conditional (1 persona)
 
 These reviewers keep their original opinionated lens. They are additive with the cross-cutting personas above, not replacements for them.
 
 | Persona | Agent | Select when diff touches... |
 |---------|-------|---------------------------|
-| `dhh-rails` | `systematic:review:dhh-rails-reviewer` | Rails architecture, service objects, authentication/session choices, Hotwire-vs-SPA boundaries, or abstractions that may fight Rails conventions |
-| `kieran-rails` | `systematic:review:kieran-rails-reviewer` | Rails controllers, models, views, jobs, components, routes, or other application-layer Ruby code where clarity and conventions matter |
-| `kieran-python` | `systematic:review:kieran-python-reviewer` | Python modules, endpoints, services, scripts, or typed domain code |
 | `kieran-typescript` | `systematic:review:kieran-typescript-reviewer` | TypeScript components, services, hooks, utilities, or shared types |
-| `julik-frontend-races` | `systematic:review:julik-frontend-races-reviewer` | Stimulus/Turbo controllers, DOM event wiring, timers, async UI flows, animations, or frontend state transitions with race potential |
 
 ## CE Conditional Agents (migration-specific)
 
@@ -55,7 +59,6 @@ These CE-native agents provide specialized analysis beyond what the persona agen
 
 | Agent | Focus |
 |-------|-------|
-| `systematic:review:schema-drift-detector` | Cross-references schema.rb changes against included migrations to catch unrelated drift |
 | `systematic:review:deployment-verification-agent` | Produces Go/No-Go deployment checklist with SQL verification queries and rollback procedures |
 
 ## Selection rules

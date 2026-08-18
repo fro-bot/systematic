@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "2.33.4"
+    "latest": "3.12.2"
   },
   "versions": {
-    "2.33.4": {
+    "3.12.2": {
       "name": "skills",
       "type": "bundle",
       "description": "All Systematic skills",
@@ -13,7 +13,6 @@
         "agent-browser",
         "agent-native-architecture",
         "agent-native-audit",
-        "andrew-kane-gem-writer",
         "ce-brainstorm",
         "ce-compound",
         "ce-compound-refresh",
@@ -21,19 +20,11 @@
         "ce-plan",
         "ce-review",
         "ce-work",
-        "changelog",
-        "claude-permissions-optimizer",
         "compound-docs",
         "deepen-plan",
         "deploy-docs",
-        "dhh-rails-style",
         "document-review",
-        "dspy-ruby",
-        "every-style-editor",
-        "feature-video",
         "frontend-design",
-        "gemini-imagegen",
-        "generate-command",
         "git-clean-gone-branches",
         "git-commit",
         "git-commit-push-pr",
@@ -41,23 +32,15 @@
         "lfg",
         "onboarding",
         "orchestrating-subagents",
-        "orchestrating-swarms",
-        "proof",
-        "rclone",
         "report-bug-ce",
         "reproduce-bug",
         "resolve-pr-feedback",
-        "setup",
         "slfg",
         "test-browser",
         "test-driven-development",
-        "test-xcode",
-        "todo-create",
-        "todo-resolve",
-        "todo-triage",
+        "todos",
         "using-systematic",
-        "writing-skills",
-        "writing-systematic-skills"
+        "writing-skills"
       ]
     }
   }

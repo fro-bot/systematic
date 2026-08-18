@@ -22,7 +22,7 @@ This skill does **not** turn plans into implementation scripts. It identifies we
 
 ## Interaction Method
 
-Use the platform's question tool when available. When asking the user a question, prefer the platform's blocking question tool if one exists (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini). Otherwise, present numbered options in chat and wait for the user's reply before proceeding.
+Use the platform's question tool when available. When asking the user a question, prefer the platform's blocking question tool if one exists (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait). Otherwise, present numbered options in chat and wait for the user's reply before proceeding.
 
 Ask one question at a time. Prefer a concise single-select choice when natural options exist.
 
@@ -234,17 +234,16 @@ Use fully-qualified agent names inside Task calls.
 **System-Wide Impact**
 - `systematic:review:architecture-strategist` for cross-boundary effects, interface surfaces, and architectural knock-on impact
 - Add the specific specialist that matches the risk:
-  - `systematic:review:performance-oracle` for scalability, latency, throughput, and resource-risk analysis
-  - `systematic:review:security-sentinel` for auth, validation, exploit surfaces, and security boundary review
-  - `systematic:review:data-integrity-guardian` for migrations, persistent state safety, consistency, and data lifecycle risks
+  - `systematic:review:performance-reviewer` for scalability, latency, throughput, and resource-risk analysis
+  - `systematic:review:security-reviewer` for auth, validation, exploit surfaces, and security boundary review
+  - `systematic:review:data-migrations-reviewer` for migrations, persistent state safety, consistency, and data lifecycle risks
 
 **Risks & Dependencies / Operational Notes**
 - Use the specialist that matches the actual risk:
-  - `systematic:review:security-sentinel` for security, auth, privacy, and exploit risk
-  - `systematic:review:data-integrity-guardian` for persistent data safety, constraints, and transaction boundaries
-  - `systematic:review:data-migration-expert` for migration realism, backfills, and production data transformation risk
+  - `systematic:review:security-reviewer` for security, auth, privacy, and exploit risk
+  - `systematic:review:data-migrations-reviewer` for persistent data safety, constraints, transaction boundaries, and migration realism
   - `systematic:review:deployment-verification-agent` for rollout checklists, rollback planning, and launch verification
-  - `systematic:review:performance-oracle` for capacity, latency, and scaling concerns
+  - `systematic:review:performance-reviewer` for capacity, latency, and scaling concerns
 
 #### 3.2 Agent Prompt Shape
 

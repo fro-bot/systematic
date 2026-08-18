@@ -32,7 +32,7 @@ When spawning subagents, pass the relevant file contents into the task prompt so
 
 ## Execution Strategy
 
-Present the user with two options before proceeding, using the platform's blocking question tool (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini). If no question tool is available, present the options and wait for the user's reply.
+Present the user with two options before proceeding, using the platform's blocking question tool (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait). If no question tool is available, present the options and wait for the user's reply.
 
 ```
 1. Full (recommended) — the complete compound workflow. Researches,
@@ -86,7 +86,7 @@ Launch research subagents. Each returns text data to the orchestrator.
 
 <parallel_tasks>
 
-#### 1. **Context Analyzer**
+#### 1. **Context Analyzer** — `systematic:research:repo-research-analyst`
    - Extracts conversation history
    - Reads `references/schema.yaml` for enum validation and **track classification**
    - Determines the track (bug or knowledge) from the problem_type
@@ -100,7 +100,7 @@ Launch research subagents. Each returns text data to the orchestrator.
    - Does not invent enum values, categories, or frontmatter fields from memory; reads the schema and mapping files above
    - Does not force bug-track fields onto knowledge-track learnings or vice versa
 
-#### 2. **Solution Extractor**
+#### 2. **Solution Extractor** — `systematic:research:repo-research-analyst`
    - Reads `references/schema.yaml` for track classification (bug vs knowledge)
    - Adapts output structure based on the problem_type track
    - Incorporates auto memory excerpts (if provided by the orchestrator) as supplementary evidence -- conversation history and the verified fix take priority; if memory notes contradict the conversation, note the contradiction as cautionary context
@@ -122,7 +122,7 @@ Launch research subagents. Each returns text data to the orchestrator.
    - **When to Apply**: Conditions or situations where this applies
    - **Examples**: Concrete before/after or usage examples showing the practice in action
 
-#### 3. **Related Docs Finder**
+#### 3. **Related Docs Finder** — `systematic:research:learnings-researcher`
    - Searches `docs/solutions/` for related documentation
    - Identifies cross-references and links
    - Finds related GitHub issues
@@ -263,7 +263,7 @@ After the learning is written and the refresh decision is made, check whether th
 
       `docs/solutions/` — documented solutions to past problems (bugs, best practices, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`). Relevant when implementing or debugging in documented areas.
       ```
-   c. In full mode, explain to the user why this matters — agents working in this repo (including fresh sessions, other tools, or collaborators without the plugin) won't know to check `docs/solutions/` unless the instruction file surfaces it. Show the proposed change and where it would go, then use the platform's blocking question tool (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini) to get consent before making the edit. If no question tool is available, present the proposal and wait for the user's reply. In lightweight mode, output a one-liner note and move on
+   c. In full mode, explain to the user why this matters — agents working in this repo (including fresh sessions, other tools, or collaborators without the plugin) won't know to check `docs/solutions/` unless the instruction file surfaces it. Show the proposed change and where it would go, then use the platform's blocking question tool (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait) to get consent before making the edit. If no question tool is available, present the proposal and wait for the user's reply. In lightweight mode, output a one-liner note and move on
 
 ### Phase 3: Optional Enhancement
 
@@ -273,12 +273,10 @@ After the learning is written and the refresh decision is made, check whether th
 
 Based on problem type, optionally invoke specialized agents to review the documentation:
 
-- **performance_issue** → `systematic:review:performance-oracle`
-- **security_issue** → `systematic:review:security-sentinel`
-- **database_issue** → `systematic:review:data-integrity-guardian`
+- **performance_issue** → `systematic:review:performance-reviewer`
+- **security_issue** → `systematic:review:security-reviewer`
+- **database_issue** → `systematic:review:data-migrations-reviewer`
 - Any code-heavy issue → always run `systematic:review:code-simplicity-reviewer`, and additionally run the kieran reviewer that matches the repo's primary stack:
-  - Ruby/Rails → also run `systematic:review:kieran-rails-reviewer`
-  - Python → also run `systematic:review:kieran-python-reviewer`
   - TypeScript/JavaScript → also run `systematic:review:kieran-typescript-reviewer`
   - Other stacks → no kieran reviewer needed
 
@@ -397,8 +395,8 @@ Subagent Results:
   ✓ Session History: 3 prior sessions on same branch, 2 failed approaches surfaced
 
 Specialized Agent Reviews (Auto-Triggered):
-  ✓ performance-oracle: Validated query optimization approach
-  ✓ kieran-rails-reviewer: Code examples meet Rails conventions
+  ✓ performance-reviewer: Validated query optimization approach
+  ✓ kieran-typescript-reviewer: Code examples meet TypeScript conventions
   ✓ code-simplicity-reviewer: Solution is appropriately minimal
 
 File created:
@@ -415,7 +413,7 @@ What's next?
 5. Other
 ```
 
-**After displaying the success output, present the "What's next?" options using the platform's blocking question tool** (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini). If no question tool is available, present the numbered options and wait for the user's reply before proceeding. Do not continue the workflow or end the turn without the user's selection.
+**After displaying the success output, present the "What's next?" options using the platform's blocking question tool** (`question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait). If no question tool is available, present the numbered options and wait for the user's reply before proceeding. Do not continue the workflow or end the turn without the user's selection.
 
 **Alternate output (when updating an existing doc due to high overlap):**
 
@@ -464,16 +462,14 @@ Writes the final learning directly into `docs/solutions/`.
 Based on problem type, these agents can enhance documentation:
 
 ### Code Quality & Review
-- **systematic:review:kieran-rails-reviewer**: Reviews code examples for Rails best practices
-- **systematic:review:kieran-python-reviewer**: Reviews code examples for Python best practices
 - **systematic:review:kieran-typescript-reviewer**: Reviews code examples for TypeScript best practices
 - **systematic:review:code-simplicity-reviewer**: Ensures solution code is minimal and clear
 - **systematic:review:pattern-recognition-specialist**: Identifies anti-patterns or repeating issues
 
 ### Specific Domain Experts
-- **systematic:review:performance-oracle**: Analyzes performance_issue category solutions
-- **systematic:review:security-sentinel**: Reviews security_issue solutions for vulnerabilities
-- **systematic:review:data-integrity-guardian**: Reviews database_issue migrations and queries
+- **systematic:review:performance-reviewer**: Analyzes performance_issue category solutions
+- **systematic:review:security-reviewer**: Reviews security_issue solutions for vulnerabilities
+- **systematic:review:data-migrations-reviewer**: Reviews database_issue migrations and queries
 
 ### Enhancement & Research
 - **systematic:research:best-practices-researcher**: Enriches solution with industry best practices
