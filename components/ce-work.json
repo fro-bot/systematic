@@ -1,10 +1,10 @@
 {
   "name": "ce-work",
   "dist-tags": {
-    "latest": "3.11.0"
+    "latest": "3.12.0"
   },
   "versions": {
-    "3.11.0": {
+    "3.12.0": {
       "name": "ce-work",
       "type": "skill",
       "description": "Execute work efficiently while maintaining quality and finishing features",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-work/SKILL.md",
           "target": "skills/ce-work/SKILL.md",
-          "integrity": "sha256-+0hyNAakQg5wmXXgK6q1yLTZhEEGxnFUErymGdcyiak="
+          "integrity": "sha256-V9Ph/8WCOQMjn8A7brE/G2bTLYep8XvQIYOjuApoqxM="
         },
         {
           "path": "skills/ce-work/references/shipping-workflow.md",

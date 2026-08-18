@@ -140,6 +140,15 @@
 <li>Check for a <code dir="auto">Deferred to Implementation</code> or <code dir="auto">Implementation-Time Unknowns</code> section — these are questions the planner intentionally left for you to resolve during execution. Note them before starting so they inform your approach rather than surprising you mid-task</li>
 <li>Check for a <code dir="auto">Scope Boundaries</code> section — these are explicit non-goals. Refer back to them if implementation starts pulling you toward adjacent work</li>
 <li>Review any references or links provided in the plan</li>
+<li>If the plan has no <code dir="auto">Prior-Art Survey</code> section at all, it predates this contract — proceed without rejecting it. Otherwise validate the section before environment setup: it must contain exactly one fenced <code dir="auto">json</code> block, and that block must validate against <code dir="auto">skills/ce-plan/references/prior-art-survey-schema.json</code>. Stop before setup when any of these conditions applies:
+<ol>
+<li><strong>Empty or non-unique survey block:</strong> the section is present but empty, or contains zero or multiple fenced <code dir="auto">json</code> blocks. Resolve it by rerunning planning and recording exactly one schema-conforming structured survey block.</li>
+<li><strong>Malformed or schema-invalid survey block:</strong> the sole block is not valid JSON or fails schema validation. Resolve it by replacing the block with one valid survey payload; prose or placeholder values do not satisfy the contract.</li>
+<li><strong>Unaccepted failure verdict:</strong> the validated verdict is <code dir="auto">unscoped</code> or <code dir="auto">unresolved</code> and the block has no recorded user acceptance for that same verdict. Resolve it by narrowing the scope, increasing the bounded budget, or getting the user to accept the uncertainty and recording matching acceptance.</li>
+<li><strong>Stale surveyed scope:</strong> the recorded scope has changed since the survey ran. Check only the workspace or subtree in <code dir="auto">scope</code>, not the whole repository. When <code dir="auto">freshness.vcs_reference</code> is present and usable VCS data is available, compare the current VCS reference or scoped diff; otherwise compare the current portable digest/baseline with <code dir="auto">freshness.scope_baseline</code>. If neither comparison can be performed, stop and request a fresh survey or explicit re-baselining rather than assuming the result is fresh. Resolve a stale result by rerunning the survey against the current scope and updating the plan.</li>
+</ol>
+</li>
+<li>When refusing execution for a survey condition, name the condition that fired and the concrete resolution required; do not fail opaquely.</li>
 <li>If the user explicitly asks for TDD, test-first, or characterization-first execution in this session, honor that request even if the plan has no <code dir="auto">Execution note</code></li>
 <li>If anything is unclear or ambiguous, ask clarifying questions now</li>
 <li>Get user approval to proceed</li>
