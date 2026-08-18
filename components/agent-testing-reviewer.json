@@ -1,10 +1,10 @@
 {
   "name": "agent-testing-reviewer",
   "dist-tags": {
-    "latest": "3.12.0"
+    "latest": "3.12.1"
   },
   "versions": {
-    "3.12.0": {
+    "3.12.1": {
       "name": "agent-testing-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Reviews code for test coverage gaps, weak assertions, brittle implementation-coupled tests, and missing edge case coverage.",
