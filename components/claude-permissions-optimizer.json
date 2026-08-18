@@ -1,0 +1,30 @@
+{
+  "name": "claude-permissions-optimizer",
+  "dist-tags": {
+    "latest": "2.33.4"
+  },
+  "versions": {
+    "2.33.4": {
+      "name": "claude-permissions-optimizer",
+      "type": "skill",
+      "description": "Optimize Claude Code permissions by finding safe Bash commands from session history and auto-applying them to settings.json. Can run from any coding agent but targets Claude Code specifically. Use when experiencing permission fatigue, too many permission prompts, wanting to optimize permissions, or needing to set up allowlists. Triggers on \"optimize permissions\", \"reduce permission prompts\", \"allowlist commands\", \"too many permission prompts\", \"permission fatigue\", \"permission setup\", or complaints about clicking approve too often.",
+      "files": [
+        {
+          "path": "skills/claude-permissions-optimizer/SKILL.md",
+          "target": "skills/claude-permissions-optimizer/SKILL.md",
+          "integrity": "sha256-enMyGAt/T1O2Ptdm9I6YKvhtpIeneSM1xnGceA0+0h4="
+        },
+        {
+          "path": "skills/claude-permissions-optimizer/scripts/extract-commands.mjs",
+          "target": "skills/claude-permissions-optimizer/scripts/extract-commands.mjs",
+          "integrity": "sha256-E+2FSughxtpQDUc6yTVYmg4fs3cSxZsaQ4nxSARJDmc="
+        },
+        {
+          "path": "skills/claude-permissions-optimizer/scripts/normalize.mjs",
+          "target": "skills/claude-permissions-optimizer/scripts/normalize.mjs",
+          "integrity": "sha256-S65uhw6K5E/1sPc+W73ps51ixFiXSHkHLOJu2TFrhJI="
+        }
+      ]
+    }
+  }
+}

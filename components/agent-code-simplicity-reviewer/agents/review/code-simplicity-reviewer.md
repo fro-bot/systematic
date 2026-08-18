@@ -1,6 +1,6 @@
 ---
 name: code-simplicity-reviewer
-description: "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities. Dispatched by ce-compound for code-heavy issues, not by ce:review."
+description: "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities."
 tools: Read, Grep, Glob, Bash
 mode: subagent
 temperature: 0.1
@@ -12,7 +12,7 @@ When reviewing code, you will:
 
 1. **Analyze Every Line**: Question the necessity of each line of code. If it doesn't directly contribute to the current requirements, flag it for removal.
 
-2. **Simplify Complex Logic**:
+2. **Simplify Complex Logic**: 
    - Break down complex conditionals into simpler forms
    - Replace clever code with obvious code
    - Eliminate nested structures where possible

@@ -1,10 +1,10 @@
 {
   "name": "writing-skills",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "writing-skills",
       "type": "skill",
       "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
@@ -12,7 +12,7 @@
         {
           "path": "skills/writing-skills/SKILL.md",
           "target": "skills/writing-skills/SKILL.md",
-          "integrity": "sha256-7kix4zv6NxVaxwxx8iigkFMtta5nHrHiJSDzRjrlVLg="
+          "integrity": "sha256-pTLABj6sMdwryEXtBo0PxFOYOczbrrrJijmLD/ciAfk="
         },
         {
           "path": "skills/writing-skills/references/anthropic-best-practices-distilled.md",
@@ -23,11 +23,6 @@
           "path": "skills/writing-skills/references/examples/skill-testing-walkthrough.md",
           "target": "skills/writing-skills/references/examples/skill-testing-walkthrough.md",
           "integrity": "sha256-iOgBc3R50MlX7nlMydr9ROjpwgtSPIqBZVZJCK5V/nE="
-        },
-        {
-          "path": "skills/writing-skills/references/foundation-conventions.md",
-          "target": "skills/writing-skills/references/foundation-conventions.md",
-          "integrity": "sha256-5ikICOi7GaRMyzOSDAaU2OSnaeyidlYIZIIzGuhkC0I="
         },
         {
           "path": "skills/writing-skills/references/graphviz-conventions.dot",

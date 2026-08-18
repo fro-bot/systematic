@@ -1,0 +1,25 @@
+{
+  "name": "todo-create",
+  "dist-tags": {
+    "latest": "2.33.4"
+  },
+  "versions": {
+    "2.33.4": {
+      "name": "todo-create",
+      "type": "skill",
+      "description": "Use when creating durable work items, managing todo lifecycle, or tracking findings across sessions in the file-based todo system",
+      "files": [
+        {
+          "path": "skills/todo-create/SKILL.md",
+          "target": "skills/todo-create/SKILL.md",
+          "integrity": "sha256-P2nTLWF8DcuJCcIkREbIzRx2I8jigwzmVQ3Nps6kEiY="
+        },
+        {
+          "path": "skills/todo-create/assets/todo-template.md",
+          "target": "skills/todo-create/assets/todo-template.md",
+          "integrity": "sha256-X8TTk3ChgcENeI2tAAdciLKz5sNxfiENcvBQNyQQQpA="
+        }
+      ]
+    }
+  }
+}

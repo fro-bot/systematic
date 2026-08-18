@@ -1,10 +1,10 @@
 {
   "name": "agent-bug-reproduction-validator",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "agent-bug-reproduction-validator",
       "type": "agent",
       "description": "Systematically reproduces and validates bug reports to confirm whether reported behavior is an actual bug. Use when you receive a bug report or issue that needs verification.",

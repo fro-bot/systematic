@@ -1,10 +1,10 @@
 {
   "name": "agent-product-lens-reviewer",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "agent-product-lens-reviewer",
       "type": "agent",
       "description": "Reviews planning documents as a senior product leader -- challenges premise claims, assesses strategic consequences (trajectory, identity, adoption, opportunity cost), and surfaces goal-work misalignment. Domain-agnostic: users may be end users, developers, operators, or any audience. Spawned by the document-review skill.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/document-review/product-lens-reviewer.md",
           "target": "agents/document-review/product-lens-reviewer.md",
-          "integrity": "sha256-mDdR58Y+1Mt66eUSEZnqyGXXqOHRQIpc5bnO91tTgyo="
+          "integrity": "sha256-STTgRYHO+d5g4sFLCBPuPkeHDssqSUTbwsPtc2dHyc8="
         }
       ]
     }

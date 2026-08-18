@@ -1,0 +1,20 @@
+{
+  "name": "generate-command",
+  "dist-tags": {
+    "latest": "2.33.4"
+  },
+  "versions": {
+    "2.33.4": {
+      "name": "generate-command",
+      "type": "skill",
+      "description": "Create a new custom slash command following conventions and best practices",
+      "files": [
+        {
+          "path": "skills/generate_command/SKILL.md",
+          "target": "skills/generate_command/SKILL.md",
+          "integrity": "sha256-EMhLql8g3q2cDPeuAV6hn42EZs1krcDxgCzqkx0LBPM="
+        }
+      ]
+    }
+  }
+}

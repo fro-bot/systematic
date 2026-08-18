@@ -1,0 +1,20 @@
+{
+  "name": "agent-dhh-rails-reviewer",
+  "dist-tags": {
+    "latest": "2.33.4"
+  },
+  "versions": {
+    "2.33.4": {
+      "name": "agent-dhh-rails-reviewer",
+      "type": "agent",
+      "description": "Conditional code-review persona, selected when Rails diffs introduce architectural choices, abstractions, or frontend patterns that may fight the framework. Reviews code from an opinionated DHH perspective.",
+      "files": [
+        {
+          "path": "agents/review/dhh-rails-reviewer.md",
+          "target": "agents/review/dhh-rails-reviewer.md",
+          "integrity": "sha256-fvAa+dHud6t8DPrIwNEHCchWYH1AT3iwYy1Ul3G01ec="
+        }
+      ]
+    }
+  }
+}

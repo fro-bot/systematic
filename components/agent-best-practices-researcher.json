@@ -1,10 +1,10 @@
 {
   "name": "agent-best-practices-researcher",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "agent-best-practices-researcher",
       "type": "agent",
       "description": "Researches and synthesizes external best practices, documentation, and examples for any technology or framework. Use when you need industry standards, community conventions, or implementation guidance.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/research/best-practices-researcher.md",
           "target": "agents/research/best-practices-researcher.md",
-          "integrity": "sha256-4d1x4v5dWvFfDuAuLodm05DrDp4F2CjTlvOvRjuRzZI="
+          "integrity": "sha256-0ptv5H0ulXcONh2NMSj6/0kFBuJAlgKrFUIQr1cmU+c="
         }
       ]
     }

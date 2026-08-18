@@ -1,10 +1,10 @@
 {
   "name": "frontend-design",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "frontend-design",
       "type": "skill",
       "description": "Use when building or reviewing any frontend interface. Covers the full design lifecycle: context detection, pre-build planning, design laws (OKLCH color, theme forcing function, layout rhythm, absolute bans on AI-slop patterns), implementation guidance, and visual verification. Use for landing pages, dashboards, components, or any web UI where design quality matters.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/frontend-design/SKILL.md",
           "target": "skills/frontend-design/SKILL.md",
-          "integrity": "sha256-7gWiCUbw4PxYAx/uaovubWzO1mYvWB2cQDdk97/eUW0="
+          "integrity": "sha256-vdvn7ZC+nrLyIus42TlZ3eFZXoSFMNnMKT5E9O8peRw="
         }
       ]
     }

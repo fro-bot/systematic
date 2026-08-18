@@ -1,10 +1,10 @@
 {
   "name": "omo",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "omo",
       "type": "profile",
       "description": "OhMyOpenCode (OMO) profile — Systematic with enhanced orchestration and delegation",
@@ -12,7 +12,7 @@
         {
           "path": "registry/files/profiles/omo/opencode.jsonc",
           "target": "opencode.jsonc",
-          "integrity": "sha256-HH6MdnyA4JY778p+gLIU8S33Wy8qcvnvP9H0nhRmt8o="
+          "integrity": "sha256-nm/IF7kxIKMmGqoYpL9UTbH9xFiNa6nIF7bzL/OgVJs="
         },
         {
           "path": "registry/files/profiles/omo/ocx.jsonc",
@@ -27,7 +27,7 @@
         {
           "path": "registry/files/profiles/omo/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-xlWJLeVNg0+4ocZVih3gAPqriOELJG06EbxY6Ao7yho="
+          "integrity": "sha256-8Y/WoBzftrNsQDPs0AtU64Ib2AZKr1AoYskpZBxBWl4="
         }
       ]
     }

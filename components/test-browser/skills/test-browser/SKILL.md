@@ -48,7 +48,7 @@ If not installed, inform the user: "`agent-browser` is not installed. Install it
 
 ### 2. Ask Browser Mode
 
-Ask the user whether to run headed or headless (using the platform's question tool — e.g., `question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini; in Pi, use the blocking-question extension if available, otherwise present numbered options in chat and wait — or present options and wait for a reply):
+Ask the user whether to run headed or headless (using the platform's question tool — e.g., `question` in OpenCode, `request_user_input` in Codex, `ask_user` in Gemini — or present options and wait for a reply):
 
 ```
 Do you want to watch the browser tests run?
@@ -221,12 +221,12 @@ When a test fails:
 
    How to proceed?
    1. Fix now - I'll help debug and fix
-   2. Create todo - Add a todo for later (using the todos skill, Create section)
+   2. Create todo - Add a todo for later (using the todo-create skill)
    3. Skip - Continue testing other pages
    ```
 
 3. **If "Fix now":** investigate, propose a fix, apply, re-run the failing test
-4. **If "Create todo":** load the `todos` skill (Create section) and create a todo with priority p1 and description `browser-test-{description}`, continue
+4. **If "Create todo":** load the `todo-create` skill and create a todo with priority p1 and description `browser-test-{description}`, continue
 5. **If "Skip":** log as skipped, continue
 
 ### 10. Test Summary

@@ -1,6 +1,6 @@
 ---
 name: pattern-recognition-specialist
-description: "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns. Dispatched by deepen-plan, ce-plan's deepening workflow, and ce-compound, not by ce:review."
+description: "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns."
 tools: Read, Grep, Glob, Bash
 mode: subagent
 temperature: 0.6
@@ -36,7 +36,7 @@ Your primary responsibilities:
 
 Your workflow:
 
-1. Start with a broad pattern search using the built-in grep tool (or `ast-grep` for structural AST matching when needed)
+1. Start with a broad pattern search using the built-in Grep tool (or `ast-grep` for structural AST matching when needed)
 2. Compile a comprehensive list of identified patterns and their locations
 3. Search for common anti-pattern indicators (TODO, FIXME, HACK, XXX)
 4. Analyze naming conventions by sampling representative files

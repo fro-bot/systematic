@@ -1,10 +1,10 @@
 {
   "name": "agent-native-audit",
   "dist-tags": {
-    "latest": "3.12.1"
+    "latest": "2.33.4"
   },
   "versions": {
-    "3.12.1": {
+    "2.33.4": {
       "name": "agent-native-audit",
       "type": "skill",
       "description": "Run comprehensive agent-native architecture review with scored principles",

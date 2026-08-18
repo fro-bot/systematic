@@ -2,5 +2,5 @@
   "$schema": "https://opencode.ai/config.json",
   // OMO + Systematic Profile
   // Combines Oh My OpenCode's powerful agents with Systematic's structured workflows
-  "plugin": ["oh-my-opencode@latest", "@fro.bot/systematic@latest"]
+  "plugins": ["oh-my-opencode@latest", "@fro.bot/systematic@latest"]
 }
