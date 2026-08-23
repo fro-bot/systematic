@@ -1,10 +1,10 @@
 {
   "name": "agent-git-history-analyzer",
   "dist-tags": {
-    "latest": "3.13.6"
+    "latest": "3.13.7"
   },
   "versions": {
-    "3.13.6": {
+    "3.13.7": {
       "name": "agent-git-history-analyzer",
       "type": "agent",
       "description": "Performs archaeological analysis of git history to trace code evolution, identify contributors, and understand why code patterns exist. Use when you need historical context for code changes.",

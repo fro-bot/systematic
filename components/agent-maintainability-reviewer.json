@@ -1,10 +1,10 @@
 {
   "name": "agent-maintainability-reviewer",
   "dist-tags": {
-    "latest": "3.13.6"
+    "latest": "3.13.7"
   },
   "versions": {
-    "3.13.6": {
+    "3.13.7": {
       "name": "agent-maintainability-reviewer",
       "type": "agent",
       "description": "Always-on code-review persona. Reviews code for premature abstraction, unnecessary indirection, dead code, coupling between unrelated modules, and naming that obscures intent.",
