@@ -1,10 +1,10 @@
 {
   "name": "ce-review",
   "dist-tags": {
-    "latest": "3.13.4"
+    "latest": "3.13.5"
   },
   "versions": {
-    "3.13.4": {
+    "3.13.5": {
       "name": "ce-review",
       "type": "skill",
       "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-review/SKILL.md",
           "target": "skills/ce-review/SKILL.md",
-          "integrity": "sha256-sUVvKmziYiU5tRTD6WDTW8D7jPGtGMkQiTLq7I9Wb3c="
+          "integrity": "sha256-rl3z896/KJ81s8MesRuVhW9i6Y98RNOA3rYYKtC/Uh0="
         },
         {
           "path": "skills/ce-review/references/diff-scope.md",
@@ -42,7 +42,7 @@
         {
           "path": "skills/ce-review/references/review-summary-schema.json",
           "target": "skills/ce-review/references/review-summary-schema.json",
-          "integrity": "sha256-tq7R9xDCfFUFfocnc4+m5gxwW537j6CNg0P5E0y6i0U="
+          "integrity": "sha256-bNfjLRreEZK67/eDJ+J2oFxQWoouxaYnzmIG6XBJykg="
         },
         {
           "path": "skills/ce-review/references/subagent-template.md",
@@ -52,7 +52,7 @@
         {
           "path": "skills/ce-review/references/synthesis-artifact-contract.md",
           "target": "skills/ce-review/references/synthesis-artifact-contract.md",
-          "integrity": "sha256-aVD683+SAlDxsmzZqkvIYIM5HQYhIZAaf7IqnCx6FyU="
+          "integrity": "sha256-d3oDeECOUg29S6uo0iPR0BoeSeMUmCDV3OD5Gt7A754="
         },
         {
           "path": "skills/ce-review/references/validator-template.md",

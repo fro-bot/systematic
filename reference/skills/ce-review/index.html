@@ -507,7 +507,8 @@
 <p>Convert multiple reviewer JSON returns into one deduplicated, confidence-gated finding set. Each persona return already contains both tiers. The parent must retain the validated payload in memory for merge and synthesis, then persist only the same validated data.</p>
 <p>Before applying the confidence gate, keep the parent-owned ledger through every later stage. See the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a> for the input-ID and reconciliation rules.</p>
 <ol>
-<li><strong>Validate before any write.</strong> Treat every persona return as untrusted input. Parse the returned text as JSON without logging the raw text, then validate the complete parsed object against <code dir="auto">references/findings-schema.json</code>, including <code dir="auto">why_it_matters</code> and <code dir="auto">evidence</code>.
+<li>
+<p><strong>Validate before any write.</strong> Treat every persona return as untrusted input. Parse the returned text as JSON without logging the raw text, then validate the complete parsed object against <code dir="auto">references/findings-schema.json</code>, including <code dir="auto">why_it_matters</code> and <code dir="auto">evidence</code>.</p>
 <ul>
 <li><strong>Top-level required:</strong> reviewer (string), findings (array), residual_risks (array), testing_gaps (array). Reject the entire persona return if any are missing or wrong type.</li>
 <li><strong>Per-finding required:</strong> title, severity, file, line, why_it_matters, confidence, evidence, autofix_class, owner, requires_verification, pre_existing.</li>
@@ -519,23 +520,45 @@
 <li><strong>Rejection policy: degrade, do not fail the whole review.</strong> Continue merging conforming returns when a persona or finding is rejected; record the rejection and apply the risk-aware verdict according to the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a>. If every persona fails or times out, use the existing degraded-review behavior.</li>
 </ul>
 </li>
-<li><strong>Confidence gate.</strong> Suppress findings below 0.60 confidence. Exception: P0 findings at 0.50+ confidence survive the gate — critical-but-uncertain issues must not be silently dropped. Record the suppressed finding’s original confidence and an explicit reason in the input ledger. A retained P0 at 0.50+ is recorded as <code dir="auto">surviving</code> unless it later participates in a deduplication merge. This matches the persona instructions and the schema’s confidence thresholds.</li>
-<li><strong>Deduplicate.</strong> Compute fingerprint: <code dir="auto">normalize(file) + line_bucket(line, +/-3) + normalize(title)</code>. When fingerprints match, merge: keep highest severity, keep highest confidence, preserve the exact fingerprint, and retain the input IDs that produced the merged entry. A singleton that passes the gate is <code dir="auto">surviving</code>; each input in a multi-input merge is provisionally <code dir="auto">merged</code>.</li>
-<li><strong>Cross-reviewer agreement.</strong> When 2+ independent reviewers flag the same issue (same fingerprint), boost the merged confidence by 0.10 (capped at 1.0). Cross-reviewer agreement is strong signal — independent reviewers converging on the same issue is more reliable than any single reviewer’s confidence. Preserve the distinction in the merged finding’s artifact provenance according to the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a>.</li>
-<li><strong>Separate pre-existing.</strong> Pull out findings with <code dir="auto">pre_existing: true</code> into a separate list.</li>
-<li><strong>Resolve disagreements.</strong> When reviewers flag the same code region but disagree on severity, autofix_class, or owner, annotate the Reviewer column with the disagreement (e.g., “security (P0), correctness (P1) — kept P0”). This transparency helps the user understand why a finding was routed the way it was.</li>
-<li><strong>Normalize routing.</strong> For each merged finding, set the final <code dir="auto">autofix_class</code>, <code dir="auto">owner</code>, and <code dir="auto">requires_verification</code>. If reviewers disagree, keep the most conservative route. Synthesis may narrow a finding from <code dir="auto">safe_auto</code> to <code dir="auto">gated_auto</code> or <code dir="auto">manual</code>, but must not widen it without new evidence.</li>
-<li><strong>Partition the work.</strong> Build three sets:
+<li>
+<p><strong>Confidence gate.</strong> Suppress findings below 0.60 confidence. Exception: P0 findings at 0.50+ confidence survive the gate — critical-but-uncertain issues must not be silently dropped. Record the suppressed finding’s original confidence and an explicit reason in the input ledger. A retained P0 at 0.50+ is recorded as <code dir="auto">surviving</code> unless it later participates in a deduplication merge. This matches the persona instructions and the schema’s confidence thresholds.</p>
+</li>
+<li>
+<p><strong>Deduplicate.</strong> Group all gated findings by <code dir="auto">normalize(file)</code>. A file with two or more findings from different personas forms a candidate group. Do not use line number to form groups. Sort findings within each group by line. Adjudicate each candidate group: merge findings judged to describe the same underlying defect; keep genuinely different defects separate. Adjacency creates a candidate, not a conclusion — findings on the same line that describe different defects must not merge. For each resulting finding, derive the fingerprint from its file and line as <code dir="auto">normalize(file) + "|" + line</code>. Keep highest severity, keep highest confidence, and retain the input IDs that produced the merged entry. Record each declined merge in the artifact’s optional <code dir="auto">declined_merges</code> field with the normalized file, input finding IDs considered but not merged, and a brief reason. A singleton that passes the gate is <code dir="auto">surviving</code>; each input in a multi-input merge is provisionally <code dir="auto">merged</code>.</p>
+<p>Worked example: at <code dir="auto">src/lib/model-availability.ts:139</code>, reliability’s <code dir="auto">Config hook awaits providers API without a timeout</code> and adversarial’s <code dir="auto">Config startup can hang forever behind a stalled /config</code> describe the same underlying defect in different words, so they merge.</p>
+</li>
+<li>
+<p><strong>Cross-reviewer agreement.</strong> When an adjudicated merge contains findings from 2+ independent reviewers, boost the merged confidence by 0.10 (capped at 1.0). Cross-reviewer agreement is strong signal — independent reviewers converging on the same issue is more reliable than any single reviewer’s confidence. Preserve the distinction in the merged finding’s artifact provenance according to the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a>.</p>
+</li>
+<li>
+<p><strong>Separate pre-existing.</strong> Pull out findings with <code dir="auto">pre_existing: true</code> into a separate list.</p>
+</li>
+<li>
+<p><strong>Resolve disagreements.</strong> When reviewers flag the same code region but disagree on severity, autofix_class, or owner, annotate the Reviewer column with the disagreement (e.g., “security (P0), correctness (P1) — kept P0”). This transparency helps the user understand why a finding was routed the way it was.</p>
+</li>
+<li>
+<p><strong>Normalize routing.</strong> For each merged finding, set the final <code dir="auto">autofix_class</code>, <code dir="auto">owner</code>, and <code dir="auto">requires_verification</code>. If reviewers disagree, keep the most conservative route. Synthesis may narrow a finding from <code dir="auto">safe_auto</code> to <code dir="auto">gated_auto</code> or <code dir="auto">manual</code>, but must not widen it without new evidence.</p>
+</li>
+<li>
+<p><strong>Partition the work.</strong> Build three sets:</p>
 <ul>
 <li>in-skill fixer queue: only <code dir="auto">safe_auto -> review-fixer</code></li>
 <li>residual actionable queue: unresolved <code dir="auto">gated_auto</code> or <code dir="auto">manual</code> findings whose owner is <code dir="auto">downstream-resolver</code></li>
 <li>report-only queue: <code dir="auto">advisory</code> findings plus anything owned by <code dir="auto">human</code> or <code dir="auto">release</code></li>
 </ul>
 </li>
-<li><strong>Sort.</strong> Order by severity (P0 first) -> confidence (descending) -> file path -> line number.</li>
-<li><strong>Collect coverage data.</strong> Union residual_risks and testing_gaps across reviewers.</li>
-<li><strong>Preserve CE agent artifacts.</strong> Keep the learnings, agent-native, schema-drift, and deployment-verification outputs alongside the merged finding set. Do not drop unstructured agent output just because it does not match the persona JSON schema.</li>
-<li><strong>Keep the input ledger complete.</strong> Reconcile admitted findings and rejected-payload summaries according to the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a>.</li>
+<li>
+<p><strong>Sort.</strong> Order by severity (P0 first) -> confidence (descending) -> file path -> line number.</p>
+</li>
+<li>
+<p><strong>Collect coverage data.</strong> Union residual_risks and testing_gaps across reviewers.</p>
+</li>
+<li>
+<p><strong>Preserve CE agent artifacts.</strong> Keep the learnings, agent-native, schema-drift, and deployment-verification outputs alongside the merged finding set. Do not drop unstructured agent output just because it does not match the persona JSON schema.</p>
+</li>
+<li>
+<p><strong>Keep the input ledger complete.</strong> Reconcile admitted findings and rejected-payload summaries according to the <a href="./references/synthesis-artifact-contract.md">synthesis artifact contract</a>.</p>
+</li>
 </ol>
 <div class="sl-heading-wrapper level-h3"><h3 id="stage-5b-validation-pass">Stage 5b: Validation pass</h3><a class="sl-anchor-link" href="#stage-5b-validation-pass"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Stage 5b: Validation pass”</span></a></div>
 <p>Run an independent validation pass over the merged finding set before synthesis. This pass annotates each gated finding <code dir="auto">validated: true</code> or <code dir="auto">validated: false</code> with a one-sentence reason. A <code dir="auto">validated: false</code> finding is dropped from the surviving/actioned set and receives disposition <code dir="auto">filtered</code>, but is retained in the synthesis artifact and surfaced in the “Filtered (not validated)” group in Stage 6. It is not erased from the record.</p>
@@ -599,7 +622,7 @@ Omit this section entirely when no plan was found — do not mention the absence
 <p><strong>Detail enrichment (headless only):</strong> The headless envelope includes <code dir="auto">Why:</code>, <code dir="auto">Evidence:</code>, and <code dir="auto">Suggested fix:</code> lines. After merge (Stage 5), use the validated full persona returns retained in parent memory for only the findings that survived dedup and confidence gating.</p>
 <ul>
 <li><strong>Field tiers:</strong> <code dir="auto">Why:</code> and <code dir="auto">Evidence:</code> are detail-tier and are already present in the validated inline return. <code dir="auto">Suggested fix:</code> is also available directly from that return and survives merge as optional fix context.</li>
-<li><strong>In-memory matching:</strong> For each surviving finding, look up its detail-tier fields in the validated returns of the contributing reviewers. Match on <code dir="auto">file + line_bucket(line, +/-3)</code> (the same tolerance used in Stage 5 dedup). When multiple entries fall within the line bucket, apply <code dir="auto">normalize(title)</code> to the merged finding’s title and each candidate entry’s title as a tie-breaker.</li>
+<li><strong>In-memory matching:</strong> For each surviving finding, look up its detail-tier fields in the validated returns of the contributing reviewers. Use the merged finding’s <code dir="auto">input_finding_ids</code> (<code dir="auto">&#x3C;reviewer>#&#x3C;1-based finding index></code>) to identify the contributing return and source finding. When an input ID cannot be resolved or multiple candidates remain, match on normalized <code dir="auto">file</code>, then use line and <code dir="auto">normalize(title)</code> only as tie-breakers.</li>
 <li><strong>Reviewer order:</strong> Try contributing reviewers in the order they appear in the merged finding’s reviewer list; use the first validated match.</li>
 <li><strong>No-match fallback:</strong> If no validated in-memory return contains a match, omit the <code dir="auto">Why:</code> and <code dir="auto">Evidence:</code> lines for that finding and note the gap in Coverage. This should indicate a synthesis/matching gap, not a failed artifact-file write. Never re-read per-agent files to recover detail.</li>
 </ul>

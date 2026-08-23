@@ -1,10 +1,10 @@
 {
   "name": "plugin",
   "dist-tags": {
-    "latest": "3.13.4"
+    "latest": "3.13.5"
   },
   "versions": {
-    "3.13.4": {
+    "3.13.5": {
       "name": "plugin",
       "type": "plugin",
       "description": "Systematic plugin — registers skills, agents, commands, and bootstrap prompt",
