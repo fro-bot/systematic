@@ -485,6 +485,7 @@ Collect:</li>
 <li><strong>Verification</strong> - how an implementer should know the unit is complete, expressed as outcomes rather than shell command scripts</li>
 </ul>
 <p>Every feature-bearing unit should include the test file path in <code dir="auto">**Files:**</code>.</p>
+<p>When a unit creates a file in a directory that carries registration obligations — a manifest, index, codemap, module table, or generated artifact that must list it — name those surfaces in the same unit’s <code dir="auto">**Files:**</code>, and name the regeneration command in its <code dir="auto">**Verification**</code>. Phase 1.1 already collects this from the repository’s own contributor guidance; carry it into the unit rather than leaving it for a failing gate to report. An obligation that no gate enforces is the one most likely to be missed, so state it even when nothing will fail.</p>
 <p>Use <code dir="auto">Execution note</code> sparingly. Good uses include:</p>
 <ul>
 <li><code dir="auto">Execution note: Start with a failing integration test for the request/response contract.</code></li>
