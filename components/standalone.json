@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "3.13.5"
+    "latest": "3.13.6"
   },
   "versions": {
-    "3.13.5": {
+    "3.13.6": {
       "name": "standalone",
       "type": "profile",
       "description": "Standalone Systematic profile — compound-engineering loops with zero extra configuration",

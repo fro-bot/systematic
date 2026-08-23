@@ -1,10 +1,10 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "3.13.5"
+    "latest": "3.13.6"
   },
   "versions": {
-    "3.13.5": {
+    "3.13.6": {
       "name": "agent-code-simplicity-reviewer",
       "type": "agent",
       "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities. Dispatched by ce-compound for code-heavy issues, not by ce:review.",
