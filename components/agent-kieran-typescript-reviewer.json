@@ -1,10 +1,10 @@
 {
   "name": "agent-kieran-typescript-reviewer",
   "dist-tags": {
-    "latest": "3.13.2"
+    "latest": "3.13.3"
   },
   "versions": {
-    "3.13.2": {
+    "3.13.3": {
       "name": "agent-kieran-typescript-reviewer",
       "type": "agent",
       "description": "Conditional code-review persona, selected when the diff touches TypeScript code. Reviews changes with Kieran's strict bar for type safety, clarity, and maintainability.",
