@@ -1,10 +1,10 @@
 {
   "name": "agent-framework-docs-researcher",
   "dist-tags": {
-    "latest": "3.13.0"
+    "latest": "3.13.1"
   },
   "versions": {
-    "3.13.0": {
+    "3.13.1": {
       "name": "agent-framework-docs-researcher",
       "type": "agent",
       "description": "Gathers comprehensive documentation and best practices for frameworks, libraries, or dependencies. Use when you need official docs, version-specific constraints, or implementation patterns.",

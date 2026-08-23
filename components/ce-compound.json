@@ -1,10 +1,10 @@
 {
   "name": "ce-compound",
   "dist-tags": {
-    "latest": "3.13.0"
+    "latest": "3.13.1"
   },
   "versions": {
-    "3.13.0": {
+    "3.13.1": {
       "name": "ce-compound",
       "type": "skill",
       "description": "Document a recently solved problem to compound your team's knowledge",
@@ -27,7 +27,7 @@
         {
           "path": "skills/ce-compound/references/yaml-schema.md",
           "target": "skills/ce-compound/references/yaml-schema.md",
-          "integrity": "sha256-VxXYwGYGD5MTW29VNukymyzbB9CfwTSz4m+e/CqKdgg="
+          "integrity": "sha256-F7PQoLq3ou7bSPjpM1jfdHJ3WcsHL6Fa4SXfEPkfQp8="
         }
       ]
     }
