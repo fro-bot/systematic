@@ -1,10 +1,10 @@
 {
   "name": "resolve-pr-feedback",
   "dist-tags": {
-    "latest": "3.14.3"
+    "latest": "3.14.4"
   },
   "versions": {
-    "3.14.3": {
+    "3.14.4": {
       "name": "resolve-pr-feedback",
       "type": "skill",
       "description": "Resolve PR review feedback by evaluating validity and fixing issues in parallel. Use when addressing PR review comments, resolving review threads, or fixing code review feedback.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/resolve-pr-feedback/SKILL.md",
           "target": "skills/resolve-pr-feedback/SKILL.md",
-          "integrity": "sha256-aLUqA58tEYURKJsd23QduPA3Ov7fMHWODhdLGBXzHpo="
+          "integrity": "sha256-ASnHFMuoFk2qeISMNWcrWkjgQ7RxXnGLRmHI9ft6fys="
         },
         {
           "path": "skills/resolve-pr-feedback/scripts/get-pr-comments",

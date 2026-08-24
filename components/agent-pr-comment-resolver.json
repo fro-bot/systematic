@@ -1,10 +1,10 @@
 {
   "name": "agent-pr-comment-resolver",
   "dist-tags": {
-    "latest": "3.14.3"
+    "latest": "3.14.4"
   },
   "versions": {
-    "3.14.3": {
+    "3.14.4": {
       "name": "agent-pr-comment-resolver",
       "type": "agent",
       "description": "Evaluates and resolves one or more related PR review threads -- assesses validity, implements fixes, and returns structured summaries with reply text. Spawned by the resolve-pr-feedback skill.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/workflow/pr-comment-resolver.md",
           "target": "agents/workflow/pr-comment-resolver.md",
-          "integrity": "sha256-QMJcN0aVZtELub0j1cGZSpurv4iHKUwW3tyaoV9oTeM="
+          "integrity": "sha256-JhgwfZ1nvIoNKmNCmo3A08uaUDa8rVeYD8yMMw19gEo="
         }
       ]
     }
