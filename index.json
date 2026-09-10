@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "3.16.5",
+  "version": "3.17.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -233,6 +233,11 @@
       "name": "ce-review",
       "type": "skill",
       "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR."
+    },
+    {
+      "name": "ce-review-cleanup",
+      "type": "skill",
+      "description": "Use when the operator wants to delete old ce:review run directories under .context/systematic/ce-review/ to free disk space or purge stale local review evidence. Use when asked to clean up, prune, or remove old review runs, review artifacts, or review-summary.json history."
     },
     {
       "name": "ce-work",

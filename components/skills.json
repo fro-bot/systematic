@@ -1,10 +1,10 @@
 {
   "name": "skills",
   "dist-tags": {
-    "latest": "3.16.5"
+    "latest": "3.17.0"
   },
   "versions": {
-    "3.16.5": {
+    "3.17.0": {
       "name": "skills",
       "type": "bundle",
       "description": "All Systematic skills",
@@ -19,6 +19,7 @@
         "ce-ideate",
         "ce-plan",
         "ce-review",
+        "ce-review-cleanup",
         "ce-work",
         "compound-docs",
         "deepen-plan",
