@@ -1,10 +1,10 @@
 {
   "name": "ce-review-cleanup",
   "dist-tags": {
-    "latest": "3.18.2"
+    "latest": "3.18.3"
   },
   "versions": {
-    "3.18.2": {
+    "3.18.3": {
       "name": "ce-review-cleanup",
       "type": "skill",
       "description": "Use when the operator wants to delete old ce:review run directories under .context/systematic/ce-review/ to free disk space or purge stale local review evidence. Use when asked to clean up, prune, or remove old review runs, review artifacts, or review-summary.json history.",
