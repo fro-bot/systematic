@@ -1,10 +1,10 @@
 {
   "name": "ce-review",
   "dist-tags": {
-    "latest": "3.18.3"
+    "latest": "3.18.4"
   },
   "versions": {
-    "3.18.3": {
+    "3.18.4": {
       "name": "ce-review",
       "type": "skill",
       "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-review/SKILL.md",
           "target": "skills/ce-review/SKILL.md",
-          "integrity": "sha256-C7VDqnXE+RISrYs8fJcxWbcUYZUb3zAyWoVU4IcySVU="
+          "integrity": "sha256-G2sxwWA5eFMwgzCRQeKcEsuGY9yItO80ZvQvn7gdufs="
         },
         {
           "path": "skills/ce-review/references/diff-scope.md",
@@ -30,6 +30,11 @@
           "integrity": "sha256-Oq2QWfOIiapStCvO74D7Ll/uJbVwkZyR/EdcJzcHMNA="
         },
         {
+          "path": "skills/ce-review/references/pipeline-invocation.md",
+          "target": "skills/ce-review/references/pipeline-invocation.md",
+          "integrity": "sha256-9AfVS/w2flFBGZgCM72G8SNGE4mxKy1W1U7dBA40wfQ="
+        },
+        {
           "path": "skills/ce-review/references/resolve-base.sh",
           "target": "skills/ce-review/references/resolve-base.sh",
           "integrity": "sha256-xqKfWuFSf2GKWp93YFS4CGM16vEpg5aQNudf7y26ctI="
@@ -37,7 +42,12 @@
         {
           "path": "skills/ce-review/references/review-output-template.md",
           "target": "skills/ce-review/references/review-output-template.md",
-          "integrity": "sha256-tEbG1tUZCewMOMDOAptk0d1aBUfnFYF+3pBWGWayxqg="
+          "integrity": "sha256-t+S2jO/2W0YHIkqrmTWseChrabGJ7h8cioVnPeFmnow="
+        },
+        {
+          "path": "skills/ce-review/references/review-pipeline-schema.json",
+          "target": "skills/ce-review/references/review-pipeline-schema.json",
+          "integrity": "sha256-iDuj+4V2QnU45r2wxAbAf5mdc7CdN8Mdh7rQ4onOHn8="
         },
         {
           "path": "skills/ce-review/references/review-summary-schema.json",
@@ -47,12 +57,12 @@
         {
           "path": "skills/ce-review/references/subagent-template.md",
           "target": "skills/ce-review/references/subagent-template.md",
-          "integrity": "sha256-Q5YTivFvyuMk0E1EKRzlvi53Pg2zFgjWVEI1KOZf0Ls="
+          "integrity": "sha256-HVZCWG/32KhggeS2+dKaVMuRhpZhfjrxcS4I9ARvpxk="
         },
         {
           "path": "skills/ce-review/references/synthesis-artifact-contract.md",
           "target": "skills/ce-review/references/synthesis-artifact-contract.md",
-          "integrity": "sha256-6MNbFjerMsQkDsK6U//YLLcZcIx+L2RqZb33CpwY/kU="
+          "integrity": "sha256-6e1CObKTbzdj4mVDjw/hWz3FcRLXNd5bTROuNW3e/nM="
         },
         {
           "path": "skills/ce-review/references/validator-template.md",
@@ -67,7 +77,7 @@
         {
           "path": "skills/ce-review/scripts/validate-review.mjs",
           "target": "skills/ce-review/scripts/validate-review.mjs",
-          "integrity": "sha256-eldnoOD58hJBXOAWDe/qvUmFoBQ5D544cuRtUKaraLc="
+          "integrity": "sha256-4X0p2YawmBBj9zS1ux/UtT/eNBKg3Y3itXfff1A8KCc="
         }
       ]
     }
