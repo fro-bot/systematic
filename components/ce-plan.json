@@ -1,10 +1,10 @@
 {
   "name": "ce-plan",
   "dist-tags": {
-    "latest": "3.22.1"
+    "latest": "3.22.2"
   },
   "versions": {
-    "3.22.1": {
+    "3.22.2": {
       "name": "ce-plan",
       "type": "skill",
       "description": "Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan.",
@@ -17,7 +17,7 @@
         {
           "path": "skills/ce-plan/references/deepening-workflow.md",
           "target": "skills/ce-plan/references/deepening-workflow.md",
-          "integrity": "sha256-+w6QlYKi/9+I1ftJYcdBjH26H4lzNMFE3GOlbnqO4co="
+          "integrity": "sha256-hLmR33z4E7amFQl51oiwxsWXIHIDIqd8o2ueo7ZzFsY="
         },
         {
           "path": "skills/ce-plan/references/markdown-rendering.md",
@@ -27,7 +27,7 @@
         {
           "path": "skills/ce-plan/references/plan-handoff.md",
           "target": "skills/ce-plan/references/plan-handoff.md",
-          "integrity": "sha256-Rh6Dp4pl/U+qsaFWHrJ4h4s8PeD/Lq4ERcUjmKKDdS8="
+          "integrity": "sha256-/rynvtsR4FW4k0q5eVCU2JbZX7Ujca8p5Xy1mER10UE="
         },
         {
           "path": "skills/ce-plan/references/plan-sections.md",
@@ -47,7 +47,7 @@
         {
           "path": "skills/ce-plan/references/universal-planning.md",
           "target": "skills/ce-plan/references/universal-planning.md",
-          "integrity": "sha256-TFAOV28wcdf+3C7vAuU/mlhO9LYETmsRIGLp4ox33uw="
+          "integrity": "sha256-K4rcjNX4+PxeuQ+IDNX8yJZlj1Kkl6LrEIpEQf13Y6Q="
         },
         {
           "path": "skills/ce-plan/references/visual-communication.md",

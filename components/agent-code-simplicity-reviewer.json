@@ -1,18 +1,18 @@
 {
   "name": "agent-code-simplicity-reviewer",
   "dist-tags": {
-    "latest": "3.22.1"
+    "latest": "3.22.2"
   },
   "versions": {
-    "3.22.1": {
+    "3.22.2": {
       "name": "agent-code-simplicity-reviewer",
       "type": "agent",
-      "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities. Dispatched by ce-compound for code-heavy issues, not by ce:review.",
+      "description": "Final review pass to ensure code is as simple and minimal as possible. Use after implementation is complete to identify YAGNI violations and simplification opportunities. Dispatched by ce:compound for code-heavy issues, not by ce:review.",
       "files": [
         {
           "path": "agents/review/code-simplicity-reviewer.md",
           "target": "agents/review/code-simplicity-reviewer.md",
-          "integrity": "sha256-sPDZOqUaf6Uj86mNNOlOyx9wsMUyStkB95zgBcWNSws="
+          "integrity": "sha256-Q7fsKNmS+ac1j+C7aSCSUnxfYLOzKXZgaJtZhB61RGU="
         }
       ]
     }
