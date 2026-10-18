@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "3.22.6"
+    "latest": "3.22.7"
   },
   "versions": {
-    "3.22.6": {
+    "3.22.7": {
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
@@ -12,7 +12,7 @@
         {
           "path": "skills/using-systematic/SKILL.md",
           "target": "skills/using-systematic/SKILL.md",
-          "integrity": "sha256-1o83yyJZGOyfNaXxpYzezrxT6CGiuofzNy2p0za7tKw="
+          "integrity": "sha256-G7jLgZRI6c2EErdbu377HxoazjalO8yJWn257E45EHI="
         },
         {
           "path": "skills/using-systematic/references/claude-code-profile.md",
