@@ -1,0 +1,25 @@
+{
+  "name": "pr-attachments",
+  "dist-tags": {
+    "latest": "3.26.0"
+  },
+  "versions": {
+    "3.26.0": {
+      "name": "pr-attachments",
+      "type": "skill",
+      "description": "Use when attaching local screenshots or other images to a pull request, publishing evidence images as commit-pinned embeds in a managed Demo section of the PR description, re-pinning those embeds after a rebase or force-push, or cleaning up evidence images once the PR is done.",
+      "files": [
+        {
+          "path": "skills/pr-attachments/SKILL.md",
+          "target": "skills/pr-attachments/SKILL.md",
+          "integrity": "sha256-Lg45wbDzOU8a1U3Qqa5vUeHHappXMBBrYkPFlnVV7bM="
+        },
+        {
+          "path": "skills/pr-attachments/scripts/pr-attachments.mjs",
+          "target": "skills/pr-attachments/scripts/pr-attachments.mjs",
+          "integrity": "sha256-BCJYlKcMH9YgIXreMTckBBa4VAJYVhuQuQWCmq86dkU="
+        }
+      ]
+    }
+  }
+}
