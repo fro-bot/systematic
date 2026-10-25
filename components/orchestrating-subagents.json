@@ -1,10 +1,10 @@
 {
   "name": "orchestrating-subagents",
   "dist-tags": {
-    "latest": "3.26.1"
+    "latest": "3.26.2"
   },
   "versions": {
-    "3.26.1": {
+    "3.26.2": {
       "name": "orchestrating-subagents",
       "type": "skill",
       "description": "Use when dispatching parallel or serial subagents, coordinating multi-unit plan execution, synthesizing results from independent subagent runs, or handling subagent failure and retry. Triggers on requests to run tasks in parallel, divide work, orchestrate a pipeline of dependent steps, or coordinate multiple agents without shared-file conflicts.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/orchestrating-subagents/SKILL.md",
           "target": "skills/orchestrating-subagents/SKILL.md",
-          "integrity": "sha256-nA8H+dVFgMEoDpFjQA3dQ4yYvH6ojpP0Fur5jXpzYtU="
+          "integrity": "sha256-4eQqcTfWoAwnFTO6vojKfxssONi4J5hOLj51fAYmVig="
         }
       ]
     }

@@ -1,23 +1,23 @@
 {
   "name": "git-worktree",
   "dist-tags": {
-    "latest": "3.26.1"
+    "latest": "3.26.2"
   },
   "versions": {
-    "3.26.1": {
+    "3.26.2": {
       "name": "git-worktree",
       "type": "skill",
-      "description": "This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles.",
+      "description": "Use when work needs an isolated git worktree, such as parallel feature branches, reviewing a PR without disturbing the current checkout, or cleaning up old worktrees.",
       "files": [
         {
           "path": "skills/git-worktree/SKILL.md",
           "target": "skills/git-worktree/SKILL.md",
-          "integrity": "sha256-tp5Ujq2iroFMgVxJdy/VpymR2XnGp9Sm+t1S399Q/BA="
+          "integrity": "sha256-2RRaKMHvnkpjmIZzMy+vy46O6H95+CcHLFfIoCUvmzY="
         },
         {
           "path": "skills/git-worktree/scripts/worktree-manager.sh",
           "target": "skills/git-worktree/scripts/worktree-manager.sh",
-          "integrity": "sha256-2IyS88xjqbPgP7pKpzlHFvgA/qv043aCn20q9sx94iY="
+          "integrity": "sha256-TkTumFBC3lF3j/oMBLq2WeATc9ugFCgFxunceUH2u58="
         }
       ]
     }

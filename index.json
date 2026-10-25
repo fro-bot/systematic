@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "3.26.1",
+  "version": "3.26.2",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -287,7 +287,7 @@
     {
       "name": "git-worktree",
       "type": "skill",
-      "description": "This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles."
+      "description": "Use when work needs an isolated git worktree, such as parallel feature branches, reviewing a PR without disturbing the current checkout, or cleaning up old worktrees."
     },
     {
       "name": "lfg",
