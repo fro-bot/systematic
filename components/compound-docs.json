@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "3.26.0"
+    "latest": "3.26.1"
   },
   "versions": {
-    "3.26.0": {
+    "3.26.1": {
       "name": "compound-docs",
       "type": "skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
@@ -32,7 +32,7 @@
         {
           "path": "skills/compound-docs/schema.yaml",
           "target": "skills/compound-docs/schema.yaml",
-          "integrity": "sha256-NLXKrwKJlC68EDcgf142QJUIlfIa9Eptk2r+z+UYtgg="
+          "integrity": "sha256-zp1hRbuLw9MSCSh40FelM6GhFBG5DwAGPrGwzl1uvDc="
         }
       ]
     }
