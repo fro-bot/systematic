@@ -1,10 +1,10 @@
 {
   "name": "agent-learnings-researcher",
   "dist-tags": {
-    "latest": "3.26.2"
+    "latest": "3.26.3"
   },
   "versions": {
-    "3.26.2": {
+    "3.26.3": {
       "name": "agent-learnings-researcher",
       "type": "agent",
       "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes.",
@@ -12,7 +12,7 @@
         {
           "path": "agents/research/learnings-researcher.md",
           "target": "agents/research/learnings-researcher.md",
-          "integrity": "sha256-BZsyaA6EoK4Ii5y0rZycKJN1eOPLXRtC7A9uL2VFeNc="
+          "integrity": "sha256-2cKO5QBAT6WgpOAb1afbhWE4ovzEdIZBijkqwHB0UZc="
         }
       ]
     }

@@ -79,8 +79,9 @@
 <p><strong>Purpose:</strong> Automatically document solved problems to build searchable institutional knowledge with category-based organization (enum-validated problem types).</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="overview">Overview</h2><a class="sl-anchor-link" href="#overview"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Overview”</span></a></div>
 <p>This skill captures problem solutions immediately after confirmation, creating structured documentation that serves as a searchable knowledge base for future sessions.</p>
-<p><strong>Organization:</strong> Single-file architecture - each problem documented as one markdown file in its symptom category directory (e.g., <code dir="auto">docs/solutions/performance-issues/n-plus-one-briefs.md</code>). Files use YAML frontmatter for metadata and searchability.</p>
-<p><strong>Prerequisites:</strong> The problem has been solved and the solution has been verified working. Do not document in-progress investigations as finalized solutions.</p>
+<p><strong>Organization:</strong> Single-file architecture - each learning documented as one markdown file in the category directory its <code dir="auto">problem_type</code> maps to (e.g., <code dir="auto">docs/solutions/performance-issues/n-plus-one-report-queries.md</code>). Files use YAML frontmatter for metadata and searchability.</p>
+<p><strong>Two tracks:</strong> The <code dir="auto">problem_type</code> decides the track. The <strong>bug track</strong> documents a defect that was diagnosed and fixed, and requires <code dir="auto">symptoms</code>, <code dir="auto">root_cause</code> and <code dir="auto">resolution_type</code>. The <strong>knowledge track</strong> documents a practice, pattern, convention or workflow decision, and needs none of those. The track lists live in <a href="./references/schema.yaml">references/schema.yaml</a>.</p>
+<p><strong>Prerequisites:</strong> The problem has been solved and the solution has been verified working, or the guidance has been confirmed. Do not document in-progress investigations as finalized solutions.</p>
 <hr>
 <p>&#x3C;critical_sequence name=“documentation-capture” enforce_order=“strict”></p>
 <div class="sl-heading-wrapper level-h2"><h2 id="7-step-process">7-Step Process</h2><a class="sl-anchor-link" href="#7-step-process"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “7-Step Process”</span></a></div>
@@ -112,27 +113,36 @@
 </ul>
 <step number="2" required="true" depends_on="1">
 ### Step 2: Gather Context
-<p>Extract from conversation history:</p>
-<p><strong>Required information:</strong></p>
+<p>Decide the track first: a fixed defect is the bug track, and a practice or decision worth keeping is the knowledge track. Then extract from conversation history:</p>
+<p><strong>Required for both tracks:</strong></p>
 <ul>
-<li><strong>Module name</strong>: Which module or component had the problem</li>
+<li><strong>Module name</strong>: Which module or area the learning applies to</li>
+<li><strong>Prevention or guidance</strong>: How to avoid the problem, or what to do instead</li>
+</ul>
+<p><strong>Bug track:</strong></p>
+<ul>
 <li><strong>Symptom</strong>: Observable error/behavior (exact error messages)</li>
 <li><strong>Investigation attempts</strong>: What didn’t work and why</li>
 <li><strong>Root cause</strong>: Technical explanation of actual problem</li>
 <li><strong>Solution</strong>: What fixed it (code/config changes)</li>
-<li><strong>Prevention</strong>: How to avoid in future</li>
 </ul>
-<p><strong>Environment details:</strong></p>
+<p><strong>Knowledge track:</strong></p>
 <ul>
-<li>Rails version</li>
-<li>Stage (0-6 or post-implementation)</li>
+<li><strong>Context</strong>: The situation, gap or friction that prompted the guidance</li>
+<li><strong>Guidance</strong>: The practice, pattern or recommendation</li>
+<li><strong>Why it matters</strong>: Rationale and impact</li>
+<li><strong>When it applies</strong>: Conditions where the guidance holds</li>
+</ul>
+<p><strong>Environment details (optional):</strong></p>
+<ul>
+<li>Runtime, framework or toolchain versions</li>
 <li>OS version</li>
 <li>File/line references</li>
 </ul>
-<p><strong>BLOCKING REQUIREMENT:</strong> If critical context is missing (module name, exact error, stage, or resolution steps), ask user and WAIT for response before proceeding to Step 3:</p>
+<p><strong>BLOCKING REQUIREMENT:</strong> If critical context is missing, ask the user and WAIT for response before proceeding to Step 3. Bug track needs the module name, the exact error or symptom, and the resolution steps. Knowledge track needs the module name, the guidance, and when it applies:</p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">I need a few details to document this properly:</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Which module had this issue? [ModuleName]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. What was the exact error message or symptom?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. What stage were you in? (0-6 or post-implementation)</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">[Continue after user provides details]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="I need a few details to document this properly:1. Which module had this issue? [ModuleName]2. What was the exact error message or symptom?3. What stage were you in? (0-6 or post-implementation)[Continue after user provides details]"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Which module or area is this about? [ModuleName]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Bug track: what was the exact error message or symptom?</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">   </span></span><span style="--0:#d6deeb;--1:#403f53">Knowledge track: what is the guidance, and when does it apply?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Bug track only: what fixed it?</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">[Continue after user provides details]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="I need a few details to document this properly:1. Which module or area is this about? [ModuleName]2. Bug track: what was the exact error message or symptom?   Knowledge track: what is the guidance, and when does it apply?3. Bug track only: what fixed it?[Continue after user provides details]"><div></div></button></div></figure></div>
 </step>
 <step number="3" required="false" depends_on="2">
 ### Step 3: Check Existing Docs
@@ -150,7 +160,8 @@
 </p>
 <step number="4" required="true" depends_on="2">
 ### Step 4: Generate Filename
-<p>Format: <code dir="auto">[sanitized-symptom]-[module]-[YYYYMMDD].md</code></p>
+<p>Format: <code dir="auto">[sanitized-symptom-or-title]-[module]-[YYYYMMDD].md</code></p>
+<p>Bug-track docs name the file after the symptom. Knowledge-track docs have no symptom, so they use a short sanitized title of the guidance.</p>
 <p><strong>Sanitization rules:</strong></p>
 <ul>
 <li>Lowercase</li>
@@ -160,9 +171,10 @@
 </ul>
 <p><strong>Examples:</strong></p>
 <ul>
-<li><code dir="auto">missing-include-BriefSystem-20251110.md</code></li>
-<li><code dir="auto">parameter-not-saving-state-EmailProcessing-20251110.md</code></li>
-<li><code dir="auto">webview-crash-on-resize-Assistant-20251110.md</code>
+<li><code dir="auto">n-plus-one-report-generation-ReportService-20251110.md</code> (bug track)</li>
+<li><code dir="auto">parameter-not-saving-state-Checkout-20251110.md</code> (bug track)</li>
+<li><code dir="auto">webview-crash-on-resize-Assistant-20251110.md</code> (bug track)</li>
+<li><code dir="auto">prefer-explicit-request-timeouts-HttpClient-20251110.md</code> (knowledge track)
 
 </li>
 </ul>
@@ -171,53 +183,40 @@
 <p><strong>CRITICAL:</strong> All docs require validated YAML frontmatter with enum validation.</p>
 <p>&#x3C;validation_gate name=“yaml-schema” blocking=“true”></p>
 <p><strong>Validate against schema:</strong>
-Load <code dir="auto">schema.yaml</code> and classify the problem against the enum values defined in <a href="./references/yaml-schema.md">yaml-schema.md</a>. Ensure all required fields are present and match allowed values exactly.</p>
+Load <a href="./references/schema.yaml">references/schema.yaml</a> and classify the problem against the enum values defined there and summarized in <a href="./references/yaml-schema.md">yaml-schema.md</a>. Ensure all required fields are present and match allowed values exactly.</p>
+<ul>
+<li>Required for both tracks: <code dir="auto">module</code>, <code dir="auto">date</code>, <code dir="auto">problem_type</code>, <code dir="auto">component</code>, <code dir="auto">severity</code>.</li>
+<li>Required for the bug track only: <code dir="auto">symptoms</code> (1-5 items), <code dir="auto">root_cause</code>, <code dir="auto">resolution_type</code>. A knowledge-track doc may omit all three.</li>
+<li>Offer and write only the <code dir="auto">values</code> lists. A value under <code dir="auto">legacy_values</code> is accepted when an existing doc already carries it, and is never chosen for a new doc.</li>
+</ul>
 <p><strong>BLOCK if validation fails:</strong></p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">❌ YAML validation failed</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Errors:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- problem_type: must be one of schema enums, got "compilation_error"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- severity: must be one of [critical, high, medium, low], got "invalid"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- symptoms: must be array with 1-5 items, got string</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Please provide corrected values.</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="❌ YAML validation failedErrors:- problem_type: must be one of schema enums, got &#x22;compilation_error&#x22;- severity: must be one of [critical, high, medium, low], got &#x22;invalid&#x22;- symptoms: must be array with 1-5 items, got stringPlease provide corrected values."><div></div></button></div></figure></div>
-<p><strong>GATE ENFORCEMENT:</strong> Do NOT proceed to Step 6 (Create Documentation) until YAML frontmatter passes all validation rules defined in <code dir="auto">schema.yaml</code>.</p>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Errors:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- problem_type: must be one of schema enums, got "compilation_error"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- severity: must be one of [critical, high, medium, low], got "invalid"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- symptoms (bug track): must be array with 1-5 items, got string</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Please provide corrected values.</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="❌ YAML validation failedErrors:- problem_type: must be one of schema enums, got &#x22;compilation_error&#x22;- severity: must be one of [critical, high, medium, low], got &#x22;invalid&#x22;- symptoms (bug track): must be array with 1-5 items, got stringPlease provide corrected values."><div></div></button></div></figure></div>
+<p><strong>GATE ENFORCEMENT:</strong> Do NOT proceed to Step 6 (Create Documentation) until YAML frontmatter passes all validation rules defined in <code dir="auto">references/schema.yaml</code>.</p>
 <p>&#x3C;/validation_gate>
 </p>
 <step number="6" required="true" depends_on="5">
 ### Step 6: Create Documentation
-<p><strong>Determine category from problem_type:</strong> Use the category mapping defined in <a href="./references/yaml-schema.md">yaml-schema.md</a> (lines 49-61).</p>
-<p><strong>Create documentation file:</strong></p>
+<p><strong>Determine category from problem_type:</strong> Use the Category Mapping section of <a href="./references/yaml-schema.md">yaml-schema.md</a>. The narrow knowledge types (<code dir="auto">architecture_pattern</code>, <code dir="auto">design_pattern</code>, <code dir="auto">tooling_decision</code>, <code dir="auto">convention</code>) share <code dir="auto">best-practices/</code> with <code dir="auto">best_practice</code>.</p>
+<p><strong>Create documentation file:</strong> The directory is created on first use, so no category directory needs to exist beforehand.</p>
 <div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">PROBLEM_TYPE</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">[from validated YAML]</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">CATEGORY</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">[mapped from problem_type]</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">FILENAME</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">[generated-filename].md</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">DOC_PATH</span><span style="--0:#C792EA;--1:#8844AE">=</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">docs/solutions/${</span><span style="--0:#C5E478;--1:#3B61B0">CATEGORY</span><span style="--0:#ECC48D;--1:#984E4D">}/${</span><span style="--0:#C5E478;--1:#3B61B0">FILENAME</span><span style="--0:#ECC48D;--1:#984E4D">}</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Create directory if needed</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">mkdir</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-p</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">docs/solutions/${</span><span style="--0:#C5E478;--1:#3B61B0">CATEGORY</span><span style="--0:#ECC48D;--1:#984E4D">}</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Write documentation using template from assets/resolution-template.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># (Content populated with Step 2 context and validated YAML frontmatter)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="PROBLEM_TYPE=&#x22;[from validated YAML]&#x22;CATEGORY=&#x22;[mapped from problem_type]&#x22;FILENAME=&#x22;[generated-filename].md&#x22;DOC_PATH=&#x22;docs/solutions/${CATEGORY}/${FILENAME}&#x22;mkdir -p &#x22;docs/solutions/${CATEGORY}&#x22;"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Create directory on first use</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">mkdir</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">-p</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">docs/solutions/${</span><span style="--0:#C5E478;--1:#3B61B0">CATEGORY</span><span style="--0:#ECC48D;--1:#984E4D">}</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Write documentation using the template for the track in assets/resolution-template.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># (Content populated with Step 2 context and validated YAML frontmatter)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="PROBLEM_TYPE=&#x22;[from validated YAML]&#x22;CATEGORY=&#x22;[mapped from problem_type]&#x22;FILENAME=&#x22;[generated-filename].md&#x22;DOC_PATH=&#x22;docs/solutions/${CATEGORY}/${FILENAME}&#x22;mkdir -p &#x22;docs/solutions/${CATEGORY}&#x22;"><div></div></button></div></figure></div>
 <p><strong>Result:</strong></p>
 <ul>
 <li>Single file in category directory</li>
 <li>Enum validation ensures consistent categorization</li>
 </ul>
-<p><strong>Create documentation:</strong> Populate the structure from <code dir="auto">assets/resolution-template.md</code> with context gathered in Step 2 and validated YAML frontmatter from Step 5.
+<p><strong>Create documentation:</strong> Populate the Bug Track or Knowledge Track template from <code dir="auto">assets/resolution-template.md</code> with context gathered in Step 2 and validated YAML frontmatter from Step 5.
 </p>
 <step number="7" required="false" depends_on="6">
-### Step 7: Cross-Reference &#x26; Critical Pattern Detection
+### Step 7: Cross-Reference
 <p>If similar issues found in Step 3:</p>
 <p><strong>Update existing doc:</strong></p>
 <div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Add Related Issues link to similar doc</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">echo</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">- See also: [</span><span style="--0:#C5E478;--1:#3B61B0">$FILENAME</span><span style="--0:#ECC48D;--1:#984E4D">](</span><span style="--0:#C5E478;--1:#3B61B0">$REAL_FILE</span><span style="--0:#ECC48D;--1:#984E4D">)</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">>></span><span style="--0:#D6DEEB;--1:#403F53"> [similar-doc.md]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="echo &#x22;- See also: [$FILENAME]($REAL_FILE)&#x22; >> [similar-doc.md]"><div></div></button></div></figure></div>
 <p><strong>Update new doc:</strong>
-Already includes cross-reference from Step 6.</p>
-<p><strong>Update patterns if applicable:</strong></p>
-<p>If this represents a common pattern (3+ similar issues):</p>
-<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F"># Add to docs/solutions/patterns/common-solutions.md</span></div></div><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3B61B0">cat</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">>></span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#ECC48D;--1:#3B61B0">docs/solutions/patterns/common-solutions.md</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">&#x3C;&#x3C;</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">'EOF'</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">## [Pattern Name]</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">**Common symptom:** [Description]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">**Root cause:** [Technical explanation]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">**Solution pattern:** [General approach]</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">**Examples:**</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">- [Link to doc 1]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">- [Link to doc 2]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#ECC48D;--1:#984E4D">- [Link to doc 3]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">EOF</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="cat >> docs/solutions/patterns/common-solutions.md << &#x27;EOF&#x27;**Common symptom:** [Description]**Root cause:** [Technical explanation]**Solution pattern:** [General approach]**Examples:**- [Link to doc 1]- [Link to doc 2]- [Link to doc 3]EOF"><div></div></button></div></figure></div>
-<p><strong>Critical Pattern Detection (Optional Proactive Suggestion):</strong></p>
-<p>If this issue has automatic indicators suggesting it might be critical:</p>
-<ul>
-<li>Severity: <code dir="auto">critical</code> in YAML</li>
-<li>Affects multiple modules OR foundational stage (Stage 2 or 3)</li>
-<li>Non-obvious solution</li>
-</ul>
-<p>Then in the decision menu (Step 8), add a note:</p>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">💡 This might be worth adding to Required Reading (Option 2)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="💡 This might be worth adding to Required Reading (Option 2)"><div></div></button></div></figure></div>
-<p>But <strong>NEVER auto-promote</strong>. User decides via decision menu (Option 2).</p>
-<p><strong>Template for critical pattern addition:</strong></p>
-<p>When user selects Option 2 (Add to Required Reading), use the template from <code dir="auto">assets/critical-pattern-template.md</code> to structure the pattern entry. Number it sequentially based on existing patterns in <code dir="auto">docs/solutions/patterns/critical-patterns.md</code>.
+Already includes cross-reference from Step 6.
 </p>
 <p>&#x3C;/critical_sequence></p>
 <hr>
@@ -226,64 +225,35 @@ Already includes cross-reference from Step 6.</p>
 <p>After successful documentation, present options and WAIT for user response:</p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">✓ Solution documented</span></div></div><div class="ec-line"><div class="code">
 </div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File created:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/[category]/[filename].md</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Link related issues - Connect to similar problems</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Create new skill - Extract into new learning skill</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">6. View documentation - See what was captured</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">7. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Solution documentedFile created:- docs/solutions/[category]/[filename].mdWhat&#x27;s next?1. Continue workflow (recommended)2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)3. Link related issues - Connect to similar problems4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)5. Create new skill - Extract into new learning skill6. View documentation - See what was captured7. Other"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Link related issues - Connect to similar problems</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Create new skill - Extract into new learning skill</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. View documentation - See what was captured</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Solution documentedFile created:- docs/solutions/[category]/[filename].mdWhat&#x27;s next?1. Continue workflow (recommended)2. Link related issues - Connect to similar problems3. Create new skill - Extract into new learning skill4. View documentation - See what was captured5. Other"><div></div></button></div></figure></div>
 <p><strong>Handle responses:</strong></p>
 <p><strong>Option 1: Continue workflow</strong></p>
 <ul>
 <li>Return to calling skill/workflow</li>
 <li>Documentation is complete</li>
 </ul>
-<p><strong>Option 2: Add to Required Reading</strong> ⭐ PRIMARY PATH FOR CRITICAL PATTERNS</p>
-<p>User selects this when:</p>
-<ul>
-<li>System made this mistake multiple times across different modules</li>
-<li>Solution is non-obvious but must be followed every time</li>
-<li>Foundational requirement (Rails, Rails API, threading, etc.)</li>
-</ul>
-<p>Action:</p>
-<ol>
-<li>Extract pattern from the documentation</li>
-<li>Format as ❌ WRONG vs ✅ CORRECT with code examples</li>
-<li>Add to <code dir="auto">docs/solutions/patterns/critical-patterns.md</code></li>
-<li>Add cross-reference back to this doc</li>
-<li>Confirm: ”✓ Added to Required Reading. All subagents will see this pattern before code generation.”</li>
-</ol>
-<p><strong>Option 3: Link related issues</strong></p>
+<p><strong>Option 2: Link related issues</strong></p>
 <ul>
 <li>Prompt: “Which doc to link? (provide filename or describe)”</li>
 <li>Search docs/solutions/ for the doc</li>
 <li>Add cross-reference to both docs</li>
 <li>Confirm: ”✓ Cross-reference added”</li>
 </ul>
-<p><strong>Option 4: Add to existing skill</strong></p>
-<p>User selects this when the documented solution relates to an existing learning skill:</p>
-<p>Action:</p>
-<ol>
-<li>Prompt: “Which skill? (hotwire-native, etc.)”</li>
-<li>Determine which reference file to update (resources.md, patterns.md, or examples.md)</li>
-<li>Add link and brief description to appropriate section</li>
-<li>Confirm: ”✓ Added to [skill-name] skill in [file]”</li>
-</ol>
-<p>Example: For Hotwire Native Tailwind variants solution:</p>
-<ul>
-<li>Add to <code dir="auto">hotwire-native/references/resources.md</code> under “Project-Specific Resources”</li>
-<li>Add to <code dir="auto">hotwire-native/references/examples.md</code> with link to solution doc</li>
-</ul>
-<p><strong>Option 5: Create new skill</strong></p>
+<p><strong>Option 3: Create new skill</strong></p>
 <p>User selects this when the solution represents the start of a new learning domain:</p>
 <p>Action:</p>
 <ol>
-<li>Prompt: “What should the new skill be called? (e.g., stripe-billing, email-processing)”</li>
+<li>Prompt: “What should the new skill be called? (e.g., release-automation, api-versioning)”</li>
 <li>Run <code dir="auto">python3 .opencode/skills/skill-creator/scripts/init_skill.py [skill-name]</code></li>
 <li>Create initial reference files with this solution as first example</li>
 <li>Confirm: ”✓ Created new [skill-name] skill with this solution as first example”</li>
 </ol>
-<p><strong>Option 6: View documentation</strong></p>
+<p><strong>Option 4: View documentation</strong></p>
 <ul>
 <li>Display the created documentation</li>
 <li>Present decision menu again</li>
 </ul>
-<p><strong>Option 7: Other</strong></p>
+<p><strong>Option 5: Other</strong></p>
 <ul>
 <li>Ask what they’d like to do</li>
 </ul>
@@ -311,7 +281,7 @@ All context needed for documentation should be present in conversation history b
 <ul>
 <li>✅ YAML frontmatter validated (all required fields, correct formats)</li>
 <li>✅ File created in docs/solutions/[category]/[filename].md</li>
-<li>✅ Enum values match schema.yaml exactly</li>
+<li>✅ Enum values match references/schema.yaml exactly, offered <code dir="auto">values</code> only</li>
 <li>✅ Code examples included in solution section</li>
 <li>✅ Cross-references added if related issues found</li>
 <li>✅ User presented with decision menu and action confirmed</li>
@@ -346,7 +316,7 @@ All context needed for documentation should be present in conversation history b
 <p><strong>MUST do:</strong></p>
 <ul>
 <li>Validate YAML frontmatter (BLOCK if invalid per Step 5 validation gate)</li>
-<li>Extract exact error messages from conversation</li>
+<li>Extract exact error messages from conversation (bug track)</li>
 <li>Include code examples in solution section</li>
 <li>Create directories before writing files (<code dir="auto">mkdir -p</code>)</li>
 <li>Ask user and WAIT if critical context missing</li>
@@ -356,6 +326,7 @@ All context needed for documentation should be present in conversation history b
 <li>Skip YAML validation (validation gate is blocking)</li>
 <li>Use vague descriptions (not searchable)</li>
 <li>Omit code examples or cross-references</li>
+<li>Require <code dir="auto">symptoms</code> or an error message for a knowledge-track doc</li>
 </ul>
 <hr>
 <div class="sl-heading-wrapper level-h2"><h2 id="quality-guidelines">Quality Guidelines</h2><a class="sl-anchor-link" href="#quality-guidelines"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Quality Guidelines”</span></a></div>
@@ -393,31 +364,32 @@ All context needed for documentation should be present in conversation history b
 <p><strong>Skill activates:</strong></p>
 <ol>
 <li><strong>Detect confirmation:</strong> “That worked!” triggers auto-invoke</li>
-<li><strong>Gather context:</strong>
+<li><strong>Gather context (bug track):</strong>
 <ul>
-<li>Module: Brief System</li>
-<li>Symptom: Brief generation taking >5 seconds, N+1 query when loading email threads</li>
+<li>Module: Report Service</li>
+<li>Symptom: Report generation taking >5 seconds, N+1 query when loading comment threads</li>
 <li>Failed attempts: Added pagination (didn’t help), checked background job performance</li>
-<li>Solution: Added eager loading with <code dir="auto">includes(:emails)</code> on Brief model</li>
-<li>Root cause: Missing eager loading causing separate database query per email thread</li>
+<li>Solution: Loaded the comments for all reports in one eager-loaded query</li>
+<li>Root cause: Missing eager loading causing a separate database query per comment thread</li>
 </ul>
 </li>
 <li><strong>Check existing:</strong> No similar issue found</li>
-<li><strong>Generate filename:</strong> <code dir="auto">n-plus-one-brief-generation-BriefSystem-20251110.md</code></li>
+<li><strong>Generate filename:</strong> <code dir="auto">n-plus-one-report-generation-ReportService-20251110.md</code></li>
 <li><strong>Validate YAML:</strong>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">module</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Brief System</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">date</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3B61B0">2025-11-10</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">problem_type</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">performance_issue</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">component</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">rails_model</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">symptoms</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">- </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">N+1 query when loading email threads</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">- </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Brief generation taking >5 seconds</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">root_cause</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">missing_include</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">severity</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">high</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">tags</span><span style="--0:#D6DEEB;--1:#403F53">: [</span><span style="--0:#ECC48D;--1:#3B61B0">n-plus-one</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#ECC48D;--1:#3B61B0">eager-loading</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#ECC48D;--1:#3B61B0">performance</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="module: Brief Systemdate: 2025-11-10problem_type: performance_issuecomponent: rails_modelsymptoms:  - &#x22;N+1 query when loading email threads&#x22;  - &#x22;Brief generation taking >5 seconds&#x22;root_cause: missing_includeseverity: hightags: [n-plus-one, eager-loading, performance]"><div></div></button></div></figure></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="yaml"><code><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">module</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">Report Service</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">date</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#82AAFF;--1:#3B61B0">2025-11-10</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">problem_type</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">performance_issue</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">component</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">backend</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">symptoms</span><span style="--0:#D6DEEB;--1:#403F53">:</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">- </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">N+1 query when loading comment threads</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">  </span></span><span style="--0:#D6DEEB;--1:#403F53">- </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Report generation taking >5 seconds</span><span style="--0:#D9F5DD;--1:#111111">"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">root_cause</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">missing_include</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">severity</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#ECC48D;--1:#3B61B0">high</span></div></div><div class="ec-line"><div class="code"><span style="--0:#7FDBCA;--1:#111111">tags</span><span style="--0:#D6DEEB;--1:#403F53">: [</span><span style="--0:#ECC48D;--1:#3B61B0">n-plus-one</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#ECC48D;--1:#3B61B0">eager-loading</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#ECC48D;--1:#3B61B0">performance</span><span style="--0:#D6DEEB;--1:#403F53">]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="module: Report Servicedate: 2025-11-10problem_type: performance_issuecomponent: backendsymptoms:  - &#x22;N+1 query when loading comment threads&#x22;  - &#x22;Report generation taking >5 seconds&#x22;root_cause: missing_includeseverity: hightags: [n-plus-one, eager-loading, performance]"><div></div></button></div></figure></div>
 ✅ Valid</li>
 <li><strong>Create documentation:</strong>
 <ul>
-<li><code dir="auto">docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md</code></li>
+<li><code dir="auto">docs/solutions/performance-issues/n-plus-one-report-generation-ReportService-20251110.md</code></li>
 </ul>
 </li>
 <li><strong>Cross-reference:</strong> None needed (no similar issues)</li>
 </ol>
 <p><strong>Output:</strong></p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">✓ Solution documented</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File created:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md</span></div></div><div class="ec-line"><div class="code">
-</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Link related issues - Connect to similar problems</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Create new skill - Extract into new learning skill</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">6. View documentation - See what was captured</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">7. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Solution documentedFile created:- docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.mdWhat&#x27;s next?1. Continue workflow (recommended)2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)3. Link related issues - Connect to similar problems4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)5. Create new skill - Extract into new learning skill6. View documentation - See what was captured7. Other"><div></div></button></div></figure></div>
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">File created:</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">- docs/solutions/performance-issues/n-plus-one-report-generation-ReportService-20251110.md</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">What's next?</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">1. Continue workflow (recommended)</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">2. Link related issues - Connect to similar problems</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">3. Create new skill - Extract into new learning skill</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">4. View documentation - See what was captured</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">5. Other</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="✓ Solution documentedFile created:- docs/solutions/performance-issues/n-plus-one-report-generation-ReportService-20251110.mdWhat&#x27;s next?1. Continue workflow (recommended)2. Link related issues - Connect to similar problems3. Create new skill - Extract into new learning skill4. View documentation - See what was captured5. Other"><div></div></button></div></figure></div>
+<p><strong>Knowledge-track variant:</strong> For “we should always set explicit request timeouts”, the same flow asks only for the module, the guidance and when it applies. The frontmatter carries <code dir="auto">problem_type: convention</code> and no <code dir="auto">symptoms</code>, the file goes to <code dir="auto">docs/solutions/best-practices/</code>, and the directory is created if it does not exist yet.</p>
 <hr>
 <div class="sl-heading-wrapper level-h2"><h2 id="future-enhancements">Future Enhancements</h2><a class="sl-anchor-link" href="#future-enhancements"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Future Enhancements”</span></a></div>
 <p><strong>Not in Phase 7 scope, but potential:</strong></p>

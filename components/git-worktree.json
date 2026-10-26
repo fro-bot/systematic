@@ -1,10 +1,10 @@
 {
   "name": "git-worktree",
   "dist-tags": {
-    "latest": "3.26.2"
+    "latest": "3.26.3"
   },
   "versions": {
-    "3.26.2": {
+    "3.26.3": {
       "name": "git-worktree",
       "type": "skill",
       "description": "Use when work needs an isolated git worktree, such as parallel feature branches, reviewing a PR without disturbing the current checkout, or cleaning up old worktrees.",

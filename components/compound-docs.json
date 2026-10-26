@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "3.26.2"
+    "latest": "3.26.3"
   },
   "versions": {
-    "3.26.2": {
+    "3.26.3": {
       "name": "compound-docs",
       "type": "skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
@@ -12,27 +12,22 @@
         {
           "path": "skills/compound-docs/SKILL.md",
           "target": "skills/compound-docs/SKILL.md",
-          "integrity": "sha256-GeQsNurzSCTleG2Dm/hQQwH87skGVTOw2eyku1FQCSI="
-        },
-        {
-          "path": "skills/compound-docs/assets/critical-pattern-template.md",
-          "target": "skills/compound-docs/assets/critical-pattern-template.md",
-          "integrity": "sha256-73ZcszjeYXaEUq5+U4ozrrVv9xwqN2g5XEVDMlAdjLE="
+          "integrity": "sha256-Q6sqzcCzBxmaOI9tFtmbsZEW4BFd+NcLnhL9K3EzmwA="
         },
         {
           "path": "skills/compound-docs/assets/resolution-template.md",
           "target": "skills/compound-docs/assets/resolution-template.md",
-          "integrity": "sha256-T/OoOZRJ4/jNy7xMaSEDsUykuSmPqy14Y02/Yhwsceg="
+          "integrity": "sha256-rzzw6btDPw1d9RxZiiUbcEeH/DFJGJuyXNEZSwTgn6o="
+        },
+        {
+          "path": "skills/compound-docs/references/schema.yaml",
+          "target": "skills/compound-docs/references/schema.yaml",
+          "integrity": "sha256-j5rIUVus/N+t+2KlUFNbPohKeAGUehObg03qkcVNV2Y="
         },
         {
           "path": "skills/compound-docs/references/yaml-schema.md",
           "target": "skills/compound-docs/references/yaml-schema.md",
-          "integrity": "sha256-wQ7+4/96u9gD8wfFXncYTenvtQL4IcUgq345+/km0Ao="
-        },
-        {
-          "path": "skills/compound-docs/schema.yaml",
-          "target": "skills/compound-docs/schema.yaml",
-          "integrity": "sha256-zp1hRbuLw9MSCSh40FelM6GhFBG5DwAGPrGwzl1uvDc="
+          "integrity": "sha256-TWnC6DbY1zLdZpkzNnWxk4BR6svW4X8v95Kg6DQUu2g="
         }
       ]
     }

@@ -1,10 +1,10 @@
 {
   "name": "ce-compound",
   "dist-tags": {
-    "latest": "3.26.2"
+    "latest": "3.26.3"
   },
   "versions": {
-    "3.26.2": {
+    "3.26.3": {
       "name": "ce-compound",
       "type": "skill",
       "description": "Document a recently solved problem to compound your team's knowledge",
@@ -12,7 +12,7 @@
         {
           "path": "skills/ce-compound/SKILL.md",
           "target": "skills/ce-compound/SKILL.md",
-          "integrity": "sha256-FIsgt/3DpX/oGrFe9pLF5mZVlzOZ0imtAnGp2oPGAe8="
+          "integrity": "sha256-ofV1kfppU/RljERJWEktW5F8/Cynhz9i+dh2WH5nmAQ="
         },
         {
           "path": "skills/ce-compound/assets/resolution-template.md",
@@ -22,12 +22,12 @@
         {
           "path": "skills/ce-compound/references/schema.yaml",
           "target": "skills/ce-compound/references/schema.yaml",
-          "integrity": "sha256-+MNndev5fpB2CWWckyl/GMDN9XyqnKO60mPb6z8sRZg="
+          "integrity": "sha256-j5rIUVus/N+t+2KlUFNbPohKeAGUehObg03qkcVNV2Y="
         },
         {
           "path": "skills/ce-compound/references/yaml-schema.md",
           "target": "skills/ce-compound/references/yaml-schema.md",
-          "integrity": "sha256-F7PQoLq3ou7bSPjpM1jfdHJ3WcsHL6Fa4SXfEPkfQp8="
+          "integrity": "sha256-TWnC6DbY1zLdZpkzNnWxk4BR6svW4X8v95Kg6DQUu2g="
         }
       ]
     }
