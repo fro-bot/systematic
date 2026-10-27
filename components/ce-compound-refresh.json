@@ -1,10 +1,10 @@
 {
   "name": "ce-compound-refresh",
   "dist-tags": {
-    "latest": "3.26.3"
+    "latest": "3.26.4"
   },
   "versions": {
-    "3.26.3": {
+    "3.26.4": {
       "name": "ce-compound-refresh",
       "type": "skill",
       "description": "Refresh stale or drifting learnings and pattern docs in docs/solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing docs/solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation.",
@@ -12,12 +12,12 @@
         {
           "path": "skills/ce-compound-refresh/SKILL.md",
           "target": "skills/ce-compound-refresh/SKILL.md",
-          "integrity": "sha256-VUNgjy/BJIU6xvFlz/zxg9pt7XJpin1KX0La/y526CY="
+          "integrity": "sha256-TtRf+hh0PfpkBKuXaa4HiowRLTWsBTi2LcEbbDy3kfw="
         },
         {
           "path": "skills/ce-compound-refresh/assets/resolution-template.md",
           "target": "skills/ce-compound-refresh/assets/resolution-template.md",
-          "integrity": "sha256-rzzw6btDPw1d9RxZiiUbcEeH/DFJGJuyXNEZSwTgn6o="
+          "integrity": "sha256-Ge1tDWWalS2+D8MjAA7UugUvOFO1bTDCoR4nQAnVfyA="
         },
         {
           "path": "skills/ce-compound-refresh/references/schema.yaml",

@@ -132,7 +132,7 @@
 </li>
 <li>Incorporates auto memory excerpts (if provided by the orchestrator) as supplementary evidence</li>
 <li>Reads <code dir="auto">references/yaml-schema.md</code> for category mapping into <code dir="auto">docs/solutions/</code></li>
-<li>Suggests a filename using the pattern <code dir="auto">[sanitized-problem-slug]-[date].md</code></li>
+<li>Suggests a filename using the pattern <code dir="auto">[sanitized-slug]-[YYYY-MM-DD].md</code>, where the slug is the symptom for bug-track docs and a short title of the guidance for knowledge-track docs</li>
 <li>Returns: YAML frontmatter skeleton (must include <code dir="auto">category:</code> field mapped from problem_type), category directory path, suggested filename, and which track applies</li>
 <li>Does not invent enum values, categories, or frontmatter fields from memory; reads the schema and mapping files above</li>
 <li>Does not force bug-track fields onto knowledge-track learnings or vice versa</li>
@@ -184,7 +184,7 @@
 <p>The score is a function of the count, not a separate judgment about how related the docs feel. Two docs on the same topic that match on one dimension score Low. When the score you are inclined to write disagrees with the count, the count wins.</p>
 </li>
 <li>
-<p>Returns: Links, relationships, refresh candidates, and overlap assessment. State the per-dimension verdicts, then the resulting count, then the score, in that order. Two consistency checks apply in sequence and both must hold: the score follows the count, and the recommendation follows the score. High overlap means update the existing doc, so an assessment that scores High while recommending a new doc has broken the second check even if the first one held. Either break is a defect to re-derive, not a nuance to note.</p>
+<p>Returns: Links, relationships, refresh candidates, and overlap assessment. Ask for the overlap assessment in the dispatch and take it back as one <code dir="auto">Overlap:</code> line per compared doc (the researcher’s format), with the per-dimension verdicts first, then the count, then the score, in that order. Phase 2 reads the score from those lines. Two consistency checks apply in sequence and both must hold: the score follows the count, and the recommendation follows the score. High overlap means update the existing doc, so an assessment that scores High while recommending a new doc has broken the second check even if the first one held. Either break is a defect to re-derive, not a nuance to note.</p>
 </li>
 </ul>
 <p><strong>Search strategy (grep-first filtering for efficiency):</strong></p>
@@ -216,7 +216,7 @@
 <p>Collect all text results from Phase 1 subagents</p>
 </li>
 <li>
-<p><strong>Check the overlap assessment</strong> from the Related Docs Finder before deciding what to write:</p>
+<p><strong>Check the overlap assessment</strong> from the Related Docs Finder (the <code dir="auto">score=</code> value of its <code dir="auto">Overlap:</code> lines) before deciding what to write:</p>
 
 
 
