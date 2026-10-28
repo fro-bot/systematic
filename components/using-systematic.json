@@ -1,10 +1,10 @@
 {
   "name": "using-systematic",
   "dist-tags": {
-    "latest": "3.26.4"
+    "latest": "3.27.0"
   },
   "versions": {
-    "3.26.4": {
+    "3.27.0": {
       "name": "using-systematic",
       "type": "skill",
       "description": "Use when starting any conversation - establishes how to find and use skills, requiring skill tool invocation before ANY response including clarifying questions",
@@ -23,6 +23,11 @@
           "path": "skills/using-systematic/references/opencode-profile.md",
           "target": "skills/using-systematic/references/opencode-profile.md",
           "integrity": "sha256-GDiomf8KFYFyLTU/J61IBLxiP5RnJ+RFI74mTlBfrUA="
+        },
+        {
+          "path": "skills/using-systematic/references/opencode-v2-profile.md",
+          "target": "skills/using-systematic/references/opencode-v2-profile.md",
+          "integrity": "sha256-l7TsoRLTcjIlyZK5bu64/xgxt5yL7PMz8lfiYhsskeE="
         },
         {
           "path": "skills/using-systematic/references/pi-profile.md",
