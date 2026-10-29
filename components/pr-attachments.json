@@ -1,10 +1,10 @@
 {
   "name": "pr-attachments",
   "dist-tags": {
-    "latest": "3.27.1"
+    "latest": "3.27.2"
   },
   "versions": {
-    "3.27.1": {
+    "3.27.2": {
       "name": "pr-attachments",
       "type": "skill",
       "description": "Use when attaching local screenshots or other images to a pull request, publishing evidence images as commit-pinned embeds in a managed Demo section of the PR description, re-pinning those embeds after a rebase or force-push, or cleaning up evidence images once the PR is done.",
