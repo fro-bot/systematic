@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "3.28.1",
+  "version": "3.29.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -112,7 +112,7 @@
     {
       "name": "agent-learnings-researcher",
       "type": "agent",
-      "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes."
+      "description": "Searches docs/solutions/ for relevant past solutions by frontmatter metadata; with scope: past-work, also plans, brainstorms and ideation. Use before implementing features or fixing problems to surface institutional knowledge and prevent repeated mistakes."
     },
     {
       "name": "agent-maintainability-reviewer",

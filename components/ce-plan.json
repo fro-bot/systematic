@@ -1,10 +1,10 @@
 {
   "name": "ce-plan",
   "dist-tags": {
-    "latest": "3.28.1"
+    "latest": "3.29.0"
   },
   "versions": {
-    "3.28.1": {
+    "3.29.0": {
       "name": "ce-plan",
       "type": "skill",
       "description": "Create structured plans for any multi-step task -- software features, research workflows, events, study plans, or any goal that benefits from structured breakdown. Also deepen existing plans with interactive review of sub-agent findings. Use for plan creation when the user says 'plan this', 'create a plan', 'write a tech plan', 'plan the implementation', 'how should we build', 'what's the approach for', 'break this down', 'plan a trip', 'create a study plan', or when a brainstorm/requirements document is ready for planning. Use for plan deepening when the user says 'deepen the plan', 'deepen my plan', 'deepening pass', or uses 'deepen' in reference to a plan.",
@@ -12,12 +12,12 @@
         {
           "path": "skills/ce-plan/SKILL.md",
           "target": "skills/ce-plan/SKILL.md",
-          "integrity": "sha256-OuBmOvVYOEfrmua6QQf8W3j7wNqeZs7R7NYBoXdTn80="
+          "integrity": "sha256-t4tT1yAL7yFPYx7LEQlM0aLvYQDUKEtClLOZZmT6+uQ="
         },
         {
           "path": "skills/ce-plan/references/deepening-workflow.md",
           "target": "skills/ce-plan/references/deepening-workflow.md",
-          "integrity": "sha256-hLmR33z4E7amFQl51oiwxsWXIHIDIqd8o2ueo7ZzFsY="
+          "integrity": "sha256-tLVVaun9d/kPiBqYi5dwh0cHe9my7MX3Q7CcJKG0f6Q="
         },
         {
           "path": "skills/ce-plan/references/markdown-rendering.md",
@@ -32,7 +32,7 @@
         {
           "path": "skills/ce-plan/references/plan-sections.md",
           "target": "skills/ce-plan/references/plan-sections.md",
-          "integrity": "sha256-vc25qPdGNYH9/TwQ9Dm9jq/0mNJS2TJrc4ZQibrDcbE="
+          "integrity": "sha256-GlrVeF0f6k8q/feQOALYYUr7s+Q/6EsQsvjMUE22BqI="
         },
         {
           "path": "skills/ce-plan/references/prior-art-survey-schema.json",
