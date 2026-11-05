@@ -1,10 +1,10 @@
 {
   "name": "compound-docs",
   "dist-tags": {
-    "latest": "3.31.2"
+    "latest": "3.31.3"
   },
   "versions": {
-    "3.31.2": {
+    "3.31.3": {
       "name": "compound-docs",
       "type": "skill",
       "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
@@ -12,7 +12,7 @@
         {
           "path": "skills/compound-docs/SKILL.md",
           "target": "skills/compound-docs/SKILL.md",
-          "integrity": "sha256-3yGsFMmrmaAk1ycitk6HTcU1VgLTHTrsvYQh6eulzuk="
+          "integrity": "sha256-5L1DQ9EMh/5hqHH6dTE/yPZbiRTkN6C9U/37YP5rOaY="
         },
         {
           "path": "skills/compound-docs/assets/resolution-template.md",

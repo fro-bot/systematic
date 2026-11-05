@@ -1,10 +1,10 @@
 {
   "name": "todos",
   "dist-tags": {
-    "latest": "3.31.2"
+    "latest": "3.31.3"
   },
   "versions": {
-    "3.31.2": {
+    "3.31.3": {
       "name": "todos",
       "type": "skill",
       "description": "Use when creating durable work items, managing todo lifecycle, or tracking findings across sessions in the file-based todo system; when reviewing pending todos for approval, prioritizing code review findings, or interactively categorizing work items; or when batch-resolving approved todos, especially after code review or triage sessions",
@@ -12,7 +12,7 @@
         {
           "path": "skills/todos/SKILL.md",
           "target": "skills/todos/SKILL.md",
-          "integrity": "sha256-ChLQ14s+ZhX7EbzoPI31Lb5d/WRQXdfwZHlBaorWGqI="
+          "integrity": "sha256-t5BMxPl6qheAbHLsdYxhEqEJdDMHK4llFLik6emhDYI="
         },
         {
           "path": "skills/todos/assets/todo-template.md",

@@ -1,10 +1,10 @@
 {
   "name": "agent-native-architecture",
   "dist-tags": {
-    "latest": "3.31.2"
+    "latest": "3.31.3"
   },
   "versions": {
-    "3.31.2": {
+    "3.31.3": {
       "name": "agent-native-architecture",
       "type": "skill",
       "description": "Build applications where agents are first-class citizens. Use this skill when designing autonomous agents, creating MCP tools, implementing self-modifying systems, or building apps where features are outcomes achieved by agents operating in a loop.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/agent-native-architecture/SKILL.md",
           "target": "skills/agent-native-architecture/SKILL.md",
-          "integrity": "sha256-sug8wR0PF9dzi3wePw7TW8fQZOY9Taa8JLqoXGrVbDs="
+          "integrity": "sha256-fOLVOhtIngdSuDItccLdXHWHYTx7G/Z5955KH7aPRjs="
         },
         {
           "path": "skills/agent-native-architecture/references/action-parity-discipline.md",

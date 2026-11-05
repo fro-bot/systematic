@@ -1,10 +1,10 @@
 {
   "name": "deploy-docs",
   "dist-tags": {
-    "latest": "3.31.2"
+    "latest": "3.31.3"
   },
   "versions": {
-    "3.31.2": {
+    "3.31.3": {
       "name": "deploy-docs",
       "type": "skill",
       "description": "Validate and prepare documentation for GitHub Pages deployment",
@@ -12,7 +12,7 @@
         {
           "path": "skills/deploy-docs/SKILL.md",
           "target": "skills/deploy-docs/SKILL.md",
-          "integrity": "sha256-8RSZ2rFHGp+zGYvXQCxLkSulJ38kwv6Kc0ka51abr9A="
+          "integrity": "sha256-u4FLgcuKvAXrD9Zgxwwdeyq5ThLPdFdGWLEJG/EZ4xU="
         }
       ]
     }
