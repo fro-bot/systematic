@@ -1,10 +1,10 @@
 {
   "name": "ce-review",
   "dist-tags": {
-    "latest": "3.31.1"
+    "latest": "3.31.2"
   },
   "versions": {
-    "3.31.1": {
+    "3.31.2": {
       "name": "ce-review",
       "type": "skill",
       "description": "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR.",
@@ -72,7 +72,7 @@
         {
           "path": "skills/ce-review/scripts/ensure-ignore.mjs",
           "target": "skills/ce-review/scripts/ensure-ignore.mjs",
-          "integrity": "sha256-T5TqNqcBgMGkRH9v5OAu7WaqUpPPqAkDpnC7Ao4m3GA="
+          "integrity": "sha256-/7uiYHXSTZ7rHaGh8CGtRXWpky5oreZ3PRBKJSXBPZw="
         },
         {
           "path": "skills/ce-review/scripts/validate-review.mjs",
