@@ -1,0 +1,35 @@
+{
+  "name": "ce-connect",
+  "dist-tags": {
+    "latest": "3.32.0"
+  },
+  "versions": {
+    "3.32.0": {
+      "name": "ce-connect",
+      "type": "skill",
+      "description": "Use when searching the projects the user has allowed for contradictions between their learnings, or for a lesson that one project recorded and a sibling project still needs. Also use when the user asks what their other projects have learned about a failure.",
+      "files": [
+        {
+          "path": "skills/ce-connect/SKILL.md",
+          "target": "skills/ce-connect/SKILL.md",
+          "integrity": "sha256-yssMHYBx3lTWAr3HResKHUsReEYEVKMsoM3ziP8DgKI="
+        },
+        {
+          "path": "skills/ce-connect/references/candidate-contract.md",
+          "target": "skills/ce-connect/references/candidate-contract.md",
+          "integrity": "sha256-/20+lRgpzr3ZEUpQKkSn7G26DMlwd8TKoT20nPpRqAw="
+        },
+        {
+          "path": "skills/ce-connect/references/headless-and-outcomes.md",
+          "target": "skills/ce-connect/references/headless-and-outcomes.md",
+          "integrity": "sha256-gItzoJybhGl9sVKgqv/41CzwC4Tgtvc13QiS4QOKD4Y="
+        },
+        {
+          "path": "skills/ce-connect/scripts/connect.mjs",
+          "target": "skills/ce-connect/scripts/connect.mjs",
+          "integrity": "sha256-QG9MeffxswCLPLt2fOKhvlFuzgbtmu6oEzAypsHUGxY="
+        }
+      ]
+    }
+  }
+}

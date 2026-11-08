@@ -1,10 +1,10 @@
 {
   "name": "agents",
   "dist-tags": {
-    "latest": "3.31.6"
+    "latest": "3.32.0"
   },
   "versions": {
-    "3.31.6": {
+    "3.32.0": {
       "name": "agents",
       "type": "bundle",
       "description": "All Systematic agents",
@@ -20,6 +20,7 @@
         "agent-cli-readiness-reviewer",
         "agent-code-simplicity-reviewer",
         "agent-coherence-reviewer",
+        "agent-connections-researcher",
         "agent-correctness-reviewer",
         "agent-data-migrations-reviewer",
         "agent-deployment-verification-agent",

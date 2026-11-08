@@ -1,7 +1,7 @@
 {
   "name": "Systematic",
   "namespace": "systematic",
-  "version": "3.31.6",
+  "version": "3.32.0",
   "author": "Marcus R. Brown <human@fro.bot>",
   "components": [
     {
@@ -58,6 +58,11 @@
       "name": "agent-coherence-reviewer",
       "type": "agent",
       "description": "Reviews planning documents for internal consistency -- contradictions between sections, terminology drift, structural issues, and ambiguity where readers would diverge. Spawned by the document-review skill."
+    },
+    {
+      "name": "agent-connections-researcher",
+      "type": "agent",
+      "description": "Reads the learnings of several allowed projects, one rule family at a time, and proposes contradictions between learnings and lessons one project recorded that a sibling still needs. Read-only. Use only through the ce:connect skill."
     },
     {
       "name": "agent-correctness-reviewer",
@@ -218,6 +223,11 @@
       "name": "ce-compound-refresh",
       "type": "skill",
       "description": "Refresh stale or drifting learnings and pattern docs in docs/solutions/ by reviewing, updating, consolidating, replacing, or deleting them against the current codebase. Use after refactors, migrations, dependency upgrades, or when a retrieved learning feels outdated or wrong. Also use when reviewing docs/solutions/ for accuracy, when a recently solved problem contradicts an existing learning, when pattern docs no longer reflect current code, or when multiple docs seem to cover the same topic and might benefit from consolidation."
+    },
+    {
+      "name": "ce-connect",
+      "type": "skill",
+      "description": "Use when searching the projects the user has allowed for contradictions between their learnings, or for a lesson that one project recorded and a sibling project still needs. Also use when the user asks what their other projects have learned about a failure."
     },
     {
       "name": "ce-ideate",

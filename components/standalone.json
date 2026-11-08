@@ -1,10 +1,10 @@
 {
   "name": "standalone",
   "dist-tags": {
-    "latest": "3.31.6"
+    "latest": "3.32.0"
   },
   "versions": {
-    "3.31.6": {
+    "3.32.0": {
       "name": "standalone",
       "type": "profile",
       "description": "Standalone Systematic profile — compound-engineering loops with zero extra configuration",
@@ -22,7 +22,7 @@
         {
           "path": "registry/files/profiles/standalone/AGENTS.md",
           "target": "AGENTS.md",
-          "integrity": "sha256-kOvo1paSP2NqfN15xSRjPzdyc/nFZq6UFn7xUT3OVls="
+          "integrity": "sha256-V6o4iCK4lTK8Yc71qKN1tG5TflU9Q0LcJY1EDEoROlc="
         }
       ]
     }
