@@ -1,10 +1,10 @@
 {
   "name": "agent-connections-researcher",
   "dist-tags": {
-    "latest": "3.32.0"
+    "latest": "3.32.1"
   },
   "versions": {
-    "3.32.0": {
+    "3.32.1": {
       "name": "agent-connections-researcher",
       "type": "agent",
       "description": "Reads the learnings of several allowed projects, one rule family at a time, and proposes contradictions between learnings and lessons one project recorded that a sibling still needs. Read-only. Use only through the ce:connect skill.",
