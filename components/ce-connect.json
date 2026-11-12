@@ -1,10 +1,10 @@
 {
   "name": "ce-connect",
   "dist-tags": {
-    "latest": "3.32.2"
+    "latest": "3.32.3"
   },
   "versions": {
-    "3.32.2": {
+    "3.32.3": {
       "name": "ce-connect",
       "type": "skill",
       "description": "Use when searching the projects the user has allowed for contradictions between their learnings, or for a lesson that one project recorded and a sibling project still needs. Also use when the user asks what their other projects have learned about a failure.",
@@ -27,7 +27,7 @@
         {
           "path": "skills/ce-connect/scripts/connect.mjs",
           "target": "skills/ce-connect/scripts/connect.mjs",
-          "integrity": "sha256-XJ40auZ7OF2zhOYN6K9P3vo3pSc/9EQ/2cN9bBbNdIo="
+          "integrity": "sha256-fjdIefUKoyxmarrusZ9BcNxBQayvXDKr0EHKNnSGZRc="
         }
       ]
     }
