@@ -438,7 +438,7 @@
 
 
 <table><thead><tr><th>Approach</th><th>When to use</th></tr></thead><tbody><tr><td><strong>Main thread only</strong></td><td>Small scope, short docs</td></tr><tr><td><strong>Sequential subagents</strong></td><td>1-2 artifacts with many supporting files to read</td></tr><tr><td><strong>Parallel subagents</strong></td><td>3+ truly independent artifacts with low overlap</td></tr><tr><td><strong>Batched subagents</strong></td><td>Broad sweeps — narrow scope first, then investigate in batches</td></tr></tbody></table>
-<p><strong>When spawning any subagent</strong>, omit the <code dir="auto">mode</code> parameter so the user’s configured permission settings apply. Include this instruction in its task prompt:</p>
+<p><strong>When spawning any subagent</strong>, dispatch without a permission-mode override so the user’s configured permission settings apply. Include this instruction in its task prompt:</p>
 <blockquote>
 <p>Use dedicated file search and read tools (Glob, Grep, Read) for all investigation. Do NOT use shell commands (ls, find, cat, grep, test, bash) for file operations. This avoids permission prompts and is more reliable.</p>
 <p>Also scan the “user’s auto-memory” block injected into your system prompt (OpenCode only). Check for notes related to the learning’s problem domain. Report any memory-sourced drift signals separately from codebase-sourced evidence, tagged with “(auto memory [claude])” in the evidence section. If the block is not present in your context, skip this check.</p>
