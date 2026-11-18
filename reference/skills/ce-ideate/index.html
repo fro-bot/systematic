@@ -151,7 +151,7 @@
 <p>Use reasonable interpretation rather than formal parsing.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="phase-1-codebase-scan">Phase 1: Codebase Scan</h3><a class="sl-anchor-link" href="#phase-1-codebase-scan"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Phase 1: Codebase Scan”</span></a></div>
 <p>Before generating ideas, gather codebase context.</p>
-<p>Run agents in parallel in the <strong>foreground</strong> (do not use background dispatch — the results are needed before proceeding):</p>
+<p>Run agents in parallel and wait for every final report before you proceed, because the results are needed first. An agent has returned only when its final report arrives; a launch handle is not a result (see the active harness profile’s <em>Dispatch results and continuation</em> section), and waiting is not a reason to dispatch it again:</p>
 <ol>
 <li>
 <p><strong>Quick context scan</strong> — dispatch <code dir="auto">systematic:research:repo-research-analyst</code> with this prompt:</p>
@@ -201,7 +201,7 @@
 <li><strong>Default frames (no issue-tracker intent):</strong> (1) user/operator pain and friction, (2) inversion, removal, or automation of a painful step, (3) assumption-breaking or reframing, (4) leverage and compounding effects.</li>
 </ul>
 <p>Ask each sub-agent to return a compact structure per idea: title, summary, why_it_matters, evidence/grounding hooks, optional boldness or focus_fit signal.</p>
-<p>After all sub-agents return:</p>
+<p>After every ideation sub-agent’s final report has arrived (same rule as Phase 1):</p>
 <ol>
 <li>Merge and dedupe into one master candidate list.</li>
 <li>Synthesize cross-cutting combinations — scan for ideas from different frames that combine into something stronger (expect 3-5 additions at most).</li>

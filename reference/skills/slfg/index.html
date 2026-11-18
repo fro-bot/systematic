@@ -92,10 +92,10 @@
 <div class="sl-heading-wrapper level-h2"><h2 id="parallel-phase">Parallel Phase</h2><a class="sl-anchor-link" href="#parallel-phase"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Parallel Phase”</span></a></div>
 <p>After work completes, launch steps 5 and 6 as <strong>parallel swarm agents</strong> (both only need code to be written):</p>
 <ol start="5">
-<li><code dir="auto">/ce:review mode:report-only</code> — spawn as background Task agent</li>
-<li><code dir="auto">/systematic:test-browser</code> — spawn as background Task agent</li>
+<li><code dir="auto">/ce:review mode:report-only</code> — spawn as a parallel Task agent</li>
+<li><code dir="auto">/systematic:test-browser</code> — spawn as a parallel Task agent</li>
 </ol>
-<p>Wait for both to complete before continuing.</p>
+<p>Wait for both final reports before continuing. A launch handle is not a report: do not re-dispatch while a report is owed (see the active harness profile’s <em>Dispatch results and continuation</em> section).</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="autofix-phase">Autofix Phase</h2><a class="sl-anchor-link" href="#autofix-phase"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Autofix Phase”</span></a></div>
 <ol start="7">
 <li><code dir="auto">/ce:review mode:autofix</code> — run sequentially after the parallel phase so it can safely mutate the checkout, apply <code dir="auto">safe_auto</code> fixes, and emit residual todos for step 8</li>
