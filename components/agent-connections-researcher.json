@@ -1,18 +1,18 @@
 {
   "name": "agent-connections-researcher",
   "dist-tags": {
-    "latest": "3.35.3"
+    "latest": "3.36.0"
   },
   "versions": {
-    "3.35.3": {
+    "3.36.0": {
       "name": "agent-connections-researcher",
       "type": "agent",
-      "description": "Reads the learnings of several allowed projects, one rule family at a time, and proposes contradictions between learnings and lessons one project recorded that a sibling still needs. Read-only. Use only through the ce:connect skill.",
+      "description": "Reads the learnings of several allowed projects, one rule family at a time, and proposes contradictions between learnings, lessons one project recorded that a sibling still needs, and learnings whose present-tense claim the code no longer supports. Read-only. Use only through the ce:connect skill.",
       "files": [
         {
           "path": "agents/research/connections-researcher.md",
           "target": "agents/research/connections-researcher.md",
-          "integrity": "sha256-xAwNxl2qTYj7t5tAoM9rHijtr4Luf5/3ikynbnMjGkU="
+          "integrity": "sha256-GuMEM5WbJ27rP5a6yfCFWYyz92oPTs0PDUIai4RhVZc="
         }
       ]
     }
