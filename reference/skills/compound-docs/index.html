@@ -344,10 +344,9 @@ All context needed for documentation should be present in conversation history b
 <p><strong>Citing code:</strong></p>
 <ul>
 <li>Write a repo-relative path with the line or range, as <code dir="auto">&#x3C;file>:&#x3C;line></code> or <code dir="auto">&#x3C;file>:&#x3C;start>-&#x3C;end></code>. Never cite a bare file name.</li>
-<li>Put the backticked symbol the citation points at in the same sentence, so a moved line is caught.</li>
+<li>Put the backticked symbol the citation points at in the same sentence, so a reader can tell when a line has moved.</li>
 <li>For code outside the repo, or code that has been deleted, link a tag or commit, not a path.</li>
 <li>In examples, write placeholders such as <code dir="auto">&#x3C;file>:&#x3C;line></code>, not real citations.</li>
-<li>The content-integrity gate checks the citations in <code dir="auto">docs/solutions/</code> and fails on a missing file, a line outside the file, a span of only blanks or comments, or a named symbol that is not in the span.</li>
 </ul>
 <p><strong>Avoid:</strong></p>
 <ul>

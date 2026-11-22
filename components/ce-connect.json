@@ -1,10 +1,10 @@
 {
   "name": "ce-connect",
   "dist-tags": {
-    "latest": "3.37.0"
+    "latest": "3.38.0"
   },
   "versions": {
-    "3.37.0": {
+    "3.38.0": {
       "name": "ce-connect",
       "type": "skill",
       "description": "Use when searching the projects the user has allowed for contradictions between their learnings, for a lesson that one project recorded and a sibling project still needs, or for a learning whose claim the code no longer supports. Also use when the user asks what their other projects have learned about a failure.",
@@ -12,12 +12,12 @@
         {
           "path": "skills/ce-connect/SKILL.md",
           "target": "skills/ce-connect/SKILL.md",
-          "integrity": "sha256-b3lPQIQXZNs0y+U8sK8jPfClOlXxReQy5nQ+NY8dr+k="
+          "integrity": "sha256-wzsHe+GLFTYqVQCkmsWo9n1ca+/kjH1jI+IBgb+IdsE="
         },
         {
           "path": "skills/ce-connect/references/candidate-contract.md",
           "target": "skills/ce-connect/references/candidate-contract.md",
-          "integrity": "sha256-obc9ADKzbSdcWxVcKeCxayjXbkWyPE2nkTom2Hnj67I="
+          "integrity": "sha256-+8b0WSeDowWWpa9m/Gpoihca/kz+PR7Ypd6WfpihCw4="
         },
         {
           "path": "skills/ce-connect/references/fetch-and-import.md",
@@ -27,12 +27,12 @@
         {
           "path": "skills/ce-connect/references/headless-and-outcomes.md",
           "target": "skills/ce-connect/references/headless-and-outcomes.md",
-          "integrity": "sha256-Z0WYDBYiCdEmkuPWq9nPyZpS2LY3o9u4UZCo4n75p+Q="
+          "integrity": "sha256-xpYJ3ACrR3KNXIKDzzPHD5nVU1VDoeI+TU9lhYNTpy4="
         },
         {
           "path": "skills/ce-connect/scripts/connect.mjs",
           "target": "skills/ce-connect/scripts/connect.mjs",
-          "integrity": "sha256-lSpCl6pMbxWXhhMwrQUUz4F/HRhgt3ToyWeHdVh+6rQ="
+          "integrity": "sha256-8HT6XPV6UOGWhAa6W7rLGH0Ea4KrJ70x5Ol/Gk7tKIE="
         }
       ]
     }
