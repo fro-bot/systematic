@@ -1,10 +1,10 @@
 {
   "name": "ce-connect",
   "dist-tags": {
-    "latest": "3.38.5"
+    "latest": "3.38.6"
   },
   "versions": {
-    "3.38.5": {
+    "3.38.6": {
       "name": "ce-connect",
       "type": "skill",
       "description": "Use when searching the projects the user has allowed for contradictions between their learnings, for a lesson that one project recorded and a sibling project still needs, or for a learning whose claim the code no longer supports. Also use when the user asks what their other projects have learned about a failure.",
