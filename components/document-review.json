@@ -1,10 +1,10 @@
 {
   "name": "document-review",
   "dist-tags": {
-    "latest": "3.38.4"
+    "latest": "3.38.5"
   },
   "versions": {
-    "3.38.4": {
+    "3.38.5": {
       "name": "document-review",
       "type": "skill",
       "description": "Review requirements or plan documents using parallel persona agents that surface role-specific issues. Use when a requirements document or plan document exists and the user wants to improve it.",
@@ -12,7 +12,7 @@
         {
           "path": "skills/document-review/SKILL.md",
           "target": "skills/document-review/SKILL.md",
-          "integrity": "sha256-EYixF626t+ZluLToZ/NVB2Zu0VRLtTfGjqW2D+HnEzw="
+          "integrity": "sha256-VD0JsizZ60pTrLDpyPialSwU1fFopybOvaDF5yRSi1I="
         },
         {
           "path": "skills/document-review/references/findings-schema.json",
@@ -32,7 +32,7 @@
         {
           "path": "skills/document-review/references/synthesis-and-presentation.md",
           "target": "skills/document-review/references/synthesis-and-presentation.md",
-          "integrity": "sha256-isBS86U//QZIszFFBeAiCSrXe3CGnumVUJb8y2PgjmY="
+          "integrity": "sha256-s+D6YwEEaVbz2krwZGo7V+yz9x4M8/ylJLwpMOD/LUI="
         }
       ]
     }

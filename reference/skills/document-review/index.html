@@ -82,9 +82,10 @@
 <p>If <code dir="auto">mode:headless</code> is present, set <strong>headless mode</strong> for the rest of the workflow.</p>
 <p><strong>Headless mode</strong> changes the interaction model, not the classification boundaries. Document-review still applies the same judgment about what has one clear correct fix vs. what needs user judgment. The only difference is how findings are delivered:</p>
 <ul>
-<li><code dir="auto">safe_auto</code> fixes at confidence anchor <code dir="auto">100</code> are applied silently (same as interactive)</li>
+<li><code dir="auto">safe_auto</code> fixes at confidence anchor <code dir="auto">100</code> that are eligible under 3.7 are applied silently (same as interactive)</li>
 <li><code dir="auto">gated_auto</code> proposed fixes and <code dir="auto">manual</code> decisions are returned as structured text for the caller to handle — no question prompts, no interactive approval</li>
 <li>Findings at confidence anchor <code dir="auto">50</code> are returned as FYI observations only — no interaction or action</li>
+<li>Findings listed under <code dir="auto">Declined:</code> failed the admission test and are non-actionable output — no interaction or action</li>
 <li>Phase 5 returns immediately with “Review complete” (no refine/complete question)</li>
 </ul>
 <p>The caller receives applied fixes, proposed fixes, decisions, and FYI observations with their original classifications intact; proposed fixes and decisions remain for the caller to handle.</p>
